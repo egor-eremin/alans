@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 38.2 38.2" style="enable-background:new 0 0 38.2 38.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);fill:none;stroke:#13B63A;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{clip-path:url(#SVGID_2_);fill:none;stroke:#D6D6D6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="0" width="38.2" height="38.2"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<path class="st0" d="M24.2,33.3c5.1,0.2,9.3-4,9.1-9.1"/>
+	<path class="st0" d="M24.2,37.7c7.5,0.2,13.7-6,13.5-13.5"/>
+	<path class="st0" d="M28.8,24.2c0.2,2.7-2,4.9-4.7,4.7"/>
+	<path class="st1" d="M15.8,24.5c-0.9-3-0.6-5.8,1.1-7.5c1.7-1.7,4.5-2,7.5-1.1L15.8,24.5z"/>
+	<line class="st1" x1="20.2" y1="20.2" x2="23.3" y2="23.3"/>
+	<circle class="st1" cx="24" cy="24" r="1.1"/>
+	<polyline class="st1" points="19.8,15.5 12.2,7.9 7.9,12.2 15.5,19.8 	"/>
+	<rect x="3.1" y="16" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -12.9973 10.4517)" class="st1" width="6.1" height="9.8"/>
+	<rect x="17.9" y="1.2" transform="matrix(0.7071 -0.7072 0.7072 0.7071 1.8008 16.5823)" class="st1" width="6.1" height="9.8"/>
+	<line class="st1" x1="18.8" y1="8.3" x2="15.7" y2="11.4"/>
+	<line class="st1" x1="11.4" y1="15.7" x2="8.3" y2="18.8"/>
+	<line class="st1" x1="17.5" y1="2.7" x2="24.4" y2="9.6"/>
+	<line class="st1" x1="2.7" y1="17.5" x2="9.6" y2="24.4"/>
+</g>
+</svg>

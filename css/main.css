@@ -399,14 +399,17 @@ input::-ms-clear {
 
 .layout-content {
   height:auto;
-  flex-grow: 1;
-  flex-shrink: 0;
+  /* flex-grow: 1;
+  flex-shrink: 0; */
   flex-basis: auto;
 }
 
 .layout-position {
   margin: 0 auto;
+  max-width: 1240px;
 }
+
+
 
 
 
@@ -417,9 +420,13 @@ input::-ms-clear {
 body, html {
      background: #f4f4f4;
      font-size: 16px;
-     font-family: 'latoregular', sans-serif;
+     font-family: 'LatoRegular', Arial, Helvetica, sans-serif;
      height: 3000px;
  }
+
+
+
+ 
 
 .header-wrapper {
     max-width: 1240px;
@@ -697,3 +704,107 @@ body, html {
   position: absolute;
   left: 63px;
 }
+
+/* Футер */
+*{
+  box-sizing: border-box;
+}
+
+body.footer, 
+html.footer{
+  height: auto;
+}
+
+.advantages {
+  display: flex;
+  min-height: 14.375rem;
+  justify-content: space-between;
+  margin-top: 218px;
+}
+
+.advantages__item {
+  width: 18.125rem;
+  display:flex;
+  justify-content: center;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.advantages__item-picplace {
+  width: 140px;
+  height: 66%;
+  min-height: 66%;
+}
+
+.advantages__item-picplace svg {
+  width: 90%;
+  max-width: 90%;
+  height: 90%;
+
+
+}
+
+
+.advantages__item-picplace.gaika svg {
+  width: 90%;
+  max-width: 90%;
+  height: 90%;
+
+}
+.advantages__item-picplace.gaika svg .st0 {
+	clip-path: url(#SVGID_2_);
+	fill: none;
+	stroke: #E1E1E1;
+	stroke-miterlimit: 10;
+	-webkit-transform: rotate(30deg) translate(8px, -18px);
+	-moz-transform: rotate(30deg) translate(8px, -18px);
+	-o-transform: rotate(30deg) translate(8px, -18px);
+	-ms-transform: rotate(30deg) translate(8px, -18px);
+	transform: rotate(30deg) translate(8px, -18px);
+}
+
+.advantages__item-picplace.russia {
+  text-align: left;
+}
+
+.advantages__item-picplace.russia svg {
+  width: 82%;
+  max-width: 82%;
+  margin-top: -5px;
+}
+
+.advantages__item-picplace.russia svg .st1{
+  clip-path:url(#SVGID_4_);
+  fill:none;
+  stroke:#D6D6D6;
+  stroke-width:1.6;
+  stroke-miterlimit:10;
+}
+.advantages__item-picplace.russia svg .st2{clip-path:url(#SVGID_4_);fill:#43B243;}
+.advantages__item-picplace.russia svg .st3{opacity:0.16;clip-path:url(#SVGID_4_);}
+.advantages__item-picplace.russia svg .st4{clip-path:url(#SVGID_6_);fill:#91C25F;}
+.advantages__item-picplace.russia svg .st5{clip-path:url(#SVGID_8_);fill:#91C25F;}
+.advantages__item-picplace.russia svg .st6{clip-path:url(#SVGID_10_);fill:#91C25F;}
+
+
+	.advantages__item-picplace.spaceship svg .st0{clip-path:url(#SVGID_2000_);fill:none;stroke:#13B63A;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.advantages__item-picplace.spaceship svg .st1{clip-path:url(#SVGID_2000_);fill:none;stroke:#D6D6D6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+  .advantages__item-picplace.spaceship svg {
+    width: 69%;
+    max-width: 69%;
+    height: 55%;
+    margin-top: 25px;
+    border: 1px solid transparent;
+  }
+
+  
+
+
+
+
+
+
+
+
+/* Футер : конец */
