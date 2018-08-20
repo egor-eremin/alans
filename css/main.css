@@ -322,6 +322,15 @@ input::-ms-clear {
   float: right;
 }
 
+.abs-alignment {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 /*Классы валидации формы*/
 .input-ok {
   border: 1px solid #96b796;
@@ -728,12 +737,15 @@ html.footer{
   justify-content: center;
   padding-top: 20px;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .advantages__item-picplace {
   width: 140px;
   height: 66%;
   min-height: 66%;
+  position: relative;
+
 }
 
 .advantages__item-picplace svg {
@@ -798,11 +810,24 @@ html.footer{
     border: 1px solid transparent;
   }
 
-  
+  .advantages__item-number {
+    font-size: 3.125rem;
+    color: #43b343;
+    height: 5rem;
+    display: block;
+  }
 
+  .advantages__item-picplace.gaika .advantages__item-number {
+    width:55%;
+    margin: auto 0;
+    margin-right: auto;
+    margin-left: 18%;
+}
 
-
-
+.advantages-item__description {
+  width: 80%;
+  text-align: center;
+}
 
 
 
