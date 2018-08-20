@@ -3,12 +3,10 @@
 
 
 @font-face {
-    font-family: 'latobold';
-    src: url('latobold-webfont.eot');
-    src: url('latobold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('latobold-webfont.woff') format('woff'),
-         url('latobold-webfont.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'lato';
+    src: url('../fonts/latoregular-webfont-webfont.woff2') format('woff2'),
+        url('../fonts/latoregular-webfont-webfont.woff') format('woff');
+    font-weight: 400;
     font-style: normal;
 
 }
@@ -17,40 +15,20 @@
 
 
 @font-face {
-    font-family: 'latosemibold';
-    src: url('latosemibold-webfont.eot');
-    src: url('latosemibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('latosemibold-webfont.woff') format('woff'),
-         url('latosemibold-webfont.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'lato';
+    src: url('../fonts/latobold-webfont-webfont.woff2') format('woff2'),
+        url('../fonts/latobold-webfont-webfont.woff') format('woff');
+    font-weight: 700;
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
-    font-family: 'latomedium';
-    src: url('latomedium-webfont.eot');
-    src: url('latomedium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('latomedium-webfont.woff') format('woff'),
-         url('latomedium-webfont.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'lato';
+    src: url('../fonts/latosemibold-webfont-webfont.woff2') format('woff2'),
+    url('../fonts/latosemibold-webfont-webfont.woff') format('woff');
+    font-weight: 600;
     font-style: normal;
 
 }
 
-
-
-
-@font-face {
-    font-family: 'latoregular';
-    src: url('latoregular-webfont.eot');
-    src: url('latoregular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('latoregular-webfont.woff') format('woff'),
-         url('latoregular-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-
-}
