@@ -292,6 +292,10 @@ input:focus {
   outline: none; 
 }
 
+p{
+  margin: 0;
+}
+
 /*Убираем placeholder при клике*/
 input:focus::-webkit-input-placeholder { 
   color:transparent; 
@@ -415,6 +419,7 @@ input::-ms-clear {
 
 .layout-position {
   margin: 0 auto;
+  width: 1240px;
   max-width: 1240px;
 }
 
@@ -745,70 +750,45 @@ html.footer{
   height: 66%;
   min-height: 66%;
   position: relative;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
 
 }
 
-.advantages__item-picplace svg {
-  width: 90%;
-  max-width: 90%;
-  height: 90%;
-
-
+.advantages__item-picplace.venok {
+  background-image: url('../img/obj_venok.svg');
+  background-size: 94%;
+  padding-top: 10%;
+  background-position: 50% 28%;
 }
 
-
-.advantages__item-picplace.gaika svg {
-  width: 90%;
-  max-width: 90%;
-  height: 90%;
-
-}
-.advantages__item-picplace.gaika svg .st0 {
-	clip-path: url(#SVGID_2_);
-	fill: none;
-	stroke: #E1E1E1;
-	stroke-miterlimit: 10;
-	-webkit-transform: rotate(30deg) translate(8px, -18px);
-	-moz-transform: rotate(30deg) translate(8px, -18px);
-	-o-transform: rotate(30deg) translate(8px, -18px);
-	-ms-transform: rotate(30deg) translate(8px, -18px);
-	transform: rotate(30deg) translate(8px, -18px);
+.advantages__item-picplace.spaceship {
+  background-image: url('../img/obj_spaceship.svg');
+  background-size: 61%;
+  background-position: 50% 39%;
 }
 
 .advantages__item-picplace.russia {
-  text-align: left;
+  background-image: url('../img/obj_russia.svg');
+  background-size: 61%;
+  background-position: 50% 39%;
 }
 
-.advantages__item-picplace.russia svg {
-  width: 82%;
-  max-width: 82%;
-  margin-top: -5px;
+.advantages__item-picplace.russia + p {
+	margin-bottom: 0;
+	margin-top: auto;
+
+	margin-left: 0.875rem;
+	margin-right: auto;
 }
 
-.advantages__item-picplace.russia svg .st1{
-  clip-path:url(#SVGID_4_);
-  fill:none;
-  stroke:#D6D6D6;
-  stroke-width:1.6;
-  stroke-miterlimit:10;
+.advantages__item-picplace.gaika + p {
+  margin-bottom: 28px;
+  margin-left: 1.175rem;
+  margin-right: auto;
 }
-.advantages__item-picplace.russia svg .st2{clip-path:url(#SVGID_4_);fill:#43B243;}
-.advantages__item-picplace.russia svg .st3{opacity:0.16;clip-path:url(#SVGID_4_);}
-.advantages__item-picplace.russia svg .st4{clip-path:url(#SVGID_6_);fill:#91C25F;}
-.advantages__item-picplace.russia svg .st5{clip-path:url(#SVGID_8_);fill:#91C25F;}
-.advantages__item-picplace.russia svg .st6{clip-path:url(#SVGID_10_);fill:#91C25F;}
 
-
-	.advantages__item-picplace.spaceship svg .st0{clip-path:url(#SVGID_2000_);fill:none;stroke:#13B63A;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.advantages__item-picplace.spaceship svg .st1{clip-path:url(#SVGID_2000_);fill:none;stroke:#D6D6D6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-
-  .advantages__item-picplace.spaceship svg {
-    width: 69%;
-    max-width: 69%;
-    height: 55%;
-    margin-top: 25px;
-    border: 1px solid transparent;
-  }
 
   .advantages__item-number {
     font-size: 3.125rem;
@@ -825,10 +805,26 @@ html.footer{
 }
 
 .advantages-item__description {
-  width: 80%;
-  text-align: center;
+	font-family: 'LatoRegular', Arial, Helvetica, sans-serif;
+	width: 79%;
+	text-align: center;
+	color: #838383;
+	line-height: 1.333;
+	font-size: 0.9063rem;
+	margin-bottom: 8px;
 }
 
+
+footer .layout-position {
+	margin-top: 84px;
+	width: 1400px;
+	max-width: 1400px;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 20px 5px #f0efef;
+	-moz-box-shadow: 0px 0px 20px 5px #f0efef;
+	box-shadow: 0px 0px 20px 5px #f0efef;
+	padding: 120px 140px 100px 150px;
+}
 
 
 
