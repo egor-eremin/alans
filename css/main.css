@@ -1062,8 +1062,59 @@ border: none;
 }
 
 .footer-map {
-  height: 600px;
-  background: url('../img/footer_map.png') 100% 100% no-repeat;
+	height: 600px;
+  background: url('../img/footer_map.png') 50% 100% no-repeat;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-top: 118px;
+  align-items: flex-start;
+}
+
+.email__link {
+	text-decoration: none;
+	color: #000000;
+	letter-spacing: 0.8px;
+}
+
+.span-item__picture {
+  display: inline-block;
+  vertical-align: middle;
+  width: 22px;
+  height: 30px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-right: 18px;
+}
+
+.span-item__picture.mail {
+	background-image: url('../img/obj_email.svg');
+	background-size: 174%;
+}
+
+.span-item__picture.address {
+	background-image: url('../img/obj_geomark_buttonmap.svg');
+  background-size: 142%;
+  margin-right: 13px;
+}
+
+.span-item__picture.call {
+	background-image: url('../img/obj_calloperator.svg');
+  background-size: 142%;
+  margin-right: 13px;
+}
+
+.address-on-map {
+	letter-spacing: 1.2px;
+	width: 352px;
+	margin-left: 186px;
+}
+.call-me {
+	width: 200px;
+	margin-left: 195px;
+	letter-spacing: 0.9px;
 }
 
 /* Футер : конец */
