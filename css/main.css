@@ -991,9 +991,8 @@ footer .layout-position {
 .user-telephone__wrapper.active .field-placeholder, 
 .username__wrapper.active .field-placeholder,
 .user-telephone__wrapper.filled .field-placeholder, 
-.username__wrapper.filled .field-placeholder,
-.user-telephone__wrapper.input-error .field-placeholder, 
-.username__wrapper.input-error .field-placeholder
+.username__wrapper.filled .field-placeholder
+
 {
 	-webkit-transform: translate(-10px, -22px);
 	-moz-transform: translate(-10px, -22px);
