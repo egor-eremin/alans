@@ -3,7 +3,9 @@ $(document).ready(function () {
 
 	//Раздел переменных
 	//----------------------------------------------------------------------------------------------------
-	var $registrationFormsInput = $('.username, .user-telephone');
+	var $registrationFormsInput = $('.username, .user-telephone'),
+		$registrationFormPlaceholders = $('.field-placeholder');
+
    
 
 
@@ -14,11 +16,34 @@ $(document).ready(function () {
 		activateInputs($registrationFormsInput, $(this));
 	});
 
-	$registrationFormsInput.on('focus keydown blur', function (event) {
-		var textValue = String($(this).val()).trim();
+	$registrationFormPlaceholders.click(function (e) { 
+		e.preventDefault();
+		var $currentField = $(this).siblings('input[type=text]'); 
+		activateInputs($registrationFormsInput, $(this));
+		$currentField.focus();
+	});
+
+
+	$registrationFormsInput.on('focus keydown  blur', function (event) {
+		var textValue = String($(this).val()).trim(),
+		$wrapper = $(this).parent();
 		if(textValue.length <= 0) {
 			$(this).removeClass('input-ok');
 			$(this).removeClass('input-error');
+			$wrapper.removeClass('input-ok');
+			$wrapper.removeClass('input-error');
+		} 
+		if(textValue.length > 0) {
+			if($(this).hasClass('input-ok')) {
+				$wrapper.removeClass('input-error');
+				$wrapper.addClass('input-ok');
+				
+			}
+			if($(this).hasClass('input-error')) {
+				$wrapper.removeClass('input-ok');
+				$wrapper.addClass('input-error');
+				
+			}
 		}
 		
 	});
@@ -29,7 +54,7 @@ $(document).ready(function () {
 	});
 
 	activateFastValidation($('.callback-form'));
-
+	initializeForm($registrationFormsInput);
    
 	//Активация медиа-запросов в javascript
 	//@param mediaQueryString (String) - строка медиа-запроса как в CSS
@@ -57,6 +82,23 @@ $(document).ready(function () {
 });
 
 
+
+function initializeForm($registrationFormsInput) {
+	if (!window.validation.isValid({ container: '.callback-form' }) || window.validation.isValid({ container: '.callback-form' })) {
+		$.each($registrationFormsInput, function () {
+			if ($(this).val().length > 0) {
+				if ($(this).hasClass('input-ok')) {
+					$(this).parent().addClass('input-ok');
+					$(this).parent().removeClass('input-error');
+				}
+				if ($(this).hasClass('input-error')) {
+					$(this).parent().addClass('input-error');
+					$(this).parent().removeClass('input-ok');
+				}
+			}
+		});
+	}
+}
 
 function activateInputs($registrationFormsInput, $selector) {
 	var $wrapper = $selector.parent(), 

@@ -24,7 +24,7 @@
        url('../fonts/latosemibold-webfont.ttf') format('truetype'),
        url('../fonts/latosemibold-webfont.woff') format('woff'),
        url('../fonts/latosemibold-webfont.woff2') format('woff2');
-      
+   
   font-weight: normal;
   font-style: normal;
 
@@ -296,7 +296,11 @@ p, div{
   margin: 0;
   position: relative;
 }
-
+ ul{
+   margin: 0;
+   padding: 0;
+   list-style: none;
+ }
 
 /*Убираем placeholder при клике*/
 input:focus::-webkit-input-placeholder { 
@@ -342,14 +346,14 @@ input::-ms-clear {
   margin: auto;
 }
 
-/*Классы валидации формы*/
+/* Классы валидации формы
 .input-ok {
-  border: 1px solid #96b796;
+  border: 1px solid magenta;
 }
 
 .input-error {
   border: 1px solid red;
-}
+} */
 
 /* Классы шрифтов */
 
@@ -933,12 +937,13 @@ footer .layout-position {
   display: inline-block;
   line-height: 0;
   color:#69c269;
-
+border: none;
 }
 
-.user-telephone__wrapper::before,
-.username__wrapper::before{
-  content:"Телефон";
+
+
+.user-telephone__wrapper .field-placeholder,
+.username__wrapper .field-placeholder{
   top: 0;
   bottom: 0;
   display: block;
@@ -951,10 +956,16 @@ footer .layout-position {
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 
+
 }
 
-.user-telephone__wrapper.active::before, 
-.username__wrapper.active::before {
+.user-telephone__wrapper.active .field-placeholder, 
+.username__wrapper.active .field-placeholder,
+.user-telephone__wrapper.input-ok .field-placeholder, 
+.username__wrapper.input-ok .field-placeholder,
+.user-telephone__wrapper.input-error .field-placeholder, 
+.username__wrapper.input-error .field-placeholder
+{
 	-webkit-transform: translate(-10px, -22px);
 	-moz-transform: translate(-10px, -22px);
 	-o-transform: translate(-10px, -22px);
@@ -963,11 +974,92 @@ footer .layout-position {
 }
 
 
-.username__wrapper::before{
-  content: "Ваше имя";
+
+
+.username__wrapper.input-ok::after,
+.username__wrapper.input-error::after,
+.user-telephone__wrapper.input-ok::after,
+.user-telephone__wrapper.input-error::after
+{
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 70px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 13px;
+  margin: auto 0;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 30%;
+  transition-property: background-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.agreement__wrapper {
+  cursor: pointer;
+}
+
+.username__wrapper.input-ok::after,
+.user-telephone__wrapper.input-ok::after {
+  background: #43b343 url('../img/obj_checked.svg') center center no-repeat;
+  background-size: 50%;
+}
+
+.username__wrapper.input-error::after,
+.user-telephone__wrapper.input-error::after {
+  background: #b35043 url('../img/obj_cross.svg') center center no-repeat;
+  background-size: 50%;
+}
+
+.footer-link__list {
+	display: flex;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
 }
 
 
+.footer-link-list__item h6{
+  color:#43b343;
+  font-family: 'LatoSemibold', Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: normal;
+  position: relative;
+}
 
+.footer-link-list__item h6::after{
+  width: 60px;
+  height: 1px;
+  background-color:#43b343;
+  display: block;
+  content: "";
+  margin-top: 46px;
+}
+
+.footer-link-list__item {
+	margin-bottom: 0.8562rem;
+}
+
+.footer-link-list__item a {
+	text-decoration: none;
+	font-family: 'LatoRegular', Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 88%;
+	display: inline-block;
+	width: 337px;
+}
+
+.footer-link-list__item--header {
+  margin-bottom: -9px;
+}
+
+.footer-link-list-base:last-child {
+	margin-left: auto;
+	width: 290px;
+}
 
 /* Футер : конец */
