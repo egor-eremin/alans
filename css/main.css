@@ -990,8 +990,8 @@ footer .layout-position {
 
 .user-telephone__wrapper.active .field-placeholder, 
 .username__wrapper.active .field-placeholder,
-.user-telephone__wrapper.input-ok .field-placeholder, 
-.username__wrapper.input-ok .field-placeholder,
+.user-telephone__wrapper.filled .field-placeholder, 
+.username__wrapper.filled .field-placeholder,
 .user-telephone__wrapper.input-error .field-placeholder, 
 .username__wrapper.input-error .field-placeholder
 {
@@ -1140,8 +1140,9 @@ footer .layout-position {
 .address-on-map {
 	letter-spacing: 1.2px;
 	width: 352px;
-  margin-left: 186px;
-  text-align: center;
+	margin-left: 186px;
+	text-align: center;
+	z-index: 100;
 }
 .call-me {
 	width: 210px;
