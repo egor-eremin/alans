@@ -292,21 +292,28 @@ input:focus {
   outline: none; 
 }
 
-p{
+p, div{
   margin: 0;
+  position: relative;
 }
+
 
 /*Убираем placeholder при клике*/
 input:focus::-webkit-input-placeholder { 
+
   color:transparent; 
 }
 input:focus:-moz-placeholder { 
+
   color:transparent; 
 } /* FF 4-18 */
 input:focus::-moz-placeholder { 
+
+
   color:transparent; 
 } /* FF 19+ */
 input:focus:-ms-input-placeholder { 
+
   color:transparent; 
 } /* IE 10+ */
 
@@ -770,9 +777,16 @@ html.footer{
 }
 
 .advantages__item-picplace.russia {
-  background-image: url('../img/obj_russia.svg');
-  background-size: 61%;
-  background-position: 50% 39%;
+	background-image: url('../img/obj_russia.svg');
+	background-size: 88%;
+	background-position: -12% 23%;
+}
+
+.advantages__item-picplace.gaika {
+	background-image: url('../img/obj_gaika.svg');
+	background-size: 81%;
+	background-position: 22% -197%;
+	padding-top: 10%;
 }
 
 .advantages__item-picplace.russia + p {
@@ -816,15 +830,143 @@ html.footer{
 
 
 footer .layout-position {
-	margin-top: 84px;
-	width: 1400px;
-	max-width: 1400px;
-	background-color: #fff;
-	-webkit-box-shadow: 0px 0px 20px 5px #f0efef;
-	-moz-box-shadow: 0px 0px 20px 5px #f0efef;
-	box-shadow: 0px 0px 20px 5px #f0efef;
-	padding: 120px 140px 100px 150px;
+  margin-top: 84px;
+  width: 1400px;
+  max-width: 1400px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 20px 5px #f0efef;
+  -moz-box-shadow: 0px 0px 20px 5px #f0efef;
+  box-shadow: 0px 0px 20px 5px #f0efef;
+  padding: 76px 128px 100px 136px;
+
 }
+
+.callback-form {
+  height: auto;
+}
+
+.form-wrapper {
+	border: 2px solid #4ead58;
+	padding: 45px 100px 73px 100px;
+}
+
+.form-wrapper legend {
+  padding: 25px;
+  font-size: 1.625rem;
+}
+
+.username,
+.user-telephone{
+  border-radius: 80px;
+  border:none;
+  background-color: #f4f4f4;
+  font-size: 1rem;
+  padding: 16px 35px;
+  color: #000000;
+  max-width: 250px;
+
+
+}
+
+.form__fields {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+
+.usersubmit {
+  border-radius: 80px;
+  border:none;
+  background-color:  #4ead58;
+  color: #ffffff;
+  padding: 16px 93px 16px 23px;
+  position: relative;
+  display: block;
+  z-index: 0;
+  cursor: pointer;
+
+}
+
+.user-submit__wrapper::before{
+  content: "";
+  position: absolute;
+  display: block;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 80px;
+  background:  #54c254 url('../img/obj_button-arrow.svg') 50% 50% no-repeat;
+  background-size: 20%;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.agreement-checkbox {
+
+  margin-top: 40px;
+}
+
+.ps-checkbox {
+  width: 22px;
+  height: 22px;
+  background: #f4f4f4;
+  display: inline-block;
+  border-radius: 70px;
+ transition-property: background-color;
+ transition-duration: 200ms;
+ transition-timing-function: ease-in-out;
+ vertical-align: middle;
+ margin-right: 10px;
+ 
+}
+
+#agree:checked ~ .ps-checkbox {
+  background: #43b343 url('../img/obj_checked.svg') center center no-repeat;
+  background-size: 50%;
+}
+
+
+.policy-link {
+  display: inline-block;
+  line-height: 0;
+  color:#69c269;
+
+}
+
+.user-telephone__wrapper::before,
+.username__wrapper::before{
+  content:"Телефон";
+  top: 0;
+  bottom: 0;
+  display: block;
+  height: 20px;
+  left: 0;
+  margin: auto 0;
+  margin-left: 36px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+
+}
+
+.user-telephone__wrapper.active::before, 
+.username__wrapper.active::before {
+	-webkit-transform: translate(-10px, -22px);
+	-moz-transform: translate(-10px, -22px);
+	-o-transform: translate(-10px, -22px);
+	-ms-transform: translate(-10px, -22px);
+	transform: translate(-10px, -22px) scale(0.75);
+}
+
+
+.username__wrapper::before{
+  content: "Ваше имя";
+}
+
 
 
 

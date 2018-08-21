@@ -37,16 +37,16 @@
                             </p>
                             
                         </div>
-                        <div class="advantages__item marked-column">
-                           <div class="advantages__item-picplace russia marked-wrapper">
+                        <div class="advantages__item">
+                           <div class="advantages__item-picplace russia">
                           </div>
                             <p class="advantages-item__description">
                                 Работаем на территории Западной и Восточной Сибири, Дальнего Востока
                             </p>
                         </div>
-                        <div class="advantages__item marked-column">
-                                <div class="advantages__item-picplace gaika  marked-wrapper">
-                                    <p class="advantages__item-number lato-medium  abs-alignment">45</p>
+                        <div class="advantages__item">
+                                <div class="advantages__item-picplace gaika">
+                                    <p class="advantages__item-number">45</p>
                                 </div>
                                 <p class="advantages-item__description">
                                     Единиц техники
@@ -55,9 +55,38 @@
 
                     </div>
                 </main>
-                <footer class="marked-wrapper">
+                <footer>
                     <div class="layout-position">
+                        <form action="#" method="post" class="callback-form" enctype="multipart/form-data">
+                            <fieldset class="form-wrapper">
+                                <legend>Оставьте заявку</legend>
+                                <div class="form__fields">
+                                    <div class="username__wrapper">
+                                        <input type="text" name="userName" class="username  field-input alfanumeric required" >
+                                    </div>
+                                    <div class="user-telephone__wrapper">
+                                        <input type="text" name="userTelephone" class="user-telephone field-input numeric required" >
+                                    </div>
+                                     
+                                    
+                                    <div class="user-submit__wrapper">
+                                        <input type="submit" name="userSubmit" class="usersubmit">
+                                    </div>
+                                   
+                                </div>
+                                <div class="agreement-checkbox">
+                                    
+                                    
+                                    <label for="agree" class="agreement__wrapper">
+                                        <input type="checkbox" name="agree" id="agree" class="agree  fully-hidden">
+                                        <span class="ps-checkbox">
+                                        </span>
+                                        Я согласен с <a href="#" class="policy-link">политикой обработки персональных данных</a> 
+                                    </label>
 
+                                </div>
+                            </fieldset>
+                        </form>
                     </div>
 
                 </footer>
@@ -72,7 +101,7 @@
     <script src="lib/formValidator.js"></script>
     <script src="lib/jquery.mCustomScrollbar.js"></script>
     <script src="lib/slick.js"></script>
-    <script src="lib/common.js"></script>
+
     <script src="js/template_script.js"></script>  
 </body>
 </html>

@@ -3,13 +3,33 @@ $(document).ready(function () {
 
 	//Раздел переменных
 	//----------------------------------------------------------------------------------------------------
-
+	var $registrationFormsInput = $('.username, .user-telephone');
    
 
 
 	//Раздел функций
 	//------------------------------------------------------------------------------------------------------
-   
+	$registrationFormsInput.focus(function (e) { 
+		e.preventDefault();
+		activateInputs($registrationFormsInput, $(this));
+	});
+
+	$registrationFormsInput.on('focus keydown blur', function (event) {
+		var textValue = String($(this).val()).trim();
+		if(textValue.length <= 0) {
+			$(this).removeClass('input-ok');
+			$(this).removeClass('input-error');
+		}
+		
+	});
+
+	$registrationFormsInput.blur(function (e) { 
+		e.preventDefault();
+		deactivateInputs($registrationFormsInput);
+	});
+
+	activateFastValidation($('.callback-form'));
+
    
 	//Активация медиа-запросов в javascript
 	//@param mediaQueryString (String) - строка медиа-запроса как в CSS
@@ -36,6 +56,30 @@ $(document).ready(function () {
     
 });
 
+
+
+function activateInputs($registrationFormsInput, $selector) {
+	var $wrapper = $selector.parent(), 
+	$wrappers = $registrationFormsInput.parent();
+	$.each($wrappers, function () {
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active');
+		}
+	});
+
+	$wrapper.addClass('active');
+}
+
+function deactivateInputs($registrationFormsInput) {
+	var	$wrappers = $registrationFormsInput.parent();
+	$.each($wrappers, function () {
+		if ($(this).hasClass('active')) {
+			$(this).removeClass('active');
+		}
+	});
+
+}
+
 function media(mediaQueryString, action){
 	'use strict';
 	var handleMatchMedia = function (mediaQuery) {
@@ -49,3 +93,13 @@ function media(mediaQueryString, action){
 	handleMatchMedia(mql);
 	mql.addListener(handleMatchMedia);
 }
+
+function activateFastValidation($selectorContainer) {
+	if(($selectorContainer.length > 0) && typeof($selectorContainer)!='undefined'){
+		window.validation.init({
+			container: $selectorContainer
+		});
+	}
+
+}
+
