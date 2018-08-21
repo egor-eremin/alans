@@ -878,7 +878,9 @@ footer .layout-position {
 }
 
 
-.usersubmit {
+.usersubmit,
+.bth-adress,
+.btn-call {
   border-radius: 80px;
   border:none;
   background-color:  #4ead58;
@@ -888,10 +890,20 @@ footer .layout-position {
   display: block;
   z-index: 0;
   cursor: pointer;
+  text-decoration: none;
 
 }
 
-.user-submit__wrapper::before{
+.bth-adress,
+.btn-call {
+	padding-right: 52px;
+	display: inline-block;
+	margin-top: 28px;
+}
+
+.user-submit__wrapper::before,
+.bth-adress::before,
+.btn-call::before{
   content: "";
   position: absolute;
   display: block;
@@ -907,9 +919,19 @@ footer .layout-position {
   margin: auto 0;
 }
 
-.agreement-checkbox {
+.bth-adress::before {
+	background: #54c254 url('../img/obj_geomark.svg') 45% 46% no-repeat;
+	background-size: 37%;
+}
 
+.btn-call::before {
+	background: #54c254 url('../img/obj_telephone.svg') 57% 58% no-repeat;
+	background-size: 37%;
+}
+
+.agreement-checkbox {
   margin-top: 40px;
+
 }
 
 .ps-checkbox {
@@ -1063,13 +1085,14 @@ border: none;
 
 .footer-map {
 	height: 600px;
-  background: url('../img/footer_map.png') 50% 100% no-repeat;
-  overflow: hidden;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  padding-top: 118px;
-  align-items: flex-start;
+	background: url('../img/footer_map.png') 50% 100% no-repeat;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 113px;
+	align-items: flex-start;
+
 }
 
 .email__link {
@@ -1109,12 +1132,81 @@ border: none;
 .address-on-map {
 	letter-spacing: 1.2px;
 	width: 352px;
-	margin-left: 186px;
+  margin-left: 186px;
+  text-align: center;
 }
 .call-me {
-	width: 200px;
-	margin-left: 195px;
+	width: 210px;
+	margin-left: auto;
 	letter-spacing: 0.9px;
+	text-align: center;
+}
+
+.final-links {
+  margin-top: auto;
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 237px;
+}
+
+
+.alans-logo-link {
+	width: 200px;
+	height: 50px;
+	background: url('../img/obj_alance_logo.png') 45% 57% no-repeat;
+	background-size: 140%;
+	display: block;
+	margin-bottom: 68px;
+}
+
+.alans-site-protocols, 
+.alans-confidential {
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.875rem;
+	color: #000000;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	letter-spacing: 1px;
+  margin-bottom: 7px;
+  transition-property: border-bottom;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.alans-site-protocols:hover,
+.alans-confidential:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+
+.copyright{
+  font-size: 0.875rem;
+  margin-top: 28px;
+}
+
+.logo-mmit{
+  width: 150px;
+  height: 50px;
+  flex-grow: 1;
+  background: url('../img/obj_megamir_logo.svg') center center no-repeat;
+}
+
+.logo-mmit__text {
+	width: 126px;
+	flex-grow: 1;
+	padding-left: 12px;
+}
+
+.logo-mmit-area {
+  margin-top: auto;
+  margin-bottom: 100px;
+  display: flex;
+  text-decoration: none;
+  color: #cccccc;
+  font-size: 0.875rem;
+  align-items: center;
+  justify-content: space-between;
+  
 }
 
 /* Футер : конец */
