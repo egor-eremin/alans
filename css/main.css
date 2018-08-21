@@ -949,18 +949,26 @@ footer .layout-position {
 }
 
 #agree:checked ~ .ps-checkbox {
-	background: #43b343 url('../img/obj_checked.svg') 63% center no-repeat;
+	background: rgb(67, 179, 67) url('../img/obj_checked.svg') 63% center no-repeat;
 	background-size: 50%;
 }
 
 
 .policy-link {
   display: inline-block;
-  line-height: 0;
+
   color:#69c269;
-border: none;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(105, 194, 105, 0.534);
+  transition-property: border-bottom;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  
 }
 
+.policy-link:hover {
+  border-bottom: 1px solid rgba(105, 194, 105, 1);
+}
 
 
 .user-telephone__wrapper .field-placeholder,
@@ -1199,6 +1207,7 @@ border: none;
 
 .logo-mmit-area {
   margin-top: auto;
+  margin-left: auto;
   margin-bottom: 100px;
   display: flex;
   text-decoration: none;
@@ -1208,5 +1217,39 @@ border: none;
   justify-content: space-between;
   
 }
+
+.aim-twirl__wrapper {
+	position: absolute;
+	width: 630px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	height: 560px;
+  overflow: hidden;
+  display: flex;
+}
+
+.aim-twirl {
+	width: 560px;
+	height: 560px;
+	background: url('../img/animated_circles.png') 50.8% 45.6% no-repeat;
+	background-size: 90%;
+	animation-name: spin;
+	animation-duration: 25s;
+	animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin: auto;
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
 
 /* Футер : конец */
