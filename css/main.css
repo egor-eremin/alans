@@ -832,21 +832,20 @@ html.footer{
 	margin-bottom: 8px;
 }
 
-
 footer .layout-position {
-  margin-top: 84px;
-  width: 1400px;
-  max-width: 1400px;
-  background-color: #fff;
-  -webkit-box-shadow: 0px 0px 20px 5px #f0efef;
-  -moz-box-shadow: 0px 0px 20px 5px #f0efef;
-  box-shadow: 0px 0px 20px 5px #f0efef;
-  padding: 76px 128px 100px 136px;
-
+	margin-top: 84px;
+	width: 1400px;
+	max-width: 1400px;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 20px 5px #f0efef;
+	-moz-box-shadow: 0px 0px 20px 5px #f0efef;
+	box-shadow: 0px 0px 20px 5px #f0efef;
+	padding: 76px 128px 0 136px;
 }
 
 .callback-form {
-  height: auto;
+	height: auto;
+	margin-bottom: 84px;
 }
 
 .form-wrapper {
@@ -928,8 +927,8 @@ footer .layout-position {
 }
 
 #agree:checked ~ .ps-checkbox {
-  background: #43b343 url('../img/obj_checked.svg') center center no-repeat;
-  background-size: 50%;
+	background: #43b343 url('../img/obj_checked.svg') 63% center no-repeat;
+	background-size: 50%;
 }
 
 
@@ -1060,6 +1059,11 @@ border: none;
 .footer-link-list-base:last-child {
 	margin-left: auto;
 	width: 290px;
+}
+
+.footer-map {
+  height: 600px;
+  background: url('../img/footer_map.png') 100% 100% no-repeat;
 }
 
 /* Футер : конец */
