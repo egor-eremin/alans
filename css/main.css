@@ -76,9 +76,7 @@
   }
 
   html, 
-body {
-  overflow-x: hidden;
-}
+
 
 *{
   box-sizing: border-box;
@@ -294,12 +292,18 @@ input:focus {
 
 p, div{
   margin: 0;
-  position: relative;
+
 }
- ul{
+ ul {
    margin: 0;
    padding: 0;
    list-style: none;
+ }
+
+ a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
  }
 
  input:-webkit-autofill {
@@ -334,31 +338,6 @@ input::-ms-clear {
   display: none;
 }
 
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}
-
-.abs-alignment {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-/* Классы валидации формы
-.input-ok {
-  border: 1px solid magenta;
-}
-
-.input-error {
-  border: 1px solid red;
-} */
 
 /* Классы шрифтов */
 
@@ -887,7 +866,7 @@ footer .layout-position {
 .bth-adress,
 .btn-call {
   border-radius: 80px;
-  border:none;
+  border:1px solid transparent;
   background-color:  #4ead58;
   color: #ffffff;
   padding: 16px 93px 16px 23px;
@@ -896,8 +875,11 @@ footer .layout-position {
   z-index: 0;
   cursor: pointer;
   text-decoration: none;
+  overflow: hidden;
 
 }
+
+
 
 .bth-adress,
 .btn-call {
@@ -906,7 +888,9 @@ footer .layout-position {
 	margin-top: 28px;
 }
 
-.user-submit__wrapper::before,
+
+
+.usersubmit::before,
 .bth-adress::before,
 .btn-call::before{
   content: "";
@@ -922,6 +906,16 @@ footer .layout-position {
   top: 0;
   bottom: 0;
   margin: auto 0;
+  border: 1px solid transparent;
+
+
+}
+
+.bth-adress span,
+.btn-call span,
+.usersubmit span {
+  position: relative;
+  z-index: 2;
 }
 
 .bth-adress::before {
@@ -975,6 +969,10 @@ footer .layout-position {
   border-bottom: 1px solid rgba(105, 194, 105, 1);
 }
 
+.user-telephone__wrapper,
+.username__wrapper {
+  position: relative;
+}
 
 .user-telephone__wrapper .field-placeholder,
 .username__wrapper .field-placeholder{
@@ -1103,7 +1101,8 @@ footer .layout-position {
 	justify-content: space-between;
 	flex-wrap: wrap;
 	padding-top: 113px;
-	align-items: flex-start;
+  align-items: flex-start;
+  position: relative;
 
 }
 
