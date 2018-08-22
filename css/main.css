@@ -302,21 +302,26 @@ p, div{
    list-style: none;
  }
 
-/*Убираем placeholder при клике*/
-input:focus::-webkit-input-placeholder { 
+ input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #f4f4f4 inset;
+  box-shadow: 0 0 0 30px #f4f4f4 inset;
+}
+
+/*Ставим placeholder при клике*/
+input:not(:focus)::-webkit-input-placeholder { 
 
   color:transparent; 
 }
-input:focus:-moz-placeholder { 
+input:not(:focus):-moz-placeholder { 
 
   color:transparent; 
 } /* FF 4-18 */
-input:focus::-moz-placeholder { 
+input:not(:focus)::-moz-placeholder { 
 
 
   color:transparent; 
 } /* FF 19+ */
-input:focus:-ms-input-placeholder { 
+input:not(:focus):-ms-input-placeholder { 
 
   color:transparent; 
 } /* IE 10+ */
@@ -949,7 +954,7 @@ footer .layout-position {
 }
 
 #agree:checked ~ .ps-checkbox {
-	background: rgb(67, 179, 67) url('../img/obj_checked.svg') 63% center no-repeat;
+	background: rgb(67, 179, 67) url('../img/obj_checked.svg') 58% center no-repeat;
 	background-size: 50%;
 }
 
@@ -1251,5 +1256,7 @@ footer .layout-position {
   }
 }
 
-
+label.error {
+  display: none !important;
+}
 /* Футер : конец */
