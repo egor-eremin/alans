@@ -14,6 +14,30 @@ $(document).ready(function () {
 	initFields($registrationFormsInput);
 	$('.user-telephone').mask('+7 (000) 000-00-00');
 	$('.callback-form').validate({
+		invalidHandler: function(event, validator) {
+			// 'this' refers to the form
+			var errors = validator.numberOfInvalids(),
+			$tel_state = validator.element( '.utl' ),
+			$usn_state = validator.element( '.username' ),
+			$telWrapper = $('.user-telephone__wrapper'),
+			$usnWrapper = $('.username__wrapper');
+			$tel_state = String($tel_state).trim();
+			$usn_state = String($usn_state).trim();
+		
+				if($tel_state === 'false'){
+			
+					$telWrapper.addClass('input-error'); 
+				}
+
+				if($usn_state === 'false'){
+			
+					$usnWrapper.addClass('input-error'); 
+				}
+				
+				
+
+			
+		  },
 	
 		onkeyup: function(element){
 			var $wrapper = $(element).parent();
@@ -48,7 +72,7 @@ $(document).ready(function () {
 		var $wrapper = $(this).parent(),
 			$wrappers = $registrationFormsInput.parent(),
 			value;
-		value = clearValidationClasses($wrappers, value);
+		// value = clearValidationClasses($wrappers, value);
 		$wrapper.addClass('active');
 		
 	
@@ -92,6 +116,12 @@ $(document).ready(function () {
 		});
 		$wrapper.addClass('active');
 		$activeField.focus();
+		
+	});
+
+	$('.usersubmit').click(function (e) { 
+		e.preventDefault();
+		$('.callback-form').submit();
 		
 	});
    

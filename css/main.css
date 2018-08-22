@@ -438,7 +438,7 @@ body, html {
  
 
 .header-wrapper {
-    max-width: 1240px;
+   width: 1240px;
     background: transparent;
     display: flex;
     /* flex-direction: column; */
@@ -446,8 +446,8 @@ body, html {
 }
 
 .logo-link {
-    /* max-width: 269px; */
-    max-height: 103px;
+
+    height: 103px;
     width: 23%;
     margin-top: 85px;
 }
@@ -816,20 +816,23 @@ html.footer{
 	margin-bottom: 8px;
 }
 
-footer .layout-position {
+footer {
 	margin-top: 84px;
-	width: 1400px;
-	max-width: 1400px;
 	background-color: #fff;
 	-webkit-box-shadow: 0px 0px 20px 5px #f0efef;
 	-moz-box-shadow: 0px 0px 20px 5px #f0efef;
 	box-shadow: 0px 0px 20px 5px #f0efef;
-	padding: 76px 128px 0 136px;
+}
+
+footer .layout-position {
+	width: 1240px;
+	padding: 76px 52px 0 52px;
+
 }
 
 .callback-form {
 	height: auto;
-	margin-bottom: 84px;
+	margin-bottom: 88px;
 }
 
 .form-wrapper {
@@ -840,19 +843,18 @@ footer .layout-position {
 .form-wrapper legend {
   padding: 25px;
   font-size: 1.625rem;
+	letter-spacing: 1px;
 }
 
-.username,
-.user-telephone{
+.username, .user-telephone {
   border-radius: 80px;
-  border:none;
+	border: none;
   background-color: #f4f4f4;
   font-size: 1rem;
-  padding: 16px 35px;
+	padding: 16px 35px;
   color: #000000;
-  max-width: 250px;
-
-
+  width: 250px;
+	line-height: normal;
 }
 
 .form__fields {
@@ -869,17 +871,21 @@ footer .layout-position {
   border:1px solid transparent;
   background-color:  #4ead58;
   color: #ffffff;
-  padding: 16px 93px 16px 23px;
+  padding: 14px 93px 14px 23px;
   position: relative;
   display: block;
   z-index: 0;
   cursor: pointer;
   text-decoration: none;
   overflow: hidden;
+  line-height: normal;
+  
 
 }
 
-
+.usersubmit{
+  min-width: 250px;
+}
 
 .bth-adress,
 .btn-call {
@@ -900,7 +906,7 @@ footer .layout-position {
   width: 32px;
   height: 32px;
   border-radius: 80px;
-  background:  #54c254 url('../img/obj_button-arrow.svg') 50% 50% no-repeat;
+  background:  #54c254 url('../img/obj_button-arrow.svg') center center no-repeat;
   background-size: 20%;
   z-index: 1;
   top: 0;
@@ -919,7 +925,7 @@ footer .layout-position {
 }
 
 .bth-adress::before {
-	background: #54c254 url('../img/obj_geomark.svg') 45% 46% no-repeat;
+	background: #54c254 url('../img/obj_geomark.svg') center center no-repeat;
 	background-size: 37%;
 }
 
@@ -934,17 +940,17 @@ footer .layout-position {
 }
 
 .ps-checkbox {
-  width: 22px;
-  height: 22px;
-  background: #f4f4f4;
-  display: inline-block;
-  border-radius: 70px;
- transition-property: background-color;
- transition-duration: 200ms;
- transition-timing-function: ease-in-out;
- vertical-align: middle;
- margin-right: 10px;
- 
+	width: 22px;
+	height: 22px;
+	background: #f4f4f4;
+	display: inline-block;
+	border-radius: 70px;
+	transition-property: background-color;
+	transition-duration: 200ms;
+	transition-timing-function: ease-in-out;
+	vertical-align: middle;
+	margin-right: 10px;
+	margin-top: -4px;
 }
 
 #agree:checked ~ .ps-checkbox {
@@ -1054,12 +1060,14 @@ footer .layout-position {
 }
 
 
-.footer-link-list__item h6{
-  color:#43b343;
-  font-family: 'LatoSemibold', Arial, Helvetica, sans-serif;
-  font-size: 1.25rem;
-  font-weight: normal;
-  position: relative;
+.footer-link-list__item h6 {
+	color: #43b343;
+	font-family: 'LatoSemibold', Arial, Helvetica, sans-serif;
+	font-size: 1.25rem;
+	font-weight: normal;
+	position: relative;
+	line-height: 80%;
+	margin-bottom: 50px;
 }
 
 .footer-link-list__item h6::after{
@@ -1082,6 +1090,10 @@ footer .layout-position {
 	font-size: 88%;
 	display: inline-block;
 	width: 337px;
+}
+
+.footer-link-list__item:hover a {
+  text-decoration: underline;
 }
 
 .footer-link-list__item--header {
@@ -1147,16 +1159,19 @@ footer .layout-position {
 	text-align: center;
 	z-index: 100;
 }
+
+
 .call-me {
 	width: 210px;
 	margin-left: auto;
 	letter-spacing: 0.9px;
 	text-align: center;
+	margin-right: 10px;
 }
 
 .final-links {
   margin-top: auto;
-  margin-bottom: 100px;
+	margin-bottom: 129px;
   display: flex;
   flex-wrap: wrap;
   width: 237px;
@@ -1191,9 +1206,9 @@ footer .layout-position {
   border-bottom: 1px solid rgba(0, 0, 0, 1);
 }
 
-.copyright{
+.copyright {
   font-size: 0.875rem;
-  margin-top: 28px;
+	margin-top: 16px;
 }
 
 .logo-mmit{
@@ -1212,14 +1227,14 @@ footer .layout-position {
 .logo-mmit-area {
   margin-top: auto;
   margin-left: auto;
-  margin-bottom: 100px;
+	margin-bottom: 116px;
   display: flex;
   text-decoration: none;
   color: #cccccc;
   font-size: 0.875rem;
   align-items: center;
   justify-content: space-between;
-  
+	margin-right: 14px;
 }
 
 .aim-twirl__wrapper {
@@ -1229,22 +1244,68 @@ footer .layout-position {
 	right: 0;
 	bottom: 0;
 	margin: auto;
-	height: 560px;
+	height: 630px;
   overflow: hidden;
   display: flex;
 }
 
-.aim-twirl {
-	width: 560px;
-	height: 560px;
-	background: url('../img/animated_circles.png') 50.8% 45.6% no-repeat;
-	background-size: 90%;
-	animation-name: spin;
-	animation-duration: 25s;
+.aim-twirl__wrp-inner {
+  width: 100%;
+  height: 112%;
+  position: relative;
+  margin: auto;
+
+}
+
+.aim-twirl-outer,
+.aim-twirl-medium,
+.aim-twirl-small,
+.aim-twirl-point {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background-size: 100%;
 	animation-iteration-count: infinite;
   animation-timing-function: linear;
-  margin: auto;
 }
+
+.aim-twirl-outer {
+	width: 610px;
+	height: 610px;
+	background: url('../img/twirl-outer.svg') 50% 50% no-repeat;
+	animation-name: spin;
+	animation-duration: 91s;
+}
+
+.aim-twirl-medium {
+
+  width: 435px;
+  height: 435px;
+  background: url('../img/twirl-medium.svg') 50% 50% no-repeat;
+  animation-name: spin-inverse;
+	animation-duration: 35s;
+
+}
+
+.aim-twirl-small {
+  animation-name: spin;
+	animation-duration: 18s;
+  width: 260px;
+  height: 260px;
+  background: url('../img/twirl-small.svg') 50% 50% no-repeat;
+}
+
+.aim-twirl-point {
+  width: 12px;
+  height: 12px;
+  border-radius: 80px;
+  background-color: #66c166;
+}
+
+
 
 @keyframes spin {
   from {
@@ -1252,6 +1313,15 @@ footer .layout-position {
   }
   to {
       transform:rotate(360deg);
+  }
+}
+
+@keyframes spin-inverse {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(-360deg);
   }
 }
 
