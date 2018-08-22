@@ -15,7 +15,7 @@
                 <div class="header-container__info">
                     <span class="tagline">Комплексный подход в области инженерных изысканий</span>
                     <a href="tel:+73952504000" class="phone__header">8 (3952)&nbsp;504−000</a>
-                    <button class="btn__order-callback">Заказать звонок</button>
+                    <button class="btn__order-callback"><span class="btn-text-wrapper">Заказать звонок</span></button>
                 </div>
                 <nav class="header-container__menu">
                     <ul class="header-menu">
@@ -697,12 +697,33 @@
         <div class="callback__wrapper">
             <a href="#" class="callback__close"></a>
             <div class="callback__form-block">
-                <form id="callback-form" action="#" method="post">
-                    <div class="callback__title">
-                        Заказать звонок
-                    </div>
-                    <div class="callback__form-item">
-                        
+                <form id="callback-form" class="callback__form" action="#" method="post">
+                    <div class="callback__form-wrapper">
+                        <div class="callback__title">
+                            Заказать звонок
+                        </div>
+                        <div class="callback__form-item">
+                                <input type="text" required>
+                                <span class="callback__label-text">Ваше имя</span>
+                        </div>
+                        <div class="callback__form-item">
+                                <input type="text" class="phone-input" required>
+                                <span class="callback__label-text">Телефон</span>
+                        </div>
+                        <div class="callback__form-item personal-data">
+                            <label>
+                                <input type="checkbox">
+                                <span class="custom-checkbox-wrapper">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="custom-checkbox-text">
+                                        Я согласен с <a href="#">политикой обработки персональных данных</a>
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="callback__form-item">
+                            <button class="btn"><span class="btn-text-wrapper">Оставить заявку</span></button>
+                        </div>
                     </div>
                 </form>
             </div>
