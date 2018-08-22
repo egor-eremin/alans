@@ -69,30 +69,25 @@ $(document).ready(function () {
 
 
 	  $registrationFormsInput.on('focus', function () {
-		var $wrapper = $(this).parent(),
-			$wrappers = $registrationFormsInput.parent(),
-			value;
-		// value = clearValidationClasses($wrappers, value);
+		var $wrapper = $(this).parent();
 		$wrapper.addClass('active');
 		
-	
-	});
+		});
 
 	$registrationFormsInput.on('blur', function () {
-		var $wrappers = $registrationFormsInput.parent(),
-		value;
+		var $wrappers = $registrationFormsInput.parent();
+
 		$.each($wrappers, function (indexInArray, valueOfElement) { 
 			$(this).removeClass('active');
 		});
-		clearValidationClasses($wrappers, value);
+
 		
 		
 	
 	});
 
 	$registrationFormsInput.on('keydown keyup', function () {
-		var $wrappers = $registrationFormsInput.parent(),
-			$wrapper = $(this).parent(),
+		var $wrapper = $(this).parent(),
 			value =  String($(this).val()).trim();
 
 			if(value.length > 0) {
@@ -122,6 +117,28 @@ $(document).ready(function () {
 	$('.usersubmit').click(function (e) { 
 		e.preventDefault();
 		$('.callback-form').submit();
+		
+	});
+
+	$('.callback-form').viewportChecker({
+		classToAdd: 'onLook',
+		repeat: true,
+
+	});
+
+	$(window).on('scroll', function () {
+		var $callBackForm = $('.callback-form.onLook.full-visible').not('.done');
+		var animationEnd = 'onanimationend animationend webKitAnimationEnd mozAnimationEnd MSAnimationEnd',
+		selector = $('.advantages-item__description'),
+		animation = 'fadeInUp';
+		if($callBackForm.length > 0){
+			if(!selector.hasClass(animation)) {
+				selector.addClass(animation).one(animationEnd, function(){
+					$callBackForm.addClass('done');
+				});
+			}
+			
+		}
 		
 	});
    

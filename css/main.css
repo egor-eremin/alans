@@ -813,7 +813,30 @@ html.footer{
 	color: #838383;
 	line-height: 1.333;
 	font-size: 0.9063rem;
-	margin-bottom: 8px;
+  margin-bottom: 8px;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  opacity: 0;
+}
+
+.venok ~ .advantages-item__description{
+  -webkit-animation-delay: 0ms;
+  animation-delay: 0ms;
+}
+
+.spaceship ~ .advantages-item__description{
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.russia ~ .advantages-item__description{
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.gaika ~ .advantages-item__description{
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 footer {
@@ -930,7 +953,7 @@ footer .layout-position {
 }
 
 .btn-call::before {
-	background: #54c254 url('../img/obj_telephone.svg') 57% 58% no-repeat;
+	background: #54c254 url('../img/obj_telephone.svg') center center no-repeat;
 	background-size: 37%;
 }
 
@@ -1083,17 +1106,25 @@ footer .layout-position {
 	margin-bottom: 0.8562rem;
 }
 
+
+
 .footer-link-list__item a {
 	text-decoration: none;
 	font-family: 'LatoRegular', Arial, Helvetica, sans-serif;
 	color: #000000;
 	font-size: 88%;
 	display: inline-block;
-	width: 337px;
+  width: 337px;
+  border-bottom: 1px solid transparent;
+  transition-property: color, border-bottom;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+  display: inline-block;
 }
 
 .footer-link-list__item:hover a {
-  text-decoration: underline;
+  
+  color: #4ead58;
 }
 
 .footer-link-list__item--header {
@@ -1106,22 +1137,51 @@ footer .layout-position {
 }
 
 .footer-map {
-	height: 600px;
-	background: url('../img/footer_map.png') 50% 100% no-repeat;
+	height: 527px;
+	background: url(../img/footer_map.png) 50% 260% no-repeat;
 	overflow: hidden;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	padding-top: 113px;
-  align-items: flex-start;
-  position: relative;
-
+	padding-top: 117px;
+	align-items: flex-start;
+	position: relative;
 }
+
+
 
 .email__link {
 	text-decoration: none;
 	color: #000000;
-	letter-spacing: 0.8px;
+  letter-spacing: 0.8px;
+  transition-property: color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.email__link-text,
+.address-link__text,
+.telefone-link__text {
+  border-bottom: 1px solid transparent;
+  transition-property: border-bottom, color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.email__link:hover,
+.email__link:hover .email__link-text,
+.address-link:hover .address-link__text,
+.telefone-link:hover .telefone-link__text
+{
+  color: #4ead58;
+}
+
+.email__link:hover .email__link-text,
+.address-link:hover .address-link__text,
+.telefone-link:hover .telefone-link__text {
+  border-bottom: 1px solid #4ead58;
+  position: relative;
+  z-index: 10;
 }
 
 .span-item__picture {
@@ -1171,12 +1231,11 @@ footer .layout-position {
 
 .final-links {
   margin-top: auto;
-	margin-bottom: 129px;
+  margin-bottom: 52px;
   display: flex;
   flex-wrap: wrap;
   width: 237px;
 }
-
 
 .alans-logo-link {
 	width: 200px;
@@ -1215,26 +1274,66 @@ footer .layout-position {
   width: 150px;
   height: 50px;
   flex-grow: 1;
+
+  position: relative;
+
+}
+
+.logo-mmit::before,
+.logo-mmit::after {
+	width: 150px;
+	height: 50px;
+	flex-grow: 1;
+
+  position: absolute;
+  display: block;
+  content:"";
+  transition-property: opacity;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+
+.logo-mmit::before{
   background: url('../img/obj_megamir_logo.svg') center center no-repeat;
+  opacity: 1;
+}
+
+.logo-mmit::after{
+  background: url('../img/obj_megamir_logo-green.svg') center center no-repeat;
+  opacity: 0;
+}
+
+.logo-mmit-area:hover .logo-mmit::before{
+  opacity: 0;
+}
+.logo-mmit-area:hover .logo-mmit::after{
+  opacity: 1;
+}
+
+.logo-mmit-area:hover .logo-mmit__text {
+  color:#4ead58;
 }
 
 .logo-mmit__text {
 	width: 126px;
 	flex-grow: 1;
-	padding-left: 12px;
+  padding-left: 12px;
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
 }
 
 .logo-mmit-area {
   margin-top: auto;
   margin-left: auto;
-	margin-bottom: 116px;
+  margin-bottom: 38px;
   display: flex;
   text-decoration: none;
   color: #cccccc;
   font-size: 0.875rem;
   align-items: center;
   justify-content: space-between;
-	margin-right: 14px;
+  margin-right: 14px;
 }
 
 .aim-twirl__wrapper {
@@ -1250,11 +1349,10 @@ footer .layout-position {
 }
 
 .aim-twirl__wrp-inner {
-  width: 100%;
-  height: 112%;
-  position: relative;
-  margin: auto;
-
+	width: 100%;
+	height: 130%;
+	position: relative;
+	margin: auto;
 }
 
 .aim-twirl-outer,
@@ -1329,3 +1427,8 @@ label.error {
   display: none !important;
 }
 /* Футер : конец */
+
+/*Заглушка*/
+.dummyy{
+  height:2000px;
+}
