@@ -14,6 +14,27 @@ $(document).ready(function () {
 	initFields($registrationFormsInput);
 	$('.user-telephone').mask('+7 (000) 000-00-00');
 	$('.callback-form').validate({
+		submitHandler: function(form) {
+			$.ajax({
+				url: '../ajax/response.json',
+				success: function (data) {  
+					var hideSelectors = $('.form__fields, .agreement-checkbox');
+					$.each(hideSelectors, function () { 
+						$(this).addClass('fully-hidden');	 
+					});
+					
+					if(data.answer === 1) {
+			
+						$('.thank-you').removeClass('fully-hidden'); 
+					}
+
+					if(data.answer === 0) {
+					
+						$('.something-wrong').removeClass('fully-hidden'); 
+					}
+				}
+			});
+		},
 		invalidHandler: function(event, validator) {
 			// 'this' refers to the form
 			var errors = validator.numberOfInvalids(),

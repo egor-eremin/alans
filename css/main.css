@@ -335,7 +335,7 @@ input::-ms-clear {
 }
 
 .fully-hidden {
-  display: none;
+  display: none !important;
 }
 
 
@@ -1426,6 +1426,26 @@ footer .layout-position {
 label.error {
   display: none !important;
 }
+
+.thank-you,
+.somthing-wrong {
+  display: block;
+  
+  text-align: center;
+  
+  
+}
+
+.thank-you {
+	color: #4ead58;
+	margin: 46px 0;
+}
+
+.something-wrong {
+  color: #b35043;
+  margin: 46px 0;
+}
+
 /* Футер : конец */
 
 /*Заглушка*/
