@@ -1446,6 +1446,77 @@ label.error {
   margin: 46px 0;
 }
 
+.up-arrow__wrapper {
+  position: fixed;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  z-index: 100;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
+
+.hidden-down {
+  -webkit-transform: translate(0, 300px);
+  -moz-transform: translate(0, 300px);
+  -o-transform: translate(0, 300px);
+  -ms-transform: translate(0, 300px);
+  transform: translate(0, 300px);
+}
+
+.up-arrow__wrapper .layout-position {
+  width: 1400px;
+  position: relative;
+  height: auto;
+}
+
+.up__arrow-area{
+  position: absolute;
+  right: 0;
+  top: -40px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 80px;
+  overflow: hidden;
+}
+
+.up-arrow-link-wrp{
+  background-color: #4ead58;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.up-arrow-link-wrp::before{
+  content:"";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 80px;
+  background: #54c254 url('../img/obj_button-arrow__up.svg') center center no-repeat;
+  background-size: 37%;
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+
+}
+
+.up__arrow-area:hover .up-arrow-link-wrp::before {
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -o-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+}
 /* Футер : конец */
 
 /*Заглушка*/

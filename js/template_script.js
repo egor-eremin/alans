@@ -152,6 +152,11 @@ $(document).ready(function () {
 		var animationEnd = 'onanimationend animationend webKitAnimationEnd mozAnimationEnd MSAnimationEnd',
 		selector = $('.advantages-item__description'),
 		animation = 'fadeInUp';
+		if($(this).scrollTop() > 500) {
+			$('.up-arrow__wrapper').removeClass('hidden-down');
+		} else {
+			$('.up-arrow__wrapper').addClass('hidden-down');
+		}
 		if($callBackForm.length > 0){
 			if(!selector.hasClass(animation)) {
 				selector.addClass(animation).one(animationEnd, function(){
@@ -160,6 +165,15 @@ $(document).ready(function () {
 			}
 			
 		}
+		
+	});
+
+	$('.up__arrow-area').click(function (e) { 
+		e.preventDefault();
+		$('body,html').animate({
+			scrollTop: 0
+			}, 100);
+			return false;
 		
 	});
    
