@@ -371,6 +371,14 @@ turn on normalize
     font-style: normal;
 
 }
+@font-face {
+  font-family: 'lato';
+  src: url('../fonts/latomedium-webfont-webfont.woff2') format('woff2'),
+  url('../fonts/latomedium-webfont-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+
+}
 /*END FONTS*/
 
  /* BEGIN MAIN */ 
@@ -1756,7 +1764,8 @@ input:-webkit-autofill {
 }
 .about-aside {
     background: red;
-    width: 285px;
+    width: 70%;
+    height: 5vh;
 }
 .about-page-wrapper {
     width: 1240px;
@@ -1778,7 +1787,7 @@ input:-webkit-autofill {
     /*width: 100%;*/
     /*position: absolute;*/
 /*}*/
-.about-page::after {
+/* .about-page::after {
     content: "";
     width: calc((100vw - 1240px) / 2);
     background: #fff;
@@ -1786,4 +1795,29 @@ input:-webkit-autofill {
     right: 0;
     top: 0;
     height: 100%;
+} */
+
+.main-section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: left; 
+}
+
+.main-section-content h1 {
+  font-size: 1.5em;
+  color: #43b343;
+  margin-top: 54px;
+  margin-bottom: 84px;
+}
+
+.main-section-content p {
+  font-weight: 500;
+  font-size: 0.938em;
+  line-height: 1.467em;
+  margin-bottom: 30px;
+}
+
+.content-image {
+  margin-top: 15px;
+  margin-bottom: 45px;
 }
