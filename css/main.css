@@ -1687,7 +1687,8 @@ label.error {
   height: 100%;
 }
 
-.up-arrow-link-wrp::before{
+.up-arrow-link-wrp::before,
+.up-arrow-link-wrp::after{
   content:"";
   position: absolute;
   top: 0;
@@ -1700,11 +1701,18 @@ label.error {
   border-radius: 80px;
   background: #54c254 url('../img/obj_button-arrow__up.svg') center center no-repeat;
   background-size: 37%;
+
+
+}
+
+.up-arrow-link-wrp::before{
+  background-image: none;
   transition-property: transform;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
-
 }
+
+
 
 .up__arrow-area:hover .up-arrow-link-wrp::before {
   -webkit-transform: scale(2);
