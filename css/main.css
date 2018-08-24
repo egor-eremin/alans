@@ -2295,7 +2295,7 @@ input:-webkit-autofill {
   width: 100%;
 }
 
-.news-article__image-wrap {
+.news-article__image-block {
   display: -webkit-inline-flex;
   display: -ms-inline-flex;
   display: inline-flex;
@@ -2309,7 +2309,7 @@ input:-webkit-autofill {
   box-sizing: border-box;
 }
 
-.news-article__image-wrap::before {
+.news-article__image-block::before {
   content: '';
   width: 63px;
   height: 1px;
@@ -2319,6 +2319,11 @@ input:-webkit-autofill {
   margin-bottom: 32px;
   margin-left: auto;
   margin-top: 9px;
+}
+
+.news-article__image-wrap {
+  display: block;
+  position: relative;
 }
 
 .news-article__image {
@@ -2332,7 +2337,7 @@ input:-webkit-autofill {
   position: absolute;
   display: block;
   z-index: 3;
-  top: 44px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
