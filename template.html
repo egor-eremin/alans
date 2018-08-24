@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/hover.css">
     <link rel="stylesheet" href="css/millimeter.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+    </script>
 </head>
 <body>
 <div class="layout-template-wrapper">
@@ -671,16 +673,31 @@
             </div>
         </header>
         <main>
-            <div class="about-page">
-                <div class="about-page-wrapper">
-                    <aside class="about-aside">
-
-                    </aside>
-                    <div class="about-contant">
-
-                    </div>
+            <section class="main-section-content contacts">
+                <div class="wrapper-contacts">
+                    <h1>Контакты</h1>
+                    <ul class="contact-list">
+                        <li class="contact-list__item contact-list__item_geomarker"><span>Адрес</span><p>г. Иркутск, ул. Софьи Перовской, 30/1</p></li>
+                        <li class="contact-list__item contact-list__item_calloperator"><span>Приёмная</span>
+                            <p>Телефон: 8 (3952) 504-000,<br>
+                            Факс: 8 (3952) 29-15-20,<br>
+                            Электронная почта: <a href="mailto:office@ooo-alans.ru">office@ooo-alans.ru</a></p>
+                        </li>
+                        <li class="contact-list__item contact-list__item_hour-work">
+                            <span>Режим работы</span>
+                            <p>Понедельник-пятница: 08:30 — 17:30,<br>
+                            Обед с 13:00 до 14:00.</p>
+                        </li>
+                        <li class="contact-list__item contact-list__item_persona"><span>Генеральный директор</span><p>Черезов Валерий Владимирович</p></li>
+                        <li class="contact-list__item contact-list__item_document">
+                            <span>Договорной отдел</span>
+                            <p>Приём заявок на кадастровые работы по Ольхонскому району и Усть-Ордынскому Бурятскому автономному округу:<br>
+                            Телефон: 8 (3952) 504-004</p>
+                        </li>
+                    </ul>
                 </div>
-            </div>
+                <div id="ymap"></div>
+            </section>
             <div class="advantages layout-position">
                 <div class="advantages__item">
                     <div class="advantages__item-picplace venok">
@@ -880,5 +897,21 @@
 <script src="lib/slick.js"></script>
 
 <script src="js/template_script.js"></script>
+<script type="text/javascript">
+    ymaps.ready(function () {  
+      var ymap = new ymaps.Map("ymap", {
+        center: [52.281181, 104.301780], 
+        zoom: 16
+      });
+      ymap.behaviors.disable('scrollZoom');
+      var myPlacemark = new ymaps.Placemark([52.281181, 104.301780], {}, {
+            iconLayout: 'default#image',
+            iconImageHref: 'img/obj_bymap_geomark.svg',
+            iconImageSize: [21, 28],
+            iconImageOffset: [-10, -28]
+        });
+      ymap.geoObjects.add(myPlacemark);
+    });
+</script>
 </body>
 </html>
