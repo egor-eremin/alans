@@ -194,19 +194,7 @@ $(document).ready(function () {
 				});
 				showDigitsAnimation = false;	
 			}
-		
-				
-		
-			
 		}
-	
-
-	
-		
-
-	
-	
-		
 	});
 
 
@@ -214,9 +202,9 @@ $(document).ready(function () {
 	//Активация стрелки наверх
 	$('.up__arrow-area').click(function (e) { 
 		e.preventDefault();
-		$('body,html').animate({
+		$('.layout-template-wrapper').animate({
 			scrollTop: 0
-			}, 100);
+			}, 300);
 			return false;
 		
 	});
