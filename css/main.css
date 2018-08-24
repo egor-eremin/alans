@@ -1802,8 +1802,13 @@ input:-webkit-autofill {
   display: flex;
   flex-direction: column;
   align-items: left;
+
+}
+
+.about-us .main-section-content {
   padding-bottom: 53px;
   padding-right: 17px;
+  border-bottom: 1px solid rgb(229,229,229);
 }
 
 .main-section-content h1 {
