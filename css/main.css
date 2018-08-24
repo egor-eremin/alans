@@ -1892,11 +1892,11 @@ input:-webkit-autofill {
   font-family: Lato;
   font-size: 15px;
   font-weight: 500;
-  line-height: 1.466;
+  line-height: 1.5;
 }
 
 .article__text p {
-  margin: 0 0 1em;
+  margin: 0 0 1.5em;
 }
 
 .article__text ul,
@@ -1905,12 +1905,12 @@ input:-webkit-autofill {
   padding-left: 31px;
   font-weight: 400;
   line-height: 1.466;
-  margin: 45px 0;
+  margin: 33px 0 45px;
 }
 
 .article__text ol li,
 .article__text ul li {
-  margin: 0 0 0.5em;
+  margin: 0 0 0.75em;
 }
 
 .article__text ol li::before,
@@ -1926,6 +1926,14 @@ input:-webkit-autofill {
   max-width: 100%;
   margin: auto;
   text-align: center;
+}
+
+.article__text h2,
+.article__text h3,
+.article__text h4,
+.article__text h5,
+.article__text h6 {
+  margin: .5em 0;
 }
 
 .other-news {
@@ -2471,6 +2479,7 @@ input:-webkit-autofill {
   justify-content: flex-start;
   -ms-align-items: flex-start;
   align-items: flex-start;
+  padding: 16px 0;
 }
 
 .article-page__column {
@@ -2483,15 +2492,13 @@ input:-webkit-autofill {
   flex-direction: column;
 }
 
-.article-page__column_image {
-  padding-right: 39px;
-}
-
 .article-page__column_article {
   order: 3;
+  margin-left: -1px;
 }
 
 .article-page__column_image {
+  padding: 0 39px 0 34px;
   position: relative;
 }
 
@@ -2507,7 +2514,7 @@ input:-webkit-autofill {
 }
 
 .article-page__header {
-  margin: 0 0 41px;
+  margin: 0 0 33px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2519,7 +2526,7 @@ input:-webkit-autofill {
 
 .article-page__title {
   font-weight: 600;
-  margin: 0 0 64px;
+  margin: 0 0 57px;
 }
 
 .article-page__time {
@@ -2545,6 +2552,6 @@ input:-webkit-autofill {
 }
 
 .article-page__image {
-  margin-top: 155px;
+  margin-top: 150px;
 }
 /* Страница новости: конец */
