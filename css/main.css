@@ -1306,9 +1306,10 @@ input {
 
 
 
-.footer-link-list__item a {
+.footer-link-list__item a,
+{
 	text-decoration: none;
-	font-family: 'LatoRegular', Arial, Helvetica, sans-serif;
+	font-family: 'lato', Arial, Helvetica, sans-serif;
 	color: #000000;
 	font-size: 88%;
 	display: inline-block;
@@ -1320,7 +1321,8 @@ input {
   display: inline-block;
 }
 
-.footer-link-list__item:hover a {
+.footer-link-list__item:hover a,
+.activiteies-types-aside__link:hover {
   
   color: #4ead58;
 }
@@ -1844,7 +1846,7 @@ background-color: transparent;
 }
 
 .activiteies-types-aside__item:not(:last-child) {
-	margin-bottom: 1.625rem;
+	margin-bottom: 26px;
 	letter-spacing: -0.2px;
 }
 
@@ -1862,6 +1864,10 @@ background-color: transparent;
   background: currentColor;
   left: -36px;
   top: .5em;
+}
+
+.activiteies-types-aside__link {
+	line-height: 1.15rem;
 }
 
 
