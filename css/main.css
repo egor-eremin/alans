@@ -1968,14 +1968,15 @@ background-color: transparent;
 }
 
 .about-contant--activities-types {
-  padding-left: 47px;
-  padding-top: 49px;
-  padding-bottom: 55px;
-  box-sizing: border-box;
+	padding-left: 47px;
+	padding-top: 49px;
+	padding-bottom: 55px;
+	box-sizing: border-box;
+	width: 70%;
 }
 
 .about-contant--activities-types .article__header {
-	margin: 0 0 75px;
+	margin: 0 0 71px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -2010,5 +2011,53 @@ background-color: transparent;
   vertical-align: middle;
 }
 
+.about-contant--activities-types .article__text {
+  color: #000000;
+  font-family: Lato;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.466;
+}
+
+.about-contant--activities-types .article__text p {
+	margin: 0 0 1.25rem;
+}
+
+.about-contant--activities-types .article__text ul, 
+.about-contant--activities-types .article__text ol {
+	position: relative;
+	padding-left: 31px;
+	font-weight: 400;
+	line-height: 1.466;
+	margin: 60px 0 81px;
+}
+
+.about-contant--activities-types .article__text ol li::before,
+.about-contant--activities-types .article__text ul li::before {
+  content: url('../img/pin.svg');
+  left: 0;
+  position: absolute;
+}
+
+.about-contant--activities-types .article__text ol li, 
+.about-contant--activities-types .article__text ul li {
+	margin: 0 0 10px;
+}
+
+.about-contant--activities-types  .article__text img,
+.about-contant--activities-types  .article__text figure,
+.about-contant--activities-types  .article__text figure img {
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.about-contant--activities-types img.article__image {
+  margin-bottom: 49px;
+}
+
+.about-contant--activities-types .article__text ul.article-list {
+	margin: 54px 0 60px;
+}
 
 /* Виды работ : конец*/
