@@ -2060,4 +2060,79 @@ background-color: transparent;
 	margin: 54px 0 60px;
 }
 
+.small-portfolio {
+	margin: 69px -58px 0;
+}
+
+.small-portfolio__item {
+	padding: 39px 56px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row;
+	flex-flow: row;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	margin-bottom: -1px;
+}
+
+.small-portfolio__item,
+.small-portfolio__item::before {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.small-portfolio__item::before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  top: -1px;
+  bottom: -1px;
+  width: 70vw;
+  z-index: -1;
+}
+
+.small-portfolio__digit {
+  padding-right: 57px;
+  color: #43b343;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1;
+  height: auto;
+  width: 165px;
+  text-align: right;
+}
+
+.small-portfolio__description {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.466;
+  margin-right: auto;
+}
+
+.small-portfolio__title {
+  font-size: 1.6em;
+  margin: 0 0 8px;
+  line-height: 1;
+}
+
+.small-portfolio__subtle {
+  color: #43b343;
+}
+
+.small-portfolio .btn {
+
+    padding: 14px 66px 14px 23px;
+
+}
+
 /* Виды работ : конец*/
