@@ -613,6 +613,11 @@ input {
   border-bottom: 1px solid rgb(0, 0, 0);
 }
 
+.breadcrumbs__wrap_tight {
+  width: 75%;
+  margin-left: auto;
+}
+
 .main-content {
   width: 1240px;
   margin: 0 auto;
