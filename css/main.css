@@ -522,7 +522,11 @@ input {
     transition: .3s ease-in-out;
 }
 
-.btn__order-callback::after, .usersubmit::after, .bth-adress::after, .btn-call::after {
+.btn__order-callback::after,
+.usersubmit::after,
+.bth-adress::after,
+.btn-call::after,
+.btn::after {
     content: "";
     width: 32px;
     height: 32px;
@@ -1171,7 +1175,7 @@ input {
 
 .btn::before {
   background: #54c254 url('../img/obj_button-arrow.svg') center center no-repeat;
-  background-size: 37%;
+  background-size: 20%;
 }
 
 .agreement-checkbox {
@@ -2103,21 +2107,24 @@ input:-webkit-autofill {
   transform: translateY(-50%);
 }
 
-.banner:not(:hover) .banner__btn,
-.banner:not(:hover) .banner__btn::before {
+.banner .banner__btn,
+.banner .banner__btn::before,
+.banner .banner__btn::after {
   -webkit-transition: .25s ease;
   -o-transition: .25s ease;
   transition: .25s ease;
-  color: #000;
 }
 
 .banner:not(:hover) .banner__btn {
   background-color: #f9f9f9;
+  color: #000;
 }
 
-.banner:not(:hover) .banner__btn::before {
-  background-color: #ffffff;
+.banner:not(:hover) .banner__btn::before,
+.banner:not(:hover) .banner__btn::after {
   background-blend-mode: difference;
+  background-color: #ffffff;
 }
+
 
 /* Новости: конец */
