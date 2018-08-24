@@ -1763,20 +1763,27 @@ input:-webkit-autofill {
     min-width:  100%;
 }
 .about-aside {
-    background: red;
+ 
     width: 285px;
+    border: 1px solid red;
 }
 .about-page-wrapper {
     width: 1240px;
     display: flex;
     flex-shrink: 0;
     margin: 0 auto;
+    
 }
 .about-contant {
     padding-right: 56px;
     padding-left: 56px;
     background: #fff;
     flex-grow: 1;
+    height: 1000px;
+}
+.about-aside__content-wrp {
+  position: sticky;
+  top: 2em;
 }
 .about-page {
     position: relative;
@@ -1815,3 +1822,47 @@ background-color: transparent;
 }
 
 /* Отраслевые решения: конец */
+
+/* Виды работ */
+
+.about-aside--activities-types {
+	width: 321px;
+
+}
+
+.activiteies-types-aside {
+  color: #000000;
+  font-weight: 400;
+  line-height: 18px;
+  margin-top: 60px;
+  margin-bottom: 170px;
+}
+
+.activiteies-types-aside__item {
+  position: relative;
+  margin: 0;
+}
+
+.activiteies-types-aside__item:not(:last-child) {
+	margin-bottom: 1.625rem;
+	letter-spacing: -0.2px;
+}
+
+
+.activiteies-types-aside__item_active {
+  color: #43b343;
+}
+
+.activiteies-types-aside__item_active::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  left: -36px;
+  top: .5em;
+}
+
+
+/* Виды работ : конец*/
