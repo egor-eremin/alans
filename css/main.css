@@ -1822,13 +1822,85 @@ input:-webkit-autofill {
   margin-top: 15px;
   margin-bottom: 45px;
 }
+/* Begin contcts */
+.contacts {
+  background-color: #FFFFFF;
+  width: 1240px;
+  display: flex;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
 
-.about-contant::after {
+.wrapper-contacts {
+  padding: 0 80px 0 55px;
+}
+
+.contact-list {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.contact-list__item {
+  flex-basis: 50%;
+  flex-grow: 1;
+  margin-bottom: 40px;
+  padding-left: 50px;
+  position: relative;
+}
+
+.contact-list__item a {
+  color: #43b343;
+  text-decoration: underline;
+}
+
+.contact-list__item span {
+  margin-bottom: 13px;
+  display: inline-block;
+  font-size: 1.125em;
+  line-height: 1.222em;
+  color: #43b343;
+  font-weight: 600;
+}
+
+.contact-list__item span::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 100%;
-  height: 100%;
-  width: 100vw;
-  background-color: inherit;
+  left: 0;
+  width: 20px;
+  height: 23px;
+  background-size: contain;
 }
+
+.contact-list__item_geomarker span::before {
+  background: url("../img/obj_icon_geomark.svg") no-repeat;
+}
+
+.contact-list__item_calloperator span::before {
+  background: url("../img/obj_icon_calloperator.svg") no-repeat;
+}
+
+.contact-list__item_hour-work span::before {
+  background: url("../img/obj_icon_watch.svg") no-repeat;
+}
+
+.contact-list__item_persona span::before {
+  background: url("../img/obj_icon_persona.svg") no-repeat;
+}
+
+.contact-list__item_document span::before {
+  background: url("../img/obj_icon_document.svg") no-repeat;
+}
+
+#ymap {
+  margin-top: 20px;
+  width: 100%;
+  padding: 0;
+  height: 619px;
+}
+
+/* End contcts */
+>>>>>>> bcc7ea8a286153cde4d4e18694a50b4b18238c30
