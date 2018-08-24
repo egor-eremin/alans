@@ -1936,6 +1936,19 @@ input:-webkit-autofill {
   margin: .5em 0;
 }
 
+.article__text a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #000000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+  transition-property: border-bottom;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
 .other-news {
   color: #000000;
   font-weight: 400;
