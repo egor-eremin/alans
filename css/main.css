@@ -718,13 +718,17 @@ input {
 .header-menu__item {
     margin-right: 20px;
 }
-.btn__order-callback:hover, .usersubmit:hover, .bth-adress:hover, .btn-call:hover {
+.btn__order-callback:hover, .usersubmit:hover, .bth-adress:hover, .btn-call:hover, .btn:hover {
     /*color: #26a626;*/
     /*background-color: transparent;*/
     /*box-shadow:  0px 0px 9px 6px rgba(38,166,38,0.1), 0px 0px 6px 12px #f4f4f4,0px 0px 58px 18px rgba(38,166,38,0.1);*/
     background-color: #11b121;
 }
-.btn__order-callback:hover::after, .usersubmit:hover::after, .bth-adress:hover::after, .btn-call:hover::after {
+.btn__order-callback:hover::after,
+.usersubmit:hover::after,
+.bth-adress:hover::after,
+.btn-call:hover::after,
+.btn:hover::after {
     transform: scale(3);
 }
 .btn-text-wrapper {
@@ -1090,7 +1094,8 @@ input {
 
 .usersubmit,
 .bth-adress,
-.btn-call {
+.btn-call,
+.btn {
   border-radius: 80px;
   background-color:  #4ead58;
   color: #ffffff;
@@ -1111,17 +1116,21 @@ input {
 }
 
 .bth-adress,
-.btn-call {
+.btn-call,
+.btn {
 	padding-right: 52px;
 	display: inline-block;
 	margin-top: 28px;
 }
 
-
+.btn {
+  margin-top: 0;
+}
 
 .usersubmit::before,
 .bth-adress::before,
-.btn-call::before{
+.btn::before,
+.btn-call::before {
   content: "";
   position: absolute;
   display: block;
@@ -1136,15 +1145,18 @@ input {
   bottom: 0;
   margin: auto 0;
   border: 1px solid transparent;
-
-
 }
 
 .bth-adress span,
 .btn-call span,
-.usersubmit span {
+.usersubmit span,
+.btn span {
   position: relative;
   z-index: 2;
+}
+
+.btn span {
+  vertical-align: middle;
 }
 
 .bth-adress::before {
@@ -1157,9 +1169,13 @@ input {
 	background-size: 37%;
 }
 
+.btn::before {
+  background: #54c254 url('../img/obj_button-arrow.svg') center center no-repeat;
+  background-size: 37%;
+}
+
 .agreement-checkbox {
   margin-top: 40px;
-
 }
 
 .ps-checkbox {
@@ -1184,7 +1200,6 @@ input {
 
 .policy-link {
   display: inline-block;
-
   color:#69c269;
   text-decoration: none;
   border-bottom: 1px solid rgba(105, 194, 105, 0.534);
@@ -1887,4 +1902,130 @@ input:-webkit-autofill {
   margin: auto;
   text-align: center;
 }
+
+.other-news {
+  color: #000000;
+  font-weight: 400;
+  line-height: 18px;
+  margin-top: 60px;
+}
+
+.other-news__item {
+  margin: 0 0 2em;
+  position: relative;
+}
+
+.other-news__item_active {
+  color: #43b343;
+}
+
+.other-news__item_active::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  left: -36px;
+  top: .5em;
+}
+
+.small-portfolio {
+  margin: 53px -53px 0;
+}
+
+.small-portfolio__item {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: -1px;
+  padding: 48px 56px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.small-portfolio__digit {
+  padding-right: 57px;
+  color: #43b343;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1;
+  height: auto;
+  width: 165px;
+  text-align: right;
+}
+
+.small-portfolio__description {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.466;
+  margin-right: auto;
+}
+
+.small-portfolio__title {
+  font-size: 1.6em;
+  margin: 0 0 8px;
+  line-height: 1;
+}
+
+.small-portfolio__subtle {
+  color: #43b343;
+}
+
+.person-summary {
+
+}
+
+.person-summary__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.person-summary__person {
+  display: inline-flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.person-summary__image-wrap {
+  width: 133px;
+  height: 133px;
+  border-radius: 70px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.person-summary__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+@supports (object-fit: cover) {
+  .person-summary__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.person-summary__summary {
+  text-align: center;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.person-summary__title {
+  font-size: 1.333em;
+  font-weight: 400;
+  line-height: 1;
+}
+
 /* Новости: конец */
