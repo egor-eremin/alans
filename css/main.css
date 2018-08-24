@@ -2429,6 +2429,9 @@ input:-webkit-autofill {
   display: inline-flex;
   justify-content: center;
   padding: 0 5px;
+  -webkit-transition: .25s ease;
+  -o-transition: .25s ease;
+  transition: .25s ease;
 }
 
 .paginator__button_prev {
@@ -2443,19 +2446,40 @@ input:-webkit-autofill {
 
 .paginator__button_prev::before,
 .paginator__button_next::after {
+  content: '';
   display: inline-block;
   position: relative;
   vertical-align: middle;
+  width: 17px;
+  height: 9px;
+  margin: auto;
+  background: transparent no-repeat center / contain;
+  -webkit-transition: .25s ease;
+  -o-transition: .25s ease;
+  transition: .25s ease;
 }
 
 .paginator__button_prev::before {
-  content: url('../img/left-arrow.png');
+  background-image: url('../img/left-arrow.png');
   margin-right: 13px;
 }
 
 .paginator__button_next::after {
-  content: url('../img/right-arrow.png');
+  background-image: url('../img/right-arrow.png');
   margin-left: 13px;
+}
+
+.paginator__button:not(.paginator__button_disabled):hover {
+  color: #fff;
+  background-color: #43b343;
+}
+
+.paginator__button_prev:not(.paginator__button_disabled):hover::before,
+.paginator__button_next:not(.paginator__button_disabled):hover::after {
+  -webkit-filter: brightness(0) invert(1);
+  -moz-filter: brightness(0) invert(1);
+  -ms-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
 
 .paginator__button_active {
