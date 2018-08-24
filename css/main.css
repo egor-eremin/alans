@@ -380,9 +380,11 @@ body, html {
      font-family: 'lato', sans-serif;
      font-weight: 400;
      color: #000;
+     overflow-x: hidden;
  }
 * {
     box-sizing: border-box;
+
 }
 a {
     color: inherit;
@@ -925,10 +927,10 @@ input {
 
 /* Футер */
 .advantages {
-  display: flex;
-  min-height: 14.375rem;
-  justify-content: space-between;
-  margin-top: 218px;
+	display: flex;
+	min-height: 14.375rem;
+	justify-content: space-between;
+	margin-top: 148px;
 }
 
 .advantages__item {
@@ -1333,6 +1335,10 @@ input {
 
 .footer-link-list__item--header {
   margin-bottom: -9px;
+}
+
+.footer-link-list-base:nth-child(2){
+  margin-left: auto;
 }
 
 .footer-link-list-base:last-child {
@@ -1785,7 +1791,7 @@ input:-webkit-autofill {
     padding-left: 56px;
     background: #fff;
     flex-grow: 1;
-    height: 10000px;
+    
 }
 .about-aside__content-wrp {
   /* position: sticky; */
@@ -1794,11 +1800,8 @@ input:-webkit-autofill {
 .about-page {
     position: relative;
 }
-/*.about-page::before {*/
-    /*content: "";*/
-    /*width: 100%;*/
-    /*position: absolute;*/
-/*}*/
+
+
 .about-page::after {
     content: "";
     width: calc((100vw - 1240px) / 2);
@@ -1881,8 +1884,9 @@ background-color: transparent;
 	color: #838383;
 	-webkit-transition: background-color .25s ease-out;
 	-o-transition: background-color .25s ease-out;
-  transition: background-color .25s ease-out;
-  margin-bottom: 53px;
+	transition: background-color .25s ease-out;
+	margin-bottom: 53px;
+	background-color: rgba(255, 255, 255, 0.22);
 }
 
 .probabilities:hover {
@@ -1927,12 +1931,13 @@ background-color: transparent;
 }
 
 .probabilities__btn {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  margin: -10% auto;
-  width: 168px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	margin: -10% auto;
+	width: 168px;
+	box-shadow: 0 0 100px rgba(83, 83, 83, 0.14);
 }
 
 .probabilities .probabilities__btn,
@@ -2134,5 +2139,85 @@ background-color: transparent;
     padding: 14px 66px 14px 23px;
 
 }
+
+.person-summary {
+  margin-top: 69px;
+}
+
+.person-summary__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.person-summary__person {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.person-summary__image-wrap {
+  width: 133px;
+  height: 133px;
+  border-radius: 70px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.person-summary__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+  .person-summary__image {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+.person-summary__summary {
+  text-align: center;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.person-summary__title {
+	font-size: 1.333em;
+	font-weight: 400;
+	line-height: 1;
+	margin-bottom: 15px;
+	margin-top: 32px;
+}
+
+.person-summary p:last-child {
+	margin-top: 7px;
+	letter-spacing: 0.1px;
+}
+
+
 
 /* Виды работ : конец*/
