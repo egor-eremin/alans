@@ -380,7 +380,7 @@ body, html {
      font-family: 'lato', sans-serif;
      font-weight: 400;
      color: #000;
-     overflow-x: hidden;
+  
  }
 * {
     box-sizing: border-box;
@@ -1766,6 +1766,8 @@ input:-webkit-autofill {
     display: block;
     min-height: 100vh;
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .layout-template-wrapper__inner {
     display: flex;
