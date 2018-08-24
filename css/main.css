@@ -1802,24 +1802,26 @@ input:-webkit-autofill {
   display: flex;
   flex-direction: column;
   align-items: left;
+  padding-bottom: 53px;
+  padding-right: 17px;
 }
 
 .main-section-content h1 {
   font-size: 1.5em;
   color: #43b343;
-  margin-top: 54px;
-  margin-bottom: 84px;
+  margin-top: 51px;
+  margin-bottom: 73px;
 }
 
 .main-section-content p {
   font-weight: 500;
   font-size: 0.938em;
   line-height: 1.467em;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 }
 
 .content-image {
-  margin-top: 15px;
+  margin-top: 20px;
   margin-bottom: 45px;
 }
 
