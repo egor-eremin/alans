@@ -1838,7 +1838,7 @@ input:-webkit-autofill {
 }
 
 .wrapper-contacts {
-  padding: 0 80px 0 76px;
+  padding-left: 77px;
 }
 
 .contact-list {
@@ -1857,9 +1857,32 @@ input:-webkit-autofill {
   position: relative;
 }
 
+.contact-list__item:nth-last-child(1) {
+  margin-top: 10px;
+}
+
+.contact-list__item a[href^="tel"] {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+}
+
+.contact-list__item a[href^="tel"]:hover {
+  border: none;
+}
+
 .contact-list__item a {
+  display: inline-block;
   color: #43b343;
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(67, 179, 67, 0.534);
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.contact-list__item a:hover {
+  border-bottom: 1px solid rgba(67, 179, 67, 1);
 }
 
 .contact-list__item span {
@@ -1874,10 +1897,10 @@ input:-webkit-autofill {
 .contact-list__item span::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 23px;
+  top: -2px;
+  left: -1px;
+  width: 21px;
+  height: 27px;
   background-size: contain;
 }
 
@@ -1905,8 +1928,7 @@ input:-webkit-autofill {
   margin-top: 20px;
   width: 100%;
   padding: 0;
-  height: 619px;
+  height: 480px;
 }
 
 /* End contcts */
->>>>>>> bcc7ea8a286153cde4d4e18694a50b4b18238c30
