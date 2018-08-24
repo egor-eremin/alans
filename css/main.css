@@ -2184,13 +2184,17 @@ input:-webkit-autofill {
 /* Виды работ: конец */
 
 /* Новости: начало */
-.news-list {
+.content-area {
   width: 100%;
   background-color: #fff;
   border: 1px solid #ebebeb;
 }
 
-.news-list__wrap {
+.content-area__wrap {
+  padding: 45px;
+}
+
+.news-list {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -2200,6 +2204,7 @@ input:-webkit-autofill {
   justify-content: flex-start;
   -ms-align-items: flex-start;
   align-items: flex-start;
+  margin: -45px;
 }
 
 .news-list__column {
