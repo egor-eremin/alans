@@ -1814,25 +1814,7 @@ input:-webkit-autofill {
     height: 100%;
 }
 
-/* Отраслевые решения */
 
-
-.about-page-wrapper--branch_solutions {
-  background-color: #ffffff;
-  padding: 56px 78px 68px 80px;
-  flex-wrap: wrap;
-    -webkit-box-shadow: 0px 0px 20px 5px #f0efef;
-    -moz-box-shadow: 0px 0px 20px 5px #f0efef;
-    box-shadow: 0px 0px 20px 5px #f0efef;
-  
-
-}
-
-.about-page--branch_solutions::after {
-background-color: transparent;
-}
-
-/* Отраслевые решения: конец */
 
 /* Виды работ */
 
@@ -1996,7 +1978,8 @@ background-color: transparent;
 	padding-right: 22px;
 }
 
-.about-contant--activities-types .article__title {
+.about-contant--activities-types .article__title,
+.page__header {
   color: #43b343;
   font-size: 26px;
   font-weight: 400;
@@ -2223,3 +2206,135 @@ background-color: transparent;
 
 
 /* Виды работ : конец*/
+
+/* Отраслевые решения */
+
+
+.about-page-wrapper--branch_solutions {
+  background-color: #ffffff;
+  padding: 56px 78px 68px 80px;
+  flex-wrap: wrap;
+    -webkit-box-shadow: 0px 0px 20px 5px #f0efef;
+    -moz-box-shadow: 0px 0px 20px 5px #f0efef;
+    box-shadow: 0px 0px 20px 5px #f0efef;
+}
+
+.about-page--branch_solutions::after {
+background-color: transparent;
+}
+
+.branch-solution-list{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.branch-solution-list__item {
+
+  margin-bottom: 15px;
+}
+
+.branch-solution-list__item a {
+	display: block;
+	width: 350px;
+	padding: 50px 40px 45px 48px;
+	background-color: #f9fcf8;
+	border-bottom: 1px solid #eef6eb;
+	font-size: 0.9375rem;
+}
+
+.branch-solution-list-item__image-place {
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  vertical-align: middle;
+  margin-right: 35px;
+}
+
+.branch-solution-list-item__image-place svg {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+
+svg.temple .st2,
+svg.emergency .st0{
+  fill:none;
+  stroke:#000000;
+  stroke-miterlimit:10;
+}
+
+svg.temple .st0{fill:#FFFFFF;stroke:#000000;stroke-linecap:round;stroke-miterlimit:10;}
+svg.temple .st1,
+svg.emergency .st1 {
+  fill:none;
+  stroke:#000000;
+  stroke-linecap:
+  round;stroke-miterlimit:10;
+}
+svg.forest .st0,
+svg.nature-saving .st0,
+svg.oil .st0,
+svg.transport .st0,
+svg.cities .st0,
+svg.agriculture .st0,
+svg.ecology .st0,
+svg.water .st0,
+svg.rest .st0{
+  fill:#ffffff;
+  stroke:#000000;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+
+svg.transport .st0,
+svg.cities .st0,
+svg.agriculture .st0,
+svg.ecology .st0,
+svg.water .st0,
+svg.rest .st0 {
+  fill: none;
+}
+
+svg.nature-saving .st1,
+svg.mountain .st0{
+  fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;
+}
+
+
+.service__quantity {
+  display: block;
+}
+
+.branch-solution-list-item__text-caption__wrp {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.4rem;
+}
+
+.branch-solution-list__item:hover a,
+.branch-solution-list__item:hover .service__quantity{
+  background-color: #43b343;
+  color: #ffffff;
+}
+
+
+.branch-solution-list__item:hover svg .st0,
+.branch-solution-list__item:hover svg .st1,
+.branch-solution-list__item:hover svg .st2{
+  stroke: #fff;
+  fill: none;
+}
+
+
+
+.service__quantity {
+  color: #43b343;
+}
+
+/* Отраслевые решения: конец */
