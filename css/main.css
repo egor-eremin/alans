@@ -2212,7 +2212,7 @@ input:-webkit-autofill {
 
 .about-page-wrapper--branch_solutions {
   background-color: #ffffff;
-  padding: 56px 78px 68px 80px;
+  padding: 45px 78px 68px 80px;
   flex-wrap: wrap;
     -webkit-box-shadow: 0px 0px 20px 5px #f0efef;
     -moz-box-shadow: 0px 0px 20px 5px #f0efef;
@@ -2223,35 +2223,48 @@ input:-webkit-autofill {
 background-color: transparent;
 }
 
-.branch-solution-list{
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 100%;
+.branch-solution-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	align-items: flex-start;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: 50px;
 }
 
 .branch-solution-list__item {
 
-  margin-bottom: 15px;
+  margin-bottom: 11px;
 }
 
 .branch-solution-list__item a {
-	display: block;
-	width: 350px;
-	padding: 50px 40px 45px 48px;
+	display: flex;
+  width: 354px;
+  padding-left: 40px;
+  padding-right: 40px;
+  align-items:center;
 	background-color: #f9fcf8;
 	border-bottom: 1px solid #eef6eb;
 	font-size: 0.9375rem;
+  height: 143px;
+  transition-property: background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 
+
 .branch-solution-list-item__image-place {
-  width: 35px;
-  height: 35px;
-  display: inline-flex;
-  vertical-align: middle;
-  margin-right: 35px;
+	width: 35px;
+	height: 35px;
+	display: inline-flex;
+	vertical-align: middle;
+	margin-right: 29px;
+}
+
+.branch-solution-list__item--long .branch-solution-list-item__image-place {
+  vertical-align: top;
+  height: 50px;
 }
 
 .branch-solution-list-item__image-place svg {
@@ -2291,9 +2304,11 @@ svg.rest .st0{
   stroke-linejoin:round;
   stroke-miterlimit:10;
 }
-
+svg.oil .st0,
+svg.forest .st0,
 svg.transport .st0,
 svg.cities .st0,
+svg.nature-saving .st0,
 svg.agriculture .st0,
 svg.ecology .st0,
 svg.water .st0,
@@ -2309,6 +2324,9 @@ svg.mountain .st0{
 
 .service__quantity {
   display: block;
+  transition-property: background-color;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
 }
 
 .branch-solution-list-item__text-caption__wrp {
@@ -2322,7 +2340,9 @@ svg.mountain .st0{
   background-color: #43b343;
   color: #ffffff;
 }
-
+.branch-solution-list__item:hover .service__quantity{
+  background-color: transparent;
+}
 
 .branch-solution-list__item:hover svg .st0,
 .branch-solution-list__item:hover svg .st1,
