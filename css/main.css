@@ -973,10 +973,10 @@ input {
 }
 
 .advantages__item-picplace.gaika {
-	background-image: url('../img/obj_gaika.svg');
-	background-size: 81%;
-	background-position: 22% -197%;
-	padding-top: 10%;
+  background-image: url(../img/obj_gaika.svg);
+  background-size: 81%;
+  background-position: 22% -136%;
+  padding-top: 10%;
 }
 
 .advantages__item-picplace.russia + p {
