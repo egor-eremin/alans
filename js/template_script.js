@@ -197,7 +197,13 @@ $(document).ready(function () {
 		// console.log('1270px');
 	});
 	
+	//spoiler on the page of vacancy
 	
+	$('.main-section-content tr:not(.details-row)').click(function() {
+		this.querySelector('input').checked = this.querySelector('input').checked ? false : true;
+		this.nextElementSibling.nextElementSibling.classList.toggle('row_active');
+		// $(this.nextElementSibling.nextElementSibling).slideDown(1000);
+	})
 	
     
 });
