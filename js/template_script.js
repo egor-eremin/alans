@@ -228,15 +228,7 @@ $(document).ready(function () {
 		if(!showDigitsAnimationFirst) return false;       
 		if($portfolioFirst.length > 0 && $person.length > 0){
 			if(showDigitsAnimationFirst){
-				$('.spincrement__first').spincrement({
-					thousandSeparator: "",
-					duration: 4000,
-					from:0,
-					to: 12,
-					callback: function(){
-						showDigitsAnimationFirst = false;	
-					}
-				});
+				numbersAnimate($('.spincrement__first'), 0, 12, 1000);
 				showDigitsAnimationFirst = false;	
 			}
 		}
@@ -245,15 +237,7 @@ $(document).ready(function () {
 		if(!showDigitsAnimationSecond) return false;       
 		if($portfolioSecond.length > 0 && $person.length > 0){
 			if(showDigitsAnimationSecond){
-				$('.spincrement__second').spincrement({
-					thousandSeparator: "",
-					duration: 2000,
-					from:0,
-					to: 4,
-					callback: function(){
-						showDigitsAnimationSecond = false;	
-					}
-				});
+				numbersAnimate($('.spincrement__second'), 0, 4, 1000);
 				showDigitsAnimationSecond = false;	
 			}
 		}
@@ -263,15 +247,7 @@ $(document).ready(function () {
 		if(!showDigitsAnimationThird) return false;       
 		if($portfolioThird.length > 0 && $person.length > 0){
 			if(showDigitsAnimationThird){
-				$('.spincrement__third').spincrement({
-					thousandSeparator: '',
-					duration: 4000,
-					from:0,
-					to: 19,
-					callback: function(){
-						showDigitsAnimationThird = false;	
-					}
-				});
+				numbersAnimate($('.spincrement__third'), 0, 19, 1000);
 				showDigitsAnimationThird = false;	
 				
 			}
@@ -319,6 +295,16 @@ $(document).ready(function () {
 	
     
 });
+
+function numbersAnimate($selector, $from, $to, $duration) {
+	$({numberValue: $from}).animate({numberValue: $to}, {
+		duration: $duration, // Скорость анимации, где 500 = 0,5 одной секунды, то есть 500 миллисекунд
+		easing: "linear",
+		step: function(val) {
+			$selector.html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
+		}
+	});
+}
 
 
 //Очистка классов валидации обертки поля в форме
