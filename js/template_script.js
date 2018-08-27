@@ -13,7 +13,7 @@ $(document).ready(function () {
    
 
 
-	//Раздел функций
+
 	// Футер
 	//------------------------------------------------------------------------------------------------------
 	initFields($registrationFormsInput);
@@ -175,7 +175,7 @@ $(document).ready(function () {
 		//Отслеживание появления морды
 		$('.person-summary__person').viewportChecker({
 			classToAdd: 'onLook',
-			repeat: true,
+			repeat: false,
 			scrollBox: $('.layout-template-wrapper'),
 	
 		});
@@ -237,10 +237,11 @@ $(document).ready(function () {
 						showDigitsAnimationFirst = false;	
 					}
 				});
-				
+				showDigitsAnimationFirst = false;	
 			}
 		}
 
+		// Запуск набегающих цифр 2* 
 		if(!showDigitsAnimationSecond) return false;       
 		if($portfolioSecond.length > 0 && $person.length > 0){
 			if(showDigitsAnimationSecond){
@@ -253,10 +254,12 @@ $(document).ready(function () {
 						showDigitsAnimationSecond = false;	
 					}
 				});
-				
+				showDigitsAnimationSecond = false;	
 			}
 		}
 
+
+		// Запуск набегающих цифр 3* 
 		if(!showDigitsAnimationThird) return false;       
 		if($portfolioThird.length > 0 && $person.length > 0){
 			if(showDigitsAnimationThird){
@@ -269,6 +272,7 @@ $(document).ready(function () {
 						showDigitsAnimationThird = false;	
 					}
 				});
+				showDigitsAnimationThird = false;	
 				
 			}
 		}

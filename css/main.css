@@ -1333,12 +1333,27 @@ input {
   display: inline-block;
 }
 
+.person-summary__summary a{
+  border-bottom: 1px solid transparent;
+  transition-property: border-bottom;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+  line-height: 150%;
+}
+
 .footer-link-list__item:hover a,
 .activiteies-types-aside__link:hover,
 .person-summary__summary a:hover{
   
   color: #4ead58;
+  
 }
+
+.person-summary__summary a:hover{
+  border-bottom: 1px solid #4ead58;
+}
+
+
 
 .footer-link-list__item--header {
   margin-bottom: -9px;
@@ -1901,6 +1916,7 @@ input:-webkit-autofill {
 	transition: background-color .25s ease-out;
 	margin-bottom: 53px;
 	background-color: rgba(255, 255, 255, 0.22);
+	min-height: 356px;
 }
 
 .probabilities:hover {
@@ -1987,11 +2003,9 @@ input:-webkit-autofill {
 }
 
 .about-contant--activities-types {
-	padding-left: 47px;
-	padding-top: 49px;
-	padding-bottom: 55px;
 	box-sizing: border-box;
 	width: 70%;
+  padding: 49px 56px 55px;
 }
 
 .about-contant--activities-types .article__header {
@@ -2081,7 +2095,7 @@ input:-webkit-autofill {
 }
 
 .small-portfolio {
-	margin: 69px -48px 0;
+	margin: 69px -56px 0;
 }
 
 .small-portfolio__item {
@@ -2117,9 +2131,8 @@ input:-webkit-autofill {
 	left: 0;
 	top: -1px;
 	bottom: -1px;
-	width: calc(100% + (100vw - 1241px)/2);
+	width: calc(100% + (100vw - 1258px)/2);
 	z-index: -1;
-	
 }
 
 .small-portfolio__digit {
