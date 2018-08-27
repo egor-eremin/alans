@@ -1829,6 +1829,7 @@ input:-webkit-autofill {
   line-height: 18px;
   margin-top: 60px;
   margin-bottom: 170px;
+  padding: 0 39px;
 }
 
 .activiteies-types-aside__item {
@@ -1844,6 +1845,28 @@ input:-webkit-autofill {
 
 .activiteies-types-aside__item_active {
   color: #43b343;
+}
+
+
+
+.activiteies-types-aside__item::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 1px;
+  background-color: #bfbfbf;
+  left: -36px;
+  top: .5em;
+  transition-property: width;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+
+}
+
+.activiteies-types-aside__item:not(.activiteies-types-aside__item_active):hover::before{
+  width:20px;
+  background-color: #43b343;
 }
 
 .activiteies-types-aside__item_active::before {
