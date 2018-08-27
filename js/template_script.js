@@ -5,7 +5,10 @@ $(document).ready(function () {
 	//----------------------------------------------------------------------------------------------------
 	var $registrationFormsInput = $('.username, .user-telephone'),
 		$registrationFormPlaceholders = $('.field-placeholder'),
-		showDigitsAnimation = true;
+		showDigitsAnimationFirst = true,
+		showDigitsAnimationSecond = true,
+		showDigitsAnimationThird = true,
+		$activitiesTypes = $('.article__link--activities-types');
 
    
 
@@ -147,11 +150,43 @@ $(document).ready(function () {
 
 	});
 
-	//Отслеживание появления морды
-	$('.small-portfolio').viewportChecker({
+	//Отслеживание появления формы
+	$('.spincrement__first').viewportChecker({
 		classToAdd: 'onLook',
 		repeat: false,
 		scrollBox: $('.layout-template-wrapper'),
+
+	});
+
+	$('.spincrement__second').viewportChecker({
+		classToAdd: 'onLook',
+		repeat: false,
+		scrollBox: $('.layout-template-wrapper'),
+
+	});
+
+	$('.spincrement__third').viewportChecker({
+		classToAdd: 'onLook',
+		repeat: false,
+		scrollBox: $('.layout-template-wrapper'),
+
+	});
+
+		//Отслеживание появления морды
+		$('.person-summary__person').viewportChecker({
+			classToAdd: 'onLook',
+			repeat: true,
+			scrollBox: $('.layout-template-wrapper'),
+	
+		});
+
+	$activitiesTypes.click(function (e) { 
+		e.preventDefault();
+		var $formPosition = $('.callback-form').offset().top;
+		$('.layout-template-wrapper').animate({
+			scrollTop: $formPosition
+			}, 300);
+			return false;
 
 	});
 
@@ -164,7 +199,10 @@ $(document).ready(function () {
 
 		var $callBackForm = $('.callback-form.onLook').not('.done');
 		var animationEnd = 'onanimationend animationend webKitAnimationEnd mozAnimationEnd MSAnimationEnd',
-		$portfolio = $('.small-portfolio.onLook'),
+		$portfolioFirst = $('.spincrement__first.onLook'),
+		$portfolioSecond = $('.spincrement__second.onLook'),
+		$portfolioThird = $('.spincrement__third.onLook'),
+		$person = $('.person-summary__person.onLook'),
 
 		selector = $('.advantages-item__description'),
 		animation = 'fadeInUp';
@@ -184,17 +222,59 @@ $(document).ready(function () {
 			}
 			
 		}
-		// Запуск набегающих цифр
-		if(!showDigitsAnimation) return false;       
-		if($portfolio.length > 0){
-			if(showDigitsAnimation){
-				$(".spincrement").spincrement({
+
+		// Запуск набегающих цифр 1* 
+		
+		if(!showDigitsAnimationFirst) return false;       
+		if($portfolioFirst.length > 0 && $person.length > 0){
+			if(showDigitsAnimationFirst){
+				$('.spincrement__first').spincrement({
 					thousandSeparator: "",
-					duration: 1200
+					duration: 4000,
+					from:0,
+					to: 12,
+					callback: function(){
+						showDigitsAnimationFirst = false;	
+					}
 				});
-				showDigitsAnimation = false;	
+				
 			}
 		}
+
+		if(!showDigitsAnimationSecond) return false;       
+		if($portfolioSecond.length > 0 && $person.length > 0){
+			if(showDigitsAnimationSecond){
+				$('.spincrement__second').spincrement({
+					thousandSeparator: "",
+					duration: 2000,
+					from:0,
+					to: 4,
+					callback: function(){
+						showDigitsAnimationSecond = false;	
+					}
+				});
+				
+			}
+		}
+
+		if(!showDigitsAnimationThird) return false;       
+		if($portfolioThird.length > 0 && $person.length > 0){
+			if(showDigitsAnimationThird){
+				$('.spincrement__third').spincrement({
+					thousandSeparator: '',
+					duration: 4000,
+					from:0,
+					to: 19,
+					callback: function(){
+						showDigitsAnimationThird = false;	
+					}
+				});
+				
+			}
+		}
+
+	
+
 	});
 
 
@@ -235,7 +315,6 @@ $(document).ready(function () {
 	
     
 });
-
 
 
 //Очистка классов валидации обертки поля в форме

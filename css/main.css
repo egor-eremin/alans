@@ -725,7 +725,13 @@ input {
 .btn__order-callback:hover, .usersubmit:hover, .bth-adress:hover, .btn-call:hover {
     background-color: #11b121;
 }
-.btn__order-callback:hover::after, .usersubmit:hover::after, .bth-adress:hover::after, .btn-call:hover::after, .btn:hover::after {
+.btn__order-callback:hover::after, 
+.usersubmit:hover::after, 
+.bth-adress:hover::after, 
+.btn-call:hover::after, 
+.btn:hover::after,
+.probabilities:hover .btn::after
+{
     transform: scale(3);
 }
 .btn-text-wrapper {
@@ -1328,7 +1334,8 @@ input {
 }
 
 .footer-link-list__item:hover a,
-.activiteies-types-aside__link:hover {
+.activiteies-types-aside__link:hover,
+.person-summary__summary a:hover{
   
   color: #4ead58;
 }
@@ -1766,7 +1773,7 @@ input:-webkit-autofill {
     display: block;
     min-height: 100vh;
     height: 100vh;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     overflow-y: scroll;
 }
 .layout-template-wrapper__inner {
@@ -2074,7 +2081,7 @@ input:-webkit-autofill {
 }
 
 .small-portfolio {
-	margin: 69px -58px 0;
+	margin: 69px -48px 0;
 }
 
 .small-portfolio__item {
@@ -2104,14 +2111,15 @@ input:-webkit-autofill {
 }
 
 .small-portfolio__item::before {
-  content: '';
-  position: absolute;
-  display: block;
-  left: 0;
-  top: -1px;
-  bottom: -1px;
-  width: 70vw;
-  z-index: -1;
+	content: '';
+	position: absolute;
+	display: block;
+	left: 0;
+	top: -1px;
+	bottom: -1px;
+	width: calc(100% + (100vw - 1241px)/2);
+	z-index: -1;
+	
 }
 
 .small-portfolio__digit {
@@ -2378,6 +2386,16 @@ svg.mountain .st0{
 
 .service__quantity {
   color: #43b343;
+}
+
+.article__link--activities-types::after{
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.article__link--activities-types:hover::after {
+    transform: translate(0, 3px);
 }
 
 /* Отраслевые решения: конец */
