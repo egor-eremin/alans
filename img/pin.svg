@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9" height="9" viewBox="0 0 9 9">
+    <defs>
+        <path id="ax1ba" d="M451.5 633a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9z" />
+        <clipPath id="ax1bb">
+            <use fill="#fff" xlink:href="#ax1ba" />
+        </clipPath>
+    </defs>
+    <g>
+        <g transform="translate(-447 -633)">
+            <use fill="#fff" xlink:href="#ax1ba" />
+            <use fill="#43b343" fill-opacity="0" stroke="#43b343" stroke-miterlimit="50" stroke-width="4" clip-path="url(&quot;#ax1bb&quot;)"
+                xlink:href="#ax1ba" />
+        </g>
+    </g>
+</svg>
