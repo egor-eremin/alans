@@ -199,10 +199,17 @@ $(document).ready(function () {
 	
 	//spoiler on the page of vacancy
 	
-	$('.main-section-content tr:not(.details-row)').click(function() {
+	$('li.list__item').click(function(event) {
+		if (event.target.tagName === 'LABEL' || event.target.tagName === 'INPUT') {
+			if (event.target.checked) {
+				$(this).nextUntil('.list__details').next().find('.vacancy-details').slideDown(300);
+			} else {
+				$(this).nextUntil('.list__details').next().find('.vacancy-details').slideUp(300);
+			}
+			return;
+		}
 		this.querySelector('input').checked = this.querySelector('input').checked ? false : true;
-		this.nextElementSibling.nextElementSibling.classList.toggle('row_active');
-		// $(this.nextElementSibling.nextElementSibling).slideDown(1000);
+		$(this).nextUntil('.list__details').next().find('.vacancy-details').slideToggle(300);
 	})
 	
     
