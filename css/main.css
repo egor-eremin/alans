@@ -388,6 +388,9 @@ body, html {
      font-family: 'lato', sans-serif;
      font-weight: 400;
      color: #000;
+     min-width: 1270px;
+    padding-left: 15px;
+    padding-right: 15px;
  }
 * {
     box-sizing: border-box;
@@ -943,7 +946,7 @@ input {
 	display: flex;
 	min-height: 14.375rem;
 	justify-content: space-between;
-	margin-top: 148px;
+	margin-top: 84px;
 }
 
 .advantages__item {
@@ -1200,8 +1203,6 @@ input {
 
 
 .policy-link {
-  display: inline-block;
-
   color:#69c269;
   text-decoration: none;
   border-bottom: 1px solid rgba(105, 194, 105, 0.534);
@@ -1797,22 +1798,18 @@ input:-webkit-autofill {
     position: relative;
     display: block;
     min-height: 100vh;
-    height: 100vh;
-
 }
 .layout-template-wrapper__inner {
     display: flex;
     flex-direction: column;
-    height: inherit;
-    min-height: inherit;
-    min-width:  100%;
 }
 .about-aside {
     /*background: red;*/
     /*width: 92%;*/
     /*height: 5vh;*/
 
-    width: 285px;
+    width: 321px;
+    flex-shrink: 0;
 }
 .about-page-wrapper {
     width: 1240px;
@@ -1835,6 +1832,7 @@ input:-webkit-autofill {
 }
 .about-page {
     position: relative;
+    overflow: hidden;
 }
 
 /*.about-page::before {*/
@@ -2071,7 +2069,7 @@ input:-webkit-autofill {
 
 .about-contant--activities-types {
 	box-sizing: border-box;
-	width: 70%;
+	width: 919px;
   padding: 49px 56px 55px;
 }
 
