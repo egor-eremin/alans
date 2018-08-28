@@ -950,6 +950,10 @@ input {
   max-width: 1240px;
 }
 
+.layout-position_404-menu {
+    z-index: 20;
+}
+
 /* Футер */
 .advantages {
   display: flex;
