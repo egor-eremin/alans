@@ -764,14 +764,14 @@ input {
     color: #fff;
     left: 50%;
     transform: translate(-50%, 0);
-    top: -106px;
+    top: -1000px;
     min-height: 100vh;
     padding-top: 106px;
     padding-bottom: 106px;
     z-index: 3;
     visibility: hidden;
     opacity: 0;
-    transition: .15s ease-in-out .15s;
+    transition: opacity .15s ease-in-out .15s, top 0s .30s, visibility 0s .30s;
 }
 .submenu_with-icon > .submenu__item > a {
     padding: 18px 38px;
@@ -791,6 +791,8 @@ input {
 .header-menu__item.with-submenu:hover > .submenu {
     visibility: visible;
     opacity: 1;
+    top: -106px;
+    transition: opacity .15s ease-in-out .15s, top 0s 0s, visibility 0s 0s;
 }
 .header-menu__item.with-submenu {
     position: relative;
