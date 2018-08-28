@@ -2793,13 +2793,19 @@ input:-webkit-autofill {
 }
 
 .page-error-block__aim-twirl {
-    -webkit-filter: brightness(0) invert(1);
-    -moz-filter: brightness(0) invert(1);
-    -ms-filter: brightness(0) invert(1);
-    -o-filter: brightness(0) invert(1);
-    filter: brightness(0) invert(1);
     overflow: visible;
     top: -25vh;
     z-index: 1;
+    opacity: .4;
+}
+
+.aim-twirl-outer_white {
+    background-image: url('../img/twirl-outer_white.svg');
+}
+.aim-twirl-medium_white {
+    background-image: url('../img/twirl-medium_white.svg');
+}
+.aim-twirl-small_white {
+    background-image: url('../img/twirl-small_white.svg');
 }
 /* Страница 404: конец */
