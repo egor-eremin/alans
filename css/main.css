@@ -2777,6 +2777,8 @@ input:-webkit-autofill {
     font-weight: 500;
     line-height: 1;
     margin: 0 0 80px;
+    z-index: 2;
+    position: relative;
 }
 
 .page-error-block__message {
@@ -2786,6 +2788,8 @@ input:-webkit-autofill {
     font-weight: 500;
     line-height: 1;
     margin: 0;
+    z-index: 2;
+    position: relative;
 }
 
 .page-error-block__aim-twirl {
@@ -2796,5 +2800,6 @@ input:-webkit-autofill {
     filter: brightness(0) invert(1);
     overflow: visible;
     top: -25vh;
+    z-index: 1;
 }
 /* Страница 404: конец */
