@@ -224,7 +224,7 @@ $(document).ready(function () {
 		}
 
 		// Запуск набегающих цифр 1* 
-		
+		numbersAnimate($('.spincrement__first'), 0, 12, 1000);
 		if(!showDigitsAnimationFirst) return false;       
 		if($portfolioFirst.length > 0 && $person.length > 0){
 			if(showDigitsAnimationFirst){
