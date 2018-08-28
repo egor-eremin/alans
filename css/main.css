@@ -2766,8 +2766,9 @@ input:-webkit-autofill {
 .page-error-block {
     display: block;
     position: relative;
-    margin-top: 27vh;
+    padding: 27vh 0 15vh;
     text-align: center;
+    overflow: hidden;
 }
 
 .page-error-block__status-digit {
@@ -2794,5 +2795,6 @@ input:-webkit-autofill {
     -o-filter: brightness(0) invert(1);
     filter: brightness(0) invert(1);
     overflow: visible;
+    top: -25vh;
 }
 /* Страница 404: конец */
