@@ -1353,6 +1353,10 @@ input {
   border-bottom: 1px solid #4ead58;
 }
 
+.person-summary__summary a {
+  color: #4ead58;
+}
+
 
 
 .footer-link-list__item--header {
@@ -1808,13 +1812,14 @@ input:-webkit-autofill {
     flex-shrink: 0;
     margin: 0 auto;
     
+    
 }
 .about-contant {
     padding-right: 56px;
     padding-left: 56px;
     background: #fff;
     flex-grow: 1;
-    
+
 }
 .about-aside__content-wrp {
   /* position: sticky; */
@@ -2272,6 +2277,7 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0px 0px 20px 5px #f0efef;
     -moz-box-shadow: 0px 0px 20px 5px #f0efef;
     box-shadow: 0px 0px 20px 5px #f0efef;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .about-page--branch_solutions::after {
@@ -2421,5 +2427,7 @@ svg.mountain .st0{
 .article__link--activities-types:hover::after {
     transform: translate(0, 3px);
 }
+
+
 
 /* Отраслевые решения: конец */

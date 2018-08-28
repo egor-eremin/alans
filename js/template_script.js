@@ -200,8 +200,6 @@ $(document).ready(function () {
 		$portfolioFirst = $('.spincrement__first.onLook'),
 		$portfolioSecond = $('.spincrement__second.onLook'),
 		$portfolioThird = $('.spincrement__third.onLook'),
-		$person = $('.person-summary__person.onLook'),
-
 		selector = $('.advantages-item__description'),
 		animation = 'fadeInUp';
 		//Запуск стрелки наверх
@@ -294,6 +292,11 @@ $(document).ready(function () {
     
 });
 
+//Плавный скролл до позиции на странице
+//$selector(jqblock) - анимируемый блок
+//position(number) - целевое вертикальное смещение на странице
+//duration(number) - длительность анимации
+
 function animatedScrollToPosition($selector, position, duration){
 	$($selector).animate({
 		scrollTop: position
@@ -301,6 +304,11 @@ function animatedScrollToPosition($selector, position, duration){
 		return false;
 }
 
+//Анимация цифр 
+//$selector(jqblock) - анимируемый блок
+//$from(number) - начальное значение
+//$to(number) - конечное значение
+//$duration(number) - длительность анимации
 function numbersAnimate($selector, $from, $to, $duration) {
 	$({numberValue: $from}).animate({numberValue: $to}, {
 		duration: $duration, // Скорость анимации, где 500 = 0,5 одной секунды, то есть 500 миллисекунд
