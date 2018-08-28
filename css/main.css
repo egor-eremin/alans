@@ -1938,15 +1938,23 @@ input:-webkit-autofill {
 .vacancy .about-contant {
   padding: 0;
   width: 77%;
+  border-bottom: 1px solid #f4f4f4;
 }
 
 .vacancy .about-aside {
   width: 23%;
 }
 
-.vacancy .main-section-content::after {
+.vacancy .about-contant::after {
+  content: "";
   position: absolute;
-  
+  top: 0;
+  left: 100%;
+  height: 100%;
+  width: 100vw;
+  background-color: inherit;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f4f4f4;
 }
 
 .vacancy .main-section-content h1 {
