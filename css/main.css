@@ -391,7 +391,7 @@ body, html {
  }
 * {
     box-sizing: border-box;
-
+  
 }
 a {
     color: inherit;
@@ -1199,7 +1199,8 @@ input {
 }
 
 
-.policy-link {
+.policy-link,
+.person-summary__summary a {
   display: inline-block;
 
   color:#69c269;
@@ -1211,7 +1212,8 @@ input {
   
 }
 
-.policy-link:hover {
+.policy-link:hover,
+.person-summary__summary a:hover {
   border-bottom: 1px solid rgba(105, 194, 105, 1);
 }
 
@@ -1340,28 +1342,18 @@ input {
 }
 
 .person-summary__summary a{
-  border-bottom: 1px solid transparent;
-  transition-property: border-bottom;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
+
   line-height: 150%;
 }
 
 .footer-link-list__item:hover a,
-.activiteies-types-aside__link:hover,
-.person-summary__summary a:hover{
+.activiteies-types-aside__link:hover{
   
   color: #4ead58;
   
 }
 
-.person-summary__summary a:hover{
-  border-bottom: 1px solid #4ead58;
-}
 
-.person-summary__summary a {
-  color: #4ead58;
-}
 
 
 
@@ -1894,7 +1886,7 @@ input:-webkit-autofill {
   content: "";
   position: absolute;
   top: 0;
-  left: 100%;
+  left: 99%;
   height: 100%;
   width: calc((100vw - 1240px) / 2);
   background-color: inherit;
