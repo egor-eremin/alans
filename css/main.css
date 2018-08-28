@@ -1360,6 +1360,10 @@ input {
   border-bottom: 1px solid #4ead58;
 }
 
+.person-summary__summary a {
+  color: #4ead58;
+}
+
 
 
 .footer-link-list__item--header {
@@ -1795,8 +1799,7 @@ input:-webkit-autofill {
     display: block;
     min-height: 100vh;
     height: 100vh;
-    /* overflow-x: hidden; */
-    overflow-y: scroll;
+
 }
 .layout-template-wrapper__inner {
     display: flex;
@@ -1818,13 +1821,14 @@ input:-webkit-autofill {
     flex-shrink: 0;
     margin: 0 auto;
     
+    
 }
 .about-contant {
     padding-right: 56px;
     padding-left: 56px;
     background: #fff;
     flex-grow: 1;
-    
+
 }
 .about-aside__content-wrp {
   /* position: sticky; */
@@ -1964,7 +1968,10 @@ input:-webkit-autofill {
 }
 
 .activiteies-types-aside__link {
-	line-height: 1.15rem;
+  line-height: 1.15rem;
+  transition-property: color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
 }
 
 .probabilities {
@@ -2099,12 +2106,15 @@ input:-webkit-autofill {
   line-height: 1.3;
 }
 
-.about-contant--activities-types  .article__link::after {
+.about-contant--activities-types .article__link::after {
   content: "\2193";
   margin-left: 21px;
   display: inline-block;
   vertical-align: middle;
+  margin-top: -5px;
 }
+
+
 
 .about-contant--activities-types .article__text {
   color: #000000;
@@ -2116,6 +2126,11 @@ input:-webkit-autofill {
 
 .about-contant--activities-types .article__text p {
 	margin: 0 0 1.25rem;
+}
+
+
+.about-contant--activities-types .article__text h3 {
+  margin-top: 49px;
 }
 
 .about-contant--activities-types .article__text ul, 
@@ -2147,12 +2162,13 @@ input:-webkit-autofill {
   text-align: center;
 }
 
-.about-contant--activities-types img.article__image {
+/* .about-contant--activities-types img.article__image {
   margin-bottom: 49px;
-}
+} */
 
-.about-contant--activities-types .article__text ul.article-list {
-	margin: 54px 0 60px;
+.about-contant--activities-types .article__text ul:last-of-type{
+  margin: 54px 0 60px;
+
 }
 
 .small-portfolio {
@@ -2323,6 +2339,7 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0px 0px 20px 5px #f0efef;
     -moz-box-shadow: 0px 0px 20px 5px #f0efef;
     box-shadow: 0px 0px 20px 5px #f0efef;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .about-page--branch_solutions::after {
@@ -2474,4 +2491,3 @@ svg.mountain .st0{
     transform: translate(0, 3px);
 }
 
-/* Отраслевые решения: конец */

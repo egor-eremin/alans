@@ -146,47 +146,45 @@ $(document).ready(function () {
 	$('.callback-form').viewportChecker({
 		classToAdd: 'onLook',
 		repeat: true,
-		scrollBox: $('.layout-template-wrapper'),
+		// scrollBox: $('.layout-template-wrapper'),
 
 	});
 
 	//Отслеживание появления формы
 	$('.spincrement__first').viewportChecker({
 		classToAdd: 'onLook',
-		repeat: false,
-		scrollBox: $('.layout-template-wrapper'),
+		repeat: true,
+		// scrollBox: $('.layout-template-wrapper'),
 
 	});
 
 	$('.spincrement__second').viewportChecker({
 		classToAdd: 'onLook',
-		repeat: false,
-		scrollBox: $('.layout-template-wrapper'),
+		repeat: true,
+		// scrollBox: $('.layout-template-wrapper'),
 
 	});
 
 	$('.spincrement__third').viewportChecker({
 		classToAdd: 'onLook',
-		repeat: false,
-		scrollBox: $('.layout-template-wrapper'),
+		repeat: true,
+		// scrollBox: $('.layout-template-wrapper'),
 
 	});
 
 		//Отслеживание появления морды
 		$('.person-summary__person').viewportChecker({
 			classToAdd: 'onLook',
-			repeat: false,
-			scrollBox: $('.layout-template-wrapper'),
+			repeat: true,
+			// scrollBox: $('.layout-template-wrapper'),
 	
 		});
 
 	$activitiesTypes.click(function (e) { 
 		e.preventDefault();
 		var $formPosition = $('.callback-form').offset().top;
-		$('.layout-template-wrapper').animate({
-			scrollTop: $formPosition
-			}, 300);
-			return false;
+		animatedScrollToPosition($('body, html'), $formPosition, 500);
+	
 
 	});
 
@@ -195,15 +193,13 @@ $(document).ready(function () {
 
 
 	//Событие по скроллу
-	$('.layout-template-wrapper').on('scroll', function () {
+	$(window).on('scroll', function () {
 
 		var $callBackForm = $('.callback-form.onLook').not('.done');
 		var animationEnd = 'onanimationend animationend webKitAnimationEnd mozAnimationEnd MSAnimationEnd',
 		$portfolioFirst = $('.spincrement__first.onLook'),
 		$portfolioSecond = $('.spincrement__second.onLook'),
 		$portfolioThird = $('.spincrement__third.onLook'),
-		$person = $('.person-summary__person.onLook'),
-
 		selector = $('.advantages-item__description'),
 		animation = 'fadeInUp';
 		//Запуск стрелки наверх
@@ -225,8 +221,9 @@ $(document).ready(function () {
 
 		// Запуск набегающих цифр 1* 
 		
-		if(!showDigitsAnimationFirst) return false;       
-		if($portfolioFirst.length > 0 && $person.length > 0){
+		
+		if($portfolioFirst.length > 0 ){
+	    
 			if(showDigitsAnimationFirst){
 				numbersAnimate($('.spincrement__first'), 0, 12, 1000);
 				showDigitsAnimationFirst = false;	
@@ -234,8 +231,9 @@ $(document).ready(function () {
 		}
 
 		// Запуск набегающих цифр 2* 
-		if(!showDigitsAnimationSecond) return false;       
-		if($portfolioSecond.length > 0 && $person.length > 0){
+	 
+		if($portfolioSecond.length > 0 ){
+	 
 			if(showDigitsAnimationSecond){
 				numbersAnimate($('.spincrement__second'), 0, 4, 1000);
 				showDigitsAnimationSecond = false;	
@@ -244,8 +242,9 @@ $(document).ready(function () {
 
 
 		// Запуск набегающих цифр 3* 
-		if(!showDigitsAnimationThird) return false;       
-		if($portfolioThird.length > 0 && $person.length > 0){
+		
+		if($portfolioThird.length > 0 ){
+	  
 			if(showDigitsAnimationThird){
 				numbersAnimate($('.spincrement__third'), 0, 19, 1000);
 				showDigitsAnimationThird = false;	
@@ -262,10 +261,7 @@ $(document).ready(function () {
 	//Активация стрелки наверх
 	$('.up__arrow-area').click(function (e) { 
 		e.preventDefault();
-		$('.layout-template-wrapper').animate({
-			scrollTop: 0
-			}, 300);
-			return false;
+		animatedScrollToPosition($('body, html'), 0, 300);
 		
 	});
 
@@ -296,6 +292,23 @@ $(document).ready(function () {
     
 });
 
+//Плавный скролл до позиции на странице
+//$selector(jqblock) - анимируемый блок
+//position(number) - целевое вертикальное смещение на странице
+//duration(number) - длительность анимации
+
+function animatedScrollToPosition($selector, position, duration){
+	$($selector).animate({
+		scrollTop: position
+		}, duration);
+		return false;
+}
+
+//Анимация цифр 
+//$selector(jqblock) - анимируемый блок
+//$from(number) - начальное значение
+//$to(number) - конечное значение
+//$duration(number) - длительность анимации
 function numbersAnimate($selector, $from, $to, $duration) {
 	$({numberValue: $from}).animate({numberValue: $to}, {
 		duration: $duration, // Скорость анимации, где 500 = 0,5 одной секунды, то есть 500 миллисекунд
