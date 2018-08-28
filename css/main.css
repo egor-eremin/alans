@@ -457,6 +457,10 @@ input {
     flex-basis: 50%;
 }
 
+.header-container_404 {
+    margin-top: 66px;
+}
+
 .header-menu {
     display: flex;
     list-style: none;
@@ -469,7 +473,7 @@ input {
 
 .menu-item__link {
     letter-spacing: 0.4px;
-    color: #000000;
+    color: inherit;
     text-decoration: none;
     position: relative;
     transition: color .3s ease-in-out;
@@ -1790,6 +1794,13 @@ input:-webkit-autofill {
     min-width:  100%;
     overflow-x: hidden;
 }
+.layout-template-wrapper__inner_404 {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: #43b343;
+    color: #fff;
+}
 .about-aside {
     background: red;
     width: 92%;
@@ -2745,3 +2756,37 @@ input:-webkit-autofill {
 }
 /* Страница новости: конец */
 
+/* Страница 404: начало */
+.page-error-block {
+    display: block;
+    position: relative;
+    margin-top: 27vh;
+    text-align: center;
+}
+
+.page-error-block__status-digit {
+    font-family: inherit;
+    font-size: 200px;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 80px;
+}
+
+.page-error-block__message {
+    color: #fff;
+    font-family: inherit;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0;
+}
+
+.page-error-block__aim-twirl {
+    -webkit-filter: brightness(0) invert(1);
+    -moz-filter: brightness(0) invert(1);
+    -ms-filter: brightness(0) invert(1);
+    -o-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+    overflow: visible;
+}
+/* Страница 404: конец */
