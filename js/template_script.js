@@ -4,12 +4,17 @@ $(document).ready(function () {
 	//Раздел переменных
 	//----------------------------------------------------------------------------------------------------
 	var $registrationFormsInput = $('.username, .user-telephone'),
-		$registrationFormPlaceholders = $('.field-placeholder');
+		$registrationFormPlaceholders = $('.field-placeholder'),
+		showDigitsAnimationFirst = true,
+		showDigitsAnimationSecond = true,
+		showDigitsAnimationThird = true,
+		$activitiesTypes = $('.article__link--activities-types');
 
    
 
 
-	//Раздел функций
+
+	// Футер
 	//------------------------------------------------------------------------------------------------------
 	initFields($registrationFormsInput);
 	$('.user-telephone').mask('+7 (000) 000-00-00');
@@ -54,10 +59,6 @@ $(document).ready(function () {
 			
 					$usnWrapper.addClass('input-error'); 
 				}
-				
-				
-
-			
 		  },
 	
 		onkeyup: function(element){
@@ -141,22 +142,74 @@ $(document).ready(function () {
 		
 	});
 
+	//Отслеживание появления формы
 	$('.callback-form').viewportChecker({
 		classToAdd: 'onLook',
 		repeat: true,
+		// scrollBox: $('.layout-template-wrapper'),
 
 	});
 
+	//Отслеживание появления формы
+	$('.spincrement__first').viewportChecker({
+		classToAdd: 'onLook',
+		repeat: true,
+		// scrollBox: $('.layout-template-wrapper'),
+
+	});
+
+	$('.spincrement__second').viewportChecker({
+		classToAdd: 'onLook',
+		repeat: true,
+		// scrollBox: $('.layout-template-wrapper'),
+
+	});
+
+	$('.spincrement__third').viewportChecker({
+		classToAdd: 'onLook',
+		repeat: true,
+		// scrollBox: $('.layout-template-wrapper'),
+
+	});
+
+		//Отслеживание появления морды
+		$('.person-summary__person').viewportChecker({
+			classToAdd: 'onLook',
+			repeat: true,
+			// scrollBox: $('.layout-template-wrapper'),
+	
+		});
+
+	$activitiesTypes.click(function (e) { 
+		e.preventDefault();
+		var $formPosition = $('.callback-form').offset().top;
+		animatedScrollToPosition($('body, html'), $formPosition, 500);
+	
+
+	});
+
+	
+
+
+
+	//Событие по скроллу
 	$(window).on('scroll', function () {
-		var $callBackForm = $('.callback-form.onLook.full-visible').not('.done');
+
+		var $callBackForm = $('.callback-form.onLook').not('.done');
 		var animationEnd = 'onanimationend animationend webKitAnimationEnd mozAnimationEnd MSAnimationEnd',
+		$portfolioFirst = $('.spincrement__first.onLook'),
+		$portfolioSecond = $('.spincrement__second.onLook'),
+		$portfolioThird = $('.spincrement__third.onLook'),
 		selector = $('.advantages-item__description'),
 		animation = 'fadeInUp';
+		//Запуск стрелки наверх
 		if($(this).scrollTop() > 500) {
 			$('.up-arrow__wrapper').removeClass('hidden-down');
 		} else {
 			$('.up-arrow__wrapper').addClass('hidden-down');
 		}
+
+		//Запуск анимации блоков преимуществ
 		if($callBackForm.length > 0){
 			if(!selector.hasClass(animation)) {
 				selector.addClass(animation).one(animationEnd, function(){
@@ -165,17 +218,54 @@ $(document).ready(function () {
 			}
 			
 		}
+
+		// Запуск набегающих цифр 1* 
+		
+		
+		if($portfolioFirst.length > 0 ){
+	    
+			if(showDigitsAnimationFirst){
+				numbersAnimate($('.spincrement__first'), 0, 12, 1000);
+				showDigitsAnimationFirst = false;	
+			}
+		}
+
+		// Запуск набегающих цифр 2* 
+	 
+		if($portfolioSecond.length > 0 ){
+	 
+			if(showDigitsAnimationSecond){
+				numbersAnimate($('.spincrement__second'), 0, 4, 1000);
+				showDigitsAnimationSecond = false;	
+			}
+		}
+
+
+		// Запуск набегающих цифр 3* 
+		
+		if($portfolioThird.length > 0 ){
+	  
+			if(showDigitsAnimationThird){
+				numbersAnimate($('.spincrement__third'), 0, 19, 1000);
+				showDigitsAnimationThird = false;	
+				
+			}
+		}
+
+	
+
+	});
+
+
+
+	//Активация стрелки наверх
+	$('.up__arrow-area').click(function (e) { 
+		e.preventDefault();
+		animatedScrollToPosition($('body, html'), 0, 300);
 		
 	});
 
-	$('.up__arrow-area').click(function (e) { 
-		e.preventDefault();
-		$('body,html').animate({
-			scrollTop: 0
-			}, 100);
-			return false;
-		
-	});
+	/*Футер: конец*/ 
    
 	//Активация медиа-запросов в javascript
 	//@param mediaQueryString (String) - строка медиа-запроса как в CSS
@@ -202,9 +292,37 @@ $(document).ready(function () {
     
 });
 
+//Плавный скролл до позиции на странице
+//$selector(jqblock) - анимируемый блок
+//position(number) - целевое вертикальное смещение на странице
+//duration(number) - длительность анимации
+
+function animatedScrollToPosition($selector, position, duration){
+	$($selector).animate({
+		scrollTop: position
+		}, duration);
+		return false;
+}
+
+//Анимация цифр 
+//$selector(jqblock) - анимируемый блок
+//$from(number) - начальное значение
+//$to(number) - конечное значение
+//$duration(number) - длительность анимации
+function numbersAnimate($selector, $from, $to, $duration) {
+	$({numberValue: $from}).animate({numberValue: $to}, {
+		duration: $duration, // Скорость анимации, где 500 = 0,5 одной секунды, то есть 500 миллисекунд
+		easing: "linear",
+		step: function(val) {
+			$selector.html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
+		}
+	});
+}
 
 
-
+//Очистка классов валидации обертки поля в форме
+//value (string) - значение поля
+//$wrappers(jqblock) - класс обертки поля
 function clearValidationClasses($wrappers, value) {
 	$.each($wrappers, function (indexInArray, valueOfElement) {
 		$(this).removeClass('active');
@@ -231,6 +349,8 @@ function media(mediaQueryString, action){
 	mql.addListener(handleMatchMedia);
 }
 
+//Инициализация полей в футере. Если поле заполнено - убирает placehoder
+//$registrationFormsInput (jqblock) - выборка полей формы
 function initFields($registrationFormsInput) {
 	var value='',
 		$wrapper;
