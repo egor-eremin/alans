@@ -457,6 +457,10 @@ input {
     flex-basis: 50%;
 }
 
+.header-container_404 {
+    margin-top: 66px;
+}
+
 .header-menu {
     display: flex;
     list-style: none;
@@ -469,7 +473,7 @@ input {
 
 .menu-item__link {
     letter-spacing: 0.4px;
-    color: #000000;
+    color: inherit;
     text-decoration: none;
     position: relative;
     transition: color .3s ease-in-out;
@@ -760,14 +764,14 @@ input {
     color: #fff;
     left: 50%;
     transform: translate(-50%, 0);
-    top: -106px;
+    top: -1000px;
     min-height: 100vh;
     padding-top: 106px;
     padding-bottom: 106px;
     z-index: 3;
     visibility: hidden;
     opacity: 0;
-    transition: .15s ease-in-out .15s;
+    transition: opacity .15s ease-in-out .15s, top 0s .30s, visibility 0s .30s;
 }
 .submenu_with-icon > .submenu__item > a {
     padding: 18px 38px;
@@ -787,6 +791,8 @@ input {
 .header-menu__item.with-submenu:hover > .submenu {
     visibility: visible;
     opacity: 1;
+    top: -106px;
+    transition: opacity .15s ease-in-out .15s, top 0s 0s, visibility 0s 0s;
 }
 .header-menu__item.with-submenu {
     position: relative;
@@ -944,6 +950,10 @@ input {
   margin: 0 auto;
   width: 1240px;
   max-width: 1240px;
+}
+
+.layout-position_404-menu {
+    z-index: 20;
 }
 
 /* Футер */
@@ -1789,6 +1799,13 @@ input:-webkit-autofill {
     min-height: inherit;
     min-width:  100%;
     overflow-x: hidden;
+}
+.layout-template-wrapper__inner_404 {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: #43b343;
+    color: #fff;
 }
 .about-aside {
     background: red;
@@ -2745,3 +2762,50 @@ input:-webkit-autofill {
 }
 /* Страница новости: конец */
 
+/* Страница 404: начало */
+.page-error-block {
+    display: block;
+    position: relative;
+    padding: 27vh 0 15vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.page-error-block__status-digit {
+    font-family: inherit;
+    font-size: 200px;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 80px;
+    z-index: 2;
+    position: relative;
+}
+
+.page-error-block__message {
+    color: #fff;
+    font-family: inherit;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0;
+    z-index: 2;
+    position: relative;
+}
+
+.page-error-block__aim-twirl {
+    overflow: visible;
+    top: -25vh;
+    z-index: 1;
+    opacity: .4;
+}
+
+.aim-twirl-outer_white {
+    background-image: url('../img/twirl-outer_white.svg');
+}
+.aim-twirl-medium_white {
+    background-image: url('../img/twirl-medium_white.svg');
+}
+.aim-twirl-small_white {
+    background-image: url('../img/twirl-small_white.svg');
+}
+/* Страница 404: конец */
