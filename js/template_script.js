@@ -287,7 +287,20 @@ $(document).ready(function () {
 		// console.log('1270px');
 	});
 	
+	//spoiler on the page of vacancy
 	
+	$('li.list__item').click(function(event) {
+		if (event.target.tagName === 'LABEL' || event.target.tagName === 'INPUT') {
+			if (event.target.checked) {
+				$(this).nextUntil('.list__details').next().find('.vacancy-details').slideDown(300);
+			} else {
+				$(this).nextUntil('.list__details').next().find('.vacancy-details').slideUp(300);
+			}
+			return;
+		}
+		this.querySelector('input').checked = this.querySelector('input').checked ? false : true;
+		$(this).nextUntil('.list__details').next().find('.vacancy-details').slideToggle(300);
+	})
 	
     
 });
