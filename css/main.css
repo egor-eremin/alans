@@ -1839,6 +1839,12 @@ input:-webkit-autofill {
   margin-bottom: 84px;
 }
 
+.contacts.main-section-content h1 {
+  margin-top: 51px;
+  letter-spacing: 0.05em;
+  margin-bottom: 74px;
+}
+
 .main-section-content p {
   font-weight: 500;
   font-size: 0.938em;
@@ -1860,7 +1866,7 @@ input:-webkit-autofill {
 }
 
 .wrapper-contacts {
-  padding: 0 80px 0 55px;
+  padding-left: 77px;
 }
 
 .contact-list {
@@ -1875,17 +1881,40 @@ input:-webkit-autofill {
   flex-basis: 50%;
   flex-grow: 1;
   margin-bottom: 40px;
-  padding-left: 50px;
+  padding-left: 47px;
   position: relative;
 }
 
+.contact-list__item:nth-last-child(1) {
+  margin-top: 10px;
+}
+
+.contact-list__item a[href^="tel"] {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+}
+
+.contact-list__item a[href^="tel"]:hover {
+  border: none;
+}
+
 .contact-list__item a {
+  display: inline-block;
   color: #43b343;
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(67, 179, 67, 0.534);
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.contact-list__item a:hover {
+  border-bottom: 1px solid rgba(67, 179, 67, 1);
 }
 
 .contact-list__item span {
-  margin-bottom: 13px;
+  margin-bottom: 9px;
   display: inline-block;
   font-size: 1.125em;
   line-height: 1.222em;
@@ -1896,10 +1925,10 @@ input:-webkit-autofill {
 .contact-list__item span::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 23px;
+  top: -2px;
+  left: -1px;
+  width: 21px;
+  height: 27px;
   background-size: contain;
 }
 
@@ -1927,10 +1956,10 @@ input:-webkit-autofill {
   margin-top: 20px;
   width: 100%;
   padding: 0;
-  height: 619px;
+  height: 480px;
 }
 
-}
+/* End contcts */
 
 /* Виды работ: начало */
 .sidebar {
