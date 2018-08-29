@@ -2766,7 +2766,7 @@ input:-webkit-autofill {
 .page-error-block {
     display: block;
     position: relative;
-    padding: 27vh 0 15vh;
+    padding: 240px 0 0;
     text-align: center;
     overflow: hidden;
 }
@@ -2794,9 +2794,8 @@ input:-webkit-autofill {
 
 .page-error-block__aim-twirl {
     overflow: visible;
-    top: -25vh;
+    top: -85px;
     z-index: 1;
-    opacity: .4;
 }
 
 .aim-twirl-outer_white {
