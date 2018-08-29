@@ -1968,6 +1968,10 @@ input:-webkit-autofill {
   padding-right: 30px;
 }
 
+.list__item {
+  cursor: pointer;
+}
+
 .list__header,
 .list__item {
   display: flex;
@@ -2017,8 +2021,8 @@ input:-webkit-autofill {
   border: 1px solid #43b343;
   display: inline-block;
   position: relative;
-  /* height: 100%; */
   margin:auto;
+  cursor: pointer;
 }
 
 .list__item p input ~ label::before,
@@ -2036,7 +2040,8 @@ input:-webkit-autofill {
   transform: rotate(90deg);
 }
 
-.list__item p input:checked ~ label::after {
+.list__item p input:checked ~ label::after,
+.list__item p input ~ label:hover::after {
   transform: rotate(0deg);
 }
 
