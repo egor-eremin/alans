@@ -388,7 +388,7 @@ body, html {
      font-family: 'lato', sans-serif;
      font-weight: 400;
      color: #000;
-     min-width: 1270px;
+     min-width: 1240px;
  }
 * {
     box-sizing: border-box;
@@ -588,8 +588,8 @@ input {
   /* flex-direction: column; */
   margin: 0 auto 26px auto;
   padding-top: 51px;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 56px;
+  padding-right: 56px;
 }
 
 .breadcrumbs__item + .breadcrumbs__item {
@@ -1362,14 +1362,13 @@ input {
 	text-decoration: none;
 	font-family: 'lato', Arial, Helvetica, sans-serif;
 	color: #000000;
-	font-size: 88%;
+	font-size: 14px;
 	display: inline-block;
-  width: 337px;
+  width: 100%;
   border-bottom: 1px solid transparent;
   transition-property: color, border-bottom;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
-  display: inline-block;
 }
 
 .person-summary__summary a{
@@ -1853,6 +1852,7 @@ input:-webkit-autofill {
     background: #fff;
     flex-grow: 1;
     position: relative;
+    border-bottom: 1px solid rgb(229,229,229);
 }
 .about-aside__content-wrp {
   /* position: sticky; */
@@ -1872,8 +1872,6 @@ input:-webkit-autofill {
 
 .about-us .main-section-content {
   padding-bottom: 53px;
-  padding-right: 17px;
-  border-bottom: 1px solid rgb(229,229,229);
 }
 
 .main-section-content h1 {
@@ -2063,15 +2061,12 @@ input:-webkit-autofill {
     height: 100%;
     width: calc((100vw - 1240px) / 2);
     background-color: inherit;
+    border-bottom: 1px solid rgb(229,229,229);
 }
 
-
-
 /* Виды работ */
-
 .about-aside--activities-types {
 	width: 321px;
-
 }
 
 .activiteies-types-aside {
@@ -3309,10 +3304,6 @@ svg.mountain .st0{
   margin-top: 51px;
   margin-bottom: 40px;
   letter-spacing: 1.1px;
-}
-
-.main-section-content {
-  padding-right: 30px;
 }
 
 .list__item {
