@@ -1843,8 +1843,7 @@ input:-webkit-autofill {
     display: flex;
     flex-shrink: 0;
     margin: 0 auto;
-    
-    
+    position: relative;
 }
 .about-contant {
     padding-right: 56px;
@@ -1931,15 +1930,15 @@ input:-webkit-autofill {
   margin-top: 10px;
 }
 
-.contact-list__item a[href^="tel"] {
-  text-decoration: none;
-  color: inherit;
-  border: none;
-}
+/*.contact-list__item a[href^="tel"] {*/
+  /*text-decoration: none;*/
+  /*color: inherit;*/
+  /*border: none;*/
+/*}*/
 
-.contact-list__item a[href^="tel"]:hover {
-  border: none;
-}
+/*.contact-list__item a[href^="tel"]:hover {*/
+  /*border: none;*/
+/*}*/
 
 .contact-list__item a {
   display: inline-block;
@@ -2053,15 +2052,17 @@ input:-webkit-autofill {
           align-items: center;
 }
 
-.about-contant::after {
+/*.about-contant::after {*/
+.about-page-wrapper::after {
     content: "";
     position: absolute;
     top: 0;
     left: 100%;
     height: 100%;
     width: calc((100vw - 1240px) / 2);
-    background-color: inherit;
+    background-color: #fff;
     border-bottom: 1px solid rgb(229,229,229);
+    box-sizing: border-box;
 }
 
 /* Виды работ */
@@ -2142,6 +2143,7 @@ input:-webkit-autofill {
 	margin-bottom: 53px;
 	background-color: rgba(255, 255, 255, 0.22);
 	min-height: 356px;
+    cursor: pointer;
 }
 
 .probabilities:hover {
@@ -2296,16 +2298,15 @@ input:-webkit-autofill {
 .article__text ul,
 .article__text ol {
   position: relative;
-  padding-left: 31px;
   font-weight: 400;
   line-height: 1.466;
   margin: 33px 0 45px;
 }
 
-.article__text ol li,
-.article__text ul li {
-  margin: 0 0 0.75em;
-}
+/*.article__text ol li,*/
+/*.article__text ul li {*/
+  /*margin: 0 0 0.75em;*/
+/*}*/
 
 .article__text ol li::before,
 .article__text ul li::before {
@@ -2324,22 +2325,25 @@ input:-webkit-autofill {
 .about-contant--activities-types .article__text ul, 
 .about-contant--activities-types .article__text ol {
 	position: relative;
-	padding-left: 31px;
 	font-weight: 400;
 	line-height: 1.466;
 	margin: 60px 0 81px;
 }
 
 .about-contant--activities-types .article__text ol li::before,
-.about-contant--activities-types .article__text ul li::before {
+.about-contant--activities-types .article__text ul li::before,
+.article__text ol li::before, .article__text ul li::before {
   content: url('../img/pin.svg');
   left: 0;
   position: absolute;
+  top: 0;
 }
 
 .about-contant--activities-types .article__text ol li,
-.about-contant--activities-types .article__text ul li {
+.about-contant--activities-types .article__text ul li, .article__text ol li, .article__text ul li {
 	margin: 0 0 10px;
+    position: relative;
+    padding-left: 31px;
 }
 
 .about-contant--activities-types  .article__text img,
@@ -2671,7 +2675,7 @@ input:-webkit-autofill {
 }
 
 .content-area__wrap {
-  padding: 45px;
+  padding: 45px 56px;
 }
 
 .news-list {
@@ -2999,7 +3003,7 @@ input:-webkit-autofill {
 }
 
 .article-page__column_image {
-  padding: 0 39px 0 34px;
+  padding: 0 39px 0 0px;
   position: relative;
 }
 
@@ -3009,7 +3013,7 @@ input:-webkit-autofill {
   height: 1px;
   position: absolute;
   display: block;
-  left: -45px;
+  left: -56px;
   background-color: rgba(67, 179, 67, 0.3);
   top: 17px;
 }
@@ -3556,3 +3560,10 @@ svg.mountain .st0{
 }
 
 /* end page of vacancy */
+.about-page-wrapper--branch_solutions::after {
+    content: none;
+}
+.contact-list__item p {
+    line-height: 22px;
+    font-size: 15px;
+}
