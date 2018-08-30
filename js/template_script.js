@@ -5,12 +5,15 @@ $(document).ready(function () {
 	//----------------------------------------------------------------------------------------------------
 	var $registrationFormsInput = $('.username, .user-telephone'),
 		$registrationFormPlaceholders = $('.field-placeholder'),
-		showDigitsAnimation = true;
+		showDigitsAnimationFirst = true,
+		showDigitsAnimationSecond = true,
+		showDigitsAnimationThird = true,
+		$activitiesTypes = $('.article__link--activities-types');
 
    
 
 
-	//Раздел функций
+
 	// Футер
 	//------------------------------------------------------------------------------------------------------
 	initFields($registrationFormsInput);
@@ -143,15 +146,45 @@ $(document).ready(function () {
 	$('.callback-form').viewportChecker({
 		classToAdd: 'onLook',
 		repeat: true,
-		scrollBox: $('.layout-template-wrapper'),
+		// scrollBox: $('.layout-template-wrapper'),
 
 	});
 
-	//Отслеживание появления морды
-	$('.small-portfolio').viewportChecker({
+	//Отслеживание появления формы
+	$('.spincrement__first').viewportChecker({
 		classToAdd: 'onLook',
-		repeat: false,
-		scrollBox: $('.layout-template-wrapper'),
+		repeat: true,
+		// scrollBox: $('.layout-template-wrapper'),
+
+	});
+
+	$('.spincrement__second').viewportChecker({
+		classToAdd: 'onLook',
+		repeat: true,
+		// scrollBox: $('.layout-template-wrapper'),
+
+	});
+
+	$('.spincrement__third').viewportChecker({
+		classToAdd: 'onLook',
+		repeat: true,
+		// scrollBox: $('.layout-template-wrapper'),
+
+	});
+
+		//Отслеживание появления морды
+		$('.person-summary__person').viewportChecker({
+			classToAdd: 'onLook',
+			repeat: true,
+			// scrollBox: $('.layout-template-wrapper'),
+	
+		});
+
+	$activitiesTypes.click(function (e) { 
+		e.preventDefault();
+		var $formPosition = $('.callback-form').offset().top;
+		animatedScrollToPosition($('body, html'), $formPosition, 500);
+	
 
 	});
 
@@ -160,12 +193,13 @@ $(document).ready(function () {
 
 
 	//Событие по скроллу
-	$('.layout-template-wrapper').on('scroll', function () {
+	$(window).on('scroll', function () {
 
 		var $callBackForm = $('.callback-form.onLook').not('.done');
 		var animationEnd = 'onanimationend animationend webKitAnimationEnd mozAnimationEnd MSAnimationEnd',
-		$portfolio = $('.small-portfolio.onLook'),
-
+		$portfolioFirst = $('.spincrement__first.onLook'),
+		$portfolioSecond = $('.spincrement__second.onLook'),
+		$portfolioThird = $('.spincrement__third.onLook'),
 		selector = $('.advantages-item__description'),
 		animation = 'fadeInUp';
 		//Запуск стрелки наверх
@@ -184,17 +218,42 @@ $(document).ready(function () {
 			}
 			
 		}
-		// Запуск набегающих цифр
-		if(!showDigitsAnimation) return false;       
-		if($portfolio.length > 0){
-			if(showDigitsAnimation){
-				$(".spincrement").spincrement({
-					thousandSeparator: "",
-					duration: 1200
-				});
-				showDigitsAnimation = false;	
+
+		// Запуск набегающих цифр 1* 
+		
+		
+		if($portfolioFirst.length > 0 ){
+	    
+			if(showDigitsAnimationFirst){
+				numbersAnimate($('.spincrement__first'), 0, 12, 1000);
+				showDigitsAnimationFirst = false;	
 			}
 		}
+
+		// Запуск набегающих цифр 2* 
+	 
+		if($portfolioSecond.length > 0 ){
+	 
+			if(showDigitsAnimationSecond){
+				numbersAnimate($('.spincrement__second'), 0, 4, 1000);
+				showDigitsAnimationSecond = false;	
+			}
+		}
+
+
+		// Запуск набегающих цифр 3* 
+		
+		if($portfolioThird.length > 0 ){
+	  
+			if(showDigitsAnimationThird){
+				numbersAnimate($('.spincrement__third'), 0, 19, 1000);
+				showDigitsAnimationThird = false;	
+				
+			}
+		}
+
+	
+
 	});
 
 
@@ -202,10 +261,7 @@ $(document).ready(function () {
 	//Активация стрелки наверх
 	$('.up__arrow-area').click(function (e) { 
 		e.preventDefault();
-		$('.layout-template-wrapper').animate({
-			scrollTop: 0
-			}, 300);
-			return false;
+		animatedScrollToPosition($('body, html'), 0, 300);
 		
 	});
 
@@ -231,11 +287,50 @@ $(document).ready(function () {
 		// console.log('1270px');
 	});
 	
+	//spoiler on the page of vacancy
 	
+	$('li.list__item').click(function(event) {
+		if (event.target.tagName === 'LABEL' || event.target.tagName === 'INPUT') {
+			if (event.target.checked) {
+				$(this).nextUntil('.list__details').next().find('.vacancy-details').slideDown(300);
+			} else {
+				$(this).nextUntil('.list__details').next().find('.vacancy-details').slideUp(300);
+			}
+			return;
+		}
+		this.querySelector('input').checked = this.querySelector('input').checked ? false : true;
+		$(this).nextUntil('.list__details').next().find('.vacancy-details').slideToggle(300);
+	})
 	
     
 });
 
+//Плавный скролл до позиции на странице
+//$selector(jqblock) - анимируемый блок
+//position(number) - целевое вертикальное смещение на странице
+//duration(number) - длительность анимации
+
+function animatedScrollToPosition($selector, position, duration){
+	$($selector).animate({
+		scrollTop: position
+		}, duration);
+		return false;
+}
+
+//Анимация цифр 
+//$selector(jqblock) - анимируемый блок
+//$from(number) - начальное значение
+//$to(number) - конечное значение
+//$duration(number) - длительность анимации
+function numbersAnimate($selector, $from, $to, $duration) {
+	$({numberValue: $from}).animate({numberValue: $to}, {
+		duration: $duration, // Скорость анимации, где 500 = 0,5 одной секунды, то есть 500 миллисекунд
+		easing: "linear",
+		step: function(val) {
+			$selector.html(Math.ceil(val)); // Блок, где необходимо сделать анимацию
+		}
+	});
+}
 
 
 //Очистка классов валидации обертки поля в форме
