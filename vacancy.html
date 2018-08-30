@@ -675,11 +675,37 @@
             <div class="about-page layout-position">
                 <div class="about-page-wrapper">
                     <aside class="about-aside">
-                        <p>Здесь будет менюшка боковая</p>
+                        <div class="about-aside__content-wrp">
+                            <nav class="activiteies-types-aside">
+                                <ul class="activiteies-types-aside__list">
+                                    <li class="activiteies-types-aside__item activiteies-types-aside__item_active">
+                                        <a href="#" class="activiteies-types-aside__link">Инженерные изыскания</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Землеустройство и кадастровая деятельность</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Маркшейдерские работы</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Мониторинг состояния <br> окружающей среды</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Оценочная деятельность</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Топографо-геодезические работы</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Экологические изыскания</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </aside>
                     <div class="about-contant">
                         <section class="main-section-content">
-                            <h1>Вакансии</h1>
+                            <h1 class="article-title article-title_vacansies">Вакансии</h1>
                             <ul class="vacancy-list">
                                 <li class="list__header">
                                     <p class="col1"></p>
@@ -848,14 +874,14 @@
                                             </div>
                                 </li>
                             </ul>
-                            <ul class="paginator">
-                                <li><a class="paginator__item paginator__item_backward not-active">Назад</a></li>
-                                <li><a class="paginator__item paginator__item_active">1</a></li>
-                                <li><a href="#" class="paginator__item">2</a></li>
-                                <li><a href="#" class="paginator__item">3</a></li>
-                                <li><a href="#" class="paginator__item">4</a></li>
-                                <li><a href="#" class="paginator__item paginator__item_forward">Вперед</a></li>
-                            </ul>
+                            <div class="paginator">
+                                <span class="paginator__button paginator__button_prev paginator__button_disabled">Назад</span>
+                                <span class="paginator__button paginator__button_active">1</span>
+                                <a href="#" class="paginator__button">2</a>
+                                <a href="#" class="paginator__button">3</a>
+                                <a href="#" class="paginator__button">4</a>
+                                <a href="#" class="paginator__button paginator__button_next">Вперед</a>
+                            </div>
                         </section>
                     </div>
                 </div>
