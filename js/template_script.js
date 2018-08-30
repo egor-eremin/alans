@@ -8,7 +8,9 @@ $(document).ready(function () {
 		showDigitsAnimationFirst = true,
 		showDigitsAnimationSecond = true,
 		showDigitsAnimationThird = true,
-		$activitiesTypes = $('.article__link--activities-types');
+		$activitiesTypes = $('.article__link--activities-types'),
+		$mtbContentDescription = $('.mtb-content-description__text'),
+		$mtbContentLink = $('.mtb-items__item');
 
    
 
@@ -143,7 +145,7 @@ $(document).ready(function () {
 	});
 
 	//Отслеживание появления формы
-	$('.callback-form').viewportChecker({
+	$('.advantages').viewportChecker({
 		classToAdd: 'onLook',
 		repeat: true,
 		// scrollBox: $('.layout-template-wrapper'),
@@ -195,7 +197,7 @@ $(document).ready(function () {
 	//Событие по скроллу
 	$(window).on('scroll', function () {
 
-		var $callBackForm = $('.callback-form.onLook').not('.done');
+		var $callBackForm = $('.advantages.onLook.full-visible').not('.done');
 		var animationEnd = 'onanimationend animationend webKitAnimationEnd mozAnimationEnd MSAnimationEnd',
 		$portfolioFirst = $('.spincrement__first.onLook'),
 		$portfolioSecond = $('.spincrement__second.onLook'),
@@ -266,11 +268,15 @@ $(document).ready(function () {
 	});
 
 	/*Футер: конец*/ 
-   
-	//Активация медиа-запросов в javascript
-	//@param mediaQueryString (String) - строка медиа-запроса как в CSS
-	//@param action(function) - функция, которая выполняется при соблюдении условий медиа-запроса
 
+	if($mtbContentDescription.length > 0 ) {
+		$mtbContentDescription.mCustomScrollbar({
+			theme: 'dark'
+		  });
+	}
+
+
+	activateLinks($mtbContentLink);
 
 
 
@@ -378,4 +384,22 @@ function initFields($registrationFormsInput) {
 			$wrapper.removeClass('filled');
 		}
 	});
+}
+
+
+function activateLinks($selector) {
+	$($selector).click(function (e) { 
+		e.preventDefault();
+		$.each($selector, function () { 
+			if($(this).hasClass('active')) {
+			   $(this).removeClass('active');
+			}
+	   });
+	   
+	  if(!$(this).hasClass('active')) {
+		$(this).addClass('active');
+	 }
+	  
+	});
+
 }
