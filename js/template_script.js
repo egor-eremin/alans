@@ -271,12 +271,13 @@ $(document).ready(function () {
 
 	if($mtbContentDescription.length > 0 ) {
 		$mtbContentDescription.mCustomScrollbar({
-			theme: 'dark'
+			theme: 'dark',
+			scrollbarPosition: 'inside'
 		  });
 	}
 
 
-	activateLinks($mtbContentLink);
+	
 
 
 
@@ -307,6 +308,16 @@ $(document).ready(function () {
 		this.querySelector('input').checked = this.querySelector('input').checked ? false : true;
 		$(this).nextUntil('.list__details').next().find('.vacancy-details').slideToggle(300);
 	})
+
+	activateLinks($mtbContentLink);
+
+	$(document).mouseup(function (e){ // событие клика по веб-документу
+	
+
+		hidePopupListener($mtbContentLink, e, function(){
+			$mtbContentLink.removeClass('active');
+		});
+	});
 	
     
 });
@@ -401,5 +412,17 @@ function activateLinks($selector) {
 	 }
 	  
 	});
+
+}
+
+
+function hidePopupListener($windowPopupSelector, e, callback) {
+
+	var div = $($windowPopupSelector); 
+	if (!div.is(e.target) && div.has(e.target).length === 0) {
+		if (callback) {
+			callback();
+		}
+	}
 
 }

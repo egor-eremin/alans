@@ -1857,6 +1857,10 @@ input:-webkit-autofill {
   /* position: sticky; */
   top: 2em;
 }
+.about-aside__content-wrp--technical-base {
+   position: sticky;
+   top: 2em;
+}
 .about-page {
     position: relative;
     overflow: hidden;
@@ -2066,7 +2070,8 @@ input:-webkit-autofill {
 }
 
 /* Виды работ */
-.about-aside--activities-types {
+.about-aside--activities-types,
+.about-aside--technical-base {
 	width: 321px;
 }
 
@@ -3573,7 +3578,7 @@ svg.mountain .st0{
 /* Материально-техническая база */
 .about-contant--mtb {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
 
 }
 
@@ -3699,6 +3704,7 @@ svg.mountain .st0{
   align-content: flex-start;
   align-items: stretch;
   flex-wrap: wrap;
+  padding-top: 70px;
 
 }
 
@@ -3729,7 +3735,8 @@ svg.mountain .st0{
 	text-align: center;
 	font-size: 2rem;
 	padding-top: 33px;
-	background-color: #f9fcf8;
+  background-color: #f9fcf8;
+  color: #43b343;
 }
 
 .mtb-counter__caption {
@@ -3740,7 +3747,10 @@ svg.mountain .st0{
 	line-height: 1.4rem;
 	align-self: stretch;
 	padding: 0 20px;
-	margin-bottom: 23px;
+  margin-bottom: 23px;
+  transition-property: color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 
 .btn.btn--mtb::before,
@@ -3807,6 +3817,28 @@ svg.mountain .st0{
   }
 }
 
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
 
 .mtb-items__item .mtb-content__description {
   display: block;
@@ -3847,20 +3879,54 @@ svg.mountain .st0{
 	display: none;
 	color: #000000;
 	overflow: auto;
-	border: 1px solid #000;
+	font-size: 0.875rem;
   height: 100%;
   padding: 25px;
+  padding-left: 0;
   text-align: left;
   position: relative;
   z-index: 10;
+  direction: rtl;
+  line-height: 1rem;
 }
+.mtb-content-description__wrapper-inner{
+  position: relative;
+}
+
+.mtb-content-description__text span {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.mtb-items__item{
+  cursor: pointer;
+}
+
+
 
 .mtb-items__item.active .mtb-content__description,
-.mtb-items__item.active .mtb-content-description__text,
-.mtb-items__item.active .image_wrap--mtb, 
-.mtb-content-description__wrapper-inner
+.mtb-items__item.active .mtb-content__description .mtb-content-description__text,
+.mtb-items__item.active .mtb-content__description .image_wrap--mtb, 
+.mtb-items__item.active .mtb-content-description__wrapper-inner
 {
   display: block;
+
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
 }
 
+
+.about-contant--mtb .mCS-dark.mCSB_scrollTools .mCSB_draggerRail {
+  background-color: transparent;
+  
+}
+
+.about-contant--mtb .mCSB_dragger_bar {
+	background-color: rgba(214, 214, 214, 0.521) !important;
+}
 /* Материально-техническая база: конец */
