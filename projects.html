@@ -855,17 +855,18 @@
         <div class="callback__wrapper">
             <a href="#" class="callback__close"></a>
                 <div class="callback__form-block">
+                    <div class="callback__form-block-wrapper">
                         <div class="callback__title">
                             Заказ обратного звонка
                         </div>
-                        <form id="callback-form" class="callback__form" action="#" method="post">
+                        <form id="main-callback-form" class="callback__form" action="#" method="post">
                             <div class="callback__form-wrapper">
                                 <div class="callback__form-item">
-                                        <input type="text" required>
+                                        <input type="text" name="user-name" required>
                                         <span class="callback__label-text">Ваше имя</span>
                                 </div>
                                 <div class="callback__form-item">
-                                        <input type="text" class="phone-input" required>
+                                        <input type="text" name="user-phone" class="phone-input" required>
                                         <span class="callback__label-text">Телефон</span>
                                 </div>
                                 <div class="callback__form-item personal-data">
@@ -882,6 +883,13 @@
                             <div class="callback__close-icon-item"></div>
                             <div class="callback__close-icon-item"></div>
                         </div>
+                        <div class="thank-you-text callback-text">
+                            Спасибо! Наши специалисты скоро свяжутся с Вами
+                        </div>
+                        <div class="wrong-text callback-text">
+                            Что-то пошло не так. Мы обязательно это исправим
+                        </div>
+                    </div>
                 </div>
         </div>
     </div>

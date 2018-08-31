@@ -17,7 +17,7 @@ $(document).ready(function () {
 	// Футер
 	//------------------------------------------------------------------------------------------------------
 	initFields($registrationFormsInput);
-	$('.user-telephone').mask('+7 (000) 000-00-00');
+	$('.user-telephone, .phone-input').mask('+7 (000) 000-00-00');
 	$('.callback-form').validate({
 		submitHandler: function(form) {
 			$.ajax({
@@ -84,7 +84,11 @@ $(document).ready(function () {
 		utl: {
 		  required: true,
 		  minlength: 18
-		}
+		},
+        'phone-input': {
+            required: true,
+            minlength: 18
+        },
 	
 	  });
 
@@ -378,4 +382,55 @@ function initFields($registrationFormsInput) {
 			$wrapper.removeClass('filled');
 		}
 	});
+
+//init callback form
+(function initCallBackForm() {
+    $('.btn__order-callback').click(function () {
+       $('.callback').show(0);
+       $('.callback').toggleClass('active');
+    });
+})();
+
+//close callback form
+(function closeCallbackForm() {
+    $('.callback__close-icon, .callback__close').click(function () {
+       if ($('.callback').hasClass('active')) {
+           $('.callback').removeClass('active');
+           setTimeout(function () {
+               $('.callback').hide(0);
+           }, 300);
+       }
+    });
+
+})();
+
+//validate main-callback
+(function vaslidateCallBackForm() {
+    $('#main-callback-form').validate({
+        submitHandler: function(form) {
+            $.ajax({
+                url: '../ajax/response.json',
+                success: function (data) {
+                    var hideSelectors = $('.callback__form-block-wrapper');
+                    $.each(hideSelectors, function () {
+                        $(this).addClass('hide-information');
+                    });
+
+                    if(data.answer === 1) {
+
+                        $('.thank-you-text').addClass('show');
+                    }
+
+                    if(data.answer === 0) {
+
+                        $('.wrong-text').addClass('show');
+                    }
+                }
+            });
+        },
+        onkeyup: function(element){
+            $(element).valid();
+        }
+    });
+})();
 }

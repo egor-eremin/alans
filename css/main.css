@@ -881,23 +881,29 @@ input {
 .callback__wrapper {
     display: flex;
     height: 100%;
+    position: relative;
+    justify-content: flex-end;
 }
 .callback__close {
     width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease-in-out;
 }
 .callback__form-block {
     width: 543px;
     flex-shrink: 0;
     background: #43b343;
     height: 100%;
-    padding-left: 80px;
-    padding-right: 80px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-    max-height: 700px;
-    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform .3s ease-in-out;
+    position: relative;
+    z-index: 2;
 }
 .callback {
     position: fixed;
@@ -906,6 +912,7 @@ input {
     width: 100%;
     height: 100%;
     z-index: 300;
+    display: none;
 }
 .callback__form {
     background: #fff;
@@ -1691,7 +1698,7 @@ input {
   }
 }
 
-label.error {
+.callback-form label.error {
   display: none !important;
 }
 
@@ -3585,7 +3592,7 @@ svg.mountain .st0{
     text-align: center;
     width: 100%;
     font-size: 20px;
-    margin-bottom: 53px;
+    margin-bottom: 30px;
 }
 .callback__close-icon {
     width: 51px;
@@ -3621,4 +3628,25 @@ svg.mountain .st0{
 .callback__close-icon:hover .callback__close-icon-item:last-child {
     transform: translate(-50%, -50%) rotate(135deg);
 }
-
+.callback__form-block-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 80px;
+}
+.callback.active .callback__form-block {
+    transform: translateX(0);
+}
+.callback.active .callback__close {
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.callback-text {
+    display: none;
+}
