@@ -10,7 +10,8 @@ $(document).ready(function () {
 		showDigitsAnimationThird = true,
 		$activitiesTypes = $('.article__link--activities-types'),
 		$mtbContentDescription = $('.mtb-content-description__text'),
-		$mtbContentLink = $('.mtb-items__item');
+		$mtbContentLink = $('.mtb-items__item'),
+		$stickyElements = $('.sticky');
 
    
 
@@ -278,6 +279,9 @@ $(document).ready(function () {
 
 
 	
+	Stickyfill.add($stickyElements);
+	Stickyfill.refreshAll();
+	Stickyfill.forceSticky();
 
 
 

@@ -1857,10 +1857,13 @@ input:-webkit-autofill {
   /* position: sticky; */
   top: 2em;
 }
-.about-aside__content-wrp--technical-base {
-   position: sticky;
-   top: 2em;
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0 !important;
 }
+
 .about-page {
     position: relative;
     overflow: hidden;
