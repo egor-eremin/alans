@@ -3650,3 +3650,6 @@ svg.mountain .st0{
 .callback-text {
     display: none;
 }
+.callback__form label.error {
+    font-size: 0;
+}
