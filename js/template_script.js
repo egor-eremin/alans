@@ -10,8 +10,8 @@ $(document).ready(function () {
 		showDigitsAnimationThird = true,
 		$activitiesTypes = $('.article__link--activities-types'),
 		$mtbContentDescription = $('.mtb-content-description__text'),
-		$mtbContentLink = $('.mtb-items__item'),
-		$stickyElements = $('.sticky');
+		$mtbContentLink = $('.mtb-items__item');
+		
 
    
 
@@ -183,6 +183,8 @@ $(document).ready(function () {
 	
 		});
 
+	
+
 	$activitiesTypes.click(function (e) { 
 		e.preventDefault();
 		var $formPosition = $('.callback-form').offset().top;
@@ -204,7 +206,16 @@ $(document).ready(function () {
 		$portfolioSecond = $('.spincrement__second.onLook'),
 		$portfolioThird = $('.spincrement__third.onLook'),
 		selector = $('.advantages-item__description'),
-		animation = 'fadeInUp';
+		animation = 'fadeInUp',
+		$sticky = $('.about-aside__content-wrp--sticky'),
+		stickyHeight = $sticky.outerHeight(true),
+		stickyPositionTop = $('.about-contant').offset().top,
+		stickyLowerBottomPosition,
+		stickyPositionBlockBottom = stickyPositionTop + $('.about-contant').outerHeight(true),
+		remainingHeight = stickyPositionBlockBottom - (stickyPositionBlockBottom - stickyHeight);
+
+	
+
 		//Запуск стрелки наверх
 		if($(this).scrollTop() > 500) {
 			$('.up-arrow__wrapper').removeClass('hidden-down');
@@ -255,6 +266,47 @@ $(document).ready(function () {
 			}
 		}
 
+		//Запуск Position:sticky
+		
+	
+			stickyLowerBottomPosition = $(this).scrollTop() + stickyHeight;
+		//Если блок находится между верхней и нижней границей
+
+	
+			if($(this).scrollTop() > stickyPositionTop && stickyLowerBottomPosition < stickyPositionBlockBottom){
+
+				if(!$sticky.hasClass('sticky')) {
+				$sticky.addClass('sticky');
+			}
+			
+		} 
+
+		if($(this).scrollTop() < stickyPositionTop){
+			if($sticky.hasClass('sticky')) {
+				$sticky.removeClass('sticky');
+			}
+		}
+		
+		if( stickyLowerBottomPosition >=  stickyPositionBlockBottom){
+				stickyLowerBottomPosition = stickyPositionBlockBottom;
+				if(!$sticky.hasClass('done')) {
+				$sticky.addClass('done');
+			}
+		}
+	
+		
+		if($(this).scrollTop() <  remainingHeight - 200) {
+			console.log($(this).scrollTop());
+			if($sticky.hasClass('done')) {
+				$sticky.removeClass('done');
+			}
+		}
+
+			
+	
+
+		
+
 	
 
 	});
@@ -279,9 +331,7 @@ $(document).ready(function () {
 
 
 	
-	Stickyfill.add($stickyElements);
-	Stickyfill.refreshAll();
-	Stickyfill.forceSticky();
+
 
 
 

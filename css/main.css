@@ -1837,6 +1837,7 @@ input:-webkit-autofill {
 
     width: 321px;
     flex-shrink: 0;
+    position: relative;
 }
 .about-page-wrapper {
     width: 1240px;
@@ -1859,9 +1860,24 @@ input:-webkit-autofill {
 }
 
 .sticky {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0 !important;
+  margin: 0;
+
+}
+.sticky--wrp {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.sticky.done {
+  position: static;
+  margin-top: auto;
+}
+
+.sticky.done .activiteies-types-aside {
+  margin-bottom: 0;
 }
 
 .about-page {
