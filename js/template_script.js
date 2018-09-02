@@ -8,7 +8,10 @@ $(document).ready(function () {
 		showDigitsAnimationFirst = true,
 		showDigitsAnimationSecond = true,
 		showDigitsAnimationThird = true,
-		$activitiesTypes = $('.article__link--activities-types');
+		$activitiesTypes = $('.article__link--activities-types'),
+		$mtbContentDescription = $('.mtb-content-description__text'),
+		$mtbContentLink = $('.mtb-items__item');
+		
 
    
 
@@ -143,7 +146,7 @@ $(document).ready(function () {
 	});
 
 	//Отслеживание появления формы
-	$('.callback-form').viewportChecker({
+	$('.advantages').viewportChecker({
 		classToAdd: 'onLook',
 		repeat: true,
 		// scrollBox: $('.layout-template-wrapper'),
@@ -180,6 +183,8 @@ $(document).ready(function () {
 	
 		});
 
+	
+
 	$activitiesTypes.click(function (e) { 
 		e.preventDefault();
 		var $formPosition = $('.callback-form').offset().top;
@@ -195,13 +200,22 @@ $(document).ready(function () {
 	//Событие по скроллу
 	$(window).on('scroll', function () {
 
-		var $callBackForm = $('.callback-form.onLook').not('.done');
+		var $callBackForm = $('.advantages.onLook.full-visible').not('.done');
 		var animationEnd = 'onanimationend animationend webKitAnimationEnd mozAnimationEnd MSAnimationEnd',
 		$portfolioFirst = $('.spincrement__first.onLook'),
 		$portfolioSecond = $('.spincrement__second.onLook'),
 		$portfolioThird = $('.spincrement__third.onLook'),
 		selector = $('.advantages-item__description'),
-		animation = 'fadeInUp';
+		animation = 'fadeInUp',
+		$sticky = $('.about-aside__content-wrp--sticky'),
+		stickyHeight = $sticky.outerHeight(true),
+		stickyPositionTop = $('.about-contant').offset().top,
+		stickyLowerBottomPosition,
+		stickyPositionBlockBottom = stickyPositionTop + $('.about-contant').outerHeight(true),
+		remainingHeight = stickyPositionBlockBottom - (stickyPositionBlockBottom - stickyHeight);
+
+	
+
 		//Запуск стрелки наверх
 		if($(this).scrollTop() > 500) {
 			$('.up-arrow__wrapper').removeClass('hidden-down');
@@ -252,6 +266,47 @@ $(document).ready(function () {
 			}
 		}
 
+		//Запуск Position:sticky
+		
+	
+			stickyLowerBottomPosition = $(this).scrollTop() + stickyHeight;
+		//Если блок находится между верхней и нижней границей
+
+	
+			if($(this).scrollTop() > stickyPositionTop && stickyLowerBottomPosition < stickyPositionBlockBottom){
+
+				if(!$sticky.hasClass('sticky')) {
+				$sticky.addClass('sticky');
+			}
+			
+		} 
+
+		if($(this).scrollTop() < stickyPositionTop){
+			if($sticky.hasClass('sticky')) {
+				$sticky.removeClass('sticky');
+			}
+		}
+		
+		if( stickyLowerBottomPosition >=  stickyPositionBlockBottom){
+				stickyLowerBottomPosition = stickyPositionBlockBottom;
+				if(!$sticky.hasClass('done')) {
+				$sticky.addClass('done');
+			}
+		}
+	
+		
+		if($(this).scrollTop() <  remainingHeight - 200) {
+			console.log($(this).scrollTop());
+			if($sticky.hasClass('done')) {
+				$sticky.removeClass('done');
+			}
+		}
+
+			
+	
+
+		
+
 	
 
 	});
@@ -266,10 +321,16 @@ $(document).ready(function () {
 	});
 
 	/*Футер: конец*/ 
-   
-	//Активация медиа-запросов в javascript
-	//@param mediaQueryString (String) - строка медиа-запроса как в CSS
-	//@param action(function) - функция, которая выполняется при соблюдении условий медиа-запроса
+
+	if($mtbContentDescription.length > 0 ) {
+		$mtbContentDescription.mCustomScrollbar({
+			theme: 'dark',
+			scrollbarPosition: 'inside'
+		  });
+	}
+
+
+	
 
 
 
@@ -301,6 +362,16 @@ $(document).ready(function () {
 		this.querySelector('input').checked = this.querySelector('input').checked ? false : true;
 		$(this).nextUntil('.list__details').next().find('.vacancy-details').slideToggle(300);
 	})
+
+	activateLinks($mtbContentLink);
+
+	$(document).mouseup(function (e){ // событие клика по веб-документу
+	
+
+		hidePopupListener($mtbContentLink, e, function(){
+			$mtbContentLink.removeClass('active');
+		});
+	});
 	
     
 });
@@ -378,4 +449,34 @@ function initFields($registrationFormsInput) {
 			$wrapper.removeClass('filled');
 		}
 	});
+}
+
+
+function activateLinks($selector) {
+	$($selector).click(function (e) { 
+		e.preventDefault();
+		$.each($selector, function () { 
+			if($(this).hasClass('active')) {
+			   $(this).removeClass('active');
+			}
+	   });
+	   
+	  if(!$(this).hasClass('active')) {
+		$(this).addClass('active');
+	 }
+	  
+	});
+
+}
+
+
+function hidePopupListener($windowPopupSelector, e, callback) {
+
+	var div = $($windowPopupSelector); 
+	if (!div.is(e.target) && div.has(e.target).length === 0) {
+		if (callback) {
+			callback();
+		}
+	}
+
 }
