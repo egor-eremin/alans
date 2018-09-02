@@ -392,7 +392,7 @@ body, html {
  }
 * {
     box-sizing: border-box;
-	outline: 1px solid red;
+
 }
 a {
     color: inherit;
@@ -3947,5 +3947,9 @@ svg.mountain .st0{
 
 .about-contant--mtb .mCSB_dragger_bar {
 	background-color: rgba(214, 214, 214, 0.521) !important;
+}
+
+.about-aside--technical-base nav {
+  margin-bottom: 0;
 }
 /* Материально-техническая база: конец */

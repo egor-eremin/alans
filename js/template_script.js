@@ -208,12 +208,13 @@ $(document).ready(function () {
 		selector = $('.advantages-item__description'),
 		animation = 'fadeInUp',
 		$sticky = $('.about-aside__content-wrp--sticky'),
-		stickyHeight = $sticky.outerHeight(true),
-		stickyPositionTop = $('.about-contant').offset().top,
-		stickyLowerBottomPosition,
-		stickyPositionBlockBottom = stickyPositionTop + $('.about-contant').outerHeight(true),
-		remainingHeight = stickyPositionBlockBottom - (stickyPositionBlockBottom - stickyHeight);
+		$stickyParent = $('.sticky--wrp');
+	
 
+
+				//Запуск Position:sticky
+
+				stickifyBlock($sticky, $stickyParent);
 	
 
 		//Запуск стрелки наверх
@@ -266,41 +267,6 @@ $(document).ready(function () {
 			}
 		}
 
-		//Запуск Position:sticky
-		
-	
-			stickyLowerBottomPosition = $(this).scrollTop() + stickyHeight;
-		//Если блок находится между верхней и нижней границей
-
-	
-			if($(this).scrollTop() > stickyPositionTop && stickyLowerBottomPosition < stickyPositionBlockBottom){
-
-				if(!$sticky.hasClass('sticky')) {
-				$sticky.addClass('sticky');
-			}
-			
-		} 
-
-		if($(this).scrollTop() < stickyPositionTop){
-			if($sticky.hasClass('sticky')) {
-				$sticky.removeClass('sticky');
-			}
-		}
-		
-		if( stickyLowerBottomPosition >=  stickyPositionBlockBottom){
-				stickyLowerBottomPosition = stickyPositionBlockBottom;
-				if(!$sticky.hasClass('done')) {
-				$sticky.addClass('done');
-			}
-		}
-	
-		
-		if($(this).scrollTop() <  remainingHeight - 200) {
-			console.log($(this).scrollTop());
-			if($sticky.hasClass('done')) {
-				$sticky.removeClass('done');
-			}
-		}
 
 			
 	
@@ -361,7 +327,7 @@ $(document).ready(function () {
 		}
 		this.querySelector('input').checked = this.querySelector('input').checked ? false : true;
 		$(this).nextUntil('.list__details').next().find('.vacancy-details').slideToggle(300);
-	})
+	});
 
 	activateLinks($mtbContentLink);
 
@@ -375,6 +341,45 @@ $(document).ready(function () {
 	
     
 });
+
+function stickifyBlock($sticky, $stickyParent) {
+	var stickyParentHeight = $stickyParent.outerHeight(true),
+	stickyHeight = $sticky.outerHeight(true), //Высота блока стикера
+	stickyPositionTop = $('.about-contant').offset().top,
+	stickyPositionBottom = ($('.sticky.done').length > 0) ? $('.sticky.done').offset().top : false,
+	currentPositionInBlock = $(this).scrollTop() - stickyPositionTop;
+	if ($(this).scrollTop() > stickyPositionTop) {
+		//Значение стикера добавляем в любом случае
+		if (!$sticky.hasClass('sticky')) {
+			$sticky.addClass('sticky');
+		}
+		//Отслеживаем появление нижней границы
+		if ((stickyParentHeight - currentPositionInBlock) <= stickyHeight) {
+			if (!$sticky.hasClass('done')) {
+				$sticky.addClass('done');
+			}
+			if ($sticky.hasClass('done')) {
+				if (stickyPositionBottom) {
+					if ($(this).scrollTop() < stickyPositionBottom) {
+						if ($sticky.hasClass('done')) {
+							$sticky.removeClass('done');
+						}
+					}
+				}
+			}
+		}
+		else {
+			if ($sticky.hasClass('done')) {
+				$sticky.removeClass('done');
+			}
+		}
+	}
+	else {
+		if ($sticky.hasClass('sticky')) {
+			$sticky.removeClass('sticky');
+		}
+	}
+}
 
 //Плавный скролл до позиции на странице
 //$selector(jqblock) - анимируемый блок
