@@ -385,7 +385,8 @@ function initFields($registrationFormsInput) {
 
 //init callback form
 (function initCallBackForm() {
-    $('.btn__order-callback').click(function () {
+    $('.btn__order-callback, .btn-call').click(function (e) {
+        e.preventDefault();
        $('.callback').show(0);
        $('.callback').toggleClass('active');
     });
@@ -393,7 +394,8 @@ function initFields($registrationFormsInput) {
 
 //close callback form
 (function closeCallbackForm() {
-    $('.callback__close-icon, .callback__close').click(function () {
+    $('.callback__close-icon, .callback__close').click(function (e) {
+        e.preventDefault();
        if ($('.callback').hasClass('active')) {
            $('.callback').removeClass('active');
            setTimeout(function () {
@@ -411,7 +413,7 @@ function initFields($registrationFormsInput) {
             $.ajax({
                 url: '../ajax/response.json',
                 success: function (data) {
-                    var hideSelectors = $('.callback__form-block-wrapper');
+                    var hideSelectors = $('.callback__form');
                     $.each(hideSelectors, function () {
                         $(this).addClass('hide-information');
                     });
@@ -433,4 +435,12 @@ function initFields($registrationFormsInput) {
         }
     });
 })();
+
+(function editCallbackText() {
+    $('#main-callback-form').on('submit', function () {
+        var userName = $('.user-callback-name').val();
+
+        $('.callback-text__title').text(userName + ',');
+    });
+})()
 }
