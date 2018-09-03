@@ -1970,15 +1970,7 @@ input:-webkit-autofill {
   margin-top: 10px;
 }
 
-/*.contact-list__item a[href^="tel"] {*/
-  /*text-decoration: none;*/
-  /*color: inherit;*/
-  /*border: none;*/
-/*}*/
 
-/*.contact-list__item a[href^="tel"]:hover {*/
-  /*border: none;*/
-}
 
 .contact-list__item a {
   display: inline-block;
