@@ -8,7 +8,11 @@ $(document).ready(function () {
 		showDigitsAnimationFirst = true,
 		showDigitsAnimationSecond = true,
 		showDigitsAnimationThird = true,
-		$activitiesTypes = $('.article__link--activities-types');
+		$activitiesTypes = $('.article__link--activities-types'),
+		$mtbContentDescription = $('.mtb-content-description__text'),
+		$mtbContentLink = $('.mtb-items__item'),
+		popupIsOpened = false;
+		
 
    
 
@@ -147,7 +151,7 @@ $(document).ready(function () {
 	});
 
 	//Отслеживание появления формы
-	$('.callback-form').viewportChecker({
+	$('.advantages').viewportChecker({
 		classToAdd: 'onLook',
 		repeat: true,
 		// scrollBox: $('.layout-template-wrapper'),
@@ -184,6 +188,8 @@ $(document).ready(function () {
 	
 		});
 
+	
+
 	$activitiesTypes.click(function (e) { 
 		e.preventDefault();
 		var $formPosition = $('.callback-form').offset().top;
@@ -199,13 +205,23 @@ $(document).ready(function () {
 	//Событие по скроллу
 	$(window).on('scroll', function () {
 
-		var $callBackForm = $('.callback-form.onLook').not('.done');
+		var $callBackForm = $('.advantages.onLook.full-visible').not('.done');
 		var animationEnd = 'onanimationend animationend webKitAnimationEnd mozAnimationEnd MSAnimationEnd',
 		$portfolioFirst = $('.spincrement__first.onLook'),
 		$portfolioSecond = $('.spincrement__second.onLook'),
 		$portfolioThird = $('.spincrement__third.onLook'),
 		selector = $('.advantages-item__description'),
-		animation = 'fadeInUp';
+		animation = 'fadeInUp',
+		$sticky = $('.about-aside__content-wrp--sticky'),
+		$stickyParent = $('.sticky--wrp');
+	
+
+
+		//Запуск Position:sticky
+
+		stickifyBlock($sticky, $stickyParent);
+	
+
 		//Запуск стрелки наверх
 		if($(this).scrollTop() > 500) {
 			$('.up-arrow__wrapper').removeClass('hidden-down');
@@ -256,6 +272,12 @@ $(document).ready(function () {
 			}
 		}
 
+
+			
+	
+
+		
+
 	
 
 	});
@@ -270,10 +292,30 @@ $(document).ready(function () {
 	});
 
 	/*Футер: конец*/ 
-   
-	//Активация медиа-запросов в javascript
-	//@param mediaQueryString (String) - строка медиа-запроса как в CSS
-	//@param action(function) - функция, которая выполняется при соблюдении условий медиа-запроса
+
+	if($mtbContentDescription.length > 0 ) {
+		$mtbContentDescription.mCustomScrollbar({
+			theme: 'dark',
+			scrollbarPosition: 'inside'
+		  });
+	}
+
+	$('.btn-brief-close').click(function (e) { 
+	
+		e.preventDefault();
+	
+		// 
+		if($mtbContentLink.hasClass('active')) {
+			e.stopPropagation();
+			$mtbContentLink.removeClass('active');
+		
+		}
+
+		
+	});
+
+
+	
 
 
 
@@ -304,10 +346,59 @@ $(document).ready(function () {
 		}
 		this.querySelector('input').checked = this.querySelector('input').checked ? false : true;
 		$(this).nextUntil('.list__details').next().find('.vacancy-details').slideToggle(300);
-	})
+	});
+
+	activateLinks($mtbContentLink);
+
+	$(document).mouseup(function (e){ // событие клика по веб-документу
+	
+
+		hidePopupListener($mtbContentLink, e, function(){
+			$mtbContentLink.removeClass('active');
+		});
+	});
 	
     
 });
+
+function stickifyBlock($sticky, $stickyParent) {
+	var stickyParentHeight = $stickyParent.outerHeight(true),
+	stickyHeight = $sticky.outerHeight(true), //Высота блока стикера
+	stickyPositionTop = $('.about-contant').offset().top,
+	stickyPositionBottom = ($('.sticky.done').length > 0) ? $('.sticky.done').offset().top : false,
+	currentPositionInBlock = $(this).scrollTop() - stickyPositionTop;
+	if ($(this).scrollTop() > stickyPositionTop) {
+		//Значение стикера добавляем в любом случае
+		if (!$sticky.hasClass('sticky')) {
+			$sticky.addClass('sticky');
+		}
+		//Отслеживаем появление нижней границы
+		if ((stickyParentHeight - currentPositionInBlock) <= stickyHeight) {
+			if (!$sticky.hasClass('done')) {
+				$sticky.addClass('done');
+			}
+			if ($sticky.hasClass('done')) {
+				if (stickyPositionBottom) {
+					if ($(this).scrollTop() < stickyPositionBottom) {
+						if ($sticky.hasClass('done')) {
+							$sticky.removeClass('done');
+						}
+					}
+				}
+			}
+		}
+		else {
+			if ($sticky.hasClass('done')) {
+				$sticky.removeClass('done');
+			}
+		}
+	}
+	else {
+		if ($sticky.hasClass('sticky')) {
+			$sticky.removeClass('sticky');
+		}
+	}
+}
 
 //Плавный скролл до позиции на странице
 //$selector(jqblock) - анимируемый блок
@@ -443,4 +534,36 @@ function initFields($registrationFormsInput) {
         $('.callback-text__title').text(userName + ',');
     });
 })()
+}
+
+
+function activateLinks($selector) {
+	$($selector).click(function (e) { 
+		e.preventDefault();
+
+		$.each($selector, function () { 
+			if($(this).hasClass('active')) {
+			   $(this).removeClass('active');
+			}
+	   });
+	   
+	  if(!$(this).hasClass('active')) {
+		$(this).addClass('active');
+
+	 }
+	  
+	});
+
+}
+
+
+function hidePopupListener($windowPopupSelector, e, callback) {
+
+	var div = $($windowPopupSelector); 
+	if (!div.is(e.target) && div.has(e.target).length === 0) {
+		if (callback) {
+			callback();
+		}
+	}
+
 }
