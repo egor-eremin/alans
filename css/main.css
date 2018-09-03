@@ -3683,7 +3683,7 @@ svg.mountain .st0{
   justify-content: flex-start;
   align-content:flex-start;
   align-items: flex-start; 
-  width: 120%;
+
  }
  .article__text--mtb .working-branches__item {
 	padding: 0;
@@ -3707,7 +3707,7 @@ svg.mountain .st0{
 	left: 0;
 	top: -1px;
 	bottom: -1px;
-	width: calc(100% + (100vw - 1568px)/2);
+	width: calc(100% + (100vw - 1030px)/2);
 	z-index: -1;
 	border-bottom: 1px solid #e5e5e5;
 }
@@ -3740,8 +3740,38 @@ svg.mountain .st0{
 
   z-index: 93;
   min-height: 486px;
+  background-color: #fff;
+  transition-property: background-color;
+  transition-duration: 600ms;
+  transition-timing-function: ease-in-out;
 
 	
+}
+
+.article__text--mtb .mtb-items__item.active{
+  z-index: 94;
+}
+
+.image_wrap--mtb {
+  position: relative;
+}
+
+.btn-brief-close {
+	width: 30px;
+	height: 30px;
+	border-radius: 70px;
+	position: absolute;
+	bottom: -10px;
+	right: 10px;
+	background: #4ead58 url('../img/obj_cross.svg') center center no-repeat;
+	background-size: 50%;
+	transition-property: background-color;
+	transition-duration: 200ms;
+	transition-timing-function: ease-in-out;
+}
+
+.btn-brief-close:hover {
+  background-color: #54c254 ;
 }
 
 .mtb-counter {
@@ -3793,18 +3823,17 @@ svg.mountain .st0{
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
   -webkit-animation-duration: 1s;
-  animation-duration: 800ms;
+  animation-duration: 400ms;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 
 }
 
-.mtb-items__item:hover .mtb-counter__caption {
-  color: rgba(104, 104, 104, 0.753);
-}
+
 
 .article__text--mtb a:hover {
   border: none;
+  background-color: #f9fcf8;
 
 }
 
@@ -3862,16 +3891,16 @@ svg.mountain .st0{
 .mtb-items__item .mtb-content__description {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 98%;
   position: absolute;
   display: none;
   top: 0;
   left: 0;
   z-index: 10;
   background-color: #ffffff;
-  -webkit-box-shadow: 0px 0px 19px 0px rgba(28, 28, 28, 0.34);
-  -moz-box-shadow:    0px 0px 19px 0px rgba(28, 28, 28, 0.34);
-  box-shadow:         0px 0px 19px 0px rgba(28, 28, 28, 0.34);
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(28, 28, 28, 0.34);
+  -moz-box-shadow:    0px 0px 16px 0px rgba(28, 28, 28, 0.34);
+  box-shadow:         0px 0px 16px 0px rgba(28, 28, 28, 0.34);
 }
 
 

@@ -10,7 +10,8 @@ $(document).ready(function () {
 		showDigitsAnimationThird = true,
 		$activitiesTypes = $('.article__link--activities-types'),
 		$mtbContentDescription = $('.mtb-content-description__text'),
-		$mtbContentLink = $('.mtb-items__item');
+		$mtbContentLink = $('.mtb-items__item'),
+		popupIsOpened = false;
 		
 
    
@@ -212,9 +213,9 @@ $(document).ready(function () {
 	
 
 
-				//Запуск Position:sticky
+		//Запуск Position:sticky
 
-				stickifyBlock($sticky, $stickyParent);
+		stickifyBlock($sticky, $stickyParent);
 	
 
 		//Запуск стрелки наверх
@@ -294,6 +295,20 @@ $(document).ready(function () {
 			scrollbarPosition: 'inside'
 		  });
 	}
+
+	$('.btn-brief-close').click(function (e) { 
+	
+		e.preventDefault();
+	
+		// 
+		if($mtbContentLink.hasClass('active')) {
+			e.stopPropagation();
+			$mtbContentLink.removeClass('active');
+		
+		}
+
+		
+	});
 
 
 	
@@ -460,6 +475,7 @@ function initFields($registrationFormsInput) {
 function activateLinks($selector) {
 	$($selector).click(function (e) { 
 		e.preventDefault();
+
 		$.each($selector, function () { 
 			if($(this).hasClass('active')) {
 			   $(this).removeClass('active');
@@ -468,6 +484,7 @@ function activateLinks($selector) {
 	   
 	  if(!$(this).hasClass('active')) {
 		$(this).addClass('active');
+
 	 }
 	  
 	});
