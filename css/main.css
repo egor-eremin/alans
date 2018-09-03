@@ -3782,9 +3782,8 @@ svg.mountain .st0{
 	position: absolute;
 	display: block;
 	left: 0;
-	top: -1px;
 	bottom: -1px;
-	width: calc(100% + (100vw - 1030px)/2);
+	width: calc(100% + (100vw - 1040px)/2);
 	z-index: -1;
 	border-bottom: 1px solid #e5e5e5;
 }
