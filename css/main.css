@@ -4104,3 +4104,176 @@ svg.mountain .st0{
   margin-bottom: 0;
 }
 /* Материально-техническая база: конец */
+.map__wrapper {
+    height: 596px;
+    position: relative;
+}
+#map-init {
+    height: 100%;
+}
+.all-project {
+    position: absolute;
+    width: 340px;
+    max-height: calc(100% - 36px);
+    top: 19px;
+    left: 19px;
+    z-index: 100;
+}
+.all-project__title {
+    padding-left: 49px;
+    padding-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+    border-bottom: 1px solid #eef6eb;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    background: #fff;
+    position: relative;
+    width: calc(100% - 30px);
+}
+.all-project__title:hover {
+    background-color: #00b335;
+}
+.all-project__title:hover .all-project__icon-item::before, .all-project__title:hover .all-project__icon-item::after {
+    background-color: #fff;
+}
+.all-project__title:hover .all-project__title-text {
+    color: #fff;
+}
+.all-project__title:hover .all-project__count {
+    color: #fff;
+}
+.all-project__icon {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%) rotate(0deg);
+    display: flex;
+    width: 12px;
+    height: 12px;
+    justify-content: space-between;
+    transition: .3s ease-in-out;
+}
+.all-project__count {
+    font-size: 13px;
+    line-height: 16px;
+    color: #b2b2b2;
+    transition: .3s ease-in-out;
+}
+.all-project__title-text {
+    color: #000;
+    font-size: 15px;
+    font-weight: 600;
+    transition: .3s ease-in-out;
+}
+.all-project__icon-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: .3s ease-in-out;
+}
+.all-project__icon-item:last-child {
+    align-items: flex-end;
+}
+.all-project__icon-item::before, .all-project__icon-item::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #00b335;
+    transition: .3s ease-in-out;
+}
+.all-project__list-item {
+    color: #000;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 15px 30px 15px 49px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eef6eb;
+    background: #fff;
+    transition: .1s ease-in-out;
+    cursor: pointer;
+    direction: ltr;
+    position: relative;
+    text-align: left;
+    line-height: 1.5;
+    width: calc(100% - 30px);
+}
+.all-project__list-item:hover {
+    background-color: #00b335;
+    color: #fff;
+    border-color: #00b335;
+}
+.all-project__list {
+    height: calc(560px - 76px);
+    overflow: auto;
+    display: none;
+    direction: rtl;
+}
+.all-project__title.active .all-project__icon {
+    transform: translateY(-50%) rotate(180deg);
+}
+.all-project__title.active .all-project__icon-item:first-child {
+    transform: translateY(35%);
+}
+.all-project__title.active .all-project__icon-item:last-child {
+    transform: translateY(-35%);
+}
+.all-project__list .mCSB_container {
+    margin-left: 0 !important;
+    direction: ltr;
+}
+.all-project__list .mCSB_draggerRail {
+    display: none;
+}
+.all-project__list .mCSB_dragger_bar {
+    background-color: #000;
+    opacity: 0.3;
+}
+.all-project__list .mCSB_dragger {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.project-show-all {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: 1px solid #7ac97a;
+    width: 30px;
+    height: 100%;
+    background-color: #00b335;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .1s ease-in-out;
+    opacity: 0;
+}
+.project-show-all__dots {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.project-show-all__dots + .project-show-all__dots {
+    margin-left: 2px;
+}
+.all-project__list-item:hover .project-show-all {
+    opacity: 1;
+}
+.project-show-all__arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    width: 13px;
+    height: calc(100% + 1px);
+}
+.project-show-all__arrow svg {
+    height: 100%;
+    width: 13px;
+}

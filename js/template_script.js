@@ -10,10 +10,7 @@ $(document).ready(function () {
 		showDigitsAnimationThird = true,
 		$activitiesTypes = $('.article__link--activities-types'),
 		$mtbContentDescription = $('.mtb-content-description__text'),
-		$mtbContentLink = $('.mtb-items__item'),
-		popupIsOpened = false;
-		
-
+		$mtbContentLink = $('.mtb-items__item');
    
 
 
@@ -219,7 +216,10 @@ $(document).ready(function () {
 
 		//Запуск Position:sticky
 
-		stickifyBlock($sticky, $stickyParent);
+        if ($('div').is('.about-contant')) {
+            stickifyBlock($sticky, $stickyParent);
+        }
+
 	
 
 		//Запуск стрелки наверх
@@ -299,6 +299,19 @@ $(document).ready(function () {
 			scrollbarPosition: 'inside'
 		  });
 	}
+
+    (function initProductCustomScroll() {
+        if ($('.all-project__list').length > 0) {
+            initCustomScrollBar($('.all-project__list'));
+        }
+    })();
+
+	function initCustomScrollBar(selectorInit) {
+        selectorInit.mCustomScrollbar({
+            theme: 'dark',
+            scrollbarPosition: 'inside'
+        });
+    }
 
 	$('.btn-brief-close').click(function (e) { 
 	
@@ -535,6 +548,36 @@ function initFields($registrationFormsInput) {
     });
 })()
 }
+
+(function initMap() {
+    ymaps.ready(init);
+
+    function init(){
+        var myMap = new ymaps.Map("map-init", {
+            center: [55.76, 37.64],
+            zoom: 7
+        });
+
+        var myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+            hintContent: 'Содержимое всплывающей подсказки',
+            balloonContent: 'Содержимое балуна'
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+    }
+})();
+
+(function activateSlideAllProject() {
+    $('.all-project__title').on('click', function () {
+       if ($(this).hasClass('active')) {
+           $(this).removeClass('active');
+           $('.all-project__list').slideUp(300);
+       } else {
+           $(this).addClass('active');
+           $('.all-project__list').slideDown(300);
+       }
+    });
+})();
 
 
 function activateLinks($selector) {
