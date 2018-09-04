@@ -3886,6 +3886,10 @@ svg.mountain .st0{
   z-index: 94;
 }
 
+.mtb-items__item.active .mtb-items-item__hover {
+  display: none;
+}
+
 .image_wrap--mtb {
   position: relative;
 }
