@@ -3870,6 +3870,13 @@ svg.mountain .st0{
 	
 }
 
+.mtb-items-item__hover {
+  display: flex;
+  height:90%;
+  
+  flex-direction: column;
+}
+
 .article__text--mtb .mtb-items__item.active{
   z-index: 94;
 }
@@ -3932,8 +3939,8 @@ svg.mountain .st0{
 .btn.btn--mtb {
   padding: 14px 23px;
   display: inline-block;
-  margin-top: auto;
-  margin-bottom: 30px;
+
+  margin: auto auto 0 auto;
   display: block;
   opacity: 0;
   -webkit-transform: translate3d(0, 100%, 0);
@@ -3963,7 +3970,7 @@ svg.mountain .st0{
   from {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 80%, 0);
   }
 
   to {
@@ -3977,7 +3984,7 @@ svg.mountain .st0{
   from {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 80%, 0);
   }
 
   to {
