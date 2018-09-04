@@ -216,11 +216,11 @@ $(document).ready(function () {
 
 		//Запуск Position:sticky
 
-        if ($('div').is('.about-contant')) {
-            stickifyBlock($sticky, $stickyParent);
-        }
 
-	
+		if($('div').is('.about-contant')){
+			stickifyBlock($sticky, $stickyParent);
+		}
+
 
 		//Запуск стрелки наверх
 		if($(this).scrollTop() > 500) {
@@ -271,14 +271,6 @@ $(document).ready(function () {
 				
 			}
 		}
-
-
-			
-	
-
-		
-
-	
 
 	});
 
@@ -546,7 +538,7 @@ function initFields($registrationFormsInput) {
 
         $('.callback-text__title').text(userName + ',');
     });
-})()
+})();
 }
 
 (function initMap() {

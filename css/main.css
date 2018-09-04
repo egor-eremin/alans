@@ -2283,7 +2283,8 @@ input:-webkit-autofill {
 }
 
 .page__header,
-.about-contant--mtb .article__title
+.about-contant--mtb .article__title,
+.about-contant--license .article__title
  {
   color: #43b343;
   font-size: 26px;
@@ -3730,7 +3731,9 @@ svg.mountain .st0{
 	margin: 0 0 67px;
 }
 
-.article__text.article__text--mtb p {
+.article__text.article__text--mtb p,
+.article__text.article__text--license p  
+{
 	margin: 0 0 1.5em;
 	line-height: 1.3562rem;
 }
@@ -3743,7 +3746,8 @@ svg.mountain .st0{
 	letter-spacing: -0.2px;
 }
 
-.article__text--mtb ul li::before {
+.article__text--mtb ul li::before,
+.article__text--license ul li::before {
   display: none;
 }
 
@@ -3808,7 +3812,8 @@ svg.mountain .st0{
   align-items: flex-start; 
 
  }
- .article__text--mtb .working-branches__item {
+ .article__text--mtb .working-branches__item,
+ .article__text--license .working-branches__item {
 	padding: 0;
 	margin-right: 12px;
 }
@@ -3834,11 +3839,14 @@ svg.mountain .st0{
 	border-bottom: 1px solid #e5e5e5;
 }
 
-.article__text--mtb ul {
+.article__text--mtb ul,
+.article__text--license ul {
   margin-bottom: 0;
 }
 
-.mtb__items {
+.mtb__items, 
+.license__items
+{
  
   display: flex;
   justify-content: space-between;
@@ -3852,14 +3860,11 @@ svg.mountain .st0{
 .article__text--mtb .mtb-items__item {
 	border: none;
 	display: flex;
-	
 	width: 265px;
-	
 	text-align: center;
 	position: relative;
 	flex-direction: column;
 	align-items: center;
-
   z-index: 93;
   min-height: 486px;
   background-color: #fff;
@@ -3870,8 +3875,19 @@ svg.mountain .st0{
 	
 }
 
+.mtb-items-item__hover {
+  display: flex;
+  height:90%;
+  
+  flex-direction: column;
+}
+
 .article__text--mtb .mtb-items__item.active{
   z-index: 94;
+}
+
+.mtb-items__item.active .mtb-items-item__hover {
+  display: none;
 }
 
 .image_wrap--mtb {
@@ -3932,8 +3948,8 @@ svg.mountain .st0{
 .btn.btn--mtb {
   padding: 14px 23px;
   display: inline-block;
-  margin-top: auto;
-  margin-bottom: 30px;
+
+  margin: auto auto 0 auto;
   display: block;
   opacity: 0;
   -webkit-transform: translate3d(0, 100%, 0);
@@ -3963,7 +3979,7 @@ svg.mountain .st0{
   from {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 80%, 0);
   }
 
   to {
@@ -3977,7 +3993,7 @@ svg.mountain .st0{
   from {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 80%, 0);
   }
 
   to {
@@ -4277,3 +4293,11 @@ svg.mountain .st0{
     height: 100%;
     width: 13px;
 }
+
+/* Лицензии и сертификаты */
+.license-items__item {
+  width: 250px;
+  border: 1px solid #000;
+}
+
+/* Лицензии и сертификаты: конец */
