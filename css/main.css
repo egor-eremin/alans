@@ -3852,14 +3852,11 @@ svg.mountain .st0{
 .article__text--mtb .mtb-items__item {
 	border: none;
 	display: flex;
-	
 	width: 265px;
-	
 	text-align: center;
 	position: relative;
 	flex-direction: column;
 	align-items: center;
-
   z-index: 93;
   min-height: 486px;
   background-color: #fff;
@@ -4104,3 +4101,6 @@ svg.mountain .st0{
   margin-bottom: 0;
 }
 /* Материально-техническая база: конец */
+/* Лицензии и сертификаты */
+
+/* Лицензии и сертификаты: конец */
