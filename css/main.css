@@ -4122,9 +4122,213 @@ svg.mountain .st0{
 /* Материально-техническая база: конец */
 
 /* Лицензии и сертификаты */
-.license-items__item {
-  width: 250px;
-  border: 1px solid #000;
+.license__items {
+  justify-content: flex-start;
 }
+.article__text a.license-items__item {
+  width: 250px;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  border: none;
+  position: relative;
+  
+
+}
+
+.license__image-area {
+  position: relative;
+  display: block;
+}
+
+.license-items-item__image-place{
+  width: 100%;
+  height: 358px;
+  display: block;
+  background-color: #f9fcf8;
+  position: relative;
+  z-index: 2;
+ 
+}
+
+.item-image-place__decor,
+.item-image-place__decor-small {
+  position: relative;
+  width: 220px;
+  height: 20px;
+  margin: 0 auto;
+  z-index: 1;
+  display: block;
+  bottom:-15px;
+  background-color: #edf2eb;
+  opacity: 0.6;
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.item-image-place__decor-small {
+  bottom: -30px;
+  width: 200px;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.license-image__wrp {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 12px;
+  position: relative;
+
+}
+
+.license-image__wrp::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f7f9f6;
+  opacity: 0.8;
+  display: block;
+  content: "";
+}
+
+.license-image__wrp img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+
+.license-image__text {
+	margin-top: 26px;
+	display: block;
+	line-height: 1.3rem;
+	padding-left: 37px;
+  font-size: 0.875rem;
+  position: relative;
+  color: #000000;
+  transition-property: color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.license-image__text::before {
+  content:"";
+  position: absolute;
+  width: 20px;
+  height: 1px;
+  background-color: #000;
+  left: 0;
+  top: 9px;
+  transition-property:   background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.license-image__hover-preview{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  opacity: 0;
+  
+ 
+}
+
+.hover-preview__header{
+  color: #ffffff;
+  text-align: center;
+  display: inline-block;
+  width: 30%;
+  font-size: 1.125rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-top: 70px;
+}
+
+.hover-preview__header span {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.btn.btn__license{
+  display: block;
+  width: 120px;
+  margin: 40px auto;
+  background: #fff;
+  color: #9bd69b;
+  font-weight: 600;
+ 
+ 
+
+}
+
+.btn.btn__license::before,
+.btn.btn__license::after {
+  display: none;
+}
+
+/*Ховер*/
+
+.license-items__item:hover .license-image__text::before {
+  background-color: #43b343;
+}
+
+.license-items__item:hover .license-image__text {
+  color: #43b343;
+}
+
+.license-items__item:hover .license-image__wrp::before {
+  background-color: #83cd83;
+  opacity: 0.8;
+}
+
+.license-items__item:hover .item-image-place__decor,
+.license-items__item:hover .item-image-place__decor-small {
+  background-color: #a1d9a0;
+  -webkit-transform: translate(0, -3px);
+  -moz-transform: translate(0, -3px);
+  -o-transform: translate(0, -3px);
+  -ms-transform: translate(0, -3px);
+  transform: translate(0, -3px);
+}
+
+.license-items__item:hover .item-image-place__decor-small {
+  -webkit-transform: translate(0, -5px);
+  -moz-transform: translate(0, -5px);
+  -o-transform: translate(0, -5px);
+  -ms-transform: translate(0, -5px);
+  transform: translate(0, -5px);
+  opacity: 0.5;
+}
+
+.license-items__item:hover .btn.btn__license{
+
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+ 
+
+}
+
+.license-items__item:hover .license-image__hover-preview {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  
+}
+
+
 
 /* Лицензии и сертификаты: конец */
