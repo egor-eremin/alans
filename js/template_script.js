@@ -542,20 +542,39 @@ function initFields($registrationFormsInput) {
 }
 
 (function initMap() {
-    ymaps.ready(init);
+    if ($('div').is('#map-init')) {
 
-    function init(){
-        var myMap = new ymaps.Map("map-init", {
-            center: [55.76, 37.64],
-            zoom: 7
-        });
+        ymaps.ready(init);
 
-        var myPlacemark = new ymaps.Placemark([55.76, 37.64], {
-            hintContent: 'Содержимое всплывающей подсказки',
-            balloonContent: 'Содержимое балуна'
-        });
+        function init(){
+            var myMap = new ymaps.Map("map-init", {
+                center: [52.376320118819244,102.550223484375],
+                zoom: 7,
+                controls: ['zoomControl', 'typeSelector', 'trafficControl', 'rulerControl'],
+            });
 
-        myMap.geoObjects.add(myPlacemark);
+            var objectManager = new ymaps.ObjectManager({
+                clusterize: true,
+                gridSize: 64,
+                clusterIconLayout: ymaps.templateLayoutFactory.createClass('<div class="clusterIcon">{{ properties.geoObjects.length }}</div>'),
+            });
+
+            myMap.geoObjects.add(objectManager);
+
+            // var myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+            //     hintContent: 'Содержимое всплывающей подсказки',
+            //     balloonContent: 'Содержимое балуна'
+            // });
+
+            // myMap.geoObjects.add(myPlacemark);
+
+            $.ajax({
+                url: "/data.json"
+            }).done(function (data) {
+                objectManager.add(data);
+            });
+        }
+
     }
 })();
 

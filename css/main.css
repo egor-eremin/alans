@@ -4301,3 +4301,13 @@ svg.mountain .st0{
 }
 
 /* Лицензии и сертификаты: конец */
+.clusterIcon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #43b343;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
