@@ -310,15 +310,76 @@ $(document).ready(function () {
 		
 	});
 
+	$('.license-items__item').click(function (e) { 
+		e.preventDefault();
+		var $gallery = $(this).attr('href');
+		$($gallery).magnificPopup({
+			delegate: 'a',
+			closeBtnInside : true,
+			mainClass:'mfp-fade',
+			removalDelay: 300,
+			type: 'image',
+			image: {
+				markup: '<div class="mfp-figure  mfp-figure--license">'+
+							'<div class="mfp-close"></div>'+
+							'<div class="mfp-img"></div>'+
+								'<div class="mfp-bottom-bar">'+
+								'<div class="mfp-title">' +
+
+								'</div>' +
+								// '<div class="mfp-counter"></div>'+
+							'</div>'+
+						'</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+				  cursor: 'mfp-zoom-out-cur',
+				  titleSrc: function(item) {
+					var $gallery = $(item.el).parents('.license-gallery-item');
+					var result = '';
+					var $cl_active = '';
+				
+					
+					if($gallery.find('a').length > 0) {
+						result = '<div class="mfp-pager">'+
+							'<ul class="mfp-thumbnails">';
+							for (var index = 0; index < $gallery.find('a').length; index++) {
+								$cl_active = (item.index == index) ? ' class="active"' : '';
+								var $thumb = $gallery.find('a:eq('+index+')').find('img').attr('src');
+								result += '<li' + $cl_active + '>'+
+									'<div class="thumbnail__wrapper" onclick="javascript:$(\'.gallery\').magnificPopup(\'goTo\', ' + index + ');return false;">'+
+										'<img src="' + $thumb + '">'+
+									'</div>'+
+								'</li>';
+							
+							}
+
+					
+
+							result += '</ul>'+
+						'<div>';
+						return result;
+					}
+					
+
+				  }
+			},
+			gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+
+	}).magnificPopup('open');
+		
+	});
 
 
-$('.license-items__item').magnificPopup({
-	type: 'inline',
-	closeBtnInside: false,
-	fixedContentPos: true,
-	enableEscapeKey: true,
-	closeOnBgClick: true
-});
+// $('.license-items__item').magnificPopup({
+// 	type: 'inline',
+// 	closeBtnInside: false,
+// 	fixedContentPos: true,
+// 	enableEscapeKey: true,
+// 	closeOnBgClick: true
+// });
 	
 	
 
