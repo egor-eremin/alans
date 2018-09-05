@@ -4255,7 +4255,7 @@ svg.mountain .st0{
   font-size: 1.125rem;
   text-transform: capitalize;
   font-weight: 600;
-  margin-top: 70px;
+  margin-top: 77px;
 }
 
 .hover-preview__header span {
@@ -4429,6 +4429,60 @@ svg.mountain .st0{
   animation-duration: 1500ms;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+
+.license-ajax__area{
+  
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 200px;
+  height:1px;
+
+}
+
+.license-ajax-loader__place{
+  
+  width: 120px;
+  height: 120px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  
+}
+
+.license-layout-position {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+}
+
+.license-ajax-loader__outer{
+  width: 120px;
+  height: 120px;
+  z-index: 0;
+  background: url('../img/twirl-outer_ajax.svg') 50% 50% no-repeat;
+  background-size: 90%;
+
+}
+
+.license-ajax-loader__medium{
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+  background: url('../img/twirl-medium_ajax.svg') 50% 50% no-repeat;
+  background-size: 90%;
+}
+
+.license-ajax-loader__small{
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  background: url('../img/twirl-small_ajax.svg') 50% 50% no-repeat;
+  background-size: 90%;
 }
 
 /* Лицензии и сертификаты: конец */
