@@ -586,17 +586,20 @@ function initFields($registrationFormsInput) {
     });
     $('.clients-list__label input:not(.all-checked)').on('change', function () {
         var flagAllChecked = false;
-        $('.clients-list__label input:not(.all-checked)').each(function (indexEl) {
-            for (var i=0; i <= indexEl; i++) {
-                if (!$(this).prop('checked')) {return}
-            }
-            flagAllChecked = true;
+        var valueChecked= [];
+
+        $('.clients-list__label input:not(.all-checked)').each(function (   ) {
+            valueChecked.push($(this).prop('checked'));
         });
-        if (flagAllChecked) {
-            $('.all-checked').prop('checked', true);
-        } else {
-            $('.all-checked').prop('checked', false);
+
+        for (var i=0; i < valueChecked.length; i++) {
+            if (!valueChecked[i]) {
+                $('.all-checked').prop('checked', false);
+                return false;
+            }
         }
+
+        $('.all-checked').prop('checked', true);
     });
 })();
 
@@ -608,6 +611,17 @@ function initFields($registrationFormsInput) {
        } else {
            $(this).addClass('active');
            $('.all-project__list').slideDown(300);
+       }
+    });
+})();
+
+(function showAllClient() {
+    $('.clients-show-all__button').on('click', function () {
+       var heightClientBlock = $('.clients-list').innerHeight();
+       var 
+
+       if (!$(this).hasClass('active')) {
+
        }
     });
 })();
