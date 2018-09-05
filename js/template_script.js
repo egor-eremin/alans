@@ -10,8 +10,8 @@ $(document).ready(function () {
 		showDigitsAnimationThird = true,
 		$activitiesTypes = $('.article__link--activities-types'),
 		$mtbContentDescription = $('.mtb-content-description__text'),
-		$mtbContentLink = $('.mtb-items__item'),
-		popupIsOpened = false;
+		$mtbContentLink = $('.mtb-items__item');
+
 		
 
    
@@ -311,7 +311,84 @@ $(document).ready(function () {
 	});
 
 
+
+	$('.license-items__item').on('click', function(e){
+		e.preventDefault();
+		var currentId = $(this).attr('href');
+
+
+			$(currentId).magnificPopup({
+				items:{
+					src : currentId,
+					type: 'inline',
+				},
+				
+				closeBtnInside: true,
+				fixedContentPos: true,
+				enableEscapeKey: true,
+				callbacks: {
+
+					open: function(){
+						var $lastActiveLink = String($(this)[0]._lastFocusedEl.attributes[0].nodeValue).trim(),
+						$sliderPreview = $($lastActiveLink).find('.slider-preview'),
+						$sliderNav = $($lastActiveLink).find('.slider-nav');
+						// console.log($sliderNav);
+						if($sliderPreview.length > 0){
+							$sliderPreview.slick({
+								slidesToShow:1,
+								slidesToScroll:1,
+								initialSlide:0,
+								infinite: true,
+								fade: true,
+								prevArrow: '<div class="slick-prev  preview-arrow"><div class="arrow__wrapper"><div class="arrow__item-part"></div><div class="arrow__item-part"></div></div></div>',
+								nextArrow: '<div class="slick-next  preview-arrow"><div class="arrow__wrapper"><div class="arrow__item-part"></div><div class="arrow__item-part"></div></div></div>',
+							});
+						
+						};
+						if($sliderPreview.length > 0){
+							$sliderNav.slick({
+								slidesToShow:3,
+								slidesToScroll:1,
+								variableWidth:true,
+								infinite: true,
+								arrows: false
+							});
+						}
+
+					},
+					beforeClose: function(){
+						var $lastActiveLink = String($(this)[0]._lastFocusedEl.attributes[0].nodeValue).trim(),
+						$sliderPreview = (typeof $lastActiveLink != 'undefined') ? $($lastActiveLink).find() : false;
+						if($sliderPreview){
+							$sliderPreview.slick('unslick');
+
+						}
+					}
+				}
+			}).magnificPopup('open');
+			
+		
+		
+		
+	});
 	
+	// click(function (e) { 
+
+	// 	
+	// 	if(typeof currentId != 'undefined' && currentId.length > 0){
+	// 		$(currentId).magnificPopup.open({
+	// 			type: 'inline',
+	// 			closeBtnInside: true,
+	// 			fixedContentPos: true,
+	// 			enableEscapeKey: true
+	// 		});
+
+			
+	// 	}
+		
+	// });
+	
+
 
 
 
