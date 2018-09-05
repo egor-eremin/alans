@@ -4434,16 +4434,16 @@ svg.mountain .st0{
 .license-ajax__area{
   
   width: 100%;
-  margin-top: 30px;
-  margin-bottom: 200px;
+  margin-top: 37px;
+  margin-bottom: 150px;
   height:1px;
 
 }
 
 .license-ajax-loader__place{
   
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   position: relative;
   margin: 0 auto;
   overflow: hidden;
@@ -4457,32 +4457,42 @@ svg.mountain .st0{
   right: 0;
   bottom: 0;
   margin: auto;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 
 }
 
 .license-ajax-loader__outer{
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   z-index: 0;
   background: url('../img/twirl-outer_ajax.svg') 50% 50% no-repeat;
-  background-size: 90%;
+ 
 
+  animation-name: spin;
+  animation-duration: 20s;
 }
 
 .license-ajax-loader__medium{
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   z-index: 1;
+
   background: url('../img/twirl-medium_ajax.svg') 50% 50% no-repeat;
-  background-size: 90%;
+
+  animation-name: spin-inverse;
+	animation-duration: 10s;
 }
 
 .license-ajax-loader__small{
   width: 40px;
+
   height: 40px;
   z-index: 2;
   background: url('../img/twirl-small_ajax.svg') 50% 50% no-repeat;
-  background-size: 90%;
+
+  animation-name: spin;
+  animation-duration: 5s;
 }
 
 /* Лицензии и сертификаты: конец */
