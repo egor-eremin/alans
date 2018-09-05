@@ -550,14 +550,17 @@ function initFields($registrationFormsInput) {
             var myMap = new ymaps.Map("map-init", {
                 center: [52.376320118819244,102.550223484375],
                 zoom: 7,
-                controls: ['zoomControl', 'typeSelector', 'trafficControl', 'rulerControl'],
+                controls: ['typeSelector', 'trafficControl', 'rulerControl'],
+                suppressMapOpenBlock: true
             });
 
             var objectManager = new ymaps.ObjectManager({
                 clusterize: true,
-                gridSize: 64,
+                gridSize: 3,
                 clusterIconLayout: ymaps.templateLayoutFactory.createClass('<div class="clusterIcon">{{ properties.geoObjects.length }}</div>'),
             });
+
+
 
             myMap.geoObjects.add(objectManager);
 
@@ -568,14 +571,33 @@ function initFields($registrationFormsInput) {
 
             // myMap.geoObjects.add(myPlacemark);
 
-            $.ajax({
-                url: "/data.json"
-            }).done(function (data) {
-                objectManager.add(data);
-            });
         }
 
     }
+})();
+
+(function allChecked() {
+    $('.all-checked').on('change', function () {
+        if ($(this).prop('checked')) {
+            $('.clients-list__label input:not(.all-checked)').prop('checked', true);
+        } else {
+            $('.clients-list__label input:not(.all-checked)').prop('checked', false);
+        }
+    });
+    $('.clients-list__label input:not(.all-checked)').on('change', function () {
+        var flagAllChecked = false;
+        $('.clients-list__label input:not(.all-checked)').each(function (indexEl) {
+            for (var i=0; i <= indexEl; i++) {
+                if (!$(this).prop('checked')) {return}
+            }
+            flagAllChecked = true;
+        });
+        if (flagAllChecked) {
+            $('.all-checked').prop('checked', true);
+        } else {
+            $('.all-checked').prop('checked', false);
+        }
+    });
 })();
 
 (function activateSlideAllProject() {

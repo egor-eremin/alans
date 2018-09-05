@@ -702,7 +702,7 @@
                 <div class="map__wrapper">
                     <div id="map-init"></div>
                     <div class="all-project">
-                        <div class="all-project__title">
+                        <div class="all-project__title active">
                             <div class="all-project__icon">
                                 <div class="all-project__icon-item"></div>
                                 <div class="all-project__icon-item"></div>
@@ -929,29 +929,130 @@
                     </div>
                 </div>
             </div>
-            <section class="clients">
-                <h2>Клиенты</h2>
-                <form action="#" class="clients-list">
-                    <input type="radio" name="clients" id="all">
-                    <label for="all"><span>Все клиенты</span></label>
-                    <input type="radio" name="clients" id="gasprom">
-                    <label for="gasprom"><img src="img/Gazprom-Logo.png" alt="gasprom"><span>Газпром</span></label>
-                    <input type="radio" name="clients" id="rosneft">
-                    <label for="rosneft"><img src="img/rosneft-logo.png" alt="gasprom"><span>Роснефть</span></label>
-                    <input type="radio" name="clients" id="ink">
-                    <label for="ink"><img src="img/ink-logo.png" alt="gasprom"><span>Иркутская нефтянная компания</span></label>
-                    <input type="radio" name="clients" id="severstal">
-                    <label for="severstal"><img src="img/ss-logo.png" alt="severstal"><span>Северсталь</span></label>
-
-                    <input type="radio" name="clients" id="gasprom1">
-                    <label for="gasprom1"><img src="img/Gazprom-Logo.png" alt="gasprom"><span>Газпром</span></label>
-                    <input type="radio" name="clients" id="rosneft1">
-                    <label for="rosneft1"><img src="img/rosneft-logo.png" alt="gasprom"><span>Роснефть</span></label>
-                    <input type="radio" name="clients" id="ink1">
-                    <label for="ink1"><img src="img/ink-logo.png"
-                                           alt="gasprom"><span>Иркутская нефтянная компания</span></label>
-                    <input type="radio" name="clients" id="severstal1">
-                    <label for="severstal1"><img src="img/ss-logo.png" alt="severstal"><span>Северсталь</span></label>
+            <section class="clients filters">
+                <h2 class="filters__title">Клиенты</h2>
+                <form action="#" class="filter-form">
+                    <div class="clients-list">
+                        <div class="clients-list__item">
+                            <label class="clients-list__label">
+                                <input class="hidden-checkbox all-checked" type="checkbox">
+                                <span class="client-custom-checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="clients-list__text">Все клиенты</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="clients-list__item">
+                            <label class="clients-list__label">
+                                <input class="hidden-checkbox" type="checkbox">
+                                <span class="client-custom-checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="clients-list__text">
+                                        <span class="client-icon"><img src="" alt=""></span>Газпром
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="clients-list__item">
+                            <label class="clients-list__label">
+                                <input class="hidden-checkbox" type="checkbox">
+                                <span class="client-custom-checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="clients-list__text">
+                                        <span class="client-icon"><img src="" alt=""></span>Роснефть
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="clients-list__item">
+                            <label class="clients-list__label">
+                                <input class="hidden-checkbox" type="checkbox">
+                                <span class="client-custom-checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="clients-list__text">
+                                        <span class="client-icon"><img src="" alt=""></span>Роснефть
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="clients-list__item">
+                            <label class="clients-list__label">
+                                <input class="hidden-checkbox" type="checkbox">
+                                <span class="client-custom-checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="clients-list__text">
+                                        <span class="client-icon"><img src="" alt=""></span>Иркутская нефтянная компания
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="clients-list__item">
+                            <label class="clients-list__label">
+                                <input class="hidden-checkbox" type="checkbox">
+                                <span class="client-custom-checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="clients-list__text">
+                                        <span class="client-icon"><img src="" alt=""></span>Северсталь
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="clients-list__item">
+                            <label class="clients-list__label">
+                                <input class="hidden-checkbox" type="checkbox">
+                                <span class="client-custom-checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="clients-list__text">
+                                        <span class="client-icon"><img src="" alt=""></span>Газпром
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="clients-list__item">
+                            <label class="clients-list__label">
+                                <input class="hidden-checkbox" type="checkbox">
+                                <span class="client-custom-checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="clients-list__text">
+                                        <span class="client-icon"><img src="" alt=""></span>Роснефть
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="clients-list__item">
+                            <label class="clients-list__label">
+                                <input class="hidden-checkbox" type="checkbox">
+                                <span class="client-custom-checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="clients-list__text">
+                                        <span class="client-icon"><img src="" alt=""></span>Иркутская нефтянная компания
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="clients-list__item">
+                            <label class="clients-list__label">
+                                <input class="hidden-checkbox" type="checkbox">
+                                <span class="client-custom-checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="clients-list__text">
+                                        <span class="client-icon"><img src="" alt=""></span>Северсталь
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="clients-list__item">
+                            <label class="clients-list__label">
+                                <input class="hidden-checkbox" type="checkbox">
+                                <span class="client-custom-checkbox">
+                                    <span class="custom-checkbox"></span>
+                                    <span class="clients-list__text">
+                                        <span class="client-icon"><img src="" alt=""></span>Роснефть
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
                 </form>
             </section>
         </main>
