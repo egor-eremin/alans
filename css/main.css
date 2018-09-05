@@ -4336,124 +4336,61 @@ svg.mountain .st0{
   
 }
 
-.license-gallery-item {
-  display: flex;
-  flex-direction: column;
+
+.license-galleries {
+  display: none;
 }
 
-.license-gallery-item {
-	width: 27%;
-	background-color: transparent;
-  margin: 0 auto;
-  position: relative;
+.license-gallery-item{
+  text-align: center;
 }
-.slider-preview{
-  width: 500px;
-  margin: 0 auto 35px;
 
+.license__popup-wrapper {
   
+  height: auto;
+  background-color: #ffffff;
+  display: inline-block;
+  text-align: center;
 }
 
-.license-gallery-item .mfp-close {
-	top: -14px;
-	right: -40px;
-	color: #4ead58;
+.popup__preview{
+  width: 500px;
+  height: 700px;
+  border: 1px solid #000;
+  display: inline-block;
 }
 
-.license-gallery-item img {
-  width:100%;
-  max-width: 100%;
-  height: 100%;
+.popup__tabs{
+  border: 1px solid #f00;
+ 
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-
-.preview-arrow{
-  width: 40px;
-  height: 40px;
-
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
+.popup-tabs__item {
+  width: 80px;
+  height: 100px;
+  border: 1px solid #000;
   cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.slick-prev{
-  left: -60px;
-
-}
-
-.slick-next{
-  right: -60px;
-}
-
-.arrow__wrapper {
+.popup-tabs__item img,
+.popup-tabs-item__preview img{
   width: 100%;
   height: 100%;
-  position: relative;
 }
 
-.arrow__item-part {
-  width: 50%;
-  height: 2px;
-  background-color: #4ead58;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  transition-property: background-color;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
+.popup-tabs-item__preview {
+  width: 100%;
+  height: 100%;
+  display: none;
 }
 
-.preview-arrow:hover .arrow__item-part {
-  background-color: #54c254;
+.popup-tabs-item__preview.active {
+  display: block;
 }
-
-.slick-prev .arrow__item-part:first-child{
-  transform: rotate(-45deg) translate(0, -9px);
-}
-.slick-prev .arrow__item-part:last-child{
-  transform: rotate(45deg) translate(0, 9px);
-}
-
-.slick-next .arrow__item-part:first-child{
-  transform: rotate(-135deg) translate(0, 9px);
-}
-.slick-next .arrow__item-part:last-child{
-  transform: rotate(135deg) translate(0, -9px);
-}
-
-
-
-.slider-nav__item .img__wrapper{
-  width: 90px;
-  height: 100px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.slider-nav__item {
-  height: auto;
-  cursor: pointer;
-}
-.slider-nav {
-  width: 270px;
- 
-  margin: 0 auto 50px;
- 
-
-}
-
-.slider-preview__item.slick-current.slick-active{
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-duration: 500ms;
-  animation-duration: 500ms;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-
 /* Лицензии и сертификаты: конец */

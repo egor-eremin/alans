@@ -312,94 +312,13 @@ $(document).ready(function () {
 
 
 
-
-
-	$('.license-items__item').on('click', function(e){
-		e.preventDefault();
-		var currentId = $(this).attr('href');
-
-
-			$(currentId).magnificPopup({
-				showCloseBtn: false,
-				items:{
-					src : currentId,
-					type: 'inline',
-					closeBtnInside: false,
-					fixedContentPos: true,
-					enableEscapeKey: true,
-					
-				},
-				
-				
-				callbacks: {
-
-					open: function(){
-						var $lastActiveLink = String($(this)[0]._lastFocusedEl.attributes[0].nodeValue).trim(),
-						$sliderPreview = $($lastActiveLink).find('.slider-preview'),
-						$sliderNav = $($lastActiveLink).find('.slider-nav');
-					
-						if($sliderPreview.length > 0 && $sliderNav.length > 0){
-							$sliderNav.on('init', function(){
-							
-								var total =$($lastActiveLink).find('.slider-nav__item').not('.slick-cloned').length;
-								console.log(total);
-								if(total <= 3) {
-									$('.preview-arrow').addClass('fully-hidden');
-								}
-					
-							});
-							$sliderPreview.slick({
-								initialSlide: 0,
-								slidesToShow:1,
-								slidesToScroll:1,
-								initialSlide:0,
-								infinite: true,
-								arrows:true,
-								fade: true,
-								prevArrow: '<div class="slick-prev  preview-arrow"><div class="arrow__wrapper"><div class="arrow__item-part"></div><div class="arrow__item-part"></div></div></div>',
-								nextArrow: '<div class="slick-next  preview-arrow"><div class="arrow__wrapper"><div class="arrow__item-part"></div><div class="arrow__item-part"></div></div></div>',
-								asNavFor: $sliderNav,
-								draggable : false,
-								swipe : false,
-							});
-						
-					
-							$sliderNav.slick({
-								initialSlide: 0,
-								slidesToShow:3,
-								slidesToScroll:1,
-								variableWidth:true,
-								infinite: true,
-								arrows: false,
-								centerMode: true,
-								asNavFor: $sliderPreview,
-								focusOnSelect: true,
-								draggable : ($sliderNav.not('.slick-cloned').length > 3) ? true : false,
-								swipe : ($sliderNav.not('.slick-cloned').length > 3) ? true : false,
-							});
-						}
-
-					},
-					beforeClose: function(){
-						var $lastActiveLink = String($(this)[0]._lastFocusedEl.attributes[0].nodeValue).trim(),
-						$sliderPreview = (typeof $lastActiveLink != 'undefined') ? $($lastActiveLink).find() : false,
-						$sliderNav = (typeof $lastActiveLink != 'undefined') ? $($lastActiveLink).find() : false;
-						if($sliderPreview){
-							$sliderPreview.slick('unslick');
-
-						};
-						if($sliderNav){
-							$sliderNav.slick('unslick');
-
-						};
-					}
-				}
-			}).magnificPopup('open');
-			
-		
-		
-		
-	});
+$('.license-items__item').magnificPopup({
+	type: 'inline',
+	closeBtnInside: false,
+	fixedContentPos: true,
+	enableEscapeKey: true,
+	closeOnBgClick: true
+});
 	
 	
 
