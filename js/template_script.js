@@ -372,13 +372,6 @@ $(document).ready(function () {
 	});
 
 
-// $('.license-items__item').magnificPopup({
-// 	type: 'inline',
-// 	closeBtnInside: false,
-// 	fixedContentPos: true,
-// 	enableEscapeKey: true,
-// 	closeOnBgClick: true
-// });
 	
 	
 

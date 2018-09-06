@@ -4466,6 +4466,64 @@ svg.mountain .st0{
 
 /* Лицензии и сертификаты: конец */
 /* Жизнь коллектива */
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+
 .collective-desr__image {
 	width: 604px;
 	height: auto;
@@ -4485,7 +4543,6 @@ svg.mountain .st0{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	border: 1px solid #000;
   margin-top: 50px;
   position: relative;
 }
@@ -4514,7 +4571,7 @@ svg.mountain .st0{
   top: 0;
   opacity: 0;
   transition-property: opacity;
-  transition-duration: 200ms;
+  transition-duration: 400ms;
   transition-timing-function: ease-in-out;
   display: flex;
 
@@ -4529,6 +4586,24 @@ svg.mountain .st0{
   width: 50px;
   height: 50px;
   display: block;
+}
+
+.collective-gallery-links__item .fullscreen-icon__wrp {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+.collective-gallery-links__item:hover .fullscreen-icon__wrp {
+  -webkit-animation-delay: 100ms;
+  animation-delay: 100ms;
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+
 }
 
 .fullscreen-icon__wrp .fullscreen-icon__place svg .translate {
@@ -4573,6 +4648,8 @@ svg.mountain .st0{
   display: block;
   margin: auto;
 }
+
+
 
 /* Жизнь коллектива: конец */
 
