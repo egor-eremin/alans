@@ -4362,6 +4362,7 @@ svg.mountain .st0{
 .clients-show-all {
     display: flex;
     justify-content: center;
+    margin-bottom: 28px;
 }
 .clients-show-all__button {
     font-size: 15px;
@@ -4383,4 +4384,48 @@ svg.mountain .st0{
 }
 .clients-show-all__button:hover .clients-show-all__icon {
     transform: translateY(2px);
+}
+.clients-show-all__button.active .clients-show-all__icon svg {
+    transform: rotate(-90deg);
+}
+.clients-show-all__button.active:hover .clients-show-all__icon {
+    transform: translateY(-2px);
+}
+.client-icon img {
+    user-select: none;
+}
+.ps-check_for-project {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.working-branches__item_for-projects {
+    height: 31px;
+    margin-right: 12px;
+    margin-bottom: 10px;
+}
+.ps-check__wrp--mtb_for-projects {
+    height: 100%;
+    display: block;
+}
+.checkbox__wrp-inner_for-project {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.types-of-jobs {
+    position: relative;
+    padding-top: 4px;
+}
+.types-of-jobs::before {
+    content: "";
+    width: calc(100% + 112px);
+    height: 1px;
+    background-color: #e5e5e5;
+    top: 0;
+    left: -56px;
+    display: block;
+    position: absolute;
+}
+.filters {
+    padding-bottom: 64px;
 }
