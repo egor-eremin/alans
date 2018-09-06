@@ -4391,11 +4391,12 @@ svg.mountain .st0{
 }
 
 
-.mfp-figure--license .mfp-img {
+.mfp-figure--license .mfp-img,
+.mfp-figure--collective .mfp-img{
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
-  -webkit-animation-duration: 100ms;
-  animation-duration: 100ms;
+  -webkit-animation-duration: 200ms;
+  animation-duration: 200ms;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
@@ -4648,6 +4649,8 @@ svg.mountain .st0{
   display: block;
   margin: auto;
 }
+
+
 
 
 

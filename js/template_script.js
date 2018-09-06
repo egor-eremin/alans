@@ -316,7 +316,6 @@ $(document).ready(function () {
 		$($gallery).magnificPopup({
 			delegate: 'a',
 			closeBtnInside : true,
-			
 			type: 'image',
 			image: {
 				markup: '<div class="mfp-figure  mfp-figure--license">'+
@@ -372,7 +371,37 @@ $(document).ready(function () {
 	});
 
 
+
 	
+		
+		$('#collective-gallery-links').magnificPopup({
+			delegate: 'a',
+			closeBtnInside : true,
+			type: 'image',
+			gallery: {
+				verticalFit: true,
+				enabled: true,
+				navigateByImgClick: true,
+				preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+			},
+	
+			image: {
+				cursor: 'mfp-zoom-out-cur',
+				markup: '<div class="mfp-figure  mfp-figure--collective">'+
+				'<div class="mfp-close"></div>'+
+				'<div class="mfp-img"></div>'+
+					'<div class="mfp-bottom-bar">'+
+					'<div class="mfp-title">' +
+
+					'</div>' +
+					// '<div class="mfp-counter"></div>'+
+				'</div>'+
+			'</div>',
+			}
+
+
+		});
+
 	
 
 
