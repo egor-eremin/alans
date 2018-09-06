@@ -4392,8 +4392,8 @@ svg.mountain .st0{
 .mfp-figure--license .mfp-img {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
-  -webkit-animation-duration: 150ms;
-  animation-duration: 150ms;
+  -webkit-animation-duration: 100ms;
+  animation-duration: 100ms;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
