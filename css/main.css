@@ -392,6 +392,7 @@ body, html {
  }
 * {
     box-sizing: border-box;
+    outline: 1px solid red;
 
 }
 a {
@@ -1291,9 +1292,6 @@ input {
   transition-timing-function: ease-in-out;
 }
 
-.agreement__wrapper {
-  cursor: pointer;
-}
 
 .username__wrapper.input-ok::after,
 .user-telephone__wrapper.input-ok::after {
@@ -4969,21 +4967,36 @@ svg.mountain .st0{
 .feedback__item {
 	position: relative;
 	display: flex;
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
-	padding: 69px 0 75px 0;
+	padding: 69px 0 53px 0;
 	justify-content: flex-start;
 	align-items: stretch;
 	align-content: center;
+	left: -56px;
+	padding-left: 65px;
 }
 
-.feedback-photo__place{
+.feedback__item::before {
+
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: calc(100% + (100vw - 1030px)/2);
+    z-index: 1;
+    border-top: 1px solid #e5e5e5;
+  
+
+}
+
+.feedback-photo__place {
   width: 112px;
   height: 112px;
   border-radius: 50%;
-  border: 1px solid #000;
   display: inline-block;
   margin-bottom: 20px;
+  background: #e8e2d7 center center no-repeat;
+  background-size: 200%; 
 }
 
 .article__text.article__text--feedback .feedback-person-wrapper p {
@@ -4996,8 +5009,6 @@ svg.mountain .st0{
 .feedback-person-wrapper {
   width: 284px;
   text-align: center;
-  border: 1px solid #000;
-  
 }
 .person__rank {
 	color: #5cbd5c;
@@ -5005,4 +5016,33 @@ svg.mountain .st0{
 	margin-top: 16px !important;
 	font-size: 0.8688rem;
 }
+.feedback-text__wrapper {
+	padding-left: 52px;
+	padding-top: 33px;
+	width: 65.9%;
+}
+
+.feedback-text__wrapper h2 {
+	color: #5cbd5c;
+	font-size: 0.875rem;
+	display: block;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.feedback-text__wrapper h2::before {
+	content: "";
+	position: absolute;
+	width: 30px;
+	height: 1px;
+	top: 9px;
+	left: -67px;
+	background-color: #5cbd5c;
+}
+
+.feedback-text__wrapper p {
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
 /* Отзывы : конец */
