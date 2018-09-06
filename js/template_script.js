@@ -11,9 +11,6 @@ $(document).ready(function () {
 		$activitiesTypes = $('.article__link--activities-types'),
 		$mtbContentDescription = $('.mtb-content-description__text'),
 		$mtbContentLink = $('.mtb-items__item');
-
-		
-
    
 
 
@@ -219,12 +216,11 @@ $(document).ready(function () {
 
 		//Запуск Position:sticky
 
+
 		if($('div').is('.about-contant')){
 			stickifyBlock($sticky, $stickyParent);
 		}
 
-	
-	
 
 		//Запуск стрелки наверх
 		if($(this).scrollTop() > 500) {
@@ -295,6 +291,19 @@ $(document).ready(function () {
 			scrollbarPosition: 'inside'
 		  });
 	}
+
+    (function initProductCustomScroll() {
+        if ($('.all-project__list').length > 0) {
+            initCustomScrollBar($('.all-project__list'));
+        }
+    })();
+
+	function initCustomScrollBar(selectorInit) {
+        selectorInit.mCustomScrollbar({
+            theme: 'dark',
+            scrollbarPosition: 'inside'
+        });
+    }
 
 	$('.btn-brief-close').click(function (e) { 
 	
@@ -623,6 +632,192 @@ function initFields($registrationFormsInput) {
 })();
 }
 
+(function initMap() {
+    if ($('div').is('#map-init')) {
+
+        ymaps.ready(init);
+
+        function init(){
+            var myMap = new ymaps.Map("map-init", {
+                center: [52.376320118819244,102.550223484375],
+                zoom: 7,
+                controls: ['typeSelector', 'trafficControl', 'rulerControl'],
+                suppressMapOpenBlock: true
+            });
+
+            var objectManager = new ymaps.ObjectManager({
+                clusterize: true,
+                gridSize: 3,
+                clusterIconLayout: ymaps.templateLayoutFactory.createClass('<div class="clusterIcon">{{ properties.geoObjects.length }}</div>'),
+            });
+
+
+
+            myMap.geoObjects.add(objectManager);
+
+            // var myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+            //     hintContent: 'Содержимое всплывающей подсказки',
+            //     balloonContent: 'Содержимое балуна'
+            // });
+
+            // myMap.geoObjects.add(myPlacemark);
+
+        }
+
+    }
+})();
+
+(function allCheckedClient() {
+    $('.all-checked').on('change', function () {
+        if ($(this).prop('checked')) {
+            $('.clients-list__label input:not(.all-checked)').prop('checked', true);
+        } else {
+            $('.clients-list__label input:not(.all-checked)').prop('checked', false);
+        }
+    });
+    $('.clients-list__label input:not(.all-checked)').on('change', function () {
+        var valueChecked= [];
+
+        $('.clients-list__label input:not(.all-checked)').each(function (   ) {
+            valueChecked.push($(this).prop('checked'));
+        });
+
+        for (var i=0; i < valueChecked.length; i++) {
+            if (!valueChecked[i]) {
+                $('.all-checked').prop('checked', false);
+                return false;
+            }
+        }
+
+        $('.all-checked').prop('checked', true);
+    });
+})();
+
+(function activateSlideAllProject() {
+    $('.all-project__title').on('click', function () {
+       if ($(this).hasClass('active')) {
+           $(this).removeClass('active');
+           $('.all-project__list').slideUp(300);
+       } else {
+           $(this).addClass('active');
+           $('.all-project__list').slideDown(300);
+       }
+    });
+})();
+
+(function showAllClient() {
+    $('.clients-show-all__button').on('click', function () {
+       var heightClientBlock = $('.clients-list').innerHeight();
+
+       if (!$(this).hasClass('active')) {
+            $('.clients-wrapper').css('max-height',heightClientBlock);
+            $(this).addClass('active');
+       } else {
+           $('.clients-wrapper').removeAttr('style');
+           $(this).removeClass('active');
+       }
+    });
+})();
+
+(function allCheckedWorks() {
+    $('.all-works').on('change', function () {
+        if ($(this).prop('checked')) {
+            $('.working-branches__item input:not(.all-works)').prop('checked', true);
+        } else {
+            $('.working-branches__item input:not(.all-works)').prop('checked', false);
+        }
+    });
+    $('.working-branches__item input:not(.all-works)').on('change', function () {
+        var valueChecked= [];
+
+        $('.working-branches__item input:not(.all-works)').each(function (   ) {
+            valueChecked.push($(this).prop('checked'));
+        });
+
+        for (var i=0; i < valueChecked.length; i++) {
+            if (!valueChecked[i]) {
+                $('.all-works').prop('checked', false);
+                return false;
+            }
+        }
+
+        $('.all-works').prop('checked', true);
+    });
+})();
+
+function addTabs(tabbed_selector) {
+    // Get relevant elements and collections
+    var tabbed = document.querySelector(tabbed_selector);
+    var tablist = tabbed.querySelector('ul');
+    var tabs = tablist.querySelectorAll('a');
+    var panels = tabbed.querySelectorAll('[id^="section"]');
+
+    // The tab switching function
+    var switchTab = function switchTab(oldTab, newTab) {
+        newTab.focus();
+        // Make the active tab focusable by the user (Tab key)
+        newTab.removeAttribute('tabindex');
+        // Set the selected state
+        newTab.setAttribute('aria-selected', 'true');
+        oldTab.removeAttribute('aria-selected');
+        oldTab.setAttribute('tabindex', '-1');
+        // Get the indices of the new and old tabs to find the correct
+        // tab panels to show and hide
+        var index = Array.prototype.indexOf.call(tabs, newTab);
+        var oldIndex = Array.prototype.indexOf.call(tabs, oldTab);
+        panels[oldIndex].hidden = true;
+        panels[index].hidden = false;
+    };
+
+    // Add the tablist role to the first <ul> in the .tabbed container
+    tablist.setAttribute('role', 'tablist');
+
+    // Add semantics are remove user focusability for each tab
+    Array.prototype.forEach.call(tabs, function (tab, i) {
+        tab.setAttribute('role', 'tab');
+        tab.setAttribute('id', 'tab' + (i + 1));
+        tab.setAttribute('tabindex', '-1');
+        tab.parentNode.setAttribute('role', 'presentation');
+
+        // Handle clicking of tabs for mouse users
+        tab.addEventListener('click', function (e) {
+            e.preventDefault();
+            var currentTab = tablist.querySelector('[aria-selected]');
+            if (e.currentTarget !== currentTab) {
+                switchTab(currentTab, e.currentTarget);
+            }
+        });
+
+        // Handle keydown events for keyboard users
+        tab.addEventListener('keydown', function (e) {
+            // Get the index of the current tab in the tabs node list
+            var index = Array.prototype.indexOf.call(tabs, e.currentTarget);
+            // Work out which key the user is pressing and
+            // Calculate the new tab's index where appropriate
+            var dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? 'down' : null;
+            if (dir !== null) {
+                e.preventDefault();
+                // If the down key is pressed, move focus to the open panel,
+                // otherwise switch to the adjacent tab
+                dir === 'down' ? panels[i].focus() : tabs[dir] ? switchTab(e.currentTarget, tabs[dir]) : void 0;
+            }
+        });
+    });
+
+    // Add tab panel semantics and hide them all
+    Array.prototype.forEach.call(panels, function (panel, i) {
+        panel.setAttribute('role', 'tabpanel');
+        panel.setAttribute('tabindex', '-1');
+        var id = panel.getAttribute('id');
+        panel.setAttribute('aria-labelledby', tabs[i].id);
+        panel.hidden = true;
+    });
+
+    // Initially activate the first tab and reveal the first tab panel
+    tabs[0].removeAttribute('tabindex');
+    tabs[0].setAttribute('aria-selected', 'true');
+    panels[0].hidden = false;
+};
 
 function activateLinks($selector) {
 	$($selector).click(function (e) { 
