@@ -1313,6 +1313,11 @@ input {
 	align-content: flex-start;
 	align-items: flex-start;
 }
+.footer-link-list-base {
+  width: 360px;
+  margin: 0;
+
+}
 
 
 .footer-link-list__item h6 {
@@ -1372,9 +1377,7 @@ input {
   margin-bottom: -9px;
 }
 
-.footer-link-list-base:nth-child(2){
-  margin-left: auto;
-}
+
 
 .footer-link-list-base:last-child {
 	margin-left: auto;
