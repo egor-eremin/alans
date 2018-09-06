@@ -4473,11 +4473,106 @@ svg.mountain .st0{
 	margin-bottom: 42px;
 }
 
-.collective-desr__image img{
+.collective-desr__image img,
+.collective-gallery-links__item img{
   width: 100%;
   max-width: 100%;
   display: inline-block;
   vertical-align: middle;
 }
+
+.collective-gallery-links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	border: 1px solid #000;
+  margin-top: 50px;
+  position: relative;
+}
+
+.article__text a.collective-gallery-links__item {
+  border: none;
+}
+
+.collective-gallery-links__item {
+	width: 264px;
+	height: 156px;
+	margin-bottom: 5px;
+	position: relative;
+}
+
+.collective-gallery-links__item:last-child{
+  margin-right: auto;
+}
+
+.collective-picture-item__hover {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+  display: flex;
+
+}
+
+.collective-gallery-links__item:hover .collective-picture-item__hover {
+  opacity: 1;
+  background-color: rgba(67, 179, 67, 0.664);
+}
+
+.fullscreen-icon__place {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.fullscreen-icon__wrp .fullscreen-icon__place svg .translate {
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.fullscreen-icon__wrp:hover .fullscreen-icon__place svg .arrow-1 {
+  -webkit-transform: translate(7px, 7px);
+  -moz-transform: translate(7px, 7px);
+  -o-transform: translate(7px, 7px);
+  -ms-transform: translate(7px, 7px);
+  transform: translate(7px, 7px);
+}
+
+.fullscreen-icon__wrp:hover .fullscreen-icon__place svg .arrow-2 {
+  -webkit-transform: translate(-7px, -7px);
+  -moz-transform: translate(-7px, -7px);
+  -o-transform: translate(-7px, -7px);
+  -ms-transform: translate(-7px, -7px);
+  transform: translate(-7px, -7px);
+}
+
+.fullscreen-icon__wrp:hover .fullscreen-icon__place svg .arrow-3 {
+  -webkit-transform: translate(-7px, 7px);
+  -moz-transform: translate(-7px, 7px);
+  -o-transform: translate(-7px, 7px);
+  -ms-transform: translate(-7px, 7px);
+  transform: translate(-7px, 7px);
+}
+
+.fullscreen-icon__wrp:hover .fullscreen-icon__place svg .arrow-4 {
+  -webkit-transform: translate(7px, -7px);
+  -moz-transform: translate(7px, -7px);
+  -o-transform: translate(7px, -7px);
+  -ms-transform: translate(7px, -7px);
+  transform: translate(7px, -7px);
+}
+
+.fullscreen-icon__wrp {
+  display: block;
+  margin: auto;
+}
+
 /* Жизнь коллектива: конец */
 
