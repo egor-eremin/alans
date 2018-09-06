@@ -316,8 +316,7 @@ $(document).ready(function () {
 		$($gallery).magnificPopup({
 			delegate: 'a',
 			closeBtnInside : true,
-			mainClass:'mfp-fade',
-			removalDelay: 300,
+			
 			type: 'image',
 			image: {
 				markup: '<div class="mfp-figure  mfp-figure--license">'+
