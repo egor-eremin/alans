@@ -663,15 +663,25 @@ function initFields($registrationFormsInput) {
 (function selectProject() {
     $('.project-show-all').on('click', function () {
       var idProject = $(this).data('project');
+      var thisParent = $(this).parents('.all-project__list-item');
+
+      $('.all-project__list-item').removeClass('active');
+      thisParent.addClass('active');
 
       $('.project-detail').hide();
       $('#' + idProject).show();
     });
     $(document).on('click','.projects__item-in-link', function () {
         var idProject = $(this).data('project');
+        var parentItemOnSidebar = $('span[data-project="' + idProject + '"]').parents('.all-project__list-item');
 
+        if (!$('.all-project__title').hasClass('active')) {
+            $('.all-project__title').addClass('active');
+            $('.all-project__list').slideDown(300);
+        }
         $('.project-detail').hide();
         $('#' + idProject).show();
+        parentItemOnSidebar.addClass('active');
     });
 })();
 
@@ -679,6 +689,7 @@ function initFields($registrationFormsInput) {
     $('.project-detail__close').on('click', function () {
         var thisParent = $(this).parents('.project-detail');
 
+        $('.all-project__list-item').removeClass('active');
         thisParent.hide();
     });
 })();

@@ -4197,12 +4197,14 @@ svg.mountain .st0{
     text-align: left;
     line-height: 1.5;
     width: calc(100% - 30px);
-    transition: .1s ease-in-out;
+    display: flex;
 }
 .all-project__name {
     padding: 15px 0 15px 49px;
+    transition: .1s ease-in-out;
+    width: 100%;
 }
-.all-project__list-item:hover {
+.all-project__list-item:hover .all-project__name, .all-project__list-item.active .all-project__name {
     background-color: #00b335;
     color: #fff;
     border-color: #00b335;
@@ -4259,7 +4261,7 @@ svg.mountain .st0{
 .project-show-all__dots + .project-show-all__dots {
     margin-left: 2px;
 }
-.all-project__list-item:hover .project-show-all {
+.all-project__list-item:hover .project-show-all, .all-project__list-item.active .project-show-all {
     opacity: 1;
 }
 .project-show-all__arrow {
@@ -4601,4 +4603,7 @@ svg.mountain .st0{
     cursor: pointer;
     background: url(../img/bg-more.png) no-repeat 0% 0%;
     z-index: 10000;
+}
+.all-project__list-item:hover, .all-project__list-item.active {
+    border-color: #00b335;
 }
