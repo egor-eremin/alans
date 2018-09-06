@@ -2099,7 +2099,8 @@ input:-webkit-autofill {
 
 /* Виды работ */
 .about-aside--activities-types,
-.about-aside--technical-base {
+.about-aside--technical-base,
+.about-aside--sticky {
 	width: 321px;
 }
 
@@ -3732,7 +3733,8 @@ svg.mountain .st0{
 }
 
 .article__text.article__text--mtb p,
-.article__text.article__text--license p  
+.article__text.article__text--license p,
+.article__text.article__text--collective p  
 {
 	margin: 0 0 1.5em;
 	line-height: 1.3562rem;
@@ -4463,4 +4465,19 @@ svg.mountain .st0{
 }
 
 /* Лицензии и сертификаты: конец */
+/* Жизнь коллектива */
+.collective-desr__image {
+	width: 604px;
+	height: auto;
+	margin-top: 42px;
+	margin-bottom: 42px;
+}
+
+.collective-desr__image img{
+  width: 100%;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* Жизнь коллектива: конец */
 
