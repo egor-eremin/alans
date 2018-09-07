@@ -295,7 +295,7 @@ $(document).ready(function () {
     (function addScrollForProjectDetail() {
         if ($('.project-detail__text').length > 0) {
             initCustomScrollBar($('.project-detail__text'));
-        };
+        }
     })();
 
     (function initProductCustomScroll() {
@@ -474,7 +474,7 @@ function stickifyBlock($sticky, $stickyParent) {
 		if ((stickyParentHeight - currentPositionInBlock) <= stickyHeight) {
 			if (!$sticky.hasClass('done')) {
 				$sticky.addClass('done');
-				console.log
+			
 			}
 			if ($sticky.hasClass('done')) {
 				if (stickyPositionBottom) {
