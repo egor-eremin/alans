@@ -488,7 +488,7 @@ input {
     content: "";
     position: absolute;
     border-top: 1px solid #43b343;
-    bottom: -16px;
+    bottom: -15px;
     width: 0;
     left: calc(50% - 8px);
     transform: translate(50%,0);
@@ -498,7 +498,7 @@ input {
     content: "";
     position: absolute;
     border-top: 1px solid #43b343;
-    bottom: -16px;
+    bottom: -15px;
     width: 0;
     left: calc(50% - 8px);
     transform: translate(-50%,0);
@@ -616,7 +616,7 @@ input {
   color: #000000;
   text-decoration: none;
   position: relative;
-  border-bottom: 1px solid transparent;
+  
     transition: .3s ease-in-out;
 }
 
@@ -624,8 +624,13 @@ input {
   color: #aaaaaa;
 }
 
+.breadcrumbs__item:not(.breadcrumbs__item_current) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 .breadcrumbs__item:not(.breadcrumbs__item_current):hover {
-  border-bottom: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid  rgba(67, 179, 67, 0.2);
+  color: #43b343;
 }
 
 .breadcrumbs__wrap_tight {
@@ -1508,14 +1513,15 @@ input {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 	letter-spacing: 1px;
   margin-bottom: 7px;
-  transition-property: border-bottom;
+  transition-property: border-bottom, color;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 }
 
 .alans-site-protocols:hover,
 .alans-confidential:hover {
-  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  border-bottom: 1px solid  rgba(67, 179, 67, 0.2);
+  color: #43b343;
 }
 
 .copyright {
