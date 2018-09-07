@@ -5087,7 +5087,7 @@ svg.mountain .st0{
 	color: #5cbd5c;
 	display: block;
 	margin-top: 16px !important;
-  font-size: 0.865rem;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 .feedback-text__wrapper {
@@ -5103,7 +5103,7 @@ svg.mountain .st0{
   margin-bottom: 18px;
   position: relative;
   display: inline-block;
-  padding: 9px 12px;
+  padding: 9px 15px;
   background-color: #f9fcf8;
   border-radius: 70px;
   left:-10px;
