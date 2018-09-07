@@ -469,9 +469,12 @@ function stickifyBlock($sticky, $stickyParent) {
 			$sticky.addClass('sticky');
 		}
 		//Отслеживаем появление нижней границы
+		// $stickyParent.css('border', '1px solid red');
+		// $sticky.css('border', '1px solid green');
 		if ((stickyParentHeight - currentPositionInBlock) <= stickyHeight) {
 			if (!$sticky.hasClass('done')) {
 				$sticky.addClass('done');
+				console.log
 			}
 			if ($sticky.hasClass('done')) {
 				if (stickyPositionBottom) {

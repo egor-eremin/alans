@@ -2097,6 +2097,10 @@ input:-webkit-autofill {
   padding: 0 39px;
 }
 
+.about-aside--sticky .activiteies-types-aside {
+  margin-bottom: 0;
+}
+
 .activiteies-types-aside__item {
   position: relative;
   margin: 0;
