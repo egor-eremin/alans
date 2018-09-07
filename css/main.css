@@ -4404,7 +4404,7 @@ svg.mountain .st0{
 .license-image__text {
 	margin-top: 26px;
   display: block;
-  font-weight: 500;
+  font-weight: 600 !important;
 	line-height: 1.3rem;
 	padding-left: 37px;
   font-size: 0.875rem;
