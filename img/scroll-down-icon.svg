@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 10.9 28.6" style="enable-background:new 0 0 10.9 28.6;" xml:space="preserve">
+<style type="text/css">
+	.scroll-down1{clip-path:url(#SVGID_2_);fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}
+	.scroll-down2{clip-path:url(#SVGID_2_);fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="0" width="10.9" height="28.6"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<path class="scroll-down1" d="M10.1,23.8c-0.2,2.5-2,4.4-4.7,4.4s-4.5-2-4.7-4.4l-0.2-8.4c0-2.4,2.2-4.4,5-4.4c2.7,0,4.9,2,4.9,4.4
+		L10.1,23.8z"/>
+	<line class="scroll-down2" x1="5.5" y1="13.7" x2="5.5" y2="16.5"/>
+	<line class="scroll-down2" x1="5.5" y1="7.2" x2="5.5" y2="0.5"/>
+</g>
+</svg>
