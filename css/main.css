@@ -3754,9 +3754,13 @@ svg.mountain .st0{
 	font-size: 0.8125rem;
 	position: relative;
 	background-color: transparent;
-	transition-property: background-color;
+	transition-property: background-color, color;
 	transition-duration: 200ms;
 	transition-timing-function: ease-in-out;
+}
+
+.checkbox__wrp-inner:hover {
+  color: #43b343;
 }
 
 .ps-check {
@@ -3774,8 +3778,8 @@ svg.mountain .st0{
 }
 
 .check__img-place {
-  width: 50%;
-  height: 50%;
+  width: 55%;
+  height: 55%;
   margin: auto;
   background: #fff url('../img/obj_ul-check.svg') center center no-repeat;
   background-size: 100%;
@@ -4385,7 +4389,7 @@ svg.mountain .st0{
   top: 0;
   left: 0;
   background-color: #f7f9f6;
-  opacity: 0.8;
+  opacity: 0.3;
   display: block;
   content: "";
 }
@@ -4399,7 +4403,8 @@ svg.mountain .st0{
 
 .license-image__text {
 	margin-top: 26px;
-	display: block;
+  display: block;
+  font-weight: 500;
 	line-height: 1.3rem;
 	padding-left: 37px;
   font-size: 0.875rem;
