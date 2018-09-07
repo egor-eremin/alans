@@ -1311,6 +1311,14 @@ input {
 .user-telephone__wrapper.input-ok::after {
   background: #43b343 url('../img/obj_checked.svg') center center no-repeat;
   background-size: 50%;
+  width: 23px;
+  height: 23px;
+}
+
+.user-telephone__wrapper.input-error::after,
+.username__wrapper.input-error::after {
+  width: 24px;
+  height: 24px;
 }
 
 .username__wrapper.input-error::after,
