@@ -2055,6 +2055,10 @@ input:-webkit-autofill {
   background-color: #fff;
 }
 
+.about-contant--feedback .article__header {
+  margin: 0 0 98px;
+}
+
 .article__header {
   margin: 0 0 75px;
   display: -webkit-box;
@@ -5052,8 +5056,14 @@ svg.mountain .st0{
 .article__text.article__text--feedback .feedback-person-wrapper p {
 
   margin: 0;
+
  
 
+}
+
+.feedback-person__name {
+  font-weight: 500;
+  font-size: 0.9375rem;
 }
 
 .feedback-person-wrapper {
@@ -5064,11 +5074,12 @@ svg.mountain .st0{
 	color: #5cbd5c;
 	display: block;
 	margin-top: 16px !important;
-	font-size: 0.8688rem;
+  font-size: 0.865rem;
+  font-weight: 400;
 }
 .feedback-text__wrapper {
 	padding-left: 52px;
-	padding-top: 33px;
+	padding-top: 27px;
 	width: 65.9%;
 }
 
@@ -5076,8 +5087,13 @@ svg.mountain .st0{
 	color: #5cbd5c;
 	font-size: 0.875rem;
 	display: block;
-  margin-bottom: 30px;
+  margin-bottom: 18px;
   position: relative;
+  display: inline-block;
+  padding: 9px 12px;
+  background-color: #f9fcf8;
+  border-radius: 70px;
+  left:-10px;
 }
 
 .feedback-text__wrapper h2::before {
@@ -5085,7 +5101,7 @@ svg.mountain .st0{
 	position: absolute;
 	width: 30px;
 	height: 1px;
-	top: 9px;
+	top: 19px;
 	left: -67px;
 	background-color: #5cbd5c;
 }
