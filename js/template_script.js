@@ -325,13 +325,98 @@ $(document).ready(function () {
 		
 	});
 
-
+	if($('.license-items__item').length > 0){
+		$('.license-items__item').click(function (e) { 
+			e.preventDefault();
+			var $gallery = $(this).attr('href');
+			$($gallery).magnificPopup({
+				delegate: 'a',
+				closeBtnInside : true,
+				type: 'image',
+				image: {
+					markup: '<div class="mfp-figure  mfp-figure--license">'+
+								'<div class="mfp-close"></div>'+
+								'<div class="mfp-img"></div>'+
+									'<div class="mfp-bottom-bar">'+
+									'<div class="mfp-title">' +
 	
+									'</div>' +
+									// '<div class="mfp-counter"></div>'+
+								'</div>'+
+							'</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+	
+					  cursor: 'mfp-zoom-out-cur',
+					  titleSrc: function(item) {
+						var $gallery = $(item.el).parents('.license-gallery-item');
+						var result = '';
+						var $cl_active = '';
+					
+						
+						if($gallery.find('a').length > 0) {
+							result = '<div class="mfp-pager">'+
+								'<ul class="mfp-thumbnails">';
+								for (var index = 0; index < $gallery.find('a').length; index++) {
+									$cl_active = (item.index == index) ? ' class="active"' : '';
+									var $thumb = $gallery.find('a:eq('+index+')').find('img').attr('src');
+									result += '<li' + $cl_active + '>'+
+										'<div class="thumbnail__wrapper" onclick="javascript:$(\'.gallery\').magnificPopup(\'goTo\', ' + index + ');return false;">'+
+											'<img src="' + $thumb + '">'+
+										'</div>'+
+									'</li>';
+								
+								}
+	
+						
+	
+								result += '</ul>'+
+							'<div>';
+							return result;
+						}
+						
+	
+					  }
+				},
+				gallery: {
+				enabled: true,
+				navigateByImgClick: true,
+				preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+			},
+	
+		}).magnificPopup('open');
+			
+		});
+	}
+
+	if($('#collective-gallery-links').length > 0) {
+		$('#collective-gallery-links').magnificPopup({
+			delegate: 'a',
+			closeBtnInside : true,
+			type: 'image',
+			gallery: {
+				verticalFit: true,
+				enabled: true,
+				navigateByImgClick: true,
+				preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+			},
+	
+			image: {
+				cursor: 'mfp-zoom-out-cur',
+				markup: '<div class="mfp-figure  mfp-figure--collective">'+
+				'<div class="mfp-close"></div>'+
+				'<div class="mfp-img"></div>'+
+					'<div class="mfp-bottom-bar">'+
+					'<div class="mfp-title">' +
+
+					'</div>' +
+					// '<div class="mfp-counter"></div>'+
+				'</div>'+
+			'</div>',
+			}
 
 
-
-
-
+		});
+	}
+		
 	//Медиа-запросы в javascript (Если нужно)
 	//-------------------------------------------------------------------------------------------------------
     
@@ -384,9 +469,12 @@ function stickifyBlock($sticky, $stickyParent) {
 			$sticky.addClass('sticky');
 		}
 		//Отслеживаем появление нижней границы
+		// $stickyParent.css('border', '1px solid red');
+		// $sticky.css('border', '1px solid green');
 		if ((stickyParentHeight - currentPositionInBlock) <= stickyHeight) {
 			if (!$sticky.hasClass('done')) {
 				$sticky.addClass('done');
+				console.log
 			}
 			if ($sticky.hasClass('done')) {
 				if (stickyPositionBottom) {
@@ -783,7 +871,7 @@ function addTabs(tabbed_selector) {
     tabs[0].removeAttribute('tabindex');
     tabs[0].setAttribute('aria-selected', 'true');
     panels[0].hidden = false;
-};
+}
 
 function activateLinks($selector) {
 	$($selector).click(function (e) { 
