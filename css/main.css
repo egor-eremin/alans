@@ -1057,18 +1057,18 @@ input {
 }
 
 .spaceship ~ .advantages-item__description{
-  -webkit-animation-delay: 500ms;
-  animation-delay: 500ms;
+  -webkit-animation-delay: 1000ms;
+  animation-delay: 1000ms;
 }
 
 .russia ~ .advantages-item__description{
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+  -webkit-animation-delay: 1500ms;
+  animation-delay: 1500ms;
 }
 
 .gaika ~ .advantages-item__description{
-  -webkit-animation-delay: 1500ms;
-  animation-delay: 1500ms;
+  -webkit-animation-delay: 500ms;
+  animation-delay: 500ms;
 }
 
 .main-footer {
@@ -3778,8 +3778,8 @@ svg.mountain .st0{
 }
 
 .check__img-place {
-  width: 55%;
-  height: 55%;
+  width: 60%;
+  height: 60%;
   margin: auto;
   background: #fff url('../img/obj_ul-check.svg') center center no-repeat;
   background-size: 100%;
@@ -4404,7 +4404,7 @@ svg.mountain .st0{
 .license-image__text {
 	margin-top: 26px;
   display: block;
-  font-weight: 600 !important;
+  font-weight: 600;
 	line-height: 1.3rem;
 	padding-left: 37px;
   font-size: 0.875rem;
