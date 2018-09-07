@@ -5291,3 +5291,18 @@ svg.mountain .st0{
 .all-project__list-item:hover, .all-project__list-item.active {
     border-color: #00b335;
 }
+
+/* История */
+.article__header--history {
+  padding-left: 322px;
+}
+
+.timeline__item{
+  border: 1px solid #000;
+  min-height:283px;
+}
+.timeline-item__image-place {
+  border: 1px solid #000;
+  width: 270px;
+}
+/* История : конец */
