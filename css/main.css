@@ -2292,6 +2292,7 @@ input:-webkit-autofill {
   font-weight: 400;
   margin: 0;
   line-height: 1.3;
+  position: relative;
 }
 
 
@@ -5289,7 +5290,7 @@ svg.mountain .st0{
     z-index: 10000;
 }
 .all-project__list-item:hover, .all-project__list-item.active {
-    border-color: #00b335;
+
 }
 
 /* История */
@@ -5298,11 +5299,125 @@ svg.mountain .st0{
 }
 
 .timeline__item{
-  border: 1px solid #000;
+
   min-height:283px;
+  display: flex;
 }
 .timeline-item__image-place {
-  border: 1px solid #000;
-  width: 270px;
+
+  width: 233px;
+}
+.timeline-image__wrapper {
+
+  padding-right: 37px;
+  width: 278px;
+  height: auto;
+  flex: 0;
+}
+
+.timeline-item__image-place img {
+  width: 100%;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.timeline-description__wrapper {
+
+  width: 100%;
+  padding-left: 50px;
+}
+
+.timeline-description__wrapper p {
+	font-weight: 500;
+	font-size: 0.9375rem;
+	line-height: 1.375rem;
+}
+
+.timeline__header {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 16px !important;
+}
+
+.timeline__date {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: #43b343;
+}
+
+.timeline__date {
+	display: inline-block;
+	font-weight: 600;
+	font-size: 1.125rem;
+	color: #43b343;
+	margin-bottom: 32px;
+}
+
+.timeline-delimeter {
+	width: 20px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	align-content: stretch;
+	display: block;
+	margin-bottom: 22px;
+}
+
+
+.timeline-nipple {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 70px;
+  border: 1px solid #10b842;
+}
+
+.timeline-line {
+	width: 1px;
+  display: block;
+	margin-top: 5px;
+	margin-bottom: 4px;
+	align-self: stretch;
+  height: 100%;
+  overflow: hidden;
+}
+.timeline-line::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #10b842;
+}
+
+.layout-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timeline-delimeter--history-header {
+	height: 157px;
+	position: absolute;
+	left: -56px;
+	top: -70px;
+}
+
+.timeline__item:last-child .timeline-nipple {
+  display: inline-block;
+}
+
+.timeline__item:last-child .timeline-line {
+  margin-top: 3px;
+}
+
+.timeline__item:last-child .timeline-delimeter {
+	height: 350px;
+	position: absolute;
+
+	left: 323px;
+	text-align: center;
 }
 /* История : конец */
