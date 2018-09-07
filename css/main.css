@@ -1528,7 +1528,7 @@ input {
 
 .alans-site-protocols:hover,
 .alans-confidential:hover {
-  border-bottom: 1px solid  rgba(67, 179, 67, 0.2);
+  border-bottom: 1px solid  rgba(67, 179, 67, 0.6);
   color: #43b343;
 }
 
