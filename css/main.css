@@ -5619,3 +5619,6 @@ svg.mountain .st0{
 .work-slide-9 {
     background: url("../img/slide9-background.png") no-repeat right 141px;
 }
+.other-content {
+    height: auto !important;
+}

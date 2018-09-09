@@ -784,15 +784,16 @@ function initFields($registrationFormsInput) {
 
 (function fullPageInit() {
     $('#fullpage').fullpage({
-        autoScrolling:true,
-        scrollHorizontally: true,
+        // autoScrolling:true,
+        // scrollHorizontally: true,
         verticalCentered: false,
-        scrollBar: true,
-        slidesNavigation: true,
-        fadingEffect: true,
-        fadingEffectKey: '43055AED-C0FF4C71-A4A7B4AE-A6F6BE8D',
-        anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6', 'anchor7', 'anchor8', 'anchor9'],
-        menu: '#menu-fullpage',
+        // scrollBar: true,
+        // slidesNavigation: true,
+        scrollOverflow: true,
+        // fadingEffect: true,
+        // fadingEffectKey: '43055AED-C0FF4C71-A4A7B4AE-A6F6BE8D',
+        // anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6', 'anchor7', 'anchor8', 'anchor9'],
+        // menu: '#menu-fullpage',
 
     });
 })();
