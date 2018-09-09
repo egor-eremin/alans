@@ -146,6 +146,14 @@ $(document).ready(function () {
 		$('.callback-form').submit();
 		
 	});
+	//Отслеживание пунктов истории
+	if($('.timeline__item').length > 0){
+		$('.timeline__item').viewportChecker({
+			classToAdd: 'onLook',
+			repeat: false,
+		});
+
+	}
 
 	//Отслеживание появления формы
 	$('.advantages').viewportChecker({
@@ -445,6 +453,7 @@ $(document).ready(function () {
 	});
 
 	activateLinks($mtbContentLink);
+	initTimeLineAnimation($('.timeline__item.onLook'), 0.7);
 
 	$(document).mouseup(function (e){ // событие клика по веб-документу
 	
@@ -453,10 +462,37 @@ $(document).ready(function () {
 			$mtbContentLink.removeClass('active');
 		});
 	});
+
+	
 	
     
 });
 
+
+
+
+// Функции
+//-------------------------------------------------------------
+
+//Запуск анимации при загрузке таймлайна на странице истории
+function initTimeLineAnimation($selector, durationMultiplicator) {
+
+	if ($selector.length > 0) {
+		$.each($selector, function (indexInArray) {
+			$(this).addClass('initialize');
+			$(this).css({
+				'-webkit-animation-delay': (indexInArray * durationMultiplicator) + 's',
+				'animation-delay': (indexInArray * durationMultiplicator) + 's',
+			});
+			$(this).find('.timeline__border').css({
+				'-webkit-animation-delay': (indexInArray * durationMultiplicator + 0.2) + 's',
+				'animation-delay': (indexInArray * durationMultiplicator + 0.2) + 's',
+			});
+		});
+	}
+}
+
+//Имитация position:sticky
 function stickifyBlock($sticky, $stickyParent) {
 	var stickyParentHeight = $stickyParent.outerHeight(true),
 	stickyHeight = $sticky.outerHeight(true), //Высота блока стикера
@@ -634,6 +670,8 @@ function initFields($registrationFormsInput) {
     });
 })();
 }
+
+
 
 // (function initMap() {
 //     if ($('div').is('#map-init')) {
