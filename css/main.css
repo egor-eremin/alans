@@ -5317,6 +5317,9 @@ svg.mountain .st0{
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  -webkit-animation-delay:800ms;
+  animation-delay:800ms;
+
 }
 
 .timeline-item__image-place {
@@ -5414,14 +5417,14 @@ svg.mountain .st0{
 }
 
 .timeline__item.onLook.initialize .timeline__border
-/* .timeline__item.onLook:not(.initialize) .timeline__border */
+
 {
   -webkit-animation-name: slideInDown;
   animation-name: slideInDown;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
