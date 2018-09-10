@@ -150,6 +150,12 @@ $(document).ready(function () {
 	if($('.timeline__item').length > 0){
 		$('.timeline__item').viewportChecker({
 			classToAdd: 'onLook',
+			callbackFunction: function(elem, action){
+				// console.log($('.timeline__item.onLook'));
+	
+				initTimeLineAnimation($('.timeline__item.onLook'), 0.1);
+				
+			},
 			repeat: false,
 		});
 
