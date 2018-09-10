@@ -437,8 +437,14 @@ input {
 .logo-link {
     /* max-width: 269px; */
     max-height: 103px;
-    width: 23%;
+    width: 16%;
     margin-top: 83px;
+    margin-right: 82px;
+}
+
+.logo-link img {
+  width: 100%;
+  max-width: 100%;
 }
 
 .header-container__info {
@@ -1509,7 +1515,7 @@ input {
 	width: 200px;
 	height: 50px;
 	background: url('../img/obj_alance_logo.png') 45% 57% no-repeat;
-	background-size: 140%;
+	background-size: 100%;
 	display: block;
 	margin-bottom: 68px;
 }
