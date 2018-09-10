@@ -934,14 +934,14 @@ input {
     height: 48px;
     background: #f4f4f4;
     border-radius: 24px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
     width: 100%;
 }
 .callback__label-text {
     position: absolute;
     top: 50%;
-    left: 20px;
+    left: 35px;
     font-size: 16px;
     line-height: 22px;
     transform: translateY(-50%);
@@ -5454,13 +5454,16 @@ svg.mountain .st0{
     height: 100%;
     visibility: hidden;
     opacity: 0;
-    transition: .3s ease-in-out .5s;
+    transition: .6s ease-in-out;
     padding-top: 50px;
     padding-bottom: 50px;
+    transform: translateY(-100%);
 }
 .fullpage-menu-wrapper__inner {
     margin: 0 auto;
-    width: 1240px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
     height: 100%;
 }
 .fullpage-ankor a {
@@ -5517,6 +5520,7 @@ svg.mountain .st0{
     visibility: visible;
     opacity: 1;
     display: block;
+    transform: translateY(0);
 }
 .fullpage-ankor_hidden {
     display: none;
@@ -5546,7 +5550,7 @@ svg.mountain .st0{
     left: 50%;
     transform: translateX(-50%);
     width: 500px;
-    margin-left: 204px;
+    margin-left: 134px;
 }
 .work-slide__title {
     text-transform: uppercase;
@@ -5674,8 +5678,10 @@ svg.mountain .st0{
     filter: drop-shadow(0 0 10px rgba(67,179,67,.4));
 }
 .commercial-proposal {
-    margin-top: 144px;
-    margin-bottom: 297px;
+    margin-top: 100px;
+    margin-bottom: 130px;
+    padding-bottom: 93px;
+    border-bottom: 1px solid #dcdcdc;
 }
 .other-content__title_center {
     text-align: center;
@@ -5801,11 +5807,13 @@ svg.mountain .st0{
     padding-bottom: 93px;
 }
 .about-company-main {
-    padding-bottom: 70px;
+    margin-bottom: 130px;
+    padding-bottom: 93px;
+    border-bottom: 1px solid #dcdcdc;
 }
-.fp-viewing-anchor0 .fullpage-menu-wrapper, .fp-viewing-10 .fullpage-menu-wrapper {
-    display: none;
-}
+/*.fp-viewing-anchor0 .fullpage-menu-wrapper, .fp-viewing-10 .fullpage-menu-wrapper {*/
+    /*display: none;*/
+/*}*/
 .advantages-item_main {
     opacity: 1;
 }
