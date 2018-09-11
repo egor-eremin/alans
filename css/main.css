@@ -6078,7 +6078,6 @@ svg.mountain .st0{
 .contact-section__item {
 	width: 175px;
 	margin-bottom: 40px;
-	border: 1px solid #000;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -6095,7 +6094,6 @@ svg.mountain .st0{
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  border: 1px solid #000;
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center center;
@@ -6116,7 +6114,6 @@ svg.mountain .st0{
 h2.persona__name {
 	margin-top: 28px;
 	display: block;
-	border: 1px solid #000;
 	text-align: center;
 	font-size: 0.9375rem;
 	letter-spacing: 0.3px;
@@ -6125,7 +6122,7 @@ h2.persona__name {
 .contact-section__item:only-child{
   margin: 0 auto 40px !important;
 }
-/* Структура и контакты : конец*/
+
 
 .contact-section__item:last-child{
   margin-right: auto;
@@ -6135,11 +6132,15 @@ h2.persona__name {
 
 p.persona__rank {
 	color: #43b343;
-	
+  /* margin-top: auto; */
 	text-align: center;
 	font-size: 0.875rem;
 	margin-top: 20px;
 	margin-bottom: 13px;
+}
+
+p.persona__tel {
+  margin-top: auto;
 }
 
 .director p.persona__rank {
@@ -6156,3 +6157,13 @@ p.persona__rank {
 .contact-section__item:not(.director) {
   padding-top: 33px;
 }
+
+.contact-section:last-child {
+  border: none;
+}
+
+.about-contant--structure {
+  padding-bottom: 0;
+}
+
+/* Структура и контакты : конец*/
