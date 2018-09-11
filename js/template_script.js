@@ -146,6 +146,17 @@ $(document).ready(function () {
 		$('.callback-form').submit();
 		
 	});
+	//Отслеживание пунктов истории
+	if($('.timeline__item').length > 0){
+		$('.timeline__item').viewportChecker({
+			classToAdd: 'onLook',
+			repeat: false,
+
+		});
+	
+				
+
+	}
 
 	//Отслеживание появления формы
 	$('.advantages').viewportChecker({
@@ -295,7 +306,7 @@ $(document).ready(function () {
     (function addScrollForProjectDetail() {
         if ($('.project-detail__text').length > 0) {
             initCustomScrollBar($('.project-detail__text'));
-        };
+        }
     })();
 
     (function initProductCustomScroll() {
@@ -446,6 +457,10 @@ $(document).ready(function () {
 
 	activateLinks($mtbContentLink);
 
+	
+
+	initTimeLineAnimation($('.timeline__item.onLook:not(.intialize)'), 0.5);
+
 	$(document).mouseup(function (e){ // событие клика по веб-документу
 	
 
@@ -453,10 +468,39 @@ $(document).ready(function () {
 			$mtbContentLink.removeClass('active');
 		});
 	});
+
+	
 	
     
 });
 
+
+
+
+// Функции
+//-------------------------------------------------------------
+
+// //Запуск анимации при загрузке таймлайна на странице истории
+function initTimeLineAnimation($selector, durationMultiplicator) {
+
+
+		$.each($selector, function (indexInArray) {
+				$(this).css({
+					'-webkit-animation-delay': (indexInArray * durationMultiplicator) + 's',
+					'animation-delay': (indexInArray * durationMultiplicator) + 's',
+				});
+				$(this).addClass('initialize');
+				$(this).find('.timeline__border').css({
+					'-webkit-animation-delay': (indexInArray * durationMultiplicator + 0.5) + 's',
+					'animation-delay': (indexInArray * durationMultiplicator + 0.5) + 's',
+				});
+		});
+
+}
+
+
+
+//Имитация position:sticky
 function stickifyBlock($sticky, $stickyParent) {
 	var stickyParentHeight = $stickyParent.outerHeight(true),
 	stickyHeight = $sticky.outerHeight(true), //Высота блока стикера
@@ -474,7 +518,7 @@ function stickifyBlock($sticky, $stickyParent) {
 		if ((stickyParentHeight - currentPositionInBlock) <= stickyHeight) {
 			if (!$sticky.hasClass('done')) {
 				$sticky.addClass('done');
-				console.log
+			
 			}
 			if ($sticky.hasClass('done')) {
 				if (stickyPositionBottom) {
@@ -634,6 +678,8 @@ function initFields($registrationFormsInput) {
     });
 })();
 }
+
+
 
 // (function initMap() {
 //     if ($('div').is('#map-init')) {
@@ -903,3 +949,27 @@ function hidePopupListener($windowPopupSelector, e, callback) {
 	}
 
 }
+// 	function isElementInViewport(el) {
+// 	  var rect = el.getBoundingClientRect();
+// 	  return (
+// 		rect.top >= 0 &&
+// 		rect.left >= 0 &&
+// 		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+// 		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+// 	  );
+// 	}
+  
+// 	function callbackFunc() {
+// 	  for (var i = 0; i < items.length; i++) {
+// 		if (isElementInViewport(items[i])) {
+// 		  items[i].classList.add("in-view");
+// 		}
+// 	  }
+// 	}
+  
+// 	// listen for events
+// 	window.addEventListener("load", callbackFunc);
+// 	window.addEventListener("resize", callbackFunc);
+// 	window.addEventListener("scroll", callbackFunc);
+  
+//   })();
