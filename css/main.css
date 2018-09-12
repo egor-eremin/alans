@@ -6111,7 +6111,7 @@ svg.mountain .st0{
 	margin-top: 30px;
 }
 
-h2.persona__name {
+.persona__name {
 	margin-top: 28px;
 	display: block;
 	text-align: center;
@@ -6121,6 +6121,8 @@ h2.persona__name {
 
 .contact-section__item:only-child{
   margin: 0 auto 40px !important;
+  
+  width:300px
 }
 
 
@@ -6130,16 +6132,16 @@ h2.persona__name {
 
 }
 
-p.persona__rank {
+.persona__rank {
 	color: #43b343;
-  /* margin-top: auto; */
+  
 	text-align: center;
 	font-size: 0.875rem;
 	margin-top: 20px;
 	margin-bottom: 13px;
 }
 
-p.persona__tel {
+.persona__tel {
   margin-top: auto;
 }
 
