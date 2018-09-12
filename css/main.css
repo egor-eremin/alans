@@ -2308,7 +2308,7 @@ input:-webkit-autofill {
 
 .page__header,
 .about-contant--mtb .article__title,
-.about-contant--license .article__title
+.about-contant--license .article__title, .article__title
  {
   color: #43b343;
   font-size: 26px;
@@ -4918,7 +4918,7 @@ svg.mountain .st0{
     justify-content: center;
     cursor: pointer;
     transition: .1s ease-in-out;
-    max-width: 256px;
+    max-width: 300px;
 }
 .custom-checkbox {
     width: 22px;
@@ -5005,6 +5005,7 @@ svg.mountain .st0{
 }
 .client-icon img {
     user-select: none;
+    max-width: 30px;
 }
 .ps-check_for-project {
     top: 50%;
@@ -6215,3 +6216,10 @@ svg.mountain .st0{
 }
 
 /* Структура и контакты : конец*/
+
+.header-container_404 .header-menu__item.with-submenu:hover > .submenu {
+    top: -66px;
+}
+.header-container_404 .submenu {
+    padding-top: 66px;
+}
