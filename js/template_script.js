@@ -840,6 +840,19 @@ function initFields($registrationFormsInput) {
         menu: '#menu-fullpage',
 
     });
+	if($('#fullpage').length > 0) {
+		$('#fullpage').fullpage({
+			// autoScrolling:true,
+			scrollHorizontally: true,
+			verticalCentered: false,
+			// scrollBar: true,
+			// slidesNavigation: true,
+			scrollOverflow: true,
+			anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6', 'anchor7', 'anchor8', 'anchor9'],
+			menu: '#menu-fullpage',
+	
+		});
+	}
 })();
 
 (function addSliderCommercialProposal() {
