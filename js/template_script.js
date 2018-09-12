@@ -679,43 +679,6 @@ function initFields($registrationFormsInput) {
 })();
 }
 
-
-
-// (function initMap() {
-//     if ($('div').is('#map-init')) {
-//
-//         ymaps.ready(init);
-//
-//         function init(){
-//             var myMap = new ymaps.Map("map-init", {
-//                 center: [52.376320118819244,102.550223484375],
-//                 zoom: 7,
-//                 controls: ['typeSelector', 'trafficControl', 'rulerControl'],
-//                 suppressMapOpenBlock: true
-//             });
-//
-//             var objectManager = new ymaps.ObjectManager({
-//                 clusterize: true,
-//                 gridSize: 3,
-//                 clusterIconLayout: ymaps.templateLayoutFactory.createClass('<div class="clusterIcon">{{ properties.geoObjects.length }}</div>'),
-//             });
-//
-//
-//
-//             myMap.geoObjects.add(objectManager);
-//
-//             // var myPlacemark = new ymaps.Placemark([55.76, 37.64], {
-//             //     hintContent: 'Содержимое всплывающей подсказки',
-//             //     balloonContent: 'Содержимое балуна'
-//             // });
-//
-//             // myMap.geoObjects.add(myPlacemark);
-//
-//         }
-//
-//     }
-// })();
-
 (function allCheckedClient() {
     $('.all-checked').on('change', function () {
         if ($(this).prop('checked')) {
@@ -848,8 +811,8 @@ function initFields($registrationFormsInput) {
         slidesToShow: 5,
         arrows: false,
         infinite: true,
-        // autoplay: true,
-        // autoplaySpeed: 4000,
+        autoplay: true,
+        autoplaySpeed: 4000,
     });
 })();
 
