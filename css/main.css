@@ -3756,6 +3756,7 @@ svg.mountain .st0{
 	margin: 0 0 67px;
 }
 
+
 .article__text.article__text--mtb p,
 .article__text.article__text--license p,
 .article__text.article__text--collective p,
@@ -6102,3 +6103,115 @@ svg.mountain .st0{
     width: 100%;
     height: 100vh;
 }
+
+/* Структура и контакты */
+.contact-section {
+	border-bottom: 1px solid #e5e5e5;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 60px 43px 20px;
+}
+
+.contact-section__item {
+	width: 175px;
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  margin-right: 7px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+.article__header--structure {
+  margin: 0 0 41px;
+}
+
+.person-image__wrapper {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.person-image__wrapper img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.director .person-image__wrapper{
+  width: 136px;
+  height: 136px;
+}
+
+.persona__name.director {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin-top: 30px;
+}
+
+.persona__name {
+	margin-top: 28px;
+	display: block;
+	text-align: center;
+	font-size: 0.9375rem;
+	letter-spacing: 0.3px;
+}
+
+.contact-section__item:only-child{
+  margin: 0 auto 40px !important;
+  
+  width:300px
+}
+
+
+.contact-section__item:last-child{
+  margin-right: auto;
+
+
+}
+
+.persona__rank {
+	color: #43b343;
+  
+	text-align: center;
+	font-size: 0.875rem;
+	margin-top: 20px;
+	margin-bottom: 13px;
+}
+
+.persona__tel {
+  margin-top: auto;
+}
+
+.director p.persona__rank {
+  font-size: 1rem;
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.contact-section__item:nth-child(4n){
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.contact-section__item:not(.director) {
+  padding-top: 33px;
+}
+
+.contact-section:last-child {
+  border: none;
+}
+
+.about-contant--structure {
+  padding-bottom: 0;
+}
+
+/* Структура и контакты : конец*/
