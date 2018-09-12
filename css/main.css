@@ -5721,8 +5721,9 @@ svg.mountain .st0{
     justify-content: center;
     margin-bottom: 48px;
 }
-.commercial-proposal__item + .commercial-proposal__item {
-    margin-left: 121px;
+.commercial-proposal__item {
+    margin-left: 50px;
+    margin-right: 50px;
 }
 .commercial-proposal__item:nth-child(3) svg {
     filter: drop-shadow(0 0 10px rgba(67,179,67,.4));
@@ -6063,4 +6064,11 @@ svg.mountain .st0{
 .fp-viewing-anchor9 .text-header {
     opacity: 1;
     visibility: visible;
+}
+.commercial-proposal__list .slick-track {
+    display: flex;
+    align-items: center;
+}
+.slick-center.commercial-proposal__item .commercial-proposal {
+    
 }

@@ -836,7 +836,7 @@ function initFields($registrationFormsInput) {
         // scrollBar: true,
         // slidesNavigation: true,
         scrollOverflow: true,
-        anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6', 'anchor7', 'anchor8', 'anchor9'],
+        anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6', 'anchor7', 'anchor8', 'anchor9','anchor10'],
         menu: '#menu-fullpage',
 
     });
@@ -846,6 +846,10 @@ function initFields($registrationFormsInput) {
     $('.commercial-proposal__list').slick({
         centerMode: true,
         slidesToShow: 5,
+        arrows: false,
+        infinite: true,
+        // autoplay: true,
+        // autoplaySpeed: 4000,
     });
 })();
 

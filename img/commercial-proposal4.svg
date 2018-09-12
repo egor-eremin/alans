@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 62 60.8" style="enable-background:new 0 0 62 60.8;" xml:space="preserve">
-<style type="text/css">
-	.commercial-proposal4{fill:none;stroke:#000000;stroke-opacity:0.12; stroke-miterlimit:10;}
-</style>
-<polyline class="commercial-proposal4" points="16.1,16 61.5,16 61.5,60.3 7,60.3 "/>
-<path class="commercial-proposal4" d="M8.2,60.3c-4.3,0-7.7-3.5-7.7-7.7s3.5-7.7,7.7-7.7s7.7,3.9,7.7,7.7c0,3.3-4.6,6.3-7.7,3.5V44.8"/>
-<path class="commercial-proposal4" d="M0.5,52.5V8.2C0.5,4,4,0.5,8.2,0.5S16,4,16,8.2v44.3"/>
-<line class="commercial-proposal4" x1="32.5" y1="53.2" x2="16" y2="53.2"/>
-<polyline class="commercial-proposal4" points="16,23 53.4,23 53.4,53.2 35.9,53.2 "/>
-<line class="commercial-proposal4" x1="16" y1="42.2" x2="21.5" y2="42.2"/>
-<polyline class="commercial-proposal4" points="25.9,42.2 30.3,42.2 30.3,53.2 "/>
-<polyline class="commercial-proposal4" points="38.3,53.2 38.3,42.2 41.4,42.2 "/>
-<line class="commercial-proposal4" x1="45" y1="42.2" x2="53.4" y2="42.2"/>
-<line class="commercial-proposal4" x1="53.4" y1="33.9" x2="49.6" y2="33.9"/>
-<line class="commercial-proposal4" x1="46.1" y1="33.9" x2="33" y2="33.9"/>
-<line class="commercial-proposal4" x1="28.6" y1="33.9" x2="16" y2="33.9"/>
-<line class="commercial-proposal4" x1="39.6" y1="33.9" x2="39.6" y2="23"/>
+    <style type="text/css">
+        .commercial-proposal{fill:none;stroke:#000000;stroke-opacity:0.12; stroke-miterlimit:10;}
+    </style>
+    <polyline class="commercial-proposal" points="16.1,16 61.5,16 61.5,60.3 7,60.3 "/>
+    <path class="commercial-proposal" d="M8.2,60.3c-4.3,0-7.7-3.5-7.7-7.7s3.5-7.7,7.7-7.7s7.7,3.9,7.7,7.7c0,3.3-4.6,6.3-7.7,3.5V44.8"/>
+    <path class="commercial-proposal" d="M0.5,52.5V8.2C0.5,4,4,0.5,8.2,0.5S16,4,16,8.2v44.3"/>
+    <line class="commercial-proposal" x1="32.5" y1="53.2" x2="16" y2="53.2"/>
+    <polyline class="commercial-proposal" points="16,23 53.4,23 53.4,53.2 35.9,53.2 "/>
+    <line class="commercial-proposal" x1="16" y1="42.2" x2="21.5" y2="42.2"/>
+    <polyline class="commercial-proposal" points="25.9,42.2 30.3,42.2 30.3,53.2 "/>
+    <polyline class="commercial-proposal" points="38.3,53.2 38.3,42.2 41.4,42.2 "/>
+    <line class="commercial-proposal" x1="45" y1="42.2" x2="53.4" y2="42.2"/>
+    <line class="commercial-proposal" x1="53.4" y1="33.9" x2="49.6" y2="33.9"/>
+    <line class="commercial-proposal" x1="46.1" y1="33.9" x2="33" y2="33.9"/>
+    <line class="commercial-proposal" x1="28.6" y1="33.9" x2="16" y2="33.9"/>
+    <line class="commercial-proposal" x1="39.6" y1="33.9" x2="39.6" y2="23"/>
 </svg>
