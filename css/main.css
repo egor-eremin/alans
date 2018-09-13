@@ -6359,11 +6359,11 @@ svg.mountain .st0{
 .news-date::after {
 	position: absolute;
 	width: 30px;
-	height: 2px;
+	height: 1px;
 	background-color: #43b343;
 	display: block;
 	content: "";
-	top: 11px;
+	top: 9px;
 	left: -70px;
 }
 
@@ -6386,6 +6386,8 @@ svg.mountain .st0{
   margin-bottom: 0;
 }
 
-
+.paginator--smi {
+	margin: 56px auto 0;
+}
 
 /* СМИ о нас : конец*/
