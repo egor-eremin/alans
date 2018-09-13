@@ -2308,7 +2308,7 @@ input:-webkit-autofill {
 
 .page__header,
 .about-contant--mtb .article__title,
-.about-contant--license .article__title, .article__title
+.about-contant--license .article__title, .article__title, .article-title
  {
   color: #43b343;
   font-size: 26px;
@@ -2356,7 +2356,10 @@ input:-webkit-autofill {
 }
 
 .article__text ul,
-.article__text ol {
+.article__text ol,
+.vacancy-details ul,
+.vacancy-details ol,
+.project-text-wrapper ul, .project-text-wrapper ol {
   position: relative;
   font-weight: 400;
   line-height: 1.466;
@@ -2392,18 +2395,28 @@ input:-webkit-autofill {
 
 .about-contant--activities-types .article__text ol li::before,
 .about-contant--activities-types .article__text ul li::before,
-.article__text ol li::before, .article__text ul li::before {
+.article__text ol li::before, .article__text ul li::before,
+.vacancy-details ol li::before, .vacancy-details ul li::before,
+.project-text-wrapper ul li::before, .project-text-wrapper ul li::before {
   content: url('../img/pin.svg');
   left: 0;
   position: absolute;
   top: 0;
 }
 
-.about-contant--activities-types .article__text ol li,
-.about-contant--activities-types .article__text ul li, .article__text ol li, .article__text ul li {
+.about-contant--activities-types .article__text ol li, .vacancy-details ul li, .vacancy-details ol li,
+.about-contant--activities-types .article__text ul li, .article__text ol li, .article__text ul li, .project-text-wrapper ul li, .project-text-wrapper ol li {
 	margin: 0 0 10px;
     position: relative;
     padding-left: 31px;
+}
+
+.project-text-wrapper ul li, .vacancy-details ul li, .vacancy-details ol li, .project-text-wrapper ol li {
+    font-size: 14px;
+}
+.project-text-wrapper ul, .project-text-wrapper ol, .vacancy-details ul, .vacancy-details ol {
+    margin-top: 0;
+    margin-bottom: 22px;
 }
 
 .about-contant--activities-types  .article__text img,
@@ -3083,10 +3096,13 @@ input:-webkit-autofill {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  text-align: center;
   justify-content: flex-start;
   -ms-align-items: flex-start;
   align-items: flex-start;
+}
+.article-page__text p {
+    font-size: 15px;
+    line-height: 1.46;
 }
 
 .article-page__title {
@@ -3427,18 +3443,19 @@ svg.mountain .st0{
   position: absolute;
   border-top: 1px solid #43b343;
   width: 11px;
-  top: 7px;
-  left: 1.5px;
-  transition: transform 0.5s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
 }
 
 .list__item p input ~ label::after {
-  transform: rotate(90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .list__item p input:checked ~ label::after,
 .list__item p input ~ label:hover::after {
-  transform: rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 
 .list__header p {
@@ -3569,6 +3586,7 @@ svg.mountain .st0{
   display: none;
   /* flex-direction: column; */
   padding-left: 5.7%;
+  padding-right: 5.7%;
   padding-top: 23px;
   padding-bottom: 58px;
   font-size: 0.875em !important;
@@ -3621,126 +3639,14 @@ svg.mountain .st0{
     line-height: 22px;
     font-size: 15px;
 }
-.article-title_vacansies {
-    padding-left: 56px;
-    padding-right: 56px;
-    margin-top: 49px;
-    margin-bottom: 71px;
-}
+/**/
 .list__item:hover label::after {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
 }
 .callback__title {
     color: #fff;
     text-align: center;
     width: 100%;
-    font-size: 20px;
-    margin-bottom: 39px;
-}
-.callback__close-icon {
-    width: 51px;
-    height: 51px;
-    border-radius: 50%;
-    background-color: #fff;
-    position: relative;
-    flex-shrink: 0;
-    cursor: pointer;
-}
-.callback__close-icon-item {
-    width: 14px;
-    border-radius: 3px;
-    height: 2px;
-    background-color: #43b343;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transition: .3s ease-in-out;
-}
-.callback__close-icon-item:first-child {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-.callback__close-icon-item:last-child {
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
-.callback__close-icon:hover .callback__close-icon-item {
-    width: 20px;
-}
-.callback__close-icon:hover .callback__close-icon-item:first-child {
-    transform: translate(-50%, -50%) rotate(225deg);
-}
-.callback__close-icon:hover .callback__close-icon-item:last-child {
-    transform: translate(-50%, -50%) rotate(135deg);
-}
-.callback__form-block-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 80px;
-}
-.callback.active .callback__form-block {
-    transform: translateX(0);
-}
-.callback.active .callback__close {
-    opacity: 1;
-    visibility: visible;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-.callback-text {
-    display: none;
-}
-.callback__form label.error {
-    font-size: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #b35043;
-    position: absolute;
-    top: 50%;
-    right: 13px;
-    transform: translate(0, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.callback__form label.error::before {
-    content: '';
-    background: url(../img/obj_cross.svg) center center no-repeat;
-    width: 10px;
-    height: 10px;
-    display: block;
-}
-.callback__form input.valid ~ label.error {
-    display: flex !important;
-    background: #43b343;
-}
-.callback__form input.valid ~ label.error::before {
-    background: url(../img/obj_checked.svg) center center no-repeat;
-}
-.callback__form.hide-information {
-    display: none;
-}
-.callback-text.show {
-    display: block;
-}
-.callback-text {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 53px;
-}
-.callback-text__title {
-    font-size: 30px;
-    margin-bottom: 17px;
-}
-.callback-text__text, .wrong-text {
-    font-size: 20px;
-}
-.callback-text__text p {
-    margin-bottom: 17px;
 }
 
 /* Материально-техническая база */
@@ -4163,6 +4069,7 @@ svg.mountain .st0{
     height: 596px;
     position: relative;
     display: flex;
+    align-items: flex-start;
 }
 #map-init {
     height: 100%;
@@ -4174,7 +4081,7 @@ svg.mountain .st0{
 .all-project {
     /*position: absolute;*/
     width: 340px;
-    max-height: calc(100% - 36px);
+    /*max-height: calc(100% - 36px);*/
     margin-left: 19px;
     margin-top: 19px;
     position: relative;
@@ -4197,6 +4104,7 @@ svg.mountain .st0{
 }
 .all-project__title:hover {
     background-color: #00b335;
+    border-color: #00b335;
 }
 .all-project__title:hover .all-project__icon-item::before, .all-project__title:hover .all-project__icon-item::after {
     background-color: #fff;
@@ -5554,6 +5462,11 @@ svg.mountain .st0{
 .fullpage-ankor.active a {
     color: #00b335;
 }
+.up-arrow-main {
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
 .fp-viewing-anchor1 .fullpage-menu-wrapper,
 .fp-viewing-anchor2 .fullpage-menu-wrapper,
 .fp-viewing-anchor3 .fullpage-menu-wrapper,
@@ -5562,7 +5475,7 @@ svg.mountain .st0{
 .fp-viewing-anchor6 .fullpage-menu-wrapper,
 .fp-viewing-anchor7 .fullpage-menu-wrapper,
 .fp-viewing-anchor8 .fullpage-menu-wrapper,
-.fp-viewing-anchor9 .fullpage-menu-wrapper{
+.fp-viewing-anchor9 .fullpage-menu-wrapper {
     visibility: visible;
     opacity: 1;
     display: block;
@@ -6064,7 +5977,17 @@ svg.mountain .st0{
 .fp-viewing-anchor6 .text-header,
 .fp-viewing-anchor7 .text-header,
 .fp-viewing-anchor8 .text-header,
-.fp-viewing-anchor9 .text-header {
+.fp-viewing-anchor9 .text-header,
+.fp-viewing-anchor1 .up-arrow-main,
+.fp-viewing-anchor2 .up-arrow-main,
+.fp-viewing-anchor3 .up-arrow-main,
+.fp-viewing-anchor4 .up-arrow-main,
+.fp-viewing-anchor5 .up-arrow-main,
+.fp-viewing-anchor6 .up-arrow-main,
+.fp-viewing-anchor7 .up-arrow-main,
+.fp-viewing-anchor8 .up-arrow-main,
+.fp-viewing-anchor9 .up-arrow-main,
+.fp-viewing-anchor10 .up-arrow-main {
     opacity: 1;
     visibility: visible;
 }
@@ -6222,4 +6145,14 @@ svg.mountain .st0{
 }
 .header-container_404 .submenu {
     padding-top: 66px;
+}
+.article-page__text p {
+    font-size: 15px;
+    line-height: 1.46;
+}
+.article-page__text h3 {
+    font-size: 18px;
+}
+.article-page__text ul li {
+    font-size: 15px;
 }

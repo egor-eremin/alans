@@ -831,6 +831,12 @@ function initFields($registrationFormsInput) {
     });
 })();
 
+(function uppTopButtonMain() {
+    $('.up-arrow-main__button').on('click', function () {
+        window.location.hash = 'anchor0';
+    });
+})();
+
 
 function addTabs(tabbed_selector) {
     // Get relevant elements and collections
