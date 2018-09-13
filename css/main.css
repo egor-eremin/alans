@@ -2266,7 +2266,7 @@ input:-webkit-autofill {
 }
 
 .probabilities:not(:hover) .probabilities__btn,
-.btn.btn--smi:not(:hover)::after
+.smi-section:not(:hover) .btn.btn--smi:not(:hover)::after
  {
   background-color: #f9f9f9;
   color: #000;
@@ -2274,7 +2274,7 @@ input:-webkit-autofill {
 
 .probabilities:not(:hover) .probabilities__btn::before,
 .probabilities:not(:hover) .probabilities__btn::after,
-.btn.btn--smi::before
+.smi-section:not(:hover) .btn.btn--smi::before
  {
   background-blend-mode: difference;
   background-color: #ffffff;
@@ -2286,6 +2286,8 @@ input:-webkit-autofill {
   font-weight: 400;
   transition: 0.25s ease; 
   border: none;
+  position: relative;
+  z-index: 3;
 }
 
 .btn.btn--smi:hover {
@@ -2304,9 +2306,14 @@ input:-webkit-autofill {
 }
 
 
-.btn.btn--smi:hover::before {
+.smi-section:hover .btn.btn--smi:before {
   background-color: #54c254;
   background-blend-mode: overlay;
+}
+
+.smi-section:hover .btn.btn--smi{
+  background-color: #11b121;
+  color: #fff;
 }
 
 
@@ -6264,15 +6271,44 @@ svg.mountain .st0{
 /* СМИ о нас */
 .smi-section {
   border-top: 1px solid #e5e5e5;
-  /* border-bottom: 1px solid #e5e5e5; */
+ 
   padding-top: 63px;
   padding-bottom: 51px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+
+.smi-section:hover::before {
+  background-color: #f9fcf8;
+  z-index: 0;
+}
+
+.smi-section::before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: -56px;
+  top: -1px;
+  width: calc(100% + (100vw - 1040px)/2);
+  height: 100%;
+  transition-property: background-color;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;
+  z-index: 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.smi-section:last-child::before {
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .smi-image__wrapper {
-
+  position: relative;
+  z-index: 2;
   width: 233px;
   height: auto;
   flex: none;
@@ -6307,6 +6343,8 @@ svg.mountain .st0{
 	font-size: 1.25rem;
   line-height: 0.6;
   font-weight: inherit;
+  position: relative;
+  z-index: 2;
 }
 
 .news-date {
@@ -6332,7 +6370,9 @@ svg.mountain .st0{
 .smi-text__wrapper p {
 	font-weight: 500;
 	line-height: 1.5;
-	font-size: 0.925rem;
+  font-size: 0.925rem;
+  position: relative;
+  z-index: 2;
 }
 
 .btn--smi {
