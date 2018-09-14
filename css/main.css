@@ -6276,7 +6276,7 @@ svg.mountain .st0{
   padding-bottom: 51px;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
+  
   position: relative;
   z-index: 2;
 }
@@ -6308,13 +6308,19 @@ svg.mountain .st0{
 
 .smi-image__wrapper {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: 233px;
   height: auto;
   flex: none;
-
-
+  align-self: flex-start;
+  border: none !important;
+  cursor: pointer;
 }
+
+.article__text .smi-text__wrapper  a{
+  border: none;
+}
+
 .smi-image__wrapper img{
   width: 100%;
   max-width: 100%;
@@ -6345,6 +6351,14 @@ svg.mountain .st0{
   font-weight: inherit;
   position: relative;
   z-index: 2;
+
+
+}
+
+.smi-section h2 {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: ease;
 }
 
 .news-date {
@@ -6388,6 +6402,10 @@ svg.mountain .st0{
 
 .paginator--smi {
 	margin: 56px auto 0;
+}
+
+.smi-section:hover h2{
+  color: #43b343;
 }
 
 /* СМИ о нас : конец*/
