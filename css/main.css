@@ -6100,7 +6100,7 @@ svg.mountain .st0{
 }
 .static-map__interactive-map {
     position: absolute;
-    right: 0;
+    right: -339px;
     top: 141px;
 }
 .text-header__wrapper {
