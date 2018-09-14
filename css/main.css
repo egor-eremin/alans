@@ -6273,7 +6273,7 @@ svg.mountain .st0{
   padding-bottom: 51px;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
+  
   position: relative;
   z-index: 2;
 }
@@ -6370,6 +6370,10 @@ svg.mountain .st0{
   background-color: #f9f9f9;
   color: #000000;
   width: 168px;
+}
+
+.article__text .smi-section  a:hover {
+  border:none;
 }
 
 .layout-margin {
