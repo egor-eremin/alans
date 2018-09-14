@@ -2266,7 +2266,7 @@ input:-webkit-autofill {
 }
 
 .probabilities:not(:hover) .probabilities__btn,
-.smi-section:not(:hover) .btn.btn--smi:not(:hover)::after
+.btn.btn--smi:not(:hover)::after
  {
   background-color: #f9f9f9;
   color: #000;
@@ -2274,7 +2274,7 @@ input:-webkit-autofill {
 
 .probabilities:not(:hover) .probabilities__btn::before,
 .probabilities:not(:hover) .probabilities__btn::after,
-.smi-section:not(:hover) .btn.btn--smi::before
+ .btn.btn--smi::before
  {
   background-blend-mode: difference;
   background-color: #ffffff;
@@ -2306,15 +2306,12 @@ input:-webkit-autofill {
 }
 
 
-.smi-section:hover .btn.btn--smi:before {
+.btn.btn--smi:hover::before {
   background-color: #54c254;
   background-blend-mode: overlay;
 }
 
-.smi-section:hover .btn.btn--smi{
-  background-color: #11b121;
-  color: #fff;
-}
+
 
 
 .btn::before {
@@ -6282,10 +6279,7 @@ svg.mountain .st0{
 }
 
 
-.smi-section:hover::before {
-  background-color: #f9fcf8;
-  z-index: 0;
-}
+
 
 .smi-section::before {
   content: '';
@@ -6295,9 +6289,6 @@ svg.mountain .st0{
   top: -1px;
   width: calc(100% + (100vw - 1040px)/2);
   height: 100%;
-  transition-property: background-color;
-  transition-duration: 400ms;
-  transition-timing-function: ease-in-out;
   z-index: 0;
   border-top: 1px solid #e5e5e5;
 }
