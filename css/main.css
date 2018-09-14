@@ -2306,16 +2306,6 @@ input:-webkit-autofill {
 }
 
 
-/* .smi-section:hover .btn.btn--smi:before {
-  background-color: #54c254;
-  background-blend-mode: overlay;
-}
-
-.smi-section:hover .btn.btn--smi{
-  background-color: #11b121;
-  color: #fff;
-} */
-
 
 .btn::before {
 	background: #54c254 url('../img/obj_button-arrow.svg') center center no-repeat;
