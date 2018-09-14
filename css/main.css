@@ -2306,15 +2306,6 @@ input:-webkit-autofill {
 }
 
 
-.smi-section:hover .btn.btn--smi:before {
-  background-color: #54c254;
-  background-blend-mode: overlay;
-}
-
-.smi-section:hover .btn.btn--smi{
-  background-color: #11b121;
-  color: #fff;
-}
 
 
 .btn::before {
@@ -6283,7 +6274,7 @@ svg.mountain .st0{
 
 
 .smi-section:hover::before {
-  background-color: #f9fcf8;
+  /* background-color: #f9fcf8; */
   z-index: 0;
 }
 
@@ -6314,7 +6305,7 @@ svg.mountain .st0{
   flex: none;
   align-self: flex-start;
   border: none !important;
-  cursor: pointer;
+  
 }
 
 .article__text .smi-text__wrapper  a{
@@ -6404,8 +6395,5 @@ svg.mountain .st0{
 	margin: 56px auto 0;
 }
 
-.smi-section:hover h2{
-  color: #43b343;
-}
 
 /* СМИ о нас : конец*/
