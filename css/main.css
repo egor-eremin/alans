@@ -6100,7 +6100,7 @@ svg.mountain .st0{
 }
 .static-map__interactive-map {
     position: absolute;
-    right: -339px;
+    right: -418px;
     top: 141px;
 }
 .text-header__wrapper {
@@ -6454,3 +6454,82 @@ svg.mountain .st0{
 }
 
 /* СМИ о нас : конец*/
+
+/*-------animation-------*/
+.main-substrate {
+    position: relative;
+}
+.small-tree {
+    position: absolute;
+}
+.small-tree__1 {
+    top: 51px;
+    left: 429px;
+}
+.small-tree__2 {
+    top: 1px;
+    left: 562px;
+}
+.small-tree__3 {
+    top: 1px;
+    left: 616px;
+}
+.small-tree__4 {
+    top: -9px;
+    left: 663px;
+}
+.small-tree__5 {
+    top: 14px;
+    left: 654px;
+}
+.small-tree__6 {
+    top: 27px;
+    left: 711px;
+}
+.small-tree__7 {
+    top: 32px;
+    left: 763px;
+}
+.small-tree__8 {
+    top: 187px;
+    left: 737px;
+}
+.small-tree__9 {
+    top: 363px;
+    left: 959px;
+}
+.small-tree__10 {
+    top: 419px;
+    left: 918px;
+}
+.small-tree__11 {
+    top: 396px;
+    left: 1009px;
+}
+.small-tree__12 {
+    top: 370px;
+    left: 1053px;
+}
+.main-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.green-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+@keyframes animation-step1 {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    100% {
+        top: 20px;
+        opacity: .6;
+    }
+
+}
