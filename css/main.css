@@ -6444,64 +6444,114 @@ svg.mountain .st0{
 /* СМИ о нас : конец*/
 
 /*-------animation-------*/
+.shadow-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
 .main-substrate {
     position: relative;
+    width: 1586px;
+    height: 514px;
 }
-.small-tree {
+.small-tree, .big-tree {
     position: absolute;
 }
-.small-tree__1 {
+.small-tree_1 {
     top: 51px;
     left: 429px;
 }
-.small-tree__2 {
+.small-tree_2 {
     top: 1px;
     left: 562px;
 }
-.small-tree__3 {
+.small-tree_3 {
     top: 1px;
     left: 616px;
 }
-.small-tree__4 {
+.small-tree_4 {
     top: -9px;
     left: 663px;
 }
-.small-tree__5 {
+.small-tree_5 {
     top: 14px;
     left: 654px;
 }
-.small-tree__6 {
+.small-tree_6 {
     top: 27px;
     left: 711px;
 }
-.small-tree__7 {
+.small-tree_7 {
     top: 32px;
     left: 763px;
 }
-.small-tree__8 {
+.small-tree_8 {
     top: 187px;
     left: 737px;
 }
-.small-tree__9 {
+.small-tree_9 {
     top: 363px;
     left: 959px;
 }
-.small-tree__10 {
+.small-tree_10 {
     top: 419px;
     left: 918px;
 }
-.small-tree__11 {
+.small-tree_11 {
     top: 396px;
     left: 1009px;
 }
-.small-tree__12 {
+.small-tree_12 {
     top: 370px;
     left: 1053px;
+}
+.big-tree_1 {
+    top: -20px;
+    left: 603px;
+}
+.big-tree_2 {
+    top: 7px;
+    left: 733px;
+}
+.big-tree_3 {
+    top: 90px;
+    left: 685px;
+}
+.big-tree_4 {
+    top: 57px;
+    left: 453px;
+}
+.big-tree_5 {
+    top: 52px;
+    left: 377px;
+}
+.big-tree_6 {
+    top: 208px;
+    left: 869px;
+}
+.big-tree_7 {
+    top: 361px;
+    left: 933px;
+}
+.big-tree_8 {
+    top: 109px;
+    left: 978px;
+}
+.big-tree_9 {
+    top: 376px;
+    left: 1019px;
+}
+.big-tree_10 {
+    top: 371px;
+    left: 1106px;
 }
 .main-animation {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
 }
 .green-background {
     position: absolute;
@@ -6509,15 +6559,124 @@ svg.mountain .st0{
     left: 0;
     opacity: 0;
 }
+.fp-viewing-anchor1 .animation-step1 .green-background {
+    animation: animation-background-step1 0.3s ease-in-out .3s;
+    animation-fill-mode: forwards;
+}
+.animate-docs-wrapper {
+    position: absolute;
+    top: 107px;
+    left: 626px;
+}
+.map-top::before, .map-bottom::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 287px;
+    background-color: #dae5b5;
+    top: 0;
+    left: 50%;
 
-@keyframes animation-step1 {
+}
+.map-top::before {
+    transform: translate(-126px, 17px) rotate(73deg);
+}
+.map-bottom::before {
+    transform: rotate(73deg);
+}
+.cross-line__item:last-child::after {
+    top: auto;
+    bottom: 0;
+    transform: rotate(73deg) translate(45px, -56px);
+}
+.fp-viewing-anchor1 .animation-step1 .animate-docs {
+    animation: animation-docs-step1 0.3s ease-in-out .6s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor1 .animation-step1 .animate-signature {
+    animation: animation-signature-step1 0.3s ease-in-out .9s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor1 .animation-step1 .animate-printing {
+    animation: animation-printing-step1 0.3s ease-in-out 1.2s;
+    animation-fill-mode: forwards;
+}
+.animate-docs {
+    position: relative;
+    opacity: 0;
+}
+.animate-signature {
+    position: absolute;
+    bottom: 15px;
+    left: 11px;
+    opacity: 0;
+}
+.animate-printing {
+    position: absolute;
+    bottom: 17px;
+    right: 15px;
+    opacity: 0;
+}
+.map-pieces-map {
+    width: 1586px;
+    height: 514px;
+}
+.piece-map {
+    position: absolute;
+}
+.map-top {
+    top: 1px;
+    left: 357px;
+}
+.map-bottom {
+    top: 82px;
+    left: 1px;
+}
+
+@keyframes animation-background-step1 {
     0% {
         top: 0;
         opacity: 0;
     }
+    50% {
+        top: 0;
+        opacity: .3;
+    }
     100% {
-        top: 20px;
-        opacity: .6;
+        top: -30px;
+        opacity: .3;
     }
 
+}
+@keyframes animation-docs-step1 {
+    0% {
+        top: 25px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+@keyframes animation-signature-step1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animation-printing-step1 {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
