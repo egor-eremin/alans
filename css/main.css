@@ -6649,7 +6649,7 @@ svg.mountain .st0{
     background-color: #dae5b5;
 }
 .map-top::after {
-    transform: rotate(18.5deg) translate(-68px, -119px);
+    transform: rotate(18.7deg) translate(-70px, -114px);
 }
 .map-bottom::after {
     transform: rotate(18.5deg) translate(240px, -323px);
@@ -6659,13 +6659,32 @@ svg.mountain .st0{
 }
 .drilling-machine {
     position: absolute;
-    top: 145px;
-    left: 624px;
+    top: 118px;
+    left: 683px;
     opacity: 0;
 }
+.fp-viewing-anchor2 .map-top::after, .fp-viewing-anchor2 .map-top::before, .fp-viewing-anchor2 .map-bottom::before {
+    display: block;
+}
+.drilling-line {
+    position: absolute;
+    top: 101px;
+    left: 453px;
+    opacity: 0;
+}
+.cut-earth {
+    top: 83px;
+    left: 358px;
+    overflow: hidden;
+    height: 350px;
+}
 .fp-viewing-anchor2 .animation-step2 .drilling-machine {
-    animation: animation-drilling-maching-step2 1s ease-in-out .3s;
+    animation: animation-drilling-maching-step2 .5s ease-in-out .3s;
     animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .drilling-line {
+    animation-fill-mode: forwards;
+    animation: animation-drilling-line-step2 1s ease-in-out .8s;
 }
 
 @keyframes animation-background-step1 {
@@ -6717,13 +6736,43 @@ svg.mountain .st0{
 }
 @keyframes animation-drilling-maching-step2 {
     0% {
-        top: 145px;
-        left: 624px;
+        top: 118px;
+        left: 683px;
         opacity: 0;
     }
     100% {
-        top: 110px;
-        left: 720px;
+        top: 112px;
+        left: 703px;
         opacity: 1;
+    }
+}
+@keyframes animation-drilling-line-step2 {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    25% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    50% {
+        opacity: .6;
+        transform: scale(1);
+    }
+    75% {
+        opacity: .3;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes animation-bottom-map-step2 {
+    0% {
+        top: 83px;
+    }
+    100% {
+        top: 224px;
     }
 }
