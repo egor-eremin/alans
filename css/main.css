@@ -6804,3 +6804,39 @@ svg.mountain .st0{
         height: 469px;
     }
 }
+
+/*----------------------------------------Адаптива-------------------------------------------------------*/
+@media all and (max-width: 1280px){
+  .header-wrapper {
+    width:100%;
+    padding: 40px;
+  }
+
+  .tagline {
+    margin-right: 0%;
+  }
+
+  .about-page-wrapper {
+    width: 100%;
+  }
+
+  .about-aside {
+    width: 28%;
+  }
+
+  .about-contant {
+    width: 80%;
+  }
+
+  .activiteies-types-aside {
+    padding: 0 39px 0 70px;
+  }
+
+  .layout-position {
+
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+}
