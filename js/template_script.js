@@ -91,6 +91,9 @@ $(document).ready(function () {
             required: true,
             minlength: 18
         },
+        'mail-input': {
+           email: true,
+        }
 
     });
 
