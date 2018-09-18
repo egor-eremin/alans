@@ -6670,7 +6670,7 @@ svg.mountain .st0{
 
 @keyframes animation-background-step1 {
     0% {
-        top: 0;
+        top: 0; 
         opacity: 0;
     }
     50% {
