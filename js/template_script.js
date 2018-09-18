@@ -91,12 +91,11 @@ $(document).ready(function () {
             required: true,
             minlength: 18
         },
-        'mail-input': {
-           email: true,
-        }
+        // 'mail-input': {
+        //    email: true,
+        // }
 
     });
-
 
 
     $registrationFormsInput.on('focus', function () {
@@ -615,6 +614,7 @@ function initFields($registrationFormsInput) {
         $('.btn__order-callback, .btn-call').click(function (e) {
             e.preventDefault();
             $('.callback').show(0);
+            $('body').css('overflow', 'hidden');
             $('.callback').toggleClass('active');
         });
     })();
@@ -627,6 +627,7 @@ function initFields($registrationFormsInput) {
                 $('.callback').removeClass('active');
                 setTimeout(function () {
                     $('.callback').hide(0);
+                    $('body').css('overflow', 'visible');
                 }, 300);
             }
         });
@@ -828,6 +829,15 @@ function initFields($registrationFormsInput) {
 (function uppTopButtonMain() {
     $('.up-arrow-main__button').on('click', function () {
         window.location.hash = 'anchor0';
+    });
+})();
+(function onBlurInput() {
+    $('.focus-element').blur(function () {
+        if ($(this).val()) {
+            $(this).addClass('text-yes');
+        } else {
+            $(this).removeClass('text-yes');
+        }
     });
 })();
 

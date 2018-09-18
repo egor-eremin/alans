@@ -904,8 +904,17 @@ input {
     justify-content: flex-start;
     transform: translateX(100%);
     transition: transform .3s ease-in-out;
-    position: relative;
+    /*position: relative;*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
     z-index: 2;
+}
+.callback-scroll-wrapper {
+    min-height: 100%;
+    height: auto;
+    overflow: auto;
 }
 .callback {
     position: fixed;
@@ -920,7 +929,7 @@ input {
     background: #fff;
     border-radius: 5px;
     overflow: hidden;
-    padding: 53px 41px;
+    padding: 35px;
     text-align: center;
     margin-bottom: 53px;
     flex-shrink: 0;
@@ -933,18 +942,27 @@ input {
 .callback__form-item {
     width: 100%;
     position: relative;
-    margin-bottom: 53px;
+    margin-bottom: 28px;
 }
 .callback__form-item_for-button-submit {
     margin-bottom: 0;
 }
-.callback__form-item input {
+.callback__form-item input, .form-item textarea, .callback__form-item textarea {
     height: 48px;
     background: #f4f4f4;
     border-radius: 24px;
     padding-left: 35px;
     padding-right: 35px;
     width: 100%;
+}
+.callback__form-item textarea, .form-item textarea {
+    border: none;
+    height: 150px;
+    resize: none;
+    padding: 20px 35px;
+}
+.callback__textarea ~ .callback__label-text {
+    top: 25px;
 }
 .callback__label-text {
     position: absolute;
@@ -956,7 +974,16 @@ input {
     transition: .2s ease;
     pointer-events: none;
 }
-.callback__form-item input:focus ~ .callback__label-text, .callback__form-item input:valid ~ .callback__label-text  {
+.callback__form-item input:focus ~ .callback__label-text,
+.callback__form-item input:valid:not(.not-valid) ~ .callback__label-text,
+.callback__form-item textarea:focus ~ .callback__label-text,
+.callback__form-item textarea:valid:not(.not-valid) ~ .callback__label-text,
+.callback__form-item textarea.text-yes ~ .callback__label-text,
+.callback__form-item input.text-yes ~ .callback__label-text,
+.form-item input:focus ~ .field-placeholder,
+.form-item textarea:focus ~ .field-placeholder,
+.form-item input.text-yes ~ .field-placeholder,
+.form-item textarea.text-yes ~ .field-placeholder {
     top: 0;
     font-size: 12px;
  }
@@ -1124,7 +1151,7 @@ input {
 	letter-spacing: 1px;
 }
 
-.username, .user-telephone {
+.username, .user-telephone, .callback-form__email {
   border-radius: 80px;
 	border: none;
   background-color: #f4f4f4;
@@ -1139,8 +1166,19 @@ input {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  /*flex-wrap: wrap;*/
+  /*width: 585px;*/
+  /*flex-shrink: 0;*/
 }
-
+.form__fields_flex {
+    flex-wrap: wrap;
+    width: 100%;
+    flex-shrink: 0;
+}
+.user-text__wrapper {
+    width: 100%;
+    margin-top: 40px;
+}
 
 .usersubmit,
 .bth-adress,
@@ -1230,6 +1268,11 @@ input {
 
 .agreement-checkbox {
   margin-top: 40px;
+    display: flex;
+    align-items: center;
+}
+.agreement__wrapper {
+    margin-right: 20px;
 }
 
 .ps-checkbox {
@@ -1269,12 +1312,14 @@ input {
 }
 
 .user-telephone__wrapper,
-.username__wrapper {
+.username__wrapper,
+.form-item {
   position: relative;
 }
 
 .user-telephone__wrapper .field-placeholder,
-.username__wrapper .field-placeholder{
+.username__wrapper .field-placeholder,
+.form-item .field-placeholder {
   top: 0;
   bottom: 0;
   display: block;
@@ -6693,6 +6738,9 @@ svg.mountain .st0{
     width: 952px;
     height: 469px;
 }
+#main-callback-form .custom-checkbox-text {
+    font-size: 14px;
+}
 .fp-viewing-anchor2 .animation-step2 .drilling-machine {
     animation: animation-drilling-maching-step2 .5s ease-in-out .3s;
     animation-fill-mode: forwards;
@@ -6708,6 +6756,42 @@ svg.mountain .st0{
 .fp-viewing-anchor2 .cut-earth {
     animation: animation-cut-step2 .5s ease-in-out 1.8s;
     animation-fill-mode: forwards;
+}
+.callback-form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-item .field-placeholder {
+    top: 50%;
+    margin: 0 0 0 36px;
+    transform: translateY(-50%);
+    transition: .3s ease-in-out;
+}
+.user-text__wrapper .field-placeholder {
+    top: 25px;
+}
+.map-marker {
+    width: 64px;
+    height: 88px;
+    background: url("../img/custom-marker.png") no-repeat;
+    position: relative;
+}
+.map-marker-wrapper {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.map-marker-wrapper img {
+    max-width: 100%;
 }
 
 @keyframes animation-background-step1 {
