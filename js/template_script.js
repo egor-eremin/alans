@@ -310,7 +310,7 @@ $(document).ready(function () {
     (function addScrollForProjectDetail() {
         if ($('.project-detail__text').length > 0) {
             initCustomScrollBar($('.project-detail__text'));
-        };
+        }
     })();
 
     (function initProductCustomScroll() {
@@ -449,10 +449,43 @@ $(document).ready(function () {
     });
 
 //Клик по бургер-менюхе
-    $('.burger-menu-list__item').click(function (e) { 
-        e.preventDefault();
-        e.stopPropagation();
-        console.log($(this));
+    $('.burger-menu-link__wrp').click(function (e) { 
+     
+        var $currentActiveAccordion = null,
+            $currentList = null,
+            currentAccordionHeight = 0;
+        
+       
+        
+        if(!$(this).parents('.burger-menu-list__item').hasClass('burger-menu-list__item--no-second-level')){
+            e.preventDefault();
+            e.stopPropagation();
+            $currentActiveAccordion = $(this).siblings()[0];
+            $currentList = $($currentActiveAccordion).find('.burger-menu-list-item-container__item');
+
+            if(!$(this).parents('.burger-menu-list__item').hasClass('burger-menu-list__item--active')) {
+        
+                $(this).parents('.burger-menu-list__item').addClass('burger-menu-list__item--active');
+        
+                
+                    $.each($currentList, function () { 
+                        currentAccordionHeight += $(this).outerHeight(true);
+                    });
+                    $($currentActiveAccordion).css('height', currentAccordionHeight);
+            
+        
+
+                 return;
+            } 
+            $(this).parents('.burger-menu-list__item').removeClass('burger-menu-list__item--active');
+            $($currentActiveAccordion).css('height', 0);
+    }
+
+        
+
+       
+
+       
     });
 
     
@@ -499,17 +532,24 @@ $(document).ready(function () {
 
 });
 
+
+//Инициализация бургера при загрузке: убираем лишние активные классы, если работает js
 function initializeBurger($selector) {
     var $menuItems = $selector.find('.burger-menu-list__item');
     $.each($menuItems, function (indexInArray) { 
         var $currentActiveAccordion = null,
             currentAccordionHeight = 0;
         if(indexInArray == 0) {
-            $currentActiveAccordion = $(this).find('.burger-menu-list-item-container__item');
-            $.each($currentActiveAccordion, function () { 
-                currentAccordionHeight += $(this).outerHeight(true);
-            });
-            $(this).find('.burger-menu-list-item__container').css('height', currentAccordionHeight);
+
+            if(!$(this).hasClass('burger-menu-list__item--no-second-level')){
+                $currentActiveAccordion = $(this).find('.burger-menu-list-item-container__item');
+                $.each($currentActiveAccordion, function () { 
+                    currentAccordionHeight += $(this).outerHeight(true);
+                });
+                $(this).find('.burger-menu-list-item__container').css('height', currentAccordionHeight);
+            }
+
+           
         }
         if(indexInArray > 0) {
             $(this).removeClass('burger-menu-list__item--active');
@@ -572,7 +612,7 @@ function stickifyBlock($sticky, $stickyParent) {
         if ((stickyParentHeight - currentPositionInBlock) <= stickyHeight) {
             if (!$sticky.hasClass('done')) {
                 $sticky.addClass('done');
-                console.log
+
             }
             if ($sticky.hasClass('done')) {
                 if (stickyPositionBottom) {

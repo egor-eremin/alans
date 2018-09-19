@@ -6812,7 +6812,9 @@ svg.mountain .st0{
 .no-scroll {
   overflow: hidden;
 }
-
+.mobile-page-navigation {
+  display: none;
+}
 /*----------------------------------------Адаптива-------------------------------------------------------*/
 @media all and (max-width: 1280px){
   .header-wrapper {
@@ -7113,11 +7115,12 @@ svg.mountain .st0{
     border-top: 1px solid #56bb56;
     color: #ffffff;
     text-align: right;
-    padding: 30px 0 0 0; 
+    padding: 0; 
   }
 
   .burger-menu-list__item:last-child {
     border-bottom: 1px solid #56bb56;
+    margin-bottom: 100px;
   }
 
   .burger-menu-list-item__header {
@@ -7175,7 +7178,34 @@ svg.mountain .st0{
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
+.burger-menu-link__wrp {
 
+  cursor: pointer;
+  padding-top: 30px;
+}
 
+.burger-menu-list__item--no-second-level .burger-menu-list-item-header__pointer {
+  display: none;
+}
+
+.burger-menu-list__item--no-second-level .burger-menu-list-item__header {
+  padding-right: 94px;
+}
+
+.mobile-page-navigation {
+  display: block;
+  padding: 50px;
+  padding-left: 100px;
+  border-bottom: 1px solid #dbdbdb;
+
+}
+
+.mobile-page-navigation.activiteies-types-aside {
+  margin:0;
+}
+
+.mobile-page-navigation .activiteies-types-aside__link {
+  font-size: 1.25rem;
+}
 
 }
