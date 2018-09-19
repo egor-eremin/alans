@@ -605,7 +605,8 @@ input {
     width: 16px;
 }
 
-.breadcrumbs {
+.breadcrumbs,
+.breadcrumbs-mobile {
   width: 1240px;
   background: transparent;
   display: flex;
@@ -614,6 +615,10 @@ input {
   padding-top: 51px;
   padding-left: 56px;
   padding-right: 56px;
+}
+
+.breadcrumbs-mobile {
+  display: none;
 }
 
 .breadcrumbs__item + .breadcrumbs__item {
@@ -6805,16 +6810,18 @@ svg.mountain .st0{
     }
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+.mobile-page-navigation,
+.article-header-stay__link,
+.advantages-mobile,
 .burger-menu {
   display: none;
 }
 
-.no-scroll {
-  overflow: hidden;
-}
-.mobile-page-navigation {
-  display: none;
-}
+
+
 /*----------------------------------------Адаптива-------------------------------------------------------*/
 @media all and (max-width: 1280px){
   .header-wrapper {
@@ -7206,6 +7213,161 @@ svg.mountain .st0{
 
 .mobile-page-navigation .activiteies-types-aside__link {
   font-size: 1.25rem;
+}
+
+.breadcrumbs {
+  display: none;
+}
+
+.breadcrumbs-mobile {
+  display: flex;
+  padding: 0;
+}
+
+.article-header-stay__link {
+  color: #43b343;
+  padding: 30px 127px 30px 57px;
+  background-color: #ecf7ec;
+  font-size: 20px;
+  display: inline-block;
+
+}
+
+.article-header__wrapper {
+  width: 50%;
+}
+
+.about-contant {
+  width: 100%;
+  padding-right: 0;
+}
+
+.article__text p {
+	padding-right: 56px;
+}
+
+.article-header-stay__link span {
+  position: relative;
+}
+.article-header-stay__link span::after{
+  content: "\2193";
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute; 
+  right: -30px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.footer-map {
+  background-image: none;
+}
+
+.advantages-mobile {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.advantages {
+  display: none;
+}
+
+.advantages-mobile-list__item {
+  position: relative;
+  height: 320px;
+
+}
+
+
+.slider__arrow {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  margin: auto 0;
+  font-size: 1.875rem;
+ color: #bdbbbb;
+  background-color: transparent;
+}
+
+.slider__arrow:focus {
+  color: #43b343;
+}
+
+.slider__arrow--left {
+  left: 0;
+}
+
+.slider__arrow--right {
+  right: 0;
+}
+.advantages-mobile-list-item__wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+}
+
+.advantages-item__description {
+  opacity: 1;
+  margin-top: 20px;
+}
+
+.advantages-mobile .fadeInUp {
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-duration: 0ms;
+  animation-duration: 0ms;
+  -webkit-animation-delay: 0ms;
+  animation-delay: 0ms;
+
+}
+
+
+
+.advantages__item-picplace.gaika .advantages__item-number {
+	width: 55%;
+	margin: auto 0;
+	margin-right: auto;
+	margin-left: 23%;
+}
+
+.advantages__item-picplace.gaika {
+	background-size: 81%;
+	background-position: center center;
+	padding-top: 11%;
+	height: 121px;
+}
+
+.advantages__item-picplace.gaika + p {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.advantages__item-picplace.spaceship {
+  height: 125px;
+	background-size: 61%;
+	background-position: 50% 39%;
+}
+
+.advantages__item-picplace.russia {
+	
+	background-size: 88%;
+  background-position: -12% 23%;
+  height: 138px;
+}
+
+.main-footer {
+	margin-top: 34px;
+
 }
 
 }

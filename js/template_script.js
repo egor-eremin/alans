@@ -10,7 +10,8 @@ $(document).ready(function () {
         showDigitsAnimationThird = true,
         $activitiesTypes = $('.article__link--activities-types'),
         $mtbContentDescription = $('.mtb-content-description__text'),
-        $mtbContentLink = $('.mtb-items__item');
+        $mtbContentLink = $('.mtb-items__item'),
+        $mobileAdvantages = $('.advantages-mobile-list');
 
 
 
@@ -479,27 +480,36 @@ $(document).ready(function () {
             } 
             $(this).parents('.burger-menu-list__item').removeClass('burger-menu-list__item--active');
             $($currentActiveAccordion).css('height', 0);
-    }
-
-        
-
-       
-
-       
+        }
     });
+
+
 
     
 
     //Медиа-запросы в javascript (Если нужно)
     //-------------------------------------------------------------------------------------------------------
 
-
-    media('all and (min-width: 1170px)', function(){
-        // console.log('1170px');
+    media('all and (min-width: 1025px)', function(){
+        $mobileAdvantages.slick('unslick');
     });
 
-    media('all and (min-width: 1270px)', function(){
-        // console.log('1270px');
+    media('all and (max-width: 1024px)', function(){
+        $mobileAdvantages.slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            infinite: true,
+            swipe: true,
+            arrows: true,
+            nextArrow: '<button type="button" class="slider__arrow slider__arrow--right">&rarr;</button>',
+			prevArrow: '<button type="button" class="slider__arrow slider__arrow--left">&larr;</button>',
+            responsive: [
+            
+
+            ]
+        });
+    
+     
     });
 
     //spoiler on the page of vacancy
