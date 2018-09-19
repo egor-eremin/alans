@@ -432,13 +432,14 @@ $(document).ready(function () {
         });
     }
 
-
+//Вызов бургер-меню
     $('.burger-menu__link').click(function (e) { 
         e.preventDefault();
         if(!$(this).hasClass('burger-menu__link--active')) {
             $(this).addClass('burger-menu__link--active');
             $('.burger-menu').addClass('burger-menu--active');
             blockScrollOnPage();
+            initializeBurger($('.burger-menu'));
             return;
         }
         
@@ -447,12 +448,14 @@ $(document).ready(function () {
         unblockScrollOnPage();
     });
 
-    if($('.burger-menu').length > 0 ) {
-        $mtbContentDescription.mCustomScrollbar({
-            theme: 'dark',
-            scrollbarPosition: 'inside'
-        });
-    }
+//Клик по бургер-менюхе
+    $('.burger-menu-list__item').click(function (e) { 
+        e.preventDefault();
+        e.stopPropagation();
+        console.log($(this));
+    });
+
+    
 
     //Медиа-запросы в javascript (Если нужно)
     //-------------------------------------------------------------------------------------------------------
@@ -495,6 +498,27 @@ $(document).ready(function () {
 
 
 });
+
+function initializeBurger($selector) {
+    var $menuItems = $selector.find('.burger-menu-list__item');
+    $.each($menuItems, function (indexInArray) { 
+        var $currentActiveAccordion = null,
+            currentAccordionHeight = 0;
+        if(indexInArray == 0) {
+            $currentActiveAccordion = $(this).find('.burger-menu-list-item-container__item');
+            $.each($currentActiveAccordion, function () { 
+                currentAccordionHeight += $(this).outerHeight(true);
+            });
+            $(this).find('.burger-menu-list-item__container').css('height', currentAccordionHeight);
+        }
+        if(indexInArray > 0) {
+            $(this).removeClass('burger-menu-list__item--active');
+        }
+         
+    });
+}
+
+
 
 // Функции
 //-------------------------------------------------------------
@@ -972,27 +996,3 @@ function hidePopupListener($windowPopupSelector, e, callback) {
     }
 
 }
-// 	function isElementInViewport(el) {
-// 	  var rect = el.getBoundingClientRect();
-// 	  return (
-// 		rect.top >= 0 &&
-// 		rect.left >= 0 &&
-// 		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-// 		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-// 	  );
-// 	}
-
-// 	function callbackFunc() {
-// 	  for (var i = 0; i < items.length; i++) {
-// 		if (isElementInViewport(items[i])) {
-// 		  items[i].classList.add("in-view");
-// 		}
-// 	  }
-// 	}
-
-// 	// listen for events
-// 	window.addEventListener("load", callbackFunc);
-// 	window.addEventListener("resize", callbackFunc);
-// 	window.addEventListener("scroll", callbackFunc);
-
-//   })();

@@ -7056,9 +7056,7 @@ svg.mountain .st0{
   .burger-menu--active {
     width: 100vw;
     height: 100vh;
-
     background-color: #43b343;
-    
     top: 0;
     left: 0;
     z-index: 150;
@@ -7071,18 +7069,51 @@ svg.mountain .st0{
   .burger-menu-list {
     position: relative;
     display: block;
-    border: 1px solid red;
     width: 100%;
     height: 100%;
+    padding-top: 100px;
+  }
+
+  .burger-menu::before{
+    content: "";
+    display: block;
+    background-color: #43b343;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 180;
+    background: -webkit-linear-gradient(bottom, rgba(86, 187, 86, 0), rgba(86, 187, 86, 1));
+    background: -moz-linear-gradient(bottom, rgba(86, 187, 86, 0), rgba(86, 187, 86, 1));
+    background: linear-gradient(to top, rgba(86, 187, 86, 0), rgba(86, 187, 86, 1));
+  }
 
 
+
+  .burger-menu::after{
+    content: "";
+    background-color: #43b343;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: rgba(86, 187, 86, 0.0);
+    background: -webkit-linear-gradient(top, rgba(86, 187, 86, 0.0), rgba(86, 187, 86, 1.0));
+    background: -moz-linear-gradient(top, rgba(86, 187, 86, 0.0), rgba(86, 187, 86, 1.0));
+    background: linear-gradient(to bottom, rgba(86, 187, 86, 0.0), rgba(86, 187, 86, 1.0));
+ 
   }
 
   .burger-menu-list__item {
     border-top: 1px solid #56bb56;
     color: #ffffff;
     text-align: right;
-    padding: 30px 0; 
+    padding: 30px 0 0 0; 
   }
 
   .burger-menu-list__item:last-child {
@@ -7092,6 +7123,8 @@ svg.mountain .st0{
   .burger-menu-list-item__header {
     color: inherit;
     font-size: 1.5rem;
+    padding: 0 50px;
+    margin-bottom: 30px;
   }
 
   .burger-menu-list-item-header__pointer {
@@ -7111,6 +7144,37 @@ svg.mountain .st0{
     transition-timing-function: ease-in-out;
   }
 
+ 
+
+  .burger-menu-list-item-container__item {
+    padding: 30px 50px;
+    border-bottom: 1px solid #56bb56;
+    color: #ffffff;
+    background-color: #3ca13c; 
+  }
+
+  .burger-menu-list-item-container-item__link {
+    font-size: 1.1875rem;
+    color: inherit;
+    display: block;
+  }
+
+
+.burger-menu-list__item--active .burger-menu-list-item-header__pointer {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.burger-menu-list-item__container {
+  overflow: hidden;
+  height:0;
+  transition-property: height;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
 
 
 
