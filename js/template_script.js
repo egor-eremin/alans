@@ -432,6 +432,28 @@ $(document).ready(function () {
         });
     }
 
+
+    $('.burger-menu__link').click(function (e) { 
+        e.preventDefault();
+        if(!$(this).hasClass('burger-menu__link--active')) {
+            $(this).addClass('burger-menu__link--active');
+            $('.burger-menu').addClass('burger-menu--active');
+            blockScrollOnPage();
+            return;
+        }
+        
+        $(this).removeClass('burger-menu__link--active');
+        $('.burger-menu').removeClass('burger-menu--active');
+        unblockScrollOnPage();
+    });
+
+    if($('.burger-menu').length > 0 ) {
+        $mtbContentDescription.mCustomScrollbar({
+            theme: 'dark',
+            scrollbarPosition: 'inside'
+        });
+    }
+
     //Медиа-запросы в javascript (Если нужно)
     //-------------------------------------------------------------------------------------------------------
 
@@ -476,7 +498,22 @@ $(document).ready(function () {
 
 // Функции
 //-------------------------------------------------------------
-// //Запуск анимации при загрузке таймлайна на странице истории
+
+//Блокировка скролла на странице
+function blockScrollOnPage(){
+	'use strict';
+	$('body, html').addClass('no-scroll');
+}
+
+//Снятие блокировки со страницы
+function unblockScrollOnPage(){
+	'use strict';
+	if($('body, html').hasClass('no-scroll')){
+		$('body, html').removeClass('no-scroll');
+	}
+}
+
+//Запуск анимации при загрузке таймлайна на странице истории
 function initTimeLineAnimation($selector, durationMultiplicator) {
 
     $.each($selector, function (indexInArray) {
