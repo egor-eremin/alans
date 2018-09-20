@@ -6826,7 +6826,9 @@ svg.mountain .st0{
   display: none;
 }
 
-
+.close-btn__area {
+  display: none;
+}
 
 /*----------------------------------------Адаптива-------------------------------------------------------*/
 @media all and (max-width: 1280px){
@@ -7711,10 +7713,44 @@ display: none;
 }
 
 @media all and (max-width: 480px){
+  .navigation-opener--active .footer-link__arrow {
+    -webkit-transform:rotate(-180deg);
+    -moz-transform:rotate(-180deg);
+    -o-transform:rotate(-180deg);
+    -ms-transform:rotate(-180deg);
+    transform:rotate(-180deg);
+  }
+
+  .close-btn__area{
+    display: block;
+    text-align: center;
+  }
+
+.activiteies-types-aside-item__close-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 70px;
+  background-color: #ffffff;
+  display: inline-flex;
+}
+
   .activiteies-types-aside__list {
     display: none;
-    padding-bottom: 100px;
 
+
+  }
+
+  .activiteies-types-aside-item__close-btn .footer-link__arrow {
+    margin: auto;
+    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+    transform:rotate(180deg);
+  }
+
+  .activiteies-types-aside__item.close-btn__area {
+    padding-top: 0;
   }
 
   .activiteies-types-aside__link:hover {
@@ -7740,7 +7776,7 @@ display: none;
   background-color: #43b343;
   width: 100%;
   position: absolute;
-  z-index: 200;
+  z-index: 100;
 }
 
 .mobile-page-navigation.activiteies-types-aside {
@@ -7895,7 +7931,7 @@ display: none;
   }
 
   .article__title {
-    margin-top: 40px;
+    margin-top: 70px;
   }
 
   .article__header {
@@ -7916,12 +7952,19 @@ display: none;
     padding: 35px;
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: 50px;
+    margin-bottom: 0;
+  }
+
+  .form-wrapper legend {
+    padding: 25px;
+    font-size: 1.625rem;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
   }
 
   .form-wrapper {
-    border-left: none;
-    border-right: none;
+    border: none;
     width: 99.5%;
   }
   .agreement-checkbox {
@@ -7940,6 +7983,7 @@ display: none;
 
 
 @media all and (max-width: 400px){
+
   .header-container__info button.btn__order-callback {
     right: 86px;
   }
@@ -7948,6 +7992,19 @@ display: none;
     width: 57%;
     vertical-align: top;
   }
+
+  .mobile-page-navigation .activiteies-types-aside__link {
+    font-size: 1.1em;
+  }
+
+  .burger-menu-list-item__header {
+    color: inherit;
+    font-size: 1.2rem;
+    padding: 0 50px;
+    margin-bottom: 30px;
+  }
+
+
 }
 
 @media all and (max-width: 320px){
@@ -7957,3 +8014,4 @@ display: none;
     margin-right: 0;
   }
 }
+

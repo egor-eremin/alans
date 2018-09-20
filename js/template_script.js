@@ -548,6 +548,24 @@ $(document).ready(function () {
      
     });
 
+    media('all and (max-width: 480px)', function(){
+        activateMobilePageNav();
+    });
+
+
+    $('.navigation-opener, .activiteies-types-aside-item__close-btn').click(function (e) { 
+ 
+        e.preventDefault();
+        if(!$('.navigation-opener').hasClass('navigation-opener--active')) {
+            $('.navigation-opener').addClass('navigation-opener--active');
+
+            return;
+         }
+         $('.navigation-opener').removeClass('navigation-opener--active');
+      
+        
+    });
+
     //spoiler on the page of vacancy
 
     $('li.list__item').click(function(event) {
@@ -577,6 +595,16 @@ $(document).ready(function () {
 
 
 });
+
+
+function activateMobilePageNav() {
+    var $mobileSelector = $('.navigation-opener');
+    $.each($mobileSelector, function (indexInArray, valueOfElement) { 
+         if($(this).hasClass('navigation-opener--active')) {
+            $(this).removeClass('navigation-opener--active');
+         }
+    });
+}
 
 
 //Инициализация бургера при загрузке: убираем лишние активные классы, если работает js
