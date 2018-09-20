@@ -530,7 +530,15 @@ $(document).ready(function () {
                 nextArrow: '<button type="button" class="slider__arrow slider__arrow--right">&rarr;</button>',
                 prevArrow: '<button type="button" class="slider__arrow slider__arrow--left">&larr;</button>',
                 responsive: [
-                
+                    {
+                        breakpoint: 550,
+                        settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1,
+                          infinite: true,
+                     
+                        }
+                      },
     
                 ]
             });
