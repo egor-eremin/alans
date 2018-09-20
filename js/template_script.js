@@ -8,7 +8,7 @@ $(document).ready(function () {
         showDigitsAnimationFirst = true,
         showDigitsAnimationSecond = true,
         showDigitsAnimationThird = true,
-        $activitiesTypes = $('.article__link--activities-types'),
+        $activitiesTypes = $('.article__link--activities-types, .article-header-stay__link'),
         $mtbContentDescription = $('.mtb-content-description__text'),
         $mtbContentLink = $('.mtb-items__item'),
         $mobileAdvantages = $('.advantages-mobile-list');
@@ -483,6 +483,28 @@ $(document).ready(function () {
         }
     });
 
+    if($('.footer-link-list__mobile').length > 0) {
+        initializeMobileFooterAccordions();
+        $('.footer-link-list__item--header a').click(function (e) { 
+            e.preventDefault();
+            var $currentActiveAccordion = null,
+            currentHeight = 0;
+            $currentActiveAccordion = $(this).parent().siblings('.footer-mobile-accordeon');
+          
+
+            if($(this).parent().hasClass('footer-link-list__item__header--active')) {
+                $(this).parent().removeClass('footer-link-list__item__header--active');
+                $currentActiveAccordion.css('height', 0); 
+                return;
+            }
+
+            $(this).parent().addClass('footer-link-list__item__header--active');
+           
+            currentHeight = $currentActiveAccordion.find('.footer-mobile-accorderon__wrapper').outerHeight(true);
+            $currentActiveAccordion.css('height', currentHeight); 
+        });
+    }
+
 
 
     
@@ -491,23 +513,29 @@ $(document).ready(function () {
     //-------------------------------------------------------------------------------------------------------
 
     media('all and (min-width: 1025px)', function(){
-        $mobileAdvantages.slick('unslick');
+        if($mobileAdvantages.length > 0) {
+            $mobileAdvantages.slick('unslick');
+        }
+       
     });
 
     media('all and (max-width: 1024px)', function(){
-        $mobileAdvantages.slick({
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            infinite: true,
-            swipe: true,
-            arrows: true,
-            nextArrow: '<button type="button" class="slider__arrow slider__arrow--right">&rarr;</button>',
-			prevArrow: '<button type="button" class="slider__arrow slider__arrow--left">&larr;</button>',
-            responsive: [
-            
-
-            ]
-        });
+        if($mobileAdvantages.length > 0) {
+            $mobileAdvantages.slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                swipe: true,
+                arrows: true,
+                nextArrow: '<button type="button" class="slider__arrow slider__arrow--right">&rarr;</button>',
+                prevArrow: '<button type="button" class="slider__arrow slider__arrow--left">&larr;</button>',
+                responsive: [
+                
+    
+                ]
+            });
+        }
+    
     
      
     });
@@ -545,10 +573,11 @@ $(document).ready(function () {
 
 //Инициализация бургера при загрузке: убираем лишние активные классы, если работает js
 function initializeBurger($selector) {
-    var $menuItems = $selector.find('.burger-menu-list__item');
+    var $menuItems = $selector.find('.burger-menu-list__item'),
+     $currentActiveAccordion = null,
+    currentAccordionHeight = 0;
     $.each($menuItems, function (indexInArray) { 
-        var $currentActiveAccordion = null,
-            currentAccordionHeight = 0;
+      
         if(indexInArray == 0) {
 
             if(!$(this).hasClass('burger-menu-list__item--no-second-level')){
@@ -566,6 +595,25 @@ function initializeBurger($selector) {
         }
          
     });
+}
+
+function initializeMobileFooterAccordions(){
+    var $items = $('.footer-link-list__mobile  .footer-link-list__item--header');
+    var $currentActiveAccordion = null,
+    currentAccordionHeight = 0;
+    $.each($items, function (indexInArray, valueOfElement) { 
+        $currentActiveAccordion = $(this).siblings('.footer-mobile-accordeon');
+        currentAccordionHeight = $currentActiveAccordion.find('.footer-mobile-accorderon__wrapper').outerHeight(true);
+        if(indexInArray > 0) {
+          
+            $(this).removeClass('footer-link-list__item__header--active');
+            $currentActiveAccordion.css('height', 0);
+        } else {
+            $currentActiveAccordion.css('height', currentAccordionHeight);
+        }
+         
+    });
+
 }
 
 

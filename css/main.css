@@ -6816,7 +6816,8 @@ svg.mountain .st0{
 .mobile-page-navigation,
 .article-header-stay__link,
 .advantages-mobile,
-.burger-menu {
+.burger-menu,
+.footer-link-list__mobile {
   display: none;
 }
 
@@ -7369,5 +7370,118 @@ svg.mountain .st0{
 	margin-top: 34px;
 
 }
+
+.form__fields {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  width: 530px;
+}
+
+.form-wrapper {
+	display: flex;
+	padding: 30px 60px 60px;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.user-telephone__wrapper, .username__wrapper {
+	margin-bottom: 30px;
+}
+
+.user-submit__wrapper {
+	margin-left: auto;
+}
+
+.agreement-checkbox {
+	margin-top: -10px;
+	width: 69%;
+}
+
+.main-footer .layout-position {
+
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.callback-form {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.footer-link-list__mobile {
+  display: block;
+}
+
+.footer-link__list {
+  display: none;
+}
+
+.footer-link-list-base:last-child,
+.footer-link-list-base {
+  margin-left: 0;
+  width: 100%;
+  margin-top: -2px;
+}
+
+.footer-link-list__item--header a {
+  color: #43b343;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  position: relative;
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 10px;
+}
+
+.footer-link-list__item--header a::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  margin: 0 auto;
+  background-color: #43b343;
+}
+
+.footer-mobile-accorderon__wrapper {
+  padding: 56px;
+
+}
+
+.footer-mobile-accordeon {
+  overflow: hidden;
+}
+.footer-link-list__item a {
+
+  font-size: 1.125rem;
+  
+
+}
+
+.footer-link-list__item:not(.footer-link-list__item--header) {
+  margin-bottom: 1.125rem;
+
+}
+
+.footer-mobile-accordeon {
+  height:0;
+  transition-property: height;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+.footer-link-list__item__header--active + .footer-mobile-accordeon {
+  height: auto;
+}
+
 
 }
