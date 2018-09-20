@@ -6901,6 +6901,7 @@ svg.mountain .st0{
 
   .article__text p {
     width: 100%;
+    line-height: 1.7;
   }
 
   .content-image {
@@ -6966,7 +6967,7 @@ svg.mountain .st0{
   }
 
   .logo-link {
-    width: 16%;
+    width: 140px;
     margin-top: 43px;
     margin-right: 0;
   }
@@ -7580,7 +7581,9 @@ display: none;
 @media all and (max-width: 800px){
   .agreement__wrapper {
     text-align: center;
+    line-height: 1.7;
   }
+
   .slider__arrow--right {
     right: -50px;
   }
@@ -7696,5 +7699,11 @@ display: none;
   .advantages__item-picplace.gaika {
     padding-top: 11%;
   }
-  
+
+}
+
+@media all and (max-width: 530px){
+  .article-header-stay__link {
+    padding: 21px 47px 21px 37px;
+  }
 }
