@@ -7130,7 +7130,7 @@ svg.mountain .st0{
   .burger-menu-list__item {
     border-top: 1px solid #56bb56;
     color: #ffffff;
-    text-align: right;
+    text-align: left;
     padding: 0; 
   }
 
@@ -8013,5 +8013,43 @@ display: none;
     margin-top: 47px;
     margin-right: 0;
   }
+
+  .burger-menu-list-item__header
+    {
+    color: inherit;
+    font-size: 1rem;
+    padding: 0 50px;
+    margin-bottom: 30px;
+  }
+
+  .burger-menu-list-item-container-item__link {
+    font-size: 1rem;
+    color: inherit;
+  }
+
+  .about-contant {
+    padding-left: 25px;
+  }
+
+  .article__text p, .img-content__wrapper {
+    padding-right: 25px;
+  }
+
+  .advantages-item__description {
+    font-size: 0.925rem;
+  }
+
+  .footer-link-list__item a {
+    font-size: 0.925rem;
+    line-height: 1.65;
+  }
+
+  .agreement-checkbox {
+    width: 88%;
+  }
+  .article__text p {
+    font-size: 1.025rem;
+  }
+
 }
 
