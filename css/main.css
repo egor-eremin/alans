@@ -7578,4 +7578,41 @@ display: none;
 
 }
 
-@media all and (max-width: 800px){}
+@media all and (max-width: 800px){
+  .agreement__wrapper {
+    text-align: center;
+  }
+}
+
+
+@media all and (max-width: 724px){
+  .img-content__wrapper{
+    padding-right: 56px;
+  }
+  .img-content__wrapper img{
+    max-width: 100%;
+    width: 100%;
+  }
+  .article-header-stay__link {
+
+    padding: 30px 77px 30px 57px;
+   
+  }
+
+  .form-wrapper {
+    padding: 30px 6% 60px;
+  }
+
+  .advantages__item-picplace.gaika {
+    padding-top: 14%;
+  }
+
+  .advantages-item__description {
+    width: 100%;
+  }
+
+  .slider__arrow {
+    margin-top: 120px;
+    margin-bottom: auto;
+  }
+}
