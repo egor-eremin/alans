@@ -7738,6 +7738,9 @@ display: none;
 
 .mobile-page-navigation {
   background-color: #43b343;
+  width: 100%;
+  position: absolute;
+  z-index: 200;
 }
 
 .mobile-page-navigation.activiteies-types-aside {
