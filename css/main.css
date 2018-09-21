@@ -5945,6 +5945,7 @@ svg.mountain .st0{
 .news-main__news-text {
     font-size: 14px;
     line-height: 1.28;
+    width: 100%;
 }
 .news-main__title::before {
     content: "";
@@ -6141,7 +6142,7 @@ svg.mountain .st0{
 }
 .static-map__interactive-map {
     position: absolute;
-    right: -418px;
+    right: -200px;
     top: 141px;
 }
 .text-header__wrapper {
@@ -6188,7 +6189,7 @@ svg.mountain .st0{
     display: flex;
     align-items: center;
 }
-.slick-center.commercial-proposal__item .commercial-proposal {
+.slick-center.commercial-proposal__item svg > * {
     stroke: #43b343;
     stroke-opacity: 1;
 }
@@ -6695,17 +6696,21 @@ svg.mountain .st0{
 }
 .map-top::after {
     transform: rotate(18.7deg);
-    top: 280px;
-    left: -31px;
+    top: 244px;
+    left: -26px;
+    width: 1005px;
 }
 .map-bottom::after {
     transform: rotate(18.7deg);
-
+    top: 161px;
+    left: 330px;
+    width: 1004px;
     transition: 0s ease-in-out 1.8s;
 }
 .map-bottom::after, .map-top::after, .map-bottom::before, .map-top::before {
     visibility: hidden;
     opacity: 0;
+    display: none;
 }
 .drilling-machine {
     position: absolute;
@@ -6715,6 +6720,7 @@ svg.mountain .st0{
 }
 .fp-viewing-anchor2 .map-bottom::after, .fp-viewing-anchor2 .map-top::after,
 .fp-viewing-anchor2 .map-top::before, .fp-viewing-anchor2 .map-bottom::before {
+    display: block;
     visibility: visible;
     opacity: 1;
 }
@@ -6729,7 +6735,8 @@ svg.mountain .st0{
     left: 358px;
     overflow: hidden;
     width: 952px;
-    height: 350px;
+    height: 300px;
+    display: none;
 }
 .cut-earth img {
     position: absolute;
@@ -6754,7 +6761,40 @@ svg.mountain .st0{
     animation-fill-mode: forwards;
 }
 .fp-viewing-anchor2 .cut-earth {
+    display: block;
     animation: animation-cut-step2 .5s ease-in-out 1.8s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .big-tree_5 {
+    animation: animation-big-tree_5-step2 .5s ease-in-out 1.8s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .small-tree_9 {
+    animation: animation-small-tree_9-step2 .5s ease-in-out 1.8s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .small-tree_10 {
+    animation: animation-small-tree_10-step2 .5s ease-in-out 1.8s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .small-tree_11 {
+    animation: animation-small-tree_11-step2 .5s ease-in-out 1.8s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .small-tree_12 {
+    animation: animation-small-tree_12-step2 .5s ease-in-out 1.8s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .big-tree_7 {
+    animation: animation-big-tree_7-step2 .5s ease-in-out 1.8s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .big-tree_9 {
+    animation: animation-big-tree_9-step2 .5s ease-in-out 1.8s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .big-tree_10 {
+    animation: animation-big-tree_10-step2 .5s ease-in-out 1.8s;
     animation-fill-mode: forwards;
 }
 .callback-form-wrapper {
@@ -6793,6 +6833,679 @@ svg.mountain .st0{
 .map-marker-wrapper img {
     max-width: 100%;
 }
+.fp-viewing-anchor2 .animation-drilling {
+    position: absolute;
+    top: 203px;
+    left: 711px;
+}
+.fp-viewing-anchor2 .animation-drilling__line {
+    width: 1px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.fp-viewing-anchor2 .animation-drilling__line-animate {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.fp-viewing-anchor2 .animation-drilling__line-animate::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #4ead58;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    animation: animation-line-step2 .5s ease-in-out 2.3s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .animation-drilling__circle {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #4ead58;
+    opacity: .7;
+    position: relative;
+    margin-top: 17px;
+    transform: translateY(6px);
+    opacity: 0;
+}
+.fp-viewing-anchor2 .animation-drilling__circle::before {
+    content: '';
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #4ead58;
+    opacity: .2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.fp-viewing-anchor2 .animation-drilling__circle:nth-child(2) {
+    animation: animation-drilling-circle .3s ease-in-out 2.4s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .animation-drilling__circle:nth-child(3) {
+    animation: animation-drilling-circle .3s ease-in-out 2.6s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor2 .animation-drilling__circle:nth-child(4) {
+    animation: animation-drilling-circle .3s ease-in-out 2.8s;
+    animation-fill-mode: forwards;
+}
+.step-3-substrate {
+    position: absolute;
+    top: -15px;
+    display: none;
+}
+.fp-viewing-anchor3 .step-3-substrate, .fp-viewing-anchor4 .step-3-substrate, .fp-viewing-anchor5 .step-3-substrate,
+.fp-viewing-anchor6 .step-3-substrate {
+    display: block;
+}
+.plan-step3 {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 273px;
+    opacity: 0;
+}
+.fp-viewing-anchor3 .plan-step3 {
+    display: block;
+    animation: animation-plan-step3 .5s ease-in-out .3s;
+    animation-fill-mode: forwards;
+}
+.dashed-line-step3 {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    top: 67px;
+    left: 229px;
+}
+.fp-viewing-anchor3 .dashed-line-step3 {
+    display: block;
+    animation: animation-plan-step3 .5s ease-in-out .8s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor4 .plan-step3, .fp-viewing-anchor5 .plan-step3,
+.fp-viewing-anchor6 .plan-step3 {
+    display: block;
+    opacity: 1;
+}
+.step4-green-rectangle {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    top: 42px;
+    left: 198px;
+}
+.fp-viewing-anchor4 .step4-green-rectangle {
+    display: block;
+    animation: animation-green-rectangle-step4 .8s ease-in-out .3s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor5 .step4-green-rectangle {
+    display: block;
+    opacity: .5;
+    top: 17px;
+}
+.fp-viewing-anchor4 .animation-step1 .animate-docs {
+    animation: animation-docs-step1 0.5s ease-in-out 1.1s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor4 .animation-step1 .animate-signature {
+    animation: animation-signature-step1 0.3s ease-in-out 1.6s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor4 .animation-step1 .animate-printing {
+    animation: animation-printing-step1 0.3s ease-in-out 1.9s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor4 .animate-docs-wrapper {
+    z-index: 1;
+}
+.step5-panel {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    top: 41px;
+    left: 277px;
+}
+.fp-viewing-anchor5 .step5-panel {
+    display: block;
+    animation: animation-panel-step5 1s ease-in-out .3s;
+    animation-fill-mode: forwards;
+}
+.step5-number {
+    position: absolute;
+    top: -9px;
+    left: 341px;
+    display: none;
+    opacity: 0;
+}
+.fp-viewing-anchor5 .step5-number {
+    display: block;
+    animation: animation-number-step5 .5s ease-in-out 1.3s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor6 .dashed-line-step3 {
+    display: block;
+    opacity: 1;
+}
+.animation-device {
+    opacity: 0;
+    display: none;
+    position: absolute;
+    top: 293px;
+    left: 1034px;
+}
+.fp-viewing-anchor6 .animation-device {
+    display: block;
+    animation: animation-device-step6 .5s ease-in-out .3s;
+    animation-fill-mode: forwards;
+}
+.step6-area, .area-shadow {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 304px;
+    left: 744px;
+}
+.fp-viewing-anchor6 .step6-area {
+    display: block;
+    animation: animation-area-step6 .5s ease-in-out .8s;
+    animation-fill-mode: forwards;
+}
+.animate-office, .office-shadow {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 125px;
+    left: 765px;
+}
+.fp-viewing-anchor6 .animate-office {
+    display: block;
+    animation: animation-pump-step6 .5s ease-in-out 1.1s;
+    animation-fill-mode: forwards;
+}
+.animate-tank, .tank-shadow {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 97px;
+    left: 520px;
+}
+.fp-viewing-anchor6 .animate-tank {
+    display: block;
+    animation: animation-tank-step6 .5s ease-in-out 1.3s;
+    animation-fill-mode: forwards;
+}
+.animate-lep, .lep-shadow {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 68px;
+    left: 188px;
+}
+.fp-viewing-anchor6 .animate-lep {
+    display: block;
+    animation: animation-lep-step6 .5s ease-in-out 1.5s;
+    animation-fill-mode: forwards;
+}
+.animate-rey {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 162px;
+    left: 509px;
+}
+.fp-viewing-anchor6 .animate-rey {
+    display: block;
+    animation: animation-rey-step6 2.6s linear 1.8s;
+    animation-fill-mode: forwards;
+}
+.animate-cooling-tower, .cooling-tower-shadow {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 92px;
+    left: 934px;
+}
+.fp-viewing-anchor6 .animate-cooling-tower {
+    display: block;
+    animation: animation-cooling-tower-step6 .5s ease-in-out 1.7s;
+    animation-fill-mode: forwards;
+}
+.animate-garage, .garage-shadow {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 182px;
+    left: 1013px;
+}
+.hidden-element {
+    display: none;
+    opacity: 0;
+    position: absolute;
+}
+.animate-trumpet-1, .trumpet-shadow-1 {
+    top: 21px;
+    left: 1077px;
+}
+.animate-pump-1, .pump-shadow-1 {
+    top: 193px;
+    left: 523px;
+}
+.animate-pump-2, .pump-shadow-2 {
+    top: 238px;
+    left: 658px;
+}
+.animate-tank-small-1, .tank-small-shadow-1 {
+    top: 224px;
+    left: 638px;
+}
+.animate-tank-small-2, .tank-small-shadow-2 {
+    top: 240px;
+    left: 585px;
+}
+.animate-trumpet-2, .trumpet-shadow-2 {
+    top: 35px;
+    left: 1126px;
+}
+.fp-viewing-anchor6 .animate-pump-1,
+.fp-viewing-anchor6 .animate-pump-2,
+.fp-viewing-anchor6 .animate-tank-small-1,
+.fp-viewing-anchor6 .animate-tank-small-2 {
+   display: block;
+   animation: animation-pump-step6 .5s ease-in-out 1.9s;
+   animation-fill-mode: forwards;
+}
+.fp-viewing-anchor6 .animate-garage {
+    display: block;
+    animation: animation-garage-step6 .5s ease-in-out 2.1s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor6 .animate-trumpet-1 {
+    display: block;
+    animation: animation-trumpet-step6 .5s ease-in-out 2.3s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor6 .animate-trumpet-2 {
+    display: block;
+    animation: animation-trumpet-step6 .5s ease-in-out 2.5s;
+    animation-fill-mode: forwards;
+}
+.animate-gas-pipe, .gas-pipe-shadow {
+    top: 22px;
+    left: 466px;
+}
+.fp-viewing-anchor6 .animate-gas-pipe {
+    display: block;
+    animation: animation-pump-step6 .5s ease-in-out 2.7s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .step-3-substrate {
+    display: block;
+}
+.fp-viewing-anchor7 .plan-step3,
+.fp-viewing-anchor7 .step6-area,
+.fp-viewing-anchor7 .animate-cooling-tower,
+.fp-viewing-anchor7 .animate-office,
+.fp-viewing-anchor7 .animate-tank,
+.fp-viewing-anchor7 .animate-lep,
+.fp-viewing-anchor7 .animate-garage,
+.fp-viewing-anchor7 .animate-trumpet-1,
+.fp-viewing-anchor7 .animate-trumpet-2,
+.fp-viewing-anchor7 .animate-pump-1,
+.fp-viewing-anchor7 .animate-tank-small-1,
+.fp-viewing-anchor7 .animate-tank-small-2,
+.fp-viewing-anchor7 .animate-pump-2,
+.fp-viewing-anchor7 .animate-gas-pipe {
+    display: block;
+    opacity: 1;
+}
+.fp-viewing-anchor7 .animate-grid {
+    display: none;
+}
+.fp-viewing-anchor7 .tank-shadow {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out .3s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .gas-pipe-shadow {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out .5s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .office-shadow {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out .7s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .cooling-tower-shadow {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out .9s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .garage-shadow {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out 1.1s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .trumpet-shadow-1 {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out 1.1s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .trumpet-shadow-2 {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out 1.1s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .area-shadow {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out 1.3s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .pump-shadow-1 {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out 1.5s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .tank-small-shadow-1 {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out 1.5s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .tank-small-shadow-2 {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out 1.5s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .pump-shadow-2 {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out 1.5s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .lep-shadow {
+    display: block;
+    animation: animation-shadow-step7 .3s ease-in-out 1.7s;
+    animation-fill-mode: forwards;
+}
+.document-tank {
+    top: 114px;
+    left: 561px;
+}
+.document-gas-pipe {
+    top: 73px;
+    left: 736px;
+}
+.document-office {
+    top: 143px;
+    left: 838px;
+}
+.document-cooling-tower {
+    top: 97px;
+    left: 974px;
+}
+.document-garage {
+    top: 156px;
+    left: 1091px;
+}
+.document-area {
+    top: 277px;
+    left: 826px;
+}
+.document-pump {
+    top: 216px;
+    left: 615px;
+}
+.document-lep {
+    top: 159px;
+    left: 445px;
+}
+.fp-viewing-anchor7 .document-tank {
+    display: block;
+    animation: animation-document-step7 .3s ease-in-out .5s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .document-gas-pipe {
+    display: block;
+    animation: animation-document-step7 .3s ease-in-out .7s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .document-office {
+    display: block;
+    animation: animation-document-step7 .3s ease-in-out .9s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .document-cooling-tower {
+    display: block;
+    animation: animation-document-step7 .3s ease-in-out 1.1s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .document-garage {
+    display: block;
+    animation: animation-document-step7 .3s ease-in-out 1.3s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .document-area {
+    display: block;
+    animation: animation-document-step7 .3s ease-in-out 1.5s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .document-pump {
+    display: block;
+    animation: animation-document-step7 .3s ease-in-out 1.7s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor7 .document-lep {
+    display: block;
+    animation: animation-document-step7 .3s ease-in-out 1.9s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor8 .plan-step3,
+.fp-viewing-anchor8 .step6-area,
+.fp-viewing-anchor8 .animate-cooling-tower,
+.fp-viewing-anchor8 .animate-office,
+.fp-viewing-anchor8 .animate-tank,
+.fp-viewing-anchor8 .animate-lep,
+.fp-viewing-anchor8 .animate-garage,
+.fp-viewing-anchor8 .animate-trumpet-1,
+.fp-viewing-anchor8 .animate-trumpet-2,
+.fp-viewing-anchor8 .animate-pump-1,
+.fp-viewing-anchor8 .animate-tank-small-1,
+.fp-viewing-anchor8 .animate-tank-small-2,
+.fp-viewing-anchor8 .animate-pump-2,
+.fp-viewing-anchor8 .animate-gas-pipe {
+    display: block;
+    opacity: 1;
+}
+.fp-viewing-anchor8 .step-3-substrate {
+    display: block;
+}
+.fp-viewing-anchor8 .animate-grid {
+    display: none;
+}
+.panel-1 {
+    top: 52px;
+    left: 488px;
+}
+.panel-2 {
+    top: 95px;
+    left: 368px;
+}
+.panel-3 {
+    top: 134px;
+    left: 211px;
+}
+.panel-4 {
+    top: 219px;
+    left: 451px;
+}
+.panel-5 {
+    top: 152px;
+    left: 721px;
+}
+.fp-viewing-anchor8 .panel-1 {
+    display: block;
+    animation: animation-panel-step8 .5s ease-in-out .3s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor8 .panel-5 {
+    display: block;
+    animation: animation-panel-step8 .5s ease-in-out .6s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor8 .panel-4 {
+    display: block;
+    animation: animation-panel-step8 .5s ease-in-out .9s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor8 .panel-3 {
+    display: block;
+    animation: animation-panel-step8 .5s ease-in-out 1.2s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor8 .panel-2 {
+    display: block;
+    animation: animation-panel-step8 .5s ease-in-out 1.5s;
+    animation-fill-mode: forwards;
+}
+.document-panel-1 {
+    top: 73px;
+    left: 736px;
+}
+.document-panel-5 {
+    top: 229px;
+    left: 968px;
+}
+.document-panel-4 {
+    top: 241px;
+    left: 752px;
+}
+.document-panel-3 {
+    top: 124px;
+    left: 344px;
+}
+.document-panel-2 {
+    top: 89px;
+    left: 560px;
+}
+.fp-viewing-anchor8 .document-panel-1 {
+    display: block;
+    animation: animation-document-step8 .5s ease-in-out .5s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor8 .document-panel-5 {
+    display: block;
+    animation: animation-document-step8 .5s ease-in-out .8s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor8 .document-panel-4 {
+    display: block;
+    animation: animation-document-step8 .5s ease-in-out 1.1s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor8 .document-panel-3 {
+    display: block;
+    animation: animation-document-step8 .5s ease-in-out 1.4s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor8 .document-panel-2 {
+    display: block;
+    animation: animation-document-step8 .5s ease-in-out 1.7s;
+    animation-fill-mode: forwards;
+}
+.fp-viewing-anchor9 .plan-step3,
+.fp-viewing-anchor9 .step6-area,
+.fp-viewing-anchor9 .animate-cooling-tower,
+.fp-viewing-anchor9 .animate-office,
+.fp-viewing-anchor9 .animate-tank,
+.fp-viewing-anchor9 .animate-lep,
+.fp-viewing-anchor9 .animate-garage,
+.fp-viewing-anchor9 .animate-trumpet-1,
+.fp-viewing-anchor9 .animate-trumpet-2,
+.fp-viewing-anchor9 .animate-pump-1,
+.fp-viewing-anchor9 .animate-tank-small-1,
+.fp-viewing-anchor9 .animate-tank-small-2,
+.fp-viewing-anchor9 .animate-pump-2,
+.fp-viewing-anchor9 .animate-gas-pipe {
+    display: block;
+    opacity: 1;
+}
+.fp-viewing-anchor9 .step-3-substrate {
+    display: block;
+}
+.fp-viewing-anchor9 .animate-grid {
+    display: none;
+}
+.animation-plan {
+    top: 0;
+    left: 0;
+}
+.plan-rey {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: animation-rey-plan-step9 4.4s linear .3s;
+    animation-fill-mode: forwards;
+}
+.plan {
+    position: relative;
+    top: -78px;
+    left: -77px;
+}
+.fp-viewing-anchor9 .animation-plan {
+    display: block;
+    animation: animation-plan-step9 5.5s linear .3s;
+    animation-fill-mode: forwards;
+}
+.small-tree_13 {
+    top: 186px;
+    left: 1216px;
+}
+.small-tree_14 {
+    top: 328px;
+    left: 1234px;
+}
+.small-tree_15 {
+    top: 360px;
+    left: 1340px;
+}
+.big-tree_11 {
+    top: 279px;
+    left: 1271px;
+}
+.big-tree_12 {
+    top: 335px;
+    left: 1297px;
+}
+.big-tree_13 {
+    top: 217px;
+    left: 1316px;
+}
+.big-tree_14 {
+    top: 276px;
+    left: 1341px;
+}
+.big-tree_15 {
+    top: 259px;
+    left: 1352px;
+}
+.fp-viewing-anchor6 .dashed-line-step3, .fp-viewing-anchor6 .animate-grid {
+    animation: animation-plan-and-dashed .3s ease-in-out 3.2s;
+    animation-fill-mode: forwards;
+}
+
 
 @keyframes animation-background-step1 {
     0% {
@@ -6886,5 +7599,339 @@ svg.mountain .st0{
 @keyframes animation-cut-step2 {
     100% {
         height: 469px;
+    }
+}
+@keyframes animation-big-tree_5-step2 {
+    0% {
+        top: 52px;
+    }
+    100% {
+        top: 193px;
+    }
+}
+@keyframes animation-small-tree_9-step2 {
+    0% {
+        top: 363px;
+    }
+    100% {
+        top: 504px;
+    }
+}
+@keyframes animation-small-tree_10-step2 {
+    0% {
+        top: 419px;
+    }
+    100% {
+        top: 560px;
+    }
+}
+@keyframes animation-small-tree_11-step2 {
+    0% {
+        top: 396px;
+    }
+    100% {
+        top: 537px;
+    }
+}
+@keyframes animation-small-tree_12-step2 {
+    0% {
+        top: 370px;
+    }
+    100% {
+        top: 511px;
+    }
+}
+@keyframes animation-big-tree_7-step2 {
+    0% {
+        top: 361px;
+    }
+    100% {
+        top: 502px;
+    }
+}
+@keyframes animation-big-tree_9-step2 {
+    0% {
+        top: 376px;
+    }
+    100% {
+        top: 517px;
+    }
+}
+@keyframes animation-big-tree_10-step2 {
+    0% {
+        top: 371px;
+    }
+    100% {
+        top: 512px;
+    }
+}
+@keyframes animation-line-step2 {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes animation-drilling-circle {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animation-plan-step3 {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes animation-green-rectangle-step4 {
+    0% {
+        opacity: 0;
+        top: 42px;
+    }
+    50% {
+        opacity: .3;
+        top: 42px;
+    }
+    65% {
+        opacity: .3;
+    }
+    100% {
+        opacity: .5;
+        top: 17px;
+    }
+}
+@keyframes animation-panel-step5 {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        top: 41px;
+    }
+    100% {
+        top: -5px;
+        opacity: 1;
+    }
+}
+@keyframes animation-number-step5 {
+    0% {
+        top: -9px;
+        opacity: 0;
+    }
+    100% {
+        top: 5px;
+        opacity: 1;
+    }
+}
+@keyframes animation-device-step6 {
+    0% {
+        top: 293px;
+        opacity: 0;
+    }
+    100% {
+        top: 318px;
+        opacity: 1;
+    }
+}
+@keyframes animation-area-step6 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animation-tank-step6 {
+    0% {
+        opacity: 0;
+        top: 72px;
+    }
+    100% {
+        opacity: 1;
+        top: 97px;
+    }
+}
+@keyframes animation-lep-step6  {
+    0% {
+        opacity: 0;
+        top: 43px;
+    }
+    100% {
+        top: 68px;
+        opacity: 1;
+    }
+}
+@keyframes animation-rey-step6 {
+    0% {
+        opacity: 0;
+    }
+    7% {
+        opacity: 1;
+    }
+    14% {
+        opacity: 0;
+    }
+    21% {
+        opacity: 1;
+    }
+    28% {
+        opacity: 0;
+    }
+    35% {
+        opacity: 1;
+    }
+    42% {
+        opacity: 0;
+    }
+    49% {
+        opacity: 1;
+    }
+    56% {
+        opacity: 0;
+    }
+    63% {
+         opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes animation-cooling-tower-step6 {
+    0% {
+        opacity: 0;
+        top: 67px;
+    }
+    100% {
+        opacity: 1;
+        top: 92px;
+    }
+}
+@keyframes animation-garage-step6 {
+    0% {
+        top: 157px;
+        opacity: 0;
+    }
+    100% {
+        top: 182px;
+        opacity: 1;
+    }
+}
+@keyframes animation-pump-step6 {
+     0% {
+         opacity: 0;
+         transform: translateY(-25px);
+     }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes animation-trumpet-step6 {
+    0% {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes animation-shadow-step7 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .6;
+    }
+}
+@keyframes animation-document-step7 {
+    0% {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes animation-panel-step8 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .4;
+    }
+}
+@keyframes animation-document-step8  {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes animation-plan-step9 {
+    0% {
+        opacity: 0;
+        top: 0;
+        left: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 480px;
+        left: 1401px;
+    }
+}
+@keyframes animation-rey-plan-step9 {
+    0% {
+        opacity: 0;
+    }
+    16% {
+        opacity: 1;
+    }
+    32% {
+        opacity: 0;
+    }
+    48% {
+        opacity: 1;
+    }
+    64% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    86% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes animation-plan-and-dashed {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
