@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     //Раздел переменных
     //----------------------------------------------------------------------------------------------------
-    var $registrationFormsInput = $('.username, .user-telephone'),
+    var $registrationFormsInput = $('.username, .user-telephone, .callback-form__email, .callback__textarea, .mail-input'),
         $registrationFormPlaceholders = $('.field-placeholder'),
         showDigitsAnimationFirst = true,
         showDigitsAnimationSecond = true,
@@ -490,7 +490,18 @@ $(document).ready(function () {
         $('.footer-link-list__item--header a').click(function (e) { 
             e.preventDefault();
             var $currentActiveAccordion = null,
+            currentIndex = $('.footer-link-list__item--header a').index($(this)),
             currentHeight = 0;
+            $.each($('.footer-link-list__item--header a'), function (indexInArray) { 
+                if(indexInArray != currentIndex){
+                    $(this).parent().removeClass('footer-link-list__item__header--active');
+                    $currentActiveAccordion = $(this).parent().siblings('.footer-mobile-accordeon');
+                    $currentActiveAccordion.css('height', 0); 
+                }
+                 
+            });
+           
+
             $currentActiveAccordion = $(this).parent().siblings('.footer-mobile-accordeon');
           
 
@@ -709,8 +720,6 @@ function stickifyBlock($sticky, $stickyParent) {
             $sticky.addClass('sticky');
         }
         //Отслеживаем появление нижней границы
-        // $stickyParent.css('border', '1px solid red');
-        // $sticky.css('border', '1px solid green');
         if ((stickyParentHeight - currentPositionInBlock) <= stickyHeight) {
             if (!$sticky.hasClass('done')) {
                 $sticky.addClass('done');

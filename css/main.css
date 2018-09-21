@@ -993,7 +993,11 @@ input {
 .form-item input:focus ~ .field-placeholder,
 .form-item textarea:focus ~ .field-placeholder,
 .form-item input.text-yes ~ .field-placeholder,
-.form-item textarea.text-yes ~ .field-placeholder {
+.form-item textarea.text-yes ~ .field-placeholder,
+.user-email__wrapper.filled .field-placeholder,
+.user-text__wrapper.filled .field-placeholder,
+.callback__form-item.filled .callback__label-text
+ {
     top: 0;
     font-size: 12px;
  }
@@ -1366,6 +1370,7 @@ input {
 .user-telephone__wrapper.filled .field-placeholder,
 .username__wrapper.filled .field-placeholder
 
+
 {
 	-webkit-transform: translate(-10px, -25px);
 	-moz-transform: translate(-10px, -25px);
@@ -1373,6 +1378,8 @@ input {
 	-ms-transform: translate(-10px, -25px);
 	transform: translate(-10px, -25px) scale(0.75);
 }
+
+
 
 
 
@@ -1897,20 +1904,20 @@ input:-webkit-autofill {
     box-shadow: 0 0 0 30px #f4f4f4 inset;
 }
 /*Ставим placeholder при клике*/
-.callback-form input:not(:focus)::-webkit-input-placeholder {
+input:not(:focus)::-webkit-input-placeholder {
 
     color:transparent;
 }
-.callback-form input:not(:focus):-moz-placeholder {
+input:not(:focus):-moz-placeholder {
 
     color:transparent;
 } /* FF 4-18 */
-.callback-form input:not(:focus)::-moz-placeholder {
+input:not(:focus)::-moz-placeholder {
 
 
     color:transparent;
 } /* FF 19+ */
-.callback-form input:not(:focus):-ms-input-placeholder {
+input:not(:focus):-ms-input-placeholder {
 
     color:transparent;
 } /* IE 10+ */
@@ -7032,6 +7039,8 @@ svg.mountain .st0{
 }
 
 @media all and (max-width: 1024px){
+
+
   .about-aside,
   .aim-twirl__wrapper,
   .header-container__menu,
@@ -7091,6 +7100,10 @@ svg.mountain .st0{
     display: block;
     z-index: 200;
   }
+
+  .burger-menu__link.burger-menu__link--active {
+    top: 39px;
+  }  
 
 .wrapper-burger__icon {
     display: block;
@@ -7258,8 +7271,10 @@ svg.mountain .st0{
     padding: 30px 50px;
     border-bottom: 1px solid #56bb56;
     color: #ffffff;
-    background-color: #3ca13c; 
+    background-color: #3ca13c;
+    padding-left: 75px;
   }
+
 
   .burger-menu-list-item-container-item__link {
     font-size: 1.1875rem;
@@ -7485,7 +7500,7 @@ svg.mountain .st0{
 .advantages__item-picplace.gaika {
 	background-size: 81%;
 	background-position: center center;
-	padding-top: 11%;
+	padding-top: 32px;
 	height: 121px;
 }
 
@@ -7509,7 +7524,7 @@ svg.mountain .st0{
 
 .main-footer {
 	margin-top: 34px;
-
+  border-top: 1px solid rgb(229,229,229);
 }
 
 .form__fields {
@@ -7623,7 +7638,7 @@ display: none;
 
 
 .logo-mmit-area {
-	margin-bottom: 153px;
+	margin-bottom: 75px;
 }
 
 .footer-link__arrow{
@@ -7677,6 +7692,12 @@ display: none;
 }
 
 @media all and (max-width: 800px){
+  .burger-menu-list-item__header {
+     font-size: 1.325rem;
+   }
+   .burger-menu-list-item-container-item__link {
+    font-size: 1.088rem;
+  }
   .agreement__wrapper {
     text-align: center;
     line-height: 1.4;
@@ -7821,7 +7842,7 @@ display: none;
     left: -50px;
   }
   .advantages__item-picplace.gaika {
-    padding-top: 11%;
+    padding-top: 32px;
   }
 
 }
@@ -7839,6 +7860,50 @@ display: none;
 }
 
 @media all and (max-width: 480px){
+  .burger-menu-list-item-container__item {
+    padding-left: 65px;
+  }
+
+  .burger-menu-list-item-container-item__link {
+    font-size: 1rem;
+  }
+  .burger-menu-list-item__header {
+    font-size: 1.125rem;
+  }
+  .email__link-text, .address-link__text, .telefone-link__text {
+    font-size: 0.9375rem;
+  }
+
+  .footer-link-list__item:not(.footer-link-list__item--header) {
+    margin-bottom: 0.875rem;
+  
+  }
+
+  .footer-link-list__item--header a {
+
+    font-size: 1.25rem !important;
+
+  }
+
+  .footer-link-list__item a {
+    font-size: 1.125rem;
+    line-height: 1.65;
+  }
+
+  .article__title {
+    margin-top: 70px;
+  }
+
+  .article__header {
+    margin: 0 0 21px;
+  }
+
+  .article__text p {
+    line-height: 1.4;
+  }
+  .breadcrumbs-mobile {
+    margin-top: 80px;
+  }
   .callback__form-block-wrapper {
     padding: 50px 40px;
   }
@@ -8043,32 +8108,6 @@ display: none;
 
 } 
 
-@media all and (max-width: 480px){
-  .email__link-text, .address-link__text, .telefone-link__text {
-    font-size: 0.9375rem;
-  }
-
-  .footer-link-list__item--header a {
-
-    font-size: 1.25rem !important;
-
-  }
-
-  .footer-link-list__item a {
-    font-size: 1.125rem;
-    line-height: 1.65;
-  }
-
-  .article__title {
-    margin-top: 70px;
-  }
-
-  .article__header {
-    margin: 0 0 21px;
-  }
-
-
-}
 
 @media all and (max-width: 400px){
   .slider__arrow--left {
@@ -8136,10 +8175,12 @@ display: none;
   .header-container__info button.btn__order-callback {
     right: 86px;
   }
+
   .address-link__text {
     display: inline-block;
-    width: 57%;
+    width: 40%;
     vertical-align: top;
+    text-align: left;
   }
 
   .mobile-page-navigation .activiteies-types-aside__link {
@@ -8152,7 +8193,9 @@ display: none;
     padding: 0 50px;
     margin-bottom: 30px;
   }
-
+  .advantages-item__description {
+    font-size: 1.025rem;
+  }
 
 }
 
