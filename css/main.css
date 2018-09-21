@@ -886,84 +886,130 @@ input {
     left: 0;
 }
 .callback__wrapper {
-    display: flex;
-    height: 100%;
-    position: relative;
-    justify-content: flex-end;
+  display: flex;
+  height: 100%;
+  position: relative;
+  justify-content: flex-end;
 }
 .callback__close {
-    width: 100%;
-    background-color: rgba(0,0,0,0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: .3s ease-in-out;
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s ease-in-out;
 }
 .callback__form-block {
-    width: 543px;
-    flex-shrink: 0;
-    background: #43b343;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    transform: translateX(100%);
-    transition: transform .3s ease-in-out;
-    position: relative;
-    z-index: 2;
+  width: 543px;
+  flex-shrink: 0;
+  background: #43b343;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  transform: translateX(100%);
+  transition: transform .3s ease-in-out;
+  /*position: relative;*/
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 2;
 }
+
+.callback-scroll-wrapper {
+  min-height: 100%;
+  height: auto;
+  overflow: auto;
+}
+
 .callback {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 300;
-    display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 300;
+  display: none;
 }
 .callback__form {
-    background: #fff;
-    border-radius: 5px;
-    overflow: hidden;
-    padding: 53px 41px;
-    text-align: center;
-    margin-bottom: 53px;
-    flex-shrink: 0;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 35px;
+  text-align: center;
+  margin-bottom: 53px;
+  flex-shrink: 0;
 }
 .callback__form-wrapper {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
 .callback__form-item {
-    width: 100%;
-    position: relative;
-    margin-bottom: 53px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 28px;
 }
 .callback__form-item_for-button-submit {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-.callback__form-item input {
-    height: 48px;
-    background: #f4f4f4;
-    border-radius: 24px;
-    padding-left: 35px;
-    padding-right: 35px;
-    width: 100%;
+.callback__form-item input, .form-item textarea, .callback__form-item textarea {
+  height: 48px;
+  background: #f4f4f4;
+  border-radius: 24px;
+  padding-left: 35px;
+  padding-right: 35px;
+  width: 100%;
 }
+
+.callback__form-item textarea, .form-item textarea {
+  border: none;
+  height: 150px;
+  resize: none;
+  padding: 20px 35px;
+}
+
+.callback__textarea ~ .callback__label-text {
+  top: 25px;
+}
+
 .callback__label-text {
-    position: absolute;
-    top: 50%;
-    left: 35px;
-    font-size: 16px;
-    line-height: 22px;
-    transform: translateY(-50%);
-    transition: .2s ease;
-    pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 35px;
+  font-size: 16px;
+  line-height: 22px;
+  transform: translateY(-50%);
+  transition: .2s ease;
+  pointer-events: none;
 }
-.callback__form-item input:focus ~ .callback__label-text, .callback__form-item input:valid ~ .callback__label-text  {
+.callback__form-item input:focus ~ .callback__label-text,
+.callback__form-item input:valid:not(.not-valid) ~ .callback__label-text,
+.callback__form-item textarea:focus ~ .callback__label-text,
+.callback__form-item textarea:valid:not(.not-valid) ~ .callback__label-text,
+.callback__form-item textarea.text-yes ~ .callback__label-text,
+.callback__form-item input.text-yes ~ .callback__label-text,
+.form-item input:focus ~ .field-placeholder,
+.form-item textarea:focus ~ .field-placeholder,
+.form-item input.text-yes ~ .field-placeholder,
+.form-item textarea.text-yes ~ .field-placeholder {
     top: 0;
     font-size: 12px;
+ }
+
+ #main-callback-form .custom-checkbox-text {
+	font-size: 14px;
+}
+
+
+/* .callback__form-item input:focus ~ .callback__label-text, .callback__form-item input:valid ~ .callback__label-text  {
+    top: 0;
+    font-size: 12px;
+ } */
+
+ .btn.btn-submit {
+   padding-top: 14px;
  }
 .callback__form-item input:invalid {
     border: none;
@@ -1129,7 +1175,7 @@ input {
 	letter-spacing: 1px;
 }
 
-.username, .user-telephone {
+.username, .user-telephone, .callback-form__email {
   border-radius: 80px;
 	border: none;
   background-color: #f4f4f4;
@@ -1144,6 +1190,17 @@ input {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+.form__fields_flex {
+  flex-wrap: wrap;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.user-text__wrapper {
+  width: 100%;
+  margin-top: 40px;
 }
 
 
@@ -1233,8 +1290,15 @@ input {
   background-size: 6px 11px;
 }
 
+
 .agreement-checkbox {
   margin-top: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.agreement__wrapper {
+  margin-right: 20px;
 }
 
 .ps-checkbox {
@@ -1274,12 +1338,14 @@ input {
 }
 
 .user-telephone__wrapper,
-.username__wrapper {
+.username__wrapper,
+.form-item {
   position: relative;
 }
 
 .user-telephone__wrapper .field-placeholder,
-.username__wrapper .field-placeholder{
+.username__wrapper .field-placeholder,
+.form-item .field-placeholder {
   top: 0;
   bottom: 0;
   display: block;
@@ -6719,6 +6785,22 @@ svg.mountain .st0{
     animation-fill-mode: forwards;
 }
 
+.callback-form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-item .field-placeholder {
+  top: 50%;
+  margin: 0 0 0 36px;
+  transform: translateY(-50%);
+  transition: .3s ease-in-out;
+}
+.user-text__wrapper .field-placeholder {
+  top: 25px;
+}
+
+
+
 @keyframes animation-background-step1 {
     0% {
         top: 0; 
@@ -7428,8 +7510,8 @@ svg.mountain .st0{
 	align-items: flex-start;
 	justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 30px;
-  width: 530px;
+  width: 100%;
+  margin-bottom: 60px;
 }
 
 .form-wrapper {
@@ -7437,6 +7519,11 @@ svg.mountain .st0{
 	padding: 30px 60px 60px;
   flex-direction: column-reverse;
   align-items: center;
+}
+
+.callback-form-wrapper {
+  justify-content: center;
+  width: 520px;
 }
 
 .user-telephone__wrapper, .username__wrapper {
@@ -7449,7 +7536,7 @@ svg.mountain .st0{
 
 .agreement-checkbox {
 	margin-top: -10px;
-	width: 520px;
+	width: 100%;
 }
 
 .main-footer .layout-position {
@@ -7585,7 +7672,8 @@ display: none;
 @media all and (max-width: 800px){
   .agreement__wrapper {
     text-align: center;
-    line-height: 1.7;
+    line-height: 1.4;
+    font-size: 0.9375rem;
   }
 
   .slider__arrow--right {
@@ -7594,6 +7682,35 @@ display: none;
 
   .slider__arrow--left {
     left: -50px;
+  }
+}
+
+@media all and (max-width: 760px){
+  .callback-form-wrapper {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 740px){
+  .user-telephone__wrapper, 
+  .username__wrapper, 
+  .user-email__wrapper {
+    width: 100%;
+  }
+  .callback-form .username,
+  .callback-form .user-telephone,
+  .callback-form .callback-form__email {
+    width: 100%;
+  }
+  .user-submit__wrapper {
+    margin-right: auto;
+  }
+  .agreement__wrapper {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .agreement-checkbox {
+   flex-direction: column;
   }
 }
 
@@ -7641,10 +7758,6 @@ display: none;
     align-items: center;
     align-content: center;
     justify-content: center;
-  }
-
-  .user-submit__wrapper {
-    margin-left: 0;
   }
 
   .article-header-stay__link {
@@ -7706,6 +7819,12 @@ display: none;
 
 }
 
+@media all and (max-width: 540px){
+  .callback__form-block {
+    width: 100%;
+  }
+}
+
 @media all and (max-width: 530px){
   .article-header-stay__link {
     padding: 21px 47px 21px 37px;
@@ -7713,6 +7832,9 @@ display: none;
 }
 
 @media all and (max-width: 480px){
+  .callback__form-block-wrapper {
+    padding: 50px 40px;
+  }
   .navigation-opener--active .footer-link__arrow {
     -webkit-transform:rotate(-180deg);
     -moz-transform:rotate(-180deg);
@@ -7894,7 +8016,7 @@ display: none;
   }
 
   .form__fields {
-    margin-top: 40px;
+    margin-top: 0;
     width: 100%;
   }
 
@@ -7979,6 +8101,26 @@ display: none;
 
 
 
+}
+
+@media all and (max-width: 450px){
+  .form-wrapper {
+    border: none;
+  }
+  .form-wrapper legend {
+    width: 100%;
+    text-align: center;
+  }
+
+  .callback__form-block-wrapper {
+    padding: 50px 20px;
+  }
+
+#main-callback-form  .callback__form {
+
+    padding: 25px;
+
+  }
 }
 
 

@@ -92,9 +92,9 @@ $(document).ready(function () {
             required: true,
             minlength: 18
         },
-        'mail-input': {
-           email: true,
-        }
+        // 'mail-input': {
+        //    email: true,
+        // }
 
     });
 
@@ -436,11 +436,13 @@ $(document).ready(function () {
 //Вызов бургер-меню
     $('.burger-menu__link').click(function (e) { 
         e.preventDefault();
+        
         if(!$(this).hasClass('burger-menu__link--active')) {
             $(this).addClass('burger-menu__link--active');
             $('.burger-menu').addClass('burger-menu--active');
             blockScrollOnPage();
             initializeBurger($('.burger-menu'));
+            
             return;
         }
         
@@ -513,13 +515,16 @@ $(document).ready(function () {
     //-------------------------------------------------------------------------------------------------------
 
     media('all and (min-width: 1025px)', function(){
-        if($mobileAdvantages.length > 0) {
+      
+        if($mobileAdvantages.length > 0 && $mobileAdvantages.is('.slick-slider')) {
             $mobileAdvantages.slick('unslick');
         }
        
     });
 
     media('all and (max-width: 1024px)', function(){
+        initializeBurger($('.burger-menu'));
+        initializeMobileFooterAccordions();
         if($mobileAdvantages.length > 0) {
             $mobileAdvantages.slick({
                 slidesToShow: 2,
@@ -549,7 +554,9 @@ $(document).ready(function () {
     });
 
     media('all and (max-width: 480px)', function(){
+        initializeBurger($('.burger-menu'));
         activateMobilePageNav();
+        initializeMobileFooterAccordions();
     });
 
 
@@ -628,6 +635,7 @@ function initializeBurger($selector) {
         }
         if(indexInArray > 0) {
             $(this).removeClass('burger-menu-list__item--active');
+            $(this).find('.burger-menu-list-item__container').css('height', 0);
         }
          
     });
