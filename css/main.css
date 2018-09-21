@@ -6913,6 +6913,13 @@ svg.mountain .st0{
 }
 
 /*----------------------------------------Адаптива-------------------------------------------------------*/
+@media all and (max-width: 1400px){
+  .up-arrow__wrapper .layout-position {
+    width: 100%;
+    
+  }
+}
+
 @media all and (max-width: 1280px){
   .header-wrapper {
     width:100%;
