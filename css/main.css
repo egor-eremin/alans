@@ -7860,6 +7860,11 @@ display: none;
 }
 
 @media all and (max-width: 480px){
+  .mobile-page-navigation .activiteies-types-aside__link {
+    font-size: 1rem;
+  }
+
+  
   .burger-menu-list-item-container__item {
     padding-left: 65px;
   }
@@ -7944,7 +7949,7 @@ display: none;
   }
 
   .activiteies-types-aside__item.close-btn__area {
-    padding-top: 0;
+    padding-top: 30px;
   }
 
   .activiteies-types-aside__link:hover {
@@ -7988,7 +7993,7 @@ display: none;
   .activiteies-types-aside__item {
     color: #fff;
     padding: 30px 60px;
-    
+    border-top: 1px solid #49cf49;
     margin-bottom: 1px !important;
   }
 
@@ -8183,9 +8188,7 @@ display: none;
     text-align: left;
   }
 
-  .mobile-page-navigation .activiteies-types-aside__link {
-    font-size: 1.1em;
-  }
+
 
   .burger-menu-list-item__header {
     color: inherit;
