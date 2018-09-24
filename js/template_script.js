@@ -790,12 +790,13 @@ function initFields($registrationFormsInput) {
     if($('#fullpage').length > 0) {
         $('#fullpage').fullpage({
             // autoScrolling:true,
-            scrollHorizontally: true,
-            verticalCentered: false,
+            // scrollHorizontally: true,
+            verticalCentered: true,
+            // loopTop: true,
             // scrollBar: true,
             // slidesNavigation: true,
             scrollOverflow: true,
-            anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6', 'anchor7', 'anchor8', 'anchor9','anchor10'],
+            anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6', 'anchor7', 'anchor8', 'anchor9','anchor10','anchor11','anchor12','anchor13','anchor14'],
             menu: '#menu-fullpage',
 
         });
@@ -815,7 +816,10 @@ function initFields($registrationFormsInput) {
 
 (function uppTopButtonMain() {
     $('.up-arrow-main__button').on('click', function () {
+        // $('html, body').animate({scrollTop: 0},500);
         window.location.hash = 'anchor0';
+        // $('.fp-scroller').css('transform','translate(0px, 0px) translateZ(0px)');
+        // $('.iScrollIndicator').css('transform','translate(0px, 0px) translateZ(0px)');
     });
 })();
 (function onBlurInput() {
