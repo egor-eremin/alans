@@ -7860,6 +7860,8 @@ display: none;
 }
 
 @media all and (max-width: 480px){
+
+
   .mobile-page-navigation .activiteies-types-aside__link {
     font-size: 1rem;
   }
@@ -8111,6 +8113,12 @@ display: none;
   }
 
 
+.address-on-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 } 
 
 
@@ -8183,7 +8191,7 @@ display: none;
 
   .address-link__text {
     display: inline-block;
-    width: 40%;
+    width: 155px;
     vertical-align: top;
     text-align: left;
   }
@@ -8245,6 +8253,7 @@ display: none;
   .article__text p {
     font-size: 1.025rem;
   }
+
 
 }
 
