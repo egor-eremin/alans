@@ -546,7 +546,7 @@ $(document).ready(function () {
                 prevArrow: '<button type="button" class="slider__arrow slider__arrow--left">&larr;</button>',
                 responsive: [
                     {
-                        breakpoint: 550,
+                        breakpoint: 640,
                         settings: {
                           slidesToShow: 1,
                           slidesToScroll: 1,
