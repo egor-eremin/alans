@@ -3,14 +3,15 @@ $(document).ready(function () {
 
     //Раздел переменных
     //----------------------------------------------------------------------------------------------------
-    var $registrationFormsInput = $('.username, .user-telephone'),
+    var $registrationFormsInput = $('.username, .user-telephone, .callback-form__email, .callback__textarea, .mail-input'),
         $registrationFormPlaceholders = $('.field-placeholder'),
         showDigitsAnimationFirst = true,
         showDigitsAnimationSecond = true,
         showDigitsAnimationThird = true,
-        $activitiesTypes = $('.article__link--activities-types'),
+        $activitiesTypes = $('.article__link--activities-types, .article-header-stay__link'),
         $mtbContentDescription = $('.mtb-content-description__text'),
-        $mtbContentLink = $('.mtb-items__item');
+        $mtbContentLink = $('.mtb-items__item'),
+        $mobileAdvantages = $('.advantages-mobile-list');
 
 
 
@@ -309,7 +310,7 @@ $(document).ready(function () {
     (function addScrollForProjectDetail() {
         if ($('.project-detail__text').length > 0) {
             initCustomScrollBar($('.project-detail__text'));
-        };
+        }
     })();
 
     (function initProductCustomScroll() {
@@ -431,16 +432,155 @@ $(document).ready(function () {
         });
     }
 
+//Вызов бургер-меню
+    $('.burger-menu__link').click(function (e) { 
+        e.preventDefault();
+        
+        if(!$(this).hasClass('burger-menu__link--active')) {
+            $(this).addClass('burger-menu__link--active');
+            $('.burger-menu').addClass('burger-menu--active');
+            blockScrollOnPage();
+            initializeBurger($('.burger-menu'));
+            
+            return;
+        }
+        
+        $(this).removeClass('burger-menu__link--active');
+        $('.burger-menu').removeClass('burger-menu--active');
+        unblockScrollOnPage();
+    });
+
+//Клик по бургер-менюхе
+    $('.burger-menu-link__wrp').click(function (e) { 
+     
+        var $currentActiveAccordion = null,
+            $currentList = null,
+            currentAccordionHeight = 0;
+        
+       
+        
+        if(!$(this).parents('.burger-menu-list__item').hasClass('burger-menu-list__item--no-second-level')){
+            e.preventDefault();
+            e.stopPropagation();
+            $currentActiveAccordion = $(this).siblings()[0];
+            $currentList = $($currentActiveAccordion).find('.burger-menu-list-item-container__item');
+
+            if(!$(this).parents('.burger-menu-list__item').hasClass('burger-menu-list__item--active')) {
+        
+                $(this).parents('.burger-menu-list__item').addClass('burger-menu-list__item--active');
+        
+                
+                    $.each($currentList, function () { 
+                        currentAccordionHeight += $(this).outerHeight(true);
+                    });
+                    $($currentActiveAccordion).css('height', currentAccordionHeight);
+            
+        
+
+                 return;
+            } 
+            $(this).parents('.burger-menu-list__item').removeClass('burger-menu-list__item--active');
+            $($currentActiveAccordion).css('height', 0);
+        }
+    });
+
+    if($('.footer-link-list__mobile').length > 0) {
+        initializeMobileFooterAccordions();
+        $('.footer-link-list__item--header a').click(function (e) { 
+            e.preventDefault();
+            var $currentActiveAccordion = null,
+            currentIndex = $('.footer-link-list__item--header a').index($(this)),
+            currentHeight = 0;
+            $.each($('.footer-link-list__item--header a'), function (indexInArray) { 
+                if(indexInArray != currentIndex){
+                    $(this).parent().removeClass('footer-link-list__item__header--active');
+                    $currentActiveAccordion = $(this).parent().siblings('.footer-mobile-accordeon');
+                    $currentActiveAccordion.css('height', 0); 
+                }
+                 
+            });
+           
+
+            $currentActiveAccordion = $(this).parent().siblings('.footer-mobile-accordeon');
+          
+
+            if($(this).parent().hasClass('footer-link-list__item__header--active')) {
+                $(this).parent().removeClass('footer-link-list__item__header--active');
+                $currentActiveAccordion.css('height', 0); 
+                return;
+            }
+
+            $(this).parent().addClass('footer-link-list__item__header--active');
+           
+            currentHeight = $currentActiveAccordion.find('.footer-mobile-accorderon__wrapper').outerHeight(true);
+            $currentActiveAccordion.css('height', currentHeight); 
+        });
+    }
+
+
+
+    
+
     //Медиа-запросы в javascript (Если нужно)
     //-------------------------------------------------------------------------------------------------------
 
-
-    media('all and (min-width: 1170px)', function(){
-        // console.log('1170px');
+    media('all and (min-width: 1025px)', function(){
+      
+        if($mobileAdvantages.length > 0 && $mobileAdvantages.is('.slick-slider')) {
+            $mobileAdvantages.slick('unslick');
+        }
+       
     });
 
-    media('all and (min-width: 1270px)', function(){
-        // console.log('1270px');
+    media('all and (max-width: 1024px)', function(){
+        initializeBurger($('.burger-menu'));
+        initializeMobileFooterAccordions();
+        if($mobileAdvantages.length > 0) {
+            $mobileAdvantages.slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                swipe: true,
+                arrows: true,
+                nextArrow: '<button type="button" class="slider__arrow slider__arrow--right">&rarr;</button>',
+                prevArrow: '<button type="button" class="slider__arrow slider__arrow--left">&larr;</button>',
+                responsive: [
+                    {
+                        breakpoint: 550,
+                        settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1,
+                          infinite: true,
+                     
+                        }
+                      },
+    
+                ]
+            });
+        }
+    
+    
+     
+    });
+
+    media('all and (max-width: 480px)', function(){
+        initializeBurger($('.burger-menu'));
+        activateMobilePageNav();
+        initializeMobileFooterAccordions();
+    });
+
+
+    $('.navigation-opener, .activiteies-types-aside-item__close-btn').click(function (e) { 
+ 
+        e.preventDefault();
+        if(!$('.navigation-opener').hasClass('navigation-opener--active')) {
+            $('.navigation-opener').addClass('navigation-opener--active');
+
+            return;
+         }
+         $('.navigation-opener').removeClass('navigation-opener--active');
+      
+        
     });
 
     //spoiler on the page of vacancy
@@ -473,9 +613,83 @@ $(document).ready(function () {
 
 });
 
+
+function activateMobilePageNav() {
+    var $mobileSelector = $('.navigation-opener');
+    $.each($mobileSelector, function (indexInArray, valueOfElement) { 
+         if($(this).hasClass('navigation-opener--active')) {
+            $(this).removeClass('navigation-opener--active');
+         }
+    });
+}
+
+
+//Инициализация бургера при загрузке: убираем лишние активные классы, если работает js
+function initializeBurger($selector) {
+    var $menuItems = $selector.find('.burger-menu-list__item'),
+     $currentActiveAccordion = null,
+    currentAccordionHeight = 0;
+    $.each($menuItems, function (indexInArray) { 
+      
+        if(indexInArray == 0) {
+
+            if(!$(this).hasClass('burger-menu-list__item--no-second-level')){
+                $currentActiveAccordion = $(this).find('.burger-menu-list-item-container__item');
+                $.each($currentActiveAccordion, function () { 
+                    currentAccordionHeight += $(this).outerHeight(true);
+                });
+                $(this).find('.burger-menu-list-item__container').css('height', currentAccordionHeight);
+            }
+
+           
+        }
+        if(indexInArray > 0) {
+            $(this).removeClass('burger-menu-list__item--active');
+            $(this).find('.burger-menu-list-item__container').css('height', 0);
+        }
+         
+    });
+}
+
+function initializeMobileFooterAccordions(){
+    var $items = $('.footer-link-list__mobile  .footer-link-list__item--header');
+    var $currentActiveAccordion = null,
+    currentAccordionHeight = 0;
+    $.each($items, function (indexInArray, valueOfElement) { 
+        $currentActiveAccordion = $(this).siblings('.footer-mobile-accordeon');
+        currentAccordionHeight = $currentActiveAccordion.find('.footer-mobile-accorderon__wrapper').outerHeight(true);
+        if(indexInArray > 0) {
+          
+            $(this).removeClass('footer-link-list__item__header--active');
+            $currentActiveAccordion.css('height', 0);
+        } else {
+            $currentActiveAccordion.css('height', currentAccordionHeight);
+        }
+         
+    });
+
+}
+
+
+
 // Функции
 //-------------------------------------------------------------
-// //Запуск анимации при загрузке таймлайна на странице истории
+
+//Блокировка скролла на странице
+function blockScrollOnPage(){
+	'use strict';
+	$('body, html').addClass('no-scroll');
+}
+
+//Снятие блокировки со страницы
+function unblockScrollOnPage(){
+	'use strict';
+	if($('body, html').hasClass('no-scroll')){
+		$('body, html').removeClass('no-scroll');
+	}
+}
+
+//Запуск анимации при загрузке таймлайна на странице истории
 function initTimeLineAnimation($selector, durationMultiplicator) {
 
     $.each($selector, function (indexInArray) {
@@ -505,12 +719,10 @@ function stickifyBlock($sticky, $stickyParent) {
             $sticky.addClass('sticky');
         }
         //Отслеживаем появление нижней границы
-        // $stickyParent.css('border', '1px solid red');
-        // $sticky.css('border', '1px solid green');
         if ((stickyParentHeight - currentPositionInBlock) <= stickyHeight) {
             if (!$sticky.hasClass('done')) {
                 $sticky.addClass('done');
-                console.log
+
             }
             if ($sticky.hasClass('done')) {
                 if (stickyPositionBottom) {
@@ -936,27 +1148,3 @@ function hidePopupListener($windowPopupSelector, e, callback) {
     }
 
 }
-// 	function isElementInViewport(el) {
-// 	  var rect = el.getBoundingClientRect();
-// 	  return (
-// 		rect.top >= 0 &&
-// 		rect.left >= 0 &&
-// 		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-// 		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-// 	  );
-// 	}
-
-// 	function callbackFunc() {
-// 	  for (var i = 0; i < items.length; i++) {
-// 		if (isElementInViewport(items[i])) {
-// 		  items[i].classList.add("in-view");
-// 		}
-// 	  }
-// 	}
-
-// 	// listen for events
-// 	window.addEventListener("load", callbackFunc);
-// 	window.addEventListener("resize", callbackFunc);
-// 	window.addEventListener("scroll", callbackFunc);
-
-//   })();
