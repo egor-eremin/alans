@@ -347,6 +347,7 @@ $(document).ready(function () {
             $($gallery).magnificPopup({
                 delegate: 'a',
                 closeBtnInside : true,
+                mainClass: 'license',
                 type: 'image',
                 image: {
                     markup: '<div class="mfp-figure  mfp-figure--license">'+
@@ -354,9 +355,8 @@ $(document).ready(function () {
                     '<div class="mfp-img"></div>'+
                     '<div class="mfp-bottom-bar">'+
                     '<div class="mfp-title">' +
-
                     '</div>' +
-                    // '<div class="mfp-counter"></div>'+
+                    '<div class="mfp-counter"></div>'+
                     '</div>'+
                     '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
 
@@ -392,6 +392,7 @@ $(document).ready(function () {
                     }
                 },
                 gallery: {
+                    tCounter: '<div class="mfp-counter">%curr% из %total%</div>',
                     enabled: true,
                     navigateByImgClick: true,
                     preload: [0,1] // Will preload 0 - before current, and 1 after the current image
@@ -1042,6 +1043,13 @@ function initFields($registrationFormsInput) {
             $(this).removeClass('text-yes');
         }
     });
+})();
+(function initCustomSelect() {
+    $('.custom-select').select2({
+        placeholder: "По видам работ",
+        dropdownParent: $('.mobile-select'),
+    });
+    $('.select2-search__field').attr("readonly","readonly");
 })();
 
 function addTabs(tabbed_selector) {

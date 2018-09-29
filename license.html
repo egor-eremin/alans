@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=1240">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ALANS | Лицензии и сертификаты</title>
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/millimeter.css">
     <link rel="stylesheet" href="css/fullpage.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/select2.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -20,11 +21,212 @@
         <header>
             <div class="header-wrapper">
                 <a href="#" class="logo-link"><img src="img/obj_alance_logo.png" alt="logo"></a>
+                <a href="#" class="burger-menu__link">
+                    <span class="wrapper-burger__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                </a>
+                <div class="burger-menu">
+                    <ul class="burger-menu-list">
+                        <li class="burger-menu-list__item  burger-menu-list__item--active">
+                            <div class="burger-menu-link__wrp">
+                                <a href="#" class="burger-menu-list-item__header">
+                                    Виды работ <span class="burger-menu-list-item-header__pointer"></span>
+                                </a>
+                            </div>
+
+                            <ul class="burger-menu-list-item__container">
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Оформление работ на земельные/лесные участки</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Выполнение комплексных инженерных изысканий</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Проектные работы</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Оформление прав на земельные/лесные участки на период строительства и эксплуатации</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Выполнение кадастровых работ</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Сопровождение строительства</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Оформление прав на объекты законченного строительства</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Мониторинг построенного объекта</span></a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+                        <li class="burger-menu-list__item  burger-menu-list__item--active  burger-menu-list__item--no-second-level">
+                            <div class="burger-menu-link__wrp">
+                                <a href="#" class="burger-menu-list-item__header">
+                                    Проекты <span class="burger-menu-list-item-header__pointer"></span>
+                                </a>
+                            </div>
+
+                            <ul class="burger-menu-list-item__container">
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Пункт 1</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Пункт 2</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Пункт 3</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger-menu-list__item  burger-menu-list__item--active">
+                            <div class="burger-menu-link__wrp">
+                                <a href="#" class="burger-menu-list-item__header">
+                                    Отраслевые решения <span class="burger-menu-list-item-header__pointer"></span>
+                                </a>
+                            </div>
+
+                            <ul class="burger-menu-list-item__container">
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Муниципальное хозяйство</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Лесное хозяйство</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Нефтегазовый комплекс</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Природоохранная деятельность</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Чрезвычайные ситуации</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Транспорт и связь</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Градостроительная деятельность</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Сельское хозяйство</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Геология и горная промышленность</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Экология</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Водное хозяйство</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Рекреация и спорт</span></a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="burger-menu-list__item  burger-menu-list__item--active  burger-menu-list__item--no-second-level">
+                            <div class="burger-menu-link__wrp">
+                                <a href="#" class="burger-menu-list-item__header">
+                                    Новости <span class="burger-menu-list-item-header__pointer"></span>
+                                </a>
+                            </div>
+
+                            <ul class="burger-menu-list-item__container">
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Пункт 1</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Пункт 2</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="burger-menu-list__item  burger-menu-list__item--active">
+                            <div class="burger-menu-link__wrp">
+                                <a href="#" class="burger-menu-list-item__header">
+                                    О компании <span class="burger-menu-list-item-header__pointer"></span>
+                                </a>
+                            </div>
+
+                            <ul class="burger-menu-list-item__container">
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#"
+                                       class="burger-menu-list-item-container-item__link"><span>О нас</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Структура и контакты</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Лицензии и сертификаты</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Материально-техническая база</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>История</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Цели и политика компании</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#"
+                                       class="burger-menu-list-item-container-item__link"><span>СМИ о нас</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Социальная отвественность</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Жизнь коллектива</span></a>
+                                </li>
+
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Вакансии</span></a>
+                                </li>
+
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#"
+                                       class="burger-menu-list-item-container-item__link"><span>Отзывы</span></a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="burger-menu-list__item  burger-menu-list__item--active  burger-menu-list__item--no-second-level">
+                            <div class="burger-menu-link__wrp">
+                                <a href="#" class="burger-menu-list-item__header">
+                                    Контакты <span class="burger-menu-list-item-header__pointer"></span>
+                                </a>
+                            </div>
+
+                            <ul class="burger-menu-list-item__container">
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Пункт 1</span></a>
+                                </li>
+                                <li class="burger-menu-list-item-container__item">
+                                    <a href="#" class="burger-menu-list-item-container-item__link"><span>Пункт 2</span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
                 <div class="header-container">
                     <div class="header-container__info">
                         <span class="tagline">Комплексный подход в области инженерных изысканий</span>
                         <a href="tel:+73952504000" class="phone__header">+7 (3952)&nbsp;504−000</a>
-                        <button class="btn__order-callback"><span class="btn-text-wrapper">Заказать звонок</span></button>
+                        <button class="btn__order-callback"><span class="btn-text-wrapper">Заказать звонок</span>
+                        </button>
                     </div>
                     <nav class="header-container__menu">
                         <ul class="header-menu">
@@ -122,7 +324,8 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#">Оформление прав на земельные/лесные участки на период строительства и эксплуатации</a>
+                                        <a href="#">Оформление прав на земельные/лесные участки на период строительства
+                                            и эксплуатации</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -278,7 +481,9 @@
                                         <a href="#">Отраслевые решения</a>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions1.svg" alt="Муниципальное хозяйство"></span>Муниципальное хозяйство</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions1.svg"
+                                                                                    alt="Муниципальное хозяйство"></span>Муниципальное
+                                            хозяйство</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -307,7 +512,9 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions2.svg" alt="Лесное хозяство"></span>Лесное хозяство</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions2.svg"
+                                                                                    alt="Лесное хозяство"></span>Лесное
+                                            хозяство</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -336,7 +543,9 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions3.svg" alt="Нефтегазовый комплекс"></span>Нефтегазовый комплекс</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions3.svg"
+                                                                                    alt="Нефтегазовый комплекс"></span>Нефтегазовый
+                                            комплекс</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -365,7 +574,9 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions4.svg" alt="Природоохранная деятельность"></span>Природоохранная деятельность</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions4.svg"
+                                                                                    alt="Природоохранная деятельность"></span>Природоохранная
+                                            деятельность</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -394,7 +605,9 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions5.svg" alt="Чрезвычайные ситуации"></span>Чрезвычайные ситуации</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions5.svg"
+                                                                                    alt="Чрезвычайные ситуации"></span>Чрезвычайные
+                                            ситуации</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -423,7 +636,9 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions6.svg" alt="Транспорт и связь"></span>Транспорт и связь</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions6.svg"
+                                                                                    alt="Транспорт и связь"></span>Транспорт
+                                            и связь</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -452,7 +667,9 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions7.svg" alt="Градостроительная деятельность"></span>Градостроительная деятельность</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions7.svg"
+                                                                                    alt="Градостроительная деятельность"></span>Градостроительная
+                                            деятельность</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -481,7 +698,9 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions8.svg" alt="Сельское хозяйство"></span>Сельское хозяйство</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions8.svg"
+                                                                                    alt="Сельское хозяйство"></span>Сельское
+                                            хозяйство</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -510,7 +729,9 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions9.svg" alt="Геология и горная промышленность"></span>Геология и горная промышленность</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions9.svg"
+                                                                                    alt="Геология и горная промышленность"></span>Геология
+                                            и горная промышленность</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -539,7 +760,8 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions10.svg" alt="Экология"></span>Экология</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions10.svg"
+                                                                                    alt="Экология"></span>Экология</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -568,7 +790,9 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions11.svg" alt="Водное хозяйство"></span>Водное хозяйство</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions11.svg"
+                                                                                    alt="Водное хозяйство"></span>Водное
+                                            хозяйство</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -597,7 +821,9 @@
                                         </ul>
                                     </li>
                                     <li class="submenu__item with-submenu">
-                                        <a href="#"><span class="submenu-icon"><img src="img/solutions12.svg" alt="Рекреация и спорт"></span>Рекреация и спорт</a>
+                                        <a href="#"><span class="submenu-icon"><img src="img/solutions12.svg"
+                                                                                    alt="Рекреация и спорт"></span>Рекреация
+                                            и спорт</a>
                                         <ul class="submenu submenu_right">
                                             <li class="submenu__item">
                                                 <a href="#">Пункт 1</a>
@@ -646,7 +872,8 @@
                                         <a href="#">Проектные работы</a>
                                     </li>
                                     <li class="submenu__item">
-                                        <a href="#">Оформление прав на земельные/лесные участки на период строительства и эксплуатации</a>
+                                        <a href="#">Оформление прав на земельные/лесные участки на период строительства
+                                            и эксплуатации</a>
                                     </li>
                                     <li class="submenu__item">
                                         <a href="#">Выполнение кадастровых работ</a>
@@ -669,6 +896,56 @@
                     </nav>
                 </div>
             </div>
+            <nav class="mobile-page-navigation  activiteies-types-aside">
+                <a href="#" class="navigation-opener  navigation-opener--active"><span>Навигация раздела <span class="footer-link__arrow">
+                            <span></span>
+                            <span></span>
+                        </span></span></a>
+                <ul class="activiteies-types-aside__list">
+                    <li class="activiteies-types-aside__item activiteies-types-aside__item_active">
+                        <a href="#" class="activiteies-types-aside__link">О нас</a>
+                    </li>
+                    <li class="activiteies-types-aside__item">
+                        <a href="#" class="activiteies-types-aside__link">Структура и контакты</a>
+                    </li>
+                    <li class="activiteies-types-aside__item">
+                        <a href="#" class="activiteies-types-aside__link">Лицензии и сертификаты</a>
+                    </li>
+                    <li class="activiteies-types-aside__item">
+                        <a href="#" class="activiteies-types-aside__link">Материально-техническая база</a>
+                    </li>
+                    <li class="activiteies-types-aside__item">
+                        <a href="#" class="activiteies-types-aside__link">История</a>
+                    </li>
+                    <li class="activiteies-types-aside__item">
+                        <a href="#" class="activiteies-types-aside__link">Цели и политика компании</a>
+                    </li>
+                    <li class="activiteies-types-aside__item">
+                        <a href="#" class="activiteies-types-aside__link">СМИ о нас</a>
+                    </li>
+                    <li class="activiteies-types-aside__item">
+                        <a href="#" class="activiteies-types-aside__link">Социальная ответственность</a>
+                    </li>
+                    <li class="activiteies-types-aside__item">
+                        <a href="#" class="activiteies-types-aside__link">Жизнь коллектива</a>
+                    </li>
+                    <li class="activiteies-types-aside__item">
+                        <a href="#" class="activiteies-types-aside__link">Вакансии</a>
+                    </li>
+                    <li class="activiteies-types-aside__item">
+                        <a href="#" class="activiteies-types-aside__link">Отзывы</a>
+                    </li>
+
+                    <li class="activiteies-types-aside__item  close-btn__area">
+                        <a href="#" class="activiteies-types-aside-item__close-btn">
+                                            <span class="footer-link__arrow">
+                                                    <span></span>
+                                                    <span></span>
+                                                </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
             <div class="breadcrumbs">
                 <a href="#" class="breadcrumbs__item">Главная</a>
                 <a href="#" class="breadcrumbs__item">О компании</a>
@@ -679,69 +956,75 @@
             <div class="about-page">
                 <div class="about-page-wrapper">
                     <aside class="about-aside  about-aside--technical-base  sticky--wrp">
-                            
-                                <div class="about-aside__content-wrp  about-aside__content-wrp--sticky">
-                                    <nav class="activiteies-types-aside">
-                                    <ul class="activiteies-types-aside__list">
-                                            <li class="activiteies-types-aside__item">
-                                                <a href="#" class="activiteies-types-aside__link">О нас</a>
-                                            </li>
-                                            <li class="activiteies-types-aside__item">
-                                                <a href="#" class="activiteies-types-aside__link">Структура и контакты</a>
-                                            </li>
-                                            <li class="activiteies-types-aside__item">
-                                                <a href="#" class="activiteies-types-aside__link  activiteies-types-aside__item_active">Лицензии и сертификаты</a>
-                                            </li>
-                                            <li class="activiteies-types-aside__item">
-                                                <a href="#" class="activiteies-types-aside__link">Материально-техническая база</a>
-                                            </li>
-                                            <li class="activiteies-types-aside__item">
-                                                <a href="#" class="activiteies-types-aside__link">История</a>
-                                            </li>
-                                            <li class="activiteies-types-aside__item">
-                                                <a href="#" class="activiteies-types-aside__link">Цели и политика компании</a>
-                                            </li>
-                                            <li class="activiteies-types-aside__item">
-                                                <a href="#" class="activiteies-types-aside__link">СМИ о нас</a>
-                                            </li>
-                                            <li class="activiteies-types-aside__item">
-                                                <a href="#" class="activiteies-types-aside__link">Социальная отвественность</a>
-                                            </li>
-                                            <li class="activiteies-types-aside__item">
-                                                <a href="#" class="activiteies-types-aside__link">Жизнь коллектива</a>
-                                            </li>
-                                            <li class="activiteies-types-aside__item">
-                                                <a href="#" class="activiteies-types-aside__link">Вакансии</a>
-                                            </li>
-                                            <li class="activiteies-types-aside__item">
-                                                <a href="#" class="activiteies-types-aside__link">Отзывы</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
 
-                                    
-                   
+                        <div class="about-aside__content-wrp  about-aside__content-wrp--sticky">
+                            <nav class="activiteies-types-aside">
+                                <ul class="activiteies-types-aside__list">
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">О нас</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Структура и контакты</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#"
+                                           class="activiteies-types-aside__link  activiteies-types-aside__item_active">Лицензии
+                                            и сертификаты</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Материально-техническая
+                                            база</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">История</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Цели и политика компании</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">СМИ о нас</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Социальная отвественность</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Жизнь коллектива</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Вакансии</a>
+                                    </li>
+                                    <li class="activiteies-types-aside__item">
+                                        <a href="#" class="activiteies-types-aside__link">Отзывы</a>
+                                    </li>
+                                </ul>
+                            </nav>
 
-                                </div>
-                                   
+
+                        </div>
 
 
                     </aside>
                     <div class="about-contant  about-contant--license">
-                     
-                           <article class="about-contant__article"> 
-                                  <header class="article__header">
-                                        <h1 class="article__title">Лицензии и сертификаты</h1>
-                                    </header>
-                                    <div class="article__text  article__text--license">
-                                        <section class="article__working-branches">
-                                            <h2>По видам работ</h2>
-                                            <ul class="working-branches">
-                                              
-                                                <li class="working-branches__item">
-                                                    <label class="ps-check__wrp--license">
-                                                        <input type="checkbox" name="branchCheckbox" class="working-branches__branch-checkbox  all-works"/>
-                                                        <span class="checkbox__wrp-inner">
+
+                        <article class="about-contant__article">
+                            <header class="article__header">
+                                <div class="breadcrumbs-mobile">
+                                    <a href="#" class="breadcrumbs__item">Главная</a>
+                                    <span class="breadcrumbs__item breadcrumbs__item_current">О компании</span>
+                                </div>
+                                <h1 class="article__title">Лицензии и сертификаты</h1>
+                                <a href="#" class="article-header-stay__link"><span>Оставить заявку</span></a>
+                            </header>
+                            <div class="article__text  article__text--license">
+                                <section class="article__working-branches">
+                                    <h2>По видам работ</h2>
+                                    <ul class="working-branches">
+
+                                        <li class="working-branches__item">
+                                            <label class="ps-check__wrp--license">
+                                                <input type="checkbox" name="branchCheckbox"
+                                                       class="working-branches__branch-checkbox  all-works"/>
+                                                <span class="checkbox__wrp-inner">
                                                             <span class="ps-check">
                                                                 <span class="check__img-place">
                                                                     
@@ -749,13 +1032,14 @@
                                                             </span>
                                                             Все виды работ
                                                         </span>
-                                                        
-                                                    </label>
-                                                </li>
-                                                <li class="working-branches__item">
-                                                    <label class="ps-check__wrp--license">
-                                                        <input type="checkbox" name="branchCheckbox" class="working-branches__branch-checkbox"/>
-                                                        <span class="checkbox__wrp-inner">
+
+                                            </label>
+                                        </li>
+                                        <li class="working-branches__item">
+                                            <label class="ps-check__wrp--license">
+                                                <input type="checkbox" name="branchCheckbox"
+                                                       class="working-branches__branch-checkbox"/>
+                                                <span class="checkbox__wrp-inner">
                                                             <span class="ps-check">
                                                                 <span class="check__img-place">
                                                                     
@@ -763,13 +1047,14 @@
                                                             </span>
                                                             Инженерные изыскания
                                                         </span>
-                                                        
-                                                    </label>
-                                                </li>
-                                                <li class="working-branches__item">
-                                                    <label class="ps-check__wrp--license">
-                                                        <input type="checkbox" name="branchCheckbox" class="working-branches__branch-checkbox"/>
-                                                        <span class="checkbox__wrp-inner">
+
+                                            </label>
+                                        </li>
+                                        <li class="working-branches__item">
+                                            <label class="ps-check__wrp--license">
+                                                <input type="checkbox" name="branchCheckbox"
+                                                       class="working-branches__branch-checkbox"/>
+                                                <span class="checkbox__wrp-inner">
                                                             <span class="ps-check">
                                                                 <span class="check__img-place">
                                                                     
@@ -777,13 +1062,14 @@
                                                             </span>
                                                             Землеустройство и кадастровая деятельность
                                                         </span>
-                                                        
-                                                    </label>
-                                                </li>
-                                                <li class="working-branches__item">
-                                                    <label class="ps-check__wrp--license">
-                                                        <input type="checkbox" name="branchCheckbox" class="working-branches__branch-checkbox"/>
-                                                        <span class="checkbox__wrp-inner">
+
+                                            </label>
+                                        </li>
+                                        <li class="working-branches__item">
+                                            <label class="ps-check__wrp--license">
+                                                <input type="checkbox" name="branchCheckbox"
+                                                       class="working-branches__branch-checkbox"/>
+                                                <span class="checkbox__wrp-inner">
                                                             <span class="ps-check">
                                                                 <span class="check__img-place">
                                                                     
@@ -791,13 +1077,14 @@
                                                             </span>
                                                             Мониторинг состояния окружающей среды
                                                         </span>
-                                                        
-                                                    </label>
-                                                </li>
-                                                <li class="working-branches__item">
-                                                    <label class="ps-check__wrp--license">
-                                                        <input type="checkbox" name="branchCheckbox" class="working-branches__branch-checkbox"/>
-                                                        <span class="checkbox__wrp-inner">
+
+                                            </label>
+                                        </li>
+                                        <li class="working-branches__item">
+                                            <label class="ps-check__wrp--license">
+                                                <input type="checkbox" name="branchCheckbox"
+                                                       class="working-branches__branch-checkbox"/>
+                                                <span class="checkbox__wrp-inner">
                                                             <span class="ps-check">
                                                                 <span class="check__img-place">
                                                                     
@@ -805,13 +1092,14 @@
                                                             </span>
                                                             Оценочная деятельность
                                                         </span>
-                                                        
-                                                    </label>
-                                                </li>
-                                                <li class="working-branches__item">
-                                                    <label class="ps-check__wrp--license">
-                                                        <input type="checkbox" name="branchCheckbox" class="working-branches__branch-checkbox"/>
-                                                        <span class="checkbox__wrp-inner">
+
+                                            </label>
+                                        </li>
+                                        <li class="working-branches__item">
+                                            <label class="ps-check__wrp--license">
+                                                <input type="checkbox" name="branchCheckbox"
+                                                       class="working-branches__branch-checkbox"/>
+                                                <span class="checkbox__wrp-inner">
                                                             <span class="ps-check">
                                                                 <span class="check__img-place">
                                                                     
@@ -819,13 +1107,14 @@
                                                             </span>
                                                             Разработка ПО
                                                         </span>
-                                                        
-                                                    </label>
-                                                </li>
-                                                <li class="working-branches__item">
-                                                    <label class="ps-check__wrp--license">
-                                                        <input type="checkbox" name="branchCheckbox" class="working-branches__branch-checkbox"/>
-                                                        <span class="checkbox__wrp-inner">
+
+                                            </label>
+                                        </li>
+                                        <li class="working-branches__item">
+                                            <label class="ps-check__wrp--license">
+                                                <input type="checkbox" name="branchCheckbox"
+                                                       class="working-branches__branch-checkbox"/>
+                                                <span class="checkbox__wrp-inner">
                                                             <span class="ps-check">
                                                                 <span class="check__img-place">
                                                                     
@@ -833,13 +1122,14 @@
                                                             </span>
                                                             Презентации
                                                         </span>
-                                                        
-                                                    </label>
-                                                </li>
-                                                <li class="working-branches__item">
-                                                    <label class="ps-check__wrp--license">
-                                                        <input type="checkbox" name="branchCheckbox" class="working-branches__branch-checkbox"/>
-                                                        <span class="checkbox__wrp-inner">
+
+                                            </label>
+                                        </li>
+                                        <li class="working-branches__item">
+                                            <label class="ps-check__wrp--license">
+                                                <input type="checkbox" name="branchCheckbox"
+                                                       class="working-branches__branch-checkbox"/>
+                                                <span class="checkbox__wrp-inner">
                                                             <span class="ps-check">
                                                                 <span class="check__img-place">
                                                                     
@@ -847,13 +1137,14 @@
                                                             </span>
                                                             Топографо-геодезические работы
                                                         </span>
-                                                        
-                                                    </label>
-                                                </li>
-                                                <li class="working-branches__item">
-                                                    <label class="ps-check__wrp--license">
-                                                        <input type="checkbox" name="branchCheckbox" class="working-branches__branch-checkbox"/>
-                                                        <span class="checkbox__wrp-inner">
+
+                                            </label>
+                                        </li>
+                                        <li class="working-branches__item">
+                                            <label class="ps-check__wrp--license">
+                                                <input type="checkbox" name="branchCheckbox"
+                                                       class="working-branches__branch-checkbox"/>
+                                                <span class="checkbox__wrp-inner">
                                                             <span class="ps-check">
                                                                 <span class="check__img-place">
                                                                     
@@ -861,13 +1152,14 @@
                                                             </span>
                                                             Экологические изыскания
                                                         </span>
-                                                        
-                                                    </label>
-                                                </li>
-                                                <li class="working-branches__item">
-                                                    <label class="ps-check__wrp--license">
-                                                        <input type="checkbox" name="branchCheckbox" class="working-branches__branch-checkbox"/>
-                                                        <span class="checkbox__wrp-inner">
+
+                                            </label>
+                                        </li>
+                                        <li class="working-branches__item">
+                                            <label class="ps-check__wrp--license">
+                                                <input type="checkbox" name="branchCheckbox"
+                                                       class="working-branches__branch-checkbox"/>
+                                                <span class="checkbox__wrp-inner">
                                                             <span class="ps-check">
                                                                 <span class="check__img-place">
                                                                     
@@ -875,23 +1167,22 @@
                                                             </span>
                                                             Маркшейдерские работы
                                                         </span>
-                                                        
-                                                    </label>
-                                                </li>
-                                            </ul>
 
-                                       </section>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </section>
 
-                                   
 
-                                       <div class="license__items">
-                                           <a href="#license-gallery_1" class="license-items__item">
+                                <div class="license__items">
+                                    <a href="#license-gallery_1" class="license-items__item">
                                                <span class="license__image-area">
                                                     <span class="item-image-place__decor-small"></span>
                                                     <span class="item-image-place__decor"></span>
                                                     <span class="license-items-item__image-place">
                                                         <span class="license-image__wrp">
-                                                            <img src="userdata/license/document_1/license_1.jpg" alt="license-preview">
+                                                            <img src="userdata/license/document_1/license_1.jpg"
+                                                                 alt="license-preview">
                                                             <span class="license-image__hover-preview">
                                                                 <span class="hover-preview__header"> <span>4</span> страницы</span>
                                                                 <span class="btn btn__license">Открыть</span>
@@ -900,19 +1191,20 @@
                                                     </span>
                                                </span>
 
-                                               <span class="license-image__text">
+                                        <span class="license-image__text">
                                                     Инженерно-геологические изыскания дают Вам возможность на всех стадиях строительства, начиная с обоснования
                                                </span>
-                                              
-                                            </a>
 
-                                            <a href="#license-gallery_2" class="license-items__item">
+                                    </a>
+
+                                    <a href="#license-gallery_2" class="license-items__item">
                                                     <span class="license__image-area">
                                                          <span class="item-image-place__decor-small"></span>
                                                          <span class="item-image-place__decor"></span>
                                                          <span class="license-items-item__image-place">
                                                              <span class="license-image__wrp">
-                                                                 <img src="userdata/license/document_2/license_1.jpg" alt="license-preview">
+                                                                 <img src="userdata/license/document_2/license_1.jpg"
+                                                                      alt="license-preview">
                                                                  <span class="license-image__hover-preview">
                                                                      <span class="hover-preview__header"> <span>5</span> страниц</span>
                                                                      <span class="btn btn__license">Открыть</span>
@@ -920,168 +1212,186 @@
                                                              </span>
                                                          </span>
                                                     </span>
-     
-                                                    <span class="license-image__text">
+
+                                        <span class="license-image__text">
                                                          Инженерно-геологические 
                                                     </span>
-                                                   
-                                                 </a>
 
-                                                 <a href="#license-gallery_3" class="license-items__item">
+                                    </a>
+
+                                    <a href="#license-gallery_3" class="license-items__item">
                                                         <span class="license__image-area">
                                                              <span class="item-image-place__decor-small"></span>
                                                              <span class="item-image-place__decor"></span>
                                                              <span class="license-items-item__image-place">
                                                                  <span class="license-image__wrp">
-                                                                     <img src="userdata/license/document_3/license_1.jpg" alt="license-preview">
+                                                                     <img
+                                                                         src="userdata/license/document_3/license_1.jpg"
+                                                                         alt="license-preview">
                                                                      <span class="license-image__hover-preview">
-                                                                         <span class="hover-preview__header"> <span>6</span> страниц</span>
+                                                                         <span
+                                                                             class="hover-preview__header"> <span>6</span> страниц</span>
                                                                          <span class="btn btn__license">Открыть</span>
                                                                      </span>
                                                                  </span>
                                                              </span>
                                                         </span>
-         
-                                                        <span class="license-image__text">
+
+                                        <span class="license-image__text">
                                                              Инженерно-геологические изыскания дают Вам 
                                                         </span>
-                                                       
-                                                     </a>
 
-                                                     <a href="#license-gallery_4" class="license-items__item">
+                                    </a>
+
+                                    <a href="#license-gallery_4" class="license-items__item">
                                                             <span class="license__image-area">
                                                                  <span class="item-image-place__decor-small"></span>
                                                                  <span class="item-image-place__decor"></span>
                                                                  <span class="license-items-item__image-place">
                                                                      <span class="license-image__wrp">
-                                                                         <img src="userdata/license/document_4/license_1.jpg" alt="license-preview">
+                                                                         <img
+                                                                             src="userdata/license/document_4/license_1.jpg"
+                                                                             alt="license-preview">
                                                                          <span class="license-image__hover-preview">
                                                                              <span class="hover-preview__header"> <span>4</span> страницы</span>
-                                                                             <span class="btn btn__license">Открыть</span>
+                                                                             <span
+                                                                                 class="btn btn__license">Открыть</span>
                                                                          </span>
                                                                      </span>
                                                                  </span>
                                                             </span>
-             
-                                                            <span class="license-image__text">
+
+                                        <span class="license-image__text">
                                                                  Инженерно-геологические изыскания дают 
                                                             </span>
-                                                           
-                                                         </a>
 
-                                                         <a href="#license-gallery_5" class="license-items__item">
+                                    </a>
+
+                                    <a href="#license-gallery_5" class="license-items__item">
                                                                 <span class="license__image-area">
                                                                      <span class="item-image-place__decor-small"></span>
                                                                      <span class="item-image-place__decor"></span>
                                                                      <span class="license-items-item__image-place">
                                                                          <span class="license-image__wrp">
-                                                                             <img src="userdata/license/document_5/license_1.jpg" alt="license-preview">
+                                                                             <img
+                                                                                 src="userdata/license/document_5/license_1.jpg"
+                                                                                 alt="license-preview">
                                                                              <span class="license-image__hover-preview">
-                                                                                 <span class="hover-preview__header"> <span>3</span> страницы</span>
-                                                                                 <span class="btn btn__license">Открыть</span>
+                                                                                 <span
+                                                                                     class="hover-preview__header"> <span>3</span> страницы</span>
+                                                                                 <span
+                                                                                     class="btn btn__license">Открыть</span>
                                                                              </span>
                                                                          </span>
                                                                      </span>
                                                                 </span>
-                 
-                                                                <span class="license-image__text">
+
+                                        <span class="license-image__text">
                                                                      Инженерно-геологические изыскания дают Вам возможность на всех стадиях строительства, начиная с обоснования
                                                                 </span>
-                                                               
-                                                             </a>
 
-                                                             <a href="#license-gallery_6" class="license-items__item">
+                                    </a>
+
+                                    <a href="#license-gallery_6" class="license-items__item">
                                                                     <span class="license__image-area">
-                                                                         <span class="item-image-place__decor-small"></span>
+                                                                         <span
+                                                                             class="item-image-place__decor-small"></span>
                                                                          <span class="item-image-place__decor"></span>
                                                                          <span class="license-items-item__image-place">
                                                                              <span class="license-image__wrp">
-                                                                                 <img src="userdata/license/document_6/license_1.jpg" alt="license-preview">
-                                                                                 <span class="license-image__hover-preview">
-                                                                                     <span class="hover-preview__header"> <span>3</span> страницы</span>
+                                                                                 <img
+                                                                                     src="userdata/license/document_6/license_1.jpg"
+                                                                                     alt="license-preview">
+                                                                                 <span
+                                                                                     class="license-image__hover-preview">
+                                                                                     <span
+                                                                                         class="hover-preview__header"> <span>3</span> страницы</span>
                                                                                      <span class="btn btn__license">Открыть</span>
                                                                                  </span>
                                                                              </span>
                                                                          </span>
                                                                     </span>
-                     
-                                                                    <span class="license-image__text">
+
+                                        <span class="license-image__text">
                                                                          Инженерно-геологические изыскания дают Вам возможность на всех стадиях строительства, начиная с обоснования
                                                                     </span>
-                                                                   
-                                                                 </a>
 
-                                                                 <a href="#license-gallery_7" class="license-items__item">
+                                    </a>
+
+                                    <a href="#license-gallery_7" class="license-items__item">
                                                                         <span class="license__image-area">
-                                                                             <span class="item-image-place__decor-small"></span>
-                                                                             <span class="item-image-place__decor"></span>
-                                                                             <span class="license-items-item__image-place">
+                                                                             <span
+                                                                                 class="item-image-place__decor-small"></span>
+                                                                             <span
+                                                                                 class="item-image-place__decor"></span>
+                                                                             <span
+                                                                                 class="license-items-item__image-place">
                                                                                  <span class="license-image__wrp">
-                                                                                     <img src="userdata/license/document_7/license_1.jpg" alt="license-preview">
-                                                                                     <span class="license-image__hover-preview">
-                                                                                         <span class="hover-preview__header"> <span>4</span> страницы</span>
+                                                                                     <img
+                                                                                         src="userdata/license/document_7/license_1.jpg"
+                                                                                         alt="license-preview">
+                                                                                     <span
+                                                                                         class="license-image__hover-preview">
+                                                                                         <span
+                                                                                             class="hover-preview__header"> <span>4</span> страницы</span>
                                                                                          <span class="btn btn__license">Открыть</span>
                                                                                      </span>
                                                                                  </span>
                                                                              </span>
                                                                         </span>
-                         
-                                                                        <span class="license-image__text">
+
+                                        <span class="license-image__text">
                                                                              Инженерно-геологические изыскания дают Вам возможность на всех стадиях строительства, начиная с обоснования
                                                                         </span>
-                                                                       
-                                                                     </a>
 
-                                                                     <a href="#license-gallery_8" class="license-items__item">
+                                    </a>
+
+                                    <a href="#license-gallery_8" class="license-items__item">
                                                                             <span class="license__image-area">
-                                                                                 <span class="item-image-place__decor-small"></span>
-                                                                                 <span class="item-image-place__decor"></span>
-                                                                                 <span class="license-items-item__image-place">
+                                                                                 <span
+                                                                                     class="item-image-place__decor-small"></span>
+                                                                                 <span
+                                                                                     class="item-image-place__decor"></span>
+                                                                                 <span
+                                                                                     class="license-items-item__image-place">
                                                                                      <span class="license-image__wrp">
-                                                                                         <img src="userdata/license/document_8/license_1.jpg" alt="license-preview">
-                                                                                         <span class="license-image__hover-preview">
-                                                                                             <span class="hover-preview__header"> <span>5</span> страниц</span>
-                                                                                             <span class="btn btn__license">Открыть</span>
+                                                                                         <img
+                                                                                             src="userdata/license/document_8/license_1.jpg"
+                                                                                             alt="license-preview">
+                                                                                         <span
+                                                                                             class="license-image__hover-preview">
+                                                                                             <span
+                                                                                                 class="hover-preview__header"> <span>5</span> страниц</span>
+                                                                                             <span
+                                                                                                 class="btn btn__license">Открыть</span>
                                                                                          </span>
                                                                                      </span>
                                                                                  </span>
                                                                             </span>
-                             
-                                                                            <span class="license-image__text">
+
+                                        <span class="license-image__text">
                                                                                  Инженерно-геологические изыскания дают Вам возможность на всех стадиях строительства, начиная с обоснования
                                                                             </span>
-                                                                           
-                                                                         </a>
 
-                                        
-                                            
-                                       </div>
-                                       <div class="license-ajax__area">
-                                           <div class="license-ajax-loader__place">
-                                               <div class="license-ajax-loader__outer  license-layout-position">
-                                                   <div class="license-ajax-loader__medium  license-layout-position">
-                                                        <div class="license-ajax-loader__small  license-layout-position"></div>
+                                    </a>
+                                </div>
+                                <div class="license-ajax__area">
+                                    <div class="license-ajax-loader__place">
+                                        <div class="license-ajax-loader__outer  license-layout-position">
+                                            <div class="license-ajax-loader__medium  license-layout-position">
+                                                <div class="license-ajax-loader__small  license-layout-position"></div>
 
-                                                   </div>
+                                            </div>
 
-                                               </div>
+                                        </div>
 
-                                           </div>
-                                       </div>
-
-                                       
                                     </div>
-                            </article> 
-                         
-
-                            
-         
-
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
-
-        
 
 
             <div class="advantages layout-position">
@@ -1103,7 +1413,7 @@
                         Единиц техники
                     </p>
                 </div>
-                
+
                 <div class="advantages__item">
                     <div class="advantages__item-picplace spaceship">
 
@@ -1120,8 +1430,62 @@
                         Работаем на территории Западной и Восточной Сибири, Дальнего Востока
                     </p>
                 </div>
-             
 
+
+            </div>
+            <div class="advantages-mobile">
+                <ul class="advantages-mobile-list">
+                    <li class="advantages-mobile-list__item">
+                        <div class="advantages-mobile-list-item__wrapper">
+                            <div class="advantages__item">
+                                <div class="advantages__item-picplace venok">
+
+                                    <p class="advantages__item-number">16</p>
+                                </div>
+                                <p class="advantages-item__description  animated ">
+                                    Лет&nbsp;на&nbsp;рынке, <br> Компания&nbsp;основана&nbsp;в&nbsp;2002&nbsp;году
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="advantages-mobile-list__item">
+                        <div class="advantages-mobile-list-item__wrapper">
+                            <div class="advantages__item">
+                                <div class="advantages__item-picplace gaika">
+                                    <p class="advantages__item-number">45</p>
+                                </div>
+                                <p class="advantages-item__description  animated ">
+                                    Единиц техники
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="advantages-mobile-list__item">
+                        <div class="advantages-mobile-list-item__wrapper">
+                            <div class="advantages__item">
+                                <div class="advantages__item-picplace spaceship">
+
+                                </div>
+                                <p class="advantages-item__description  animated ">
+                                    Используем современное оборудование и ПО
+                                </p>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="advantages-mobile-list__item">
+                        <div class="advantages-mobile-list-item__wrapper">
+                            <div class="advantages__item">
+                                <div class="advantages__item-picplace russia">
+                                </div>
+                                <p class="advantages-item__description  animated ">
+                                    Работаем на территории Западной и Восточной Сибири, Дальнего Востока
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
             </div>
         </main>
         <footer class="main-footer">
@@ -1136,28 +1500,33 @@
                                     <div class="field-placeholder">Ваше имя</div>
                                 </div>
                                 <div class="user-telephone__wrapper">
-                                    <input type="text" name="userTelephone" class="user-telephone utl" maxlength="18" placeholder="+7 (xxx) xxx xx xx" required/>
+                                    <input type="text" name="userTelephone" class="user-telephone utl" maxlength="18"
+                                           placeholder="+7 (xxx) xxx xx xx" required/>
                                     <div class="field-placeholder">Телефон</div>
                                 </div>
                                 <div class="user-email__wrapper form-item">
-                                    <input type="text" class="callback-form__email not-valid focus-element" name="userEmail">
+                                    <input type="text" class="callback-form__email not-valid focus-element"
+                                           name="userEmail">
                                     <div class="field-placeholder">E-mail</div>
                                 </div>
                                 <div class="user-text__wrapper form-item">
-                                    <textarea class="focus-element callback__textarea not-valid focus-element" name="userText"></textarea>
+                                    <textarea class="focus-element callback__textarea not-valid focus-element"
+                                              name="userText"></textarea>
                                     <div class="field-placeholder">Текст сообщения</div>
                                 </div>
                             </div>
                             <div class="agreement-checkbox">
 
 
-                                <div  class="agreement__wrapper">
+                                <div class="agreement__wrapper">
 
-                                    Отправляя данное сообщение, Вы соглашаетесь с <a href="#" class="policy-link">политикой обработки персональных данных</a>
+                                    Отправляя данное сообщение, Вы соглашаетесь с <a href="#" class="policy-link">политикой
+                                    обработки персональных данных</a>
                                 </div>
 
                                 <div class="user-submit__wrapper">
-                                    <a href="#" class="usersubmit" ><span class="btn-text-wrapper">Оставить заявку</span> </a>
+                                    <a href="#" class="usersubmit"><span class="btn-text-wrapper">Оставить заявку</span>
+                                    </a>
                                 </div>
 
                             </div>
@@ -1169,50 +1538,146 @@
                 <div class="footer-link__list">
                     <ul class="footer-link-list-base">
                         <li class="footer-link-list__item  footer-link-list__item--header"><h6>Компания</h6></li>
-                        <li class="footer-link-list__item"><a href="#" >О нас</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Структура и контакты</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Лицензии и сертификаты</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Материально-техническая база</a></li>
-                        <li class="footer-link-list__item"><a href="#" >История</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Цели и политика компании</a></li>
-                        <li class="footer-link-list__item"><a href="#" >СМИ о нас</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Социальная отвественность</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Жизнь коллектива</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Вакансии</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Отзывы</a></li>
+                        <li class="footer-link-list__item"><a href="#">О нас</a></li>
+                        <li class="footer-link-list__item"><a href="#">Структура и контакты</a></li>
+                        <li class="footer-link-list__item"><a href="#">Лицензии и сертификаты</a></li>
+                        <li class="footer-link-list__item"><a href="#">Материально-техническая база</a></li>
+                        <li class="footer-link-list__item"><a href="#">История</a></li>
+                        <li class="footer-link-list__item"><a href="#">Цели и политика компании</a></li>
+                        <li class="footer-link-list__item"><a href="#">СМИ о нас</a></li>
+                        <li class="footer-link-list__item"><a href="#">Социальная отвественность</a></li>
+                        <li class="footer-link-list__item"><a href="#">Жизнь коллектива</a></li>
+                        <li class="footer-link-list__item"><a href="#">Вакансии</a></li>
+                        <li class="footer-link-list__item"><a href="#">Отзывы</a></li>
 
 
                     </ul>
 
                     <ul class="footer-link-list-base">
                         <li class="footer-link-list__item  footer-link-list__item--header"><h6>Виды работ</h6></li>
-                        <li class="footer-link-list__item"><a href="#" >Оформление прав на земельные/лесные участки</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Выполнение комплексных инженерных изысканий</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Проектные работы</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Оформление прав на земельные/лесные <br> участки на период строительства и эксплуатации</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Выполнение кадастровых работ</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Сопровождение строительства</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Оформление прав на объекты <br> законченного строительства</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Мониторинг построенного объекта</a></li>
+                        <li class="footer-link-list__item"><a href="#">Оформление прав на земельные/лесные участки</a>
+                        </li>
+                        <li class="footer-link-list__item"><a href="#">Выполнение комплексных инженерных изысканий</a>
+                        </li>
+                        <li class="footer-link-list__item"><a href="#">Проектные работы</a></li>
+                        <li class="footer-link-list__item"><a href="#">Оформление прав на земельные/лесные <br> участки
+                            на период строительства и эксплуатации</a></li>
+                        <li class="footer-link-list__item"><a href="#">Выполнение кадастровых работ</a></li>
+                        <li class="footer-link-list__item"><a href="#">Сопровождение строительства</a></li>
+                        <li class="footer-link-list__item"><a href="#">Оформление прав на объекты <br> законченного
+                            строительства</a></li>
+                        <li class="footer-link-list__item"><a href="#">Мониторинг построенного объекта</a></li>
                     </ul>
 
                     <ul class="footer-link-list-base">
-                        <li class="footer-link-list__item  footer-link-list__item--header"><h6>Отраслевые решения</h6></li>
-                        <li class="footer-link-list__item"><a href="#" >Муниципальное хозяйство</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Градостроительная деятельность</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Лесное хозяйство</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Сельское хозяйство</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Нефтегазовый комплекс</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Геология и горная промышленность</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Природоохранная деятельность</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Экология</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Чрезвычайные ситуации</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Водное хозяйство</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Транспорт и связь</a></li>
-                        <li class="footer-link-list__item"><a href="#" >Рекреация и спорт</a></li>
+                        <li class="footer-link-list__item  footer-link-list__item--header"><h6>Отраслевые решения</h6>
+                        </li>
+                        <li class="footer-link-list__item"><a href="#">Муниципальное хозяйство</a></li>
+                        <li class="footer-link-list__item"><a href="#">Градостроительная деятельность</a></li>
+                        <li class="footer-link-list__item"><a href="#">Лесное хозяйство</a></li>
+                        <li class="footer-link-list__item"><a href="#">Сельское хозяйство</a></li>
+                        <li class="footer-link-list__item"><a href="#">Нефтегазовый комплекс</a></li>
+                        <li class="footer-link-list__item"><a href="#">Геология и горная промышленность</a></li>
+                        <li class="footer-link-list__item"><a href="#">Природоохранная деятельность</a></li>
+                        <li class="footer-link-list__item"><a href="#">Экология</a></li>
+                        <li class="footer-link-list__item"><a href="#">Чрезвычайные ситуации</a></li>
+                        <li class="footer-link-list__item"><a href="#">Водное хозяйство</a></li>
+                        <li class="footer-link-list__item"><a href="#">Транспорт и связь</a></li>
+                        <li class="footer-link-list__item"><a href="#">Рекреация и спорт</a></li>
                     </ul>
                 </div>
+                <div class="footer-link-list__mobile">
+                    <div class="footer-link-list-base">
+                        <div
+                            class="footer-link-list__item  footer-link-list__item--header  footer-link-list__item__header--active">
+                            <a href="#"><span>Компания
+                                    <span class="footer-link__arrow">
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                            </span></a></div>
+                        <div class="footer-mobile-accordeon">
+                            <div class="footer-mobile-accorderon__wrapper">
+                                <div class="footer-link-list__item"><a href="#">О нас</a></div>
+                                <div class="footer-link-list__item"><a href="#">Структура и контакты</a></div>
+                                <div class="footer-link-list__item"><a href="#">Лицензии и сертификаты</a></div>
+                                <div class="footer-link-list__item"><a href="#">Материально-техническая база</a></div>
+                                <div class="footer-link-list__item"><a href="#">История</a></div>
+                                <div class="footer-link-list__item"><a href="#">Цели и политика компании</a></div>
+                                <div class="footer-link-list__item"><a href="#">СМИ о нас</a></div>
+                                <div class="footer-link-list__item"><a href="#">Социальная отвественность</a></div>
+                                <div class="footer-link-list__item"><a href="#">Жизнь коллектива</a></div>
+                                <div class="footer-link-list__item"><a href="#">Вакансии</a></div>
+                                <div class="footer-link-list__item"><a href="#">Отзывы</a></div>
+                            </div>
+                        </div>
 
+
+                    </div>
+
+                    <div class="footer-link-list-base">
+                        <div
+                            class="footer-link-list__item  footer-link-list__item--header  footer-link-list__item__header--active">
+                            <a href="#"><span>Виды работ
+                                    <span class="footer-link__arrow">
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                            </span></a></div>
+                        <div class="footer-mobile-accordeon">
+                            <div class="footer-mobile-accorderon__wrapper">
+
+                                <div class="footer-link-list__item"><a href="#">Оформление прав на земельные/лесные
+                                    участки</a></div>
+                                <div class="footer-link-list__item"><a href="#">Выполнение комплексных инженерных
+                                    изысканий</a></div>
+                                <div class="footer-link-list__item"><a href="#">Проектные работы</a></div>
+                                <div class="footer-link-list__item"><a href="#">Оформление прав на земельные/лесные
+                                    участки на период строительства и эксплуатации</a></div>
+                                <div class="footer-link-list__item"><a href="#">Выполнение кадастровых работ</a></div>
+                                <div class="footer-link-list__item"><a href="#">Сопровождение строительства</a></div>
+                                <div class="footer-link-list__item"><a href="#">Оформление прав на объекты законченного
+                                    строительства</a></div>
+                                <div class="footer-link-list__item"><a href="#">Мониторинг построенного объекта</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="footer-link-list-base">
+                        <div
+                            class="footer-link-list__item  footer-link-list__item--header  footer-link-list__item__header--active">
+                            <a href="#"> <span>Отраслевые решения
+                                    <span class="footer-link__arrow">
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                            </span>
+
+                            </a></div>
+                        <div class="footer-mobile-accordeon">
+                            <div class="footer-mobile-accorderon__wrapper">
+                                <div class="footer-link-list__item"><a href="#">Муниципальное хозяйство</a></div>
+                                <div class="footer-link-list__item"><a href="#">Градостроительная деятельность</a></div>
+                                <div class="footer-link-list__item"><a href="#">Лесное хозяйство</a></div>
+                                <div class="footer-link-list__item"><a href="#">Сельское хозяйство</a></div>
+                                <div class="footer-link-list__item"><a href="#">Нефтегазовый комплекс</a></div>
+                                <div class="footer-link-list__item"><a href="#">Геология и горная промышленность</a>
+                                </div>
+                                <div class="footer-link-list__item"><a href="#">Природоохранная деятельность</a></div>
+                                <div class="footer-link-list__item"><a href="#">Экология</a></div>
+                                <div class="footer-link-list__item"><a href="#">Чрезвычайные ситуации</a></div>
+                                <div class="footer-link-list__item"><a href="#">Водное хозяйство</a></div>
+                                <div class="footer-link-list__item"><a href="#">Транспорт и связь</a></div>
+                                <div class="footer-link-list__item"><a href="#">Рекреация и спорт</a></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
                 <div class="footer-map">
                     <a href="mailto:office@ooo-alans.ru" class="email__link">
                         <span class="span-item__picture  mail"></span>
@@ -1234,10 +1699,11 @@
                         <a href="#" class="alans-logo-link"></a>
                         <a href="#" class="alans-site-protocols">Правила сайта</a>
                         <a href="#" class="alans-confidential">Политика конфиденциальности</a>
-                        <p class="copyright">&copy;&nbsp;2018,&nbsp;ООО&nbsp;«АЛАНС».&nbsp;Все&nbsp;права&nbsp;защищены</p>
+                        <p class="copyright">
+                            &copy;&nbsp;2018,&nbsp;ООО&nbsp;«АЛАНС».&nbsp;Все&nbsp;права&nbsp;защищены</p>
 
                     </div>
-                    <a  href="#" class="logo-mmit-area">
+                    <a href="#" class="logo-mmit-area">
                         <span class="logo-mmit"></span>
                         <span class="logo-mmit__text">Разработка и поддержка сайта</span>
                     </a>
@@ -1266,7 +1732,6 @@
                     </div>
 
 
-
                 </div>
 
             </div>
@@ -1287,86 +1752,118 @@
 </div>
 
 <div class="license-galleries">
-        <div id="license-gallery_1" class="mfp-hide license-gallery-item">
-            <div class="license__popup-wrapper">
-                    <a href="userdata/license/document_1/license_1.jpg"><img src="userdata/license/document_1/license_1.jpg" alt="image-1"></a>
-                    <a href="userdata/license/document_1/license_2.jpg"><img src="userdata/license/document_1/license_2.jpg" alt="image-1"></a>    
-                    <a href="userdata/license/document_1/license_3.jpg"><img src="userdata/license/document_1/license_3.jpg" alt="image-1"></a>
-                    <a href="userdata/license/document_1/license_4.jpg"> <img src="userdata/license/document_1/license_4.jpg" alt="image-1"></a>
-            </div>
+    <div id="license-gallery_1" class="mfp-hide license-gallery-item">
+        <div class="license__popup-wrapper">
+            <a href="userdata/license/document_1/license_1.jpg"><img src="userdata/license/document_1/license_1.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_1/license_2.jpg"><img src="userdata/license/document_1/license_2.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_1/license_3.jpg"><img src="userdata/license/document_1/license_3.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_1/license_4.jpg"> <img src="userdata/license/document_1/license_4.jpg"
+                                                                      alt="image-1"></a>
         </div>
-
-        <div id="license-gallery_2" class="mfp-hide license-gallery-item">
-                <div class="license__popup-wrapper">
-                        <a href="userdata/license/document_2/license_1.jpg"><img src="userdata/license/document_2/license_1.jpg" alt="image-1"></a>
-                        <a href="userdata/license/document_2/license_2.jpg"><img src="userdata/license/document_2/license_2.jpg" alt="image-1"></a>    
-                        <a href="userdata/license/document_2/license_3.jpg"><img src="userdata/license/document_2/license_3.jpg" alt="image-1"></a>
-                        <a href="userdata/license/document_2/license_4.jpg"> <img src="userdata/license/document_2/license_4.jpg" alt="image-1"></a>
-                        <a href="userdata/license/document_2/license_5.jpg"> <img src="userdata/license/document_2/license_5.jpg" alt="image-1"></a>
-                </div>
-            </div>
-        
-            <div id="license-gallery_3" class="mfp-hide license-gallery-item">
-                    <div class="license__popup-wrapper">
-                            <a href="userdata/license/document_3/license_1.jpg"><img src="userdata/license/document_3/license_1.jpg" alt="image-1"></a>
-                            <a href="userdata/license/document_3/license_2.jpg"><img src="userdata/license/document_3/license_2.jpg" alt="image-1"></a>    
-                            <a href="userdata/license/document_3/license_3.jpg"><img src="userdata/license/document_3/license_3.jpg" alt="image-1"></a>
-                            <a href="userdata/license/document_3/license_4.jpg"> <img src="userdata/license/document_3/license_4.jpg" alt="image-1"></a>
-                            <a href="userdata/license/document_3/license_5.jpg"> <img src="userdata/license/document_3/license_5.jpg" alt="image-1"></a>
-                            <a href="userdata/license/document_3/license_6.jpg"> <img src="userdata/license/document_3/license_6.jpg" alt="image-1"></a>
-                    </div>
-                </div>
-            
-                <div id="license-gallery_4" class="mfp-hide license-gallery-item">
-                        <div class="license__popup-wrapper">
-                                <a href="userdata/license/document_4/license_1.jpg"><img src="userdata/license/document_4/license_1.jpg" alt="image-1"></a>
-                                <a href="userdata/license/document_4/license_2.jpg"><img src="userdata/license/document_4/license_2.jpg" alt="image-1"></a>    
-                                <a href="userdata/license/document_4/license_3.jpg"><img src="userdata/license/document_4/license_3.jpg" alt="image-1"></a>
-                                <a href="userdata/license/document_4/license_4.jpg"><img src="userdata/license/document_4/license_4.jpg" alt="image-1"></a>
-                              
-                        </div>
-                    </div>
-                
-                    <div id="license-gallery_5" class="mfp-hide license-gallery-item">
-                            <div class="license__popup-wrapper">
-                                    <a href="userdata/license/document_5/license_1.jpg"><img src="userdata/license/document_5/license_1.jpg" alt="image-1"></a>
-                                    <a href="userdata/license/document_5/license_2.jpg"><img src="userdata/license/document_5/license_2.jpg" alt="image-1"></a>    
-                                    <a href="userdata/license/document_5/license_3.jpg"><img src="userdata/license/document_5/license_3.jpg" alt="image-1"></a>
-                                  
-                            </div>
-                        </div>
-                        <div id="license-gallery_6" class="mfp-hide license-gallery-item">
-                                <div class="license__popup-wrapper">
-                                        <a href="userdata/license/document_6/license_1.jpg"><img src="userdata/license/document_6/license_1.jpg" alt="image-1"></a>
-                                        <a href="userdata/license/document_6/license_2.jpg"><img src="userdata/license/document_6/license_2.jpg" alt="image-1"></a>    
-                                        <a href="userdata/license/document_6/license_3.jpg"><img src="userdata/license/document_6/license_3.jpg" alt="image-1"></a>
-                                      
-                                </div>
-                            </div>
-                            <div id="license-gallery_7" class="mfp-hide license-gallery-item">
-                                    <div class="license__popup-wrapper">
-                                            <a href="userdata/license/document_7/license_1.jpg"><img src="userdata/license/document_7/license_1.jpg" alt="image-1"></a>
-                                            <a href="userdata/license/document_7/license_2.jpg"><img src="userdata/license/document_7/license_2.jpg" alt="image-1"></a>    
-                                            <a href="userdata/license/document_7/license_3.jpg"><img src="userdata/license/document_7/license_3.jpg" alt="image-1"></a>
-                                            <a href="userdata/license/document_7/license_4.jpg"><img src="userdata/license/document_7/license_4.jpg" alt="image-1"></a>
-                                          
-                                    </div>
-                                </div>
-                                <div id="license-gallery_8" class="mfp-hide license-gallery-item">
-                                        <div class="license__popup-wrapper">
-                                                <a href="userdata/license/document_8/license_1.jpg"><img src="userdata/license/document_8/license_1.jpg" alt="image-1"></a>
-                                                <a href="userdata/license/document_8/license_2.jpg"><img src="userdata/license/document_8/license_2.jpg" alt="image-1"></a>    
-                                                <a href="userdata/license/document_8/license_3.jpg"><img src="userdata/license/document_8/license_3.jpg" alt="image-1"></a>
-                                                <a href="userdata/license/document_8/license_4.jpg"><img src="userdata/license/document_8/license_4.jpg" alt="image-1"></a>
-                                                <a href="userdata/license/document_8/license_5.jpg"><img src="userdata/license/document_8/license_5.jpg" alt="image-1"></a>
-                                              
-                                        </div>
-                                    </div>
-
-       
-       
-                       
     </div>
+
+    <div id="license-gallery_2" class="mfp-hide license-gallery-item">
+        <div class="license__popup-wrapper">
+            <a href="userdata/license/document_2/license_1.jpg"><img src="userdata/license/document_2/license_1.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_2/license_2.jpg"><img src="userdata/license/document_2/license_2.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_2/license_3.jpg"><img src="userdata/license/document_2/license_3.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_2/license_4.jpg"> <img src="userdata/license/document_2/license_4.jpg"
+                                                                      alt="image-1"></a>
+            <a href="userdata/license/document_2/license_5.jpg"> <img src="userdata/license/document_2/license_5.jpg"
+                                                                      alt="image-1"></a>
+        </div>
+    </div>
+
+    <div id="license-gallery_3" class="mfp-hide license-gallery-item">
+        <div class="license__popup-wrapper">
+            <a href="userdata/license/document_3/license_1.jpg"><img src="userdata/license/document_3/license_1.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_3/license_2.jpg"><img src="userdata/license/document_3/license_2.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_3/license_3.jpg"><img src="userdata/license/document_3/license_3.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_3/license_4.jpg"> <img src="userdata/license/document_3/license_4.jpg"
+                                                                      alt="image-1"></a>
+            <a href="userdata/license/document_3/license_5.jpg"> <img src="userdata/license/document_3/license_5.jpg"
+                                                                      alt="image-1"></a>
+            <a href="userdata/license/document_3/license_6.jpg"> <img src="userdata/license/document_3/license_6.jpg"
+                                                                      alt="image-1"></a>
+        </div>
+    </div>
+
+    <div id="license-gallery_4" class="mfp-hide license-gallery-item">
+        <div class="license__popup-wrapper">
+            <a href="userdata/license/document_4/license_1.jpg"><img src="userdata/license/document_4/license_1.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_4/license_2.jpg"><img src="userdata/license/document_4/license_2.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_4/license_3.jpg"><img src="userdata/license/document_4/license_3.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_4/license_4.jpg"><img src="userdata/license/document_4/license_4.jpg"
+                                                                     alt="image-1"></a>
+
+        </div>
+    </div>
+
+    <div id="license-gallery_5" class="mfp-hide license-gallery-item">
+        <div class="license__popup-wrapper">
+            <a href="userdata/license/document_5/license_1.jpg"><img src="userdata/license/document_5/license_1.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_5/license_2.jpg"><img src="userdata/license/document_5/license_2.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_5/license_3.jpg"><img src="userdata/license/document_5/license_3.jpg"
+                                                                     alt="image-1"></a>
+
+        </div>
+    </div>
+    <div id="license-gallery_6" class="mfp-hide license-gallery-item">
+        <div class="license__popup-wrapper">
+            <a href="userdata/license/document_6/license_1.jpg"><img src="userdata/license/document_6/license_1.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_6/license_2.jpg"><img src="userdata/license/document_6/license_2.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_6/license_3.jpg"><img src="userdata/license/document_6/license_3.jpg"
+                                                                     alt="image-1"></a>
+
+        </div>
+    </div>
+    <div id="license-gallery_7" class="mfp-hide license-gallery-item">
+        <div class="license__popup-wrapper">
+            <a href="userdata/license/document_7/license_1.jpg"><img src="userdata/license/document_7/license_1.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_7/license_2.jpg"><img src="userdata/license/document_7/license_2.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_7/license_3.jpg"><img src="userdata/license/document_7/license_3.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_7/license_4.jpg"><img src="userdata/license/document_7/license_4.jpg"
+                                                                     alt="image-1"></a>
+
+        </div>
+    </div>
+    <div id="license-gallery_8" class="mfp-hide license-gallery-item">
+        <div class="license__popup-wrapper">
+            <a href="userdata/license/document_8/license_1.jpg"><img src="userdata/license/document_8/license_1.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_8/license_2.jpg"><img src="userdata/license/document_8/license_2.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_8/license_3.jpg"><img src="userdata/license/document_8/license_3.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_8/license_4.jpg"><img src="userdata/license/document_8/license_4.jpg"
+                                                                     alt="image-1"></a>
+            <a href="userdata/license/document_8/license_5.jpg"><img src="userdata/license/document_8/license_5.jpg"
+                                                                     alt="image-1"></a>
+
+        </div>
+    </div>
+
+
+</div>
 
 <div class="callback">
     <div class="callback__wrapper">
@@ -1436,7 +1933,7 @@
 <script src="js/scrollOverflow.js"></script>
 <script src="lib/jquery.magnific-popup.js"></script>
 <script src="js/fullpage.min.js"></script>
-
+<script src="js/select2.min.js"></script>
 <script src="js/template_script.js"></script>
 <script src="js/map.js"></script>
 </body>
