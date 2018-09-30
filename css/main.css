@@ -685,7 +685,8 @@ input {
 }
 
 .main-content {
-    width: 1240px;
+    max-width: 1240px;
+    width: 100%;
     margin: 0 auto;
     background: #ffffff;
 }
@@ -2103,7 +2104,8 @@ input:not(:focus):-ms-input-placeholder {
 /* Begin contcts */
 .contacts {
     background-color: #FFFFFF;
-    width: 1240px;
+    max-width: 1240px;
+    width: 100%;
     display: flex;
     flex-shrink: 0;
     margin: 0 auto;
@@ -2914,7 +2916,7 @@ input:not(:focus):-ms-input-placeholder {
 }
 
 .content-area__wrap {
-    padding: 45px 56px;
+    /*padding: 45px 56px;*/
 }
 
 .news-list {
@@ -2925,9 +2927,10 @@ input:not(:focus):-ms-input-placeholder {
     -ms-flex-direction: row;
     flex-direction: row;
     justify-content: flex-start;
+    position: relative;
     /*-ms-align-items: flex-start;*/
     /*align-items: flex-start;*/
-    margin: -45px;
+    /*margin: -45px;*/
 }
 
 .news-list__column {
@@ -3142,6 +3145,7 @@ input:not(:focus):-ms-input-placeholder {
     -webkit-transition: .25s ease;
     -o-transition: .25s ease;
     transition: .25s ease;
+    flex-shrink: 0;
 }
 
 .paginator__button_prev {
@@ -3167,6 +3171,7 @@ input:not(:focus):-ms-input-placeholder {
     -webkit-transition: .25s ease;
     -o-transition: .25s ease;
     transition: .25s ease;
+    flex-shrink: 0;
 }
 
 .paginator__button_prev::before {
@@ -3256,7 +3261,7 @@ input:not(:focus):-ms-input-placeholder {
     height: 1px;
     position: absolute;
     display: block;
-    left: -56px;
+    /*left: -56px;*/
     background-color: rgba(67, 179, 67, 0.3);
     top: 17px;
 }
@@ -8984,6 +8989,19 @@ svg.mountain .st0 {
 .about-contant--activities-types .article__text ul li {
     font-weight: 500;
 }
+.news-list .breadcrumbs-mobile {
+    position: absolute;
+    padding-left: 45px;
+    padding-right: 45px;
+    top: 49px;
+    margin: 0;
+}
+.wrapper-contacts .breadcrumbs-mobile {
+    margin-top: 0;
+}
+.header-container_404 .burger-menu__link span:not(.wrapper-burger__icon) {
+    background-color: #fff;
+}
 
 /*----------------------------------------Адаптива-------------------------------------------------------*/
 @media all and (max-width: 1400px) {
@@ -9003,6 +9021,9 @@ svg.mountain .st0 {
     }
     .branch-solution-list__item a {
         width: 100%;
+    }
+    .page-error-block {
+        padding-bottom: 240px;
     }
 }
 
@@ -9142,6 +9163,40 @@ svg.mountain .st0 {
 
     .image_wrap--mtb img {
         width: auto;
+    }
+    .news-article__wrap {
+        flex-direction: column;
+    }
+    .news-article__image-block::before {
+        content: none;
+    }
+    .news-list__list {
+        margin-top: 50px;
+    }
+    .news-article__image-block {
+        margin-bottom: 30px;
+    }
+    .news-list__title {
+        margin-left: 0;
+    }
+    .news-article__description {
+        padding-left: 0;
+    }
+    .news-list__column + .news-list__column .news-list__title {
+        margin-left: 0;
+    }
+    .news-article__description {
+        width: 100%;
+    }
+    .article-page__column_image::before {
+        width: calc(100% - 39px);
+    }
+    .article-page__column_article {
+        padding-right: 39px;
+    }
+    .article-page .breadcrumbs-mobile {
+        margin-bottom: 0;
+        margin-top: 39px;
     }
 }
 
@@ -9894,6 +9949,52 @@ svg.mountain .st0 {
     .about-contant--activities-types .article__header {
         margin: 0 0 45px;
     }
+    .content-area {
+        border: none;
+    }
+    .news-list {
+        flex-direction: column;
+        padding-top: 72px;
+    }
+    .news-list__column {
+        width: 100%;
+        border: none;
+    }
+    .news-article__wrap {
+        flex-direction: row;
+    }
+    .news-article__description {
+
+    }
+    .news-article__image-block {
+        flex-shrink: 0;
+        margin-right: 20px;
+    }
+    .news-article + .news-article {
+        margin-top: 50px;
+    }
+    .article-page {
+        flex-direction: column;
+    }
+    .article-page__column {
+        width: 100%;
+        padding-right: 56px;
+        padding-left: 56px;
+    }
+    .image__content {
+        width: auto;
+        max-width: 100%;
+    }
+    .article-page__column_image::before {
+        content: none;
+    }
+    .article-page {
+        padding-top: 0;
+    }
+    .article-page__image {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
 }
 
 @media all and (max-width: 880px) {
@@ -9943,6 +10044,10 @@ svg.mountain .st0 {
     }
     .branch-solution-list__item {
         width: calc(50% - 11px);
+    }
+    .contact-list__item {
+        flex-basis: auto;
+        width: 100%;
     }
 }
 
@@ -10193,6 +10298,9 @@ svg.mountain .st0 {
         padding-right: 40px;
         padding-left: 40px;
     }
+    .news-article__wrap {
+        flex-direction: column;
+    }
 }
 
 @media all and (max-width: 600px) {
@@ -10267,6 +10375,17 @@ svg.mountain .st0 {
 
     .license .mfp-thumbnails {
         display: none;
+    }
+    .page-error-block__status-digit {
+        font-size: 140px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 45px;
+    }
+    .page-error-block__message {
+        font-size: 44px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
 }
@@ -10702,6 +10821,57 @@ svg.mountain .st0 {
     .branch-solution-list__item a {
         padding-right: 20px;
         padding-left: 20px;
+    }
+    .about-page-wrapper--branch_solutions .breadcrumbs-mobile {
+        margin-top: 0;
+    }
+    .news-list__column {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+    .news-list__column .paginator {
+        margin: 53px 0 40px 0;
+    }
+    .news-article__description p {
+        font-size: 16px;
+    }
+    .news-article__time {
+        font-size: 16px;
+    }
+    .news-list .breadcrumbs-mobile {
+        padding-right: 35px;
+        padding-left: 35px;
+    }
+    .article-page__column {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+    .article-page__image {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .article-page__title {
+        margin-bottom: 30px;
+    }
+    .article-page__time {
+        font-size: 16px;
+    }
+    .wrapper-contacts {
+        padding-right: 35px;
+        padding-left: 35px;
+    }
+    .contacts .article__header {
+        margin-bottom: 40px;
+    }
+    .page-error-block__status-digit {
+        font-size: 80px;
+    }
+    .page-error-block__message {
+        font-size: 25px;
+    }
+    .page-error-block {
+        padding-top: 150px;
+        padding-bottom: 150px;
     }
 }
 
