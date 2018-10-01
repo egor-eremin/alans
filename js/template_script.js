@@ -1051,6 +1051,17 @@ function initFields($registrationFormsInput) {
     });
     $('.select2-search__field').attr("readonly","readonly");
 })();
+(function activateMobileMenu() {
+    $(document).on('click','.mobile-menu', function () {
+        if ($('.mobile-menu-wrapper').hasClass('active')) {
+            $('.mobile-menu-wrapper').removeClass('active');
+            $('.burger-menu_mobile').removeClass('burger-menu--active');
+        } else {
+            $('.mobile-menu-wrapper').addClass('active');
+            $('.burger-menu_mobile').addClass('burger-menu--active');
+        };
+    });
+})();
 
 function addTabs(tabbed_selector) {
     // Get relevant elements and collections
