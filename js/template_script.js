@@ -976,18 +976,22 @@ function initFields($registrationFormsInput) {
         $('.project-detail').hide();
         $('#' + idProject).show();
     });
-    $(document).on('click','.projects__item-in-link', function () {
-        var idProject = $(this).data('project');
-        var parentItemOnSidebar = $('span[data-project="' + idProject + '"]').parents('.all-project__list-item');
+        $(document).on('click','.projects__item-in-link', function () {
+            var idProject = $(this).data('project');
+            var parentItemOnSidebar = $('span[data-project="' + idProject + '"]').parents('.all-project__list-item');
 
-        if (!$('.all-project__title').hasClass('active')) {
-            $('.all-project__title').addClass('active');
-            $('.all-project__list').slideDown(300);
-        }
-        $('.project-detail').hide();
-        $('#' + idProject).show();
-        parentItemOnSidebar.addClass('active');
-    });
+            if (!$('div').is('.mobile-map')) {
+                if (!$('.all-project__title').hasClass('active')) {
+                    $('.all-project__title').addClass('active');
+                    $('.all-project__list').slideDown(300);
+                }
+                $('.project-detail').hide();
+                $('#' + idProject).show();
+                parentItemOnSidebar.addClass('active');
+            } else {
+                $('#' + idProject).addClass('active');
+            }
+        });
 })();
 
 (function closeProjectDetail() {
@@ -1026,7 +1030,6 @@ function initFields($registrationFormsInput) {
         autoplaySpeed: 3500,
     });
 })();
-
 (function uppTopButtonMain() {
     $('.up-arrow-main__button').on('click', function () {
         // $('html, body').animate({scrollTop: 0},500);
@@ -1052,15 +1055,156 @@ function initFields($registrationFormsInput) {
     $('.select2-search__field').attr("readonly","readonly");
 })();
 (function activateMobileMenu() {
-    $(document).on('click','.mobile-menu', function () {
+    $(document).on('click','.mobile-menu', function (e) {
+        e.preventDefault();
         if ($('.mobile-menu-wrapper').hasClass('active')) {
             $('.mobile-menu-wrapper').removeClass('active');
-            $('.burger-menu_mobile').removeClass('burger-menu--active');
+            $('.burger-menu-mobile').removeClass('active');
         } else {
             $('.mobile-menu-wrapper').addClass('active');
-            $('.burger-menu_mobile').addClass('burger-menu--active');
+            $('.burger-menu-mobile').addClass('active');
         };
     });
+})();
+(function activateMobileAccordeon() {
+    $(document).on('click','.burger-menu-mobile__item:not(.burger-menu-mobile__item--no-second-level) .burger-menu-mobile__header', function (e) {
+        e.preventDefault();
+        var thisParent = $(this).parents('.burger-menu-mobile__item');
+       if (thisParent.hasClass('active')) {
+           thisParent.removeClass('active');
+           thisParent.find('.burger-menu-mobile__container').slideUp(300);
+       } else {
+           thisParent.addClass('active')
+           thisParent.find('.burger-menu-mobile__container').slideDown(300);
+       }
+    });
+})();
+(function openFilterMobilePopup() {
+    $(document).on('click', '.filter-mb-button', function (e) {
+        e.preventDefault();
+        $('.mb-filter').addClass('active');
+    });
+})();
+(function closeFilterMobilePopup() {
+    $(document).on('click', '.mb-close-button', function (e) {
+        e.preventDefault();
+        $('.mb-filter').removeClass('active');
+    });
+})();
+(function openClientFilterMobile() {
+    $(document).on('click', '.mb-filter-button_client', function (e) {
+        e.preventDefault();
+       $('.mb-filter-item_clients').addClass('active');
+    });
+})();
+(function openWorkFilterMobile() {
+    $(document).on('click', '.mb-filter-button_works', function (e) {
+        e.preventDefault();
+        $('.mb-filter-item_works').addClass('active');
+    });
+})();
+(function closeFilterMobile() {
+
+    $(document).on('click', '.mb-ok-button', function (e) {
+        e.preventDefault();
+        var numberValueClients = 0;
+        var numberValueWorks = 0;
+
+        $('.mb-filter-item_clients input:not(.all-checked)').each(function () {
+            if ($(this).prop('checked')) {
+                numberValueClients += 1;
+            }
+        });
+
+        $('.working-branches input:not(.all-works)').each(function () {
+            if ($(this).prop('checked')) {
+                numberValueWorks += 1;
+            }
+        });
+
+
+        if ($(this).parents('.mb-filter-item_clients').length > 0) {
+            if (numberValueClients > 0) {
+                console.log('asd');
+                $('.mb-filter-button_client .mb-filter-button__text').text('Клиентов - ' + numberValueClients);
+            } else {
+                $('.mb-filter-button_client .mb-filter-button__text').text('Клиенты');
+            };
+
+            $('.mb-filter-item_clients').removeClass('active');
+        }
+
+        if ($(this).parents('.mb-filter-item_works').length > 0) {
+            if (numberValueWorks > 0) {
+                $('.mb-filter-button_works .mb-filter-button__text').text('Работ - ' + numberValueWorks);
+            } else {
+                $('.mb-filter-button_works .mb-filter-button__text').text('По видам работ');
+            };
+            $('.mb-filter-item_works').removeClass('active');
+        }
+
+        if (numberValueClients > 0 || numberValueWorks > 0) {
+            $('.mb-refresh-button').addClass('active');
+            $('.mb-filter__wrapper').addClass('mb-filter__wrapper_width-footer');
+        } else {
+            $('.mb-refresh-button').removeClass('active');
+            $('.mb-filter__wrapper').removeClass('mb-filter__wrapper_width-footer');
+        }
+
+    });
+})();
+(function refreshFilterMobile() {
+    $(document).on('click', '.mb-refresh-button', function (e) {
+        e.preventDefault();
+
+       $('.mb-filter-button_client .mb-filter-button__text').text('Клиенты');
+       $('.mb-filter-button_works .mb-filter-button__text').text('По видам работ');
+       $('.mb-filter__wrapper').removeClass('mb-filter__wrapper_width-footer');
+
+        $('.mb-filter-item_clients input').each(function () {
+            $(this).prop('checked',false);
+        });
+
+        $('.working-branches input').each(function () {
+            $(this).prop('checked',false);
+        });
+
+        $(this).removeClass('active');
+
+    });
+})();
+(function showProjectMobile() {
+    $(document).on('click', '.mb-filter__show-project', function () {
+       $('.mb-filter').removeClass('active');
+    });
+})();
+(function openProjectMB() {
+    $(document).on('click', '.project-mb-button', function () {
+       $('.mobile-project').addClass('active');
+    });
+})();
+(function closeProjectMB() {
+    $(document).on('click', '.close-project-mobile', function () {
+        $('.mobile-project').removeClass('active');
+    });
+})();
+(function openProjectInMap() {
+    $(document).on('click', '.mobile-project__item-in-map', function () {
+        $('.mobile-project').removeClass('active');
+    });
+})();
+(function openProjectDetail() {
+    $(document).on('click', '.project-open', function () {
+       var idProject = $(this).data('project');
+       $('#' + idProject).addClass('active');
+    });
+})();
+(function closeProjectDetail() {
+   $(document).on('click', '.mobile-project-detail-close', function () {
+      var thisParent = $(this).parents('.mobile-project-detail__item');
+
+       thisParent.removeClass('active');
+   });
 })();
 
 function addTabs(tabbed_selector) {
