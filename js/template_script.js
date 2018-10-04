@@ -533,6 +533,41 @@ $(document).ready(function () {
        
     });
 
+    media('all and (max-width: 1100px)', function(){
+        if($('#fullpage').length > 0 && $('html').is('.fp-enabled')) {
+            fullpage_api.destroy('all');
+            }
+
+        if ($('.services-slider__list').length > 0) {
+            $('.services-slider__list').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                swipe: true,
+                dots: true,
+                arrows: false,
+                fade: true,
+            });
+        }
+
+    });
+
+    media('all and (min-width: 1101px)', function(){
+        if($('#fullpage').length > 0) {
+                    $('#fullpage').fullpage({
+                        verticalCentered: true,
+                        scrollOverflow: true,
+                        anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6', 'anchor7', 'anchor8', 'anchor9','anchor10','anchor11','anchor12','anchor13','anchor14'],
+                        menu: '#menu-fullpage',
+
+                    });
+        }
+
+        if ($('.services-slider__list').length > 0 && $('.services-slider__list').is('.slick-slider')) {
+            $('.services-slider__list').slick('unslick');
+        }
+    });
+
     media('all and (max-width: 1024px)', function(){
         initializeBurger($('.burger-menu'));
         initializeMobileFooterAccordions();
@@ -1003,22 +1038,22 @@ function initFields($registrationFormsInput) {
     });
 })();
 
-(function fullPageInit() {
-    if($('#fullpage').length > 0) {
-        $('#fullpage').fullpage({
-            // autoScrolling:true,
-            // scrollHorizontally: true,
-            verticalCentered: true,
-            // loopTop: true,
-            // scrollBar: true,
-            // slidesNavigation: true,
-            scrollOverflow: true,
-            anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6', 'anchor7', 'anchor8', 'anchor9','anchor10','anchor11','anchor12','anchor13','anchor14'],
-            menu: '#menu-fullpage',
-
-        });
-    }
-})();
+// (function fullPageInit() {
+//     if($('#fullpage').length > 0) {
+//         $('#fullpage').fullpage({
+//             // autoScrolling:true,
+//             // scrollHorizontally: true,
+//             verticalCentered: true,
+//             // loopTop: true,
+//             // scrollBar: true,
+//             // slidesNavigation: true,
+//             scrollOverflow: true,
+//             anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6', 'anchor7', 'anchor8', 'anchor9','anchor10','anchor11','anchor12','anchor13','anchor14'],
+//             menu: '#menu-fullpage',
+//
+//         });
+//     }
+// })();
 
 (function addSliderCommercialProposal() {
     $('.commercial-proposal__list').slick({
@@ -1027,7 +1062,22 @@ function initFields($registrationFormsInput) {
         arrows: false,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 3500,
+        autoplaySpeed: 3200,
+        responsive: [
+            {
+                breakpoint: 1231,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 801,
+                settings: {
+                    slidesToShow: 1,
+                    fade: true,
+                }
+            }
+        ]
     });
 })();
 (function uppTopButtonMain() {
