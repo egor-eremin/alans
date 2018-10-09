@@ -965,6 +965,7 @@ input {
     min-height: 100%;
     height: auto;
     overflow: auto;
+    width: 100%;
 }
 
 .callback {
@@ -1396,7 +1397,7 @@ input {
 }
 
 .policy-link,
-.person-summary__summary a, .contact-list__item a, .typical-link {
+.person-summary__summary a, .contact-list__item a, .typical-link, .feedback-text__wrapper a {
     color: #69c269;
     text-decoration: none;
     display: inline;
@@ -1408,7 +1409,7 @@ input {
 }
 
 .policy-link:hover,
-.person-summary__summary a:hover, .contact-list__item a:hover, .typical-link:hover {
+.person-summary__summary a:hover, .contact-list__item a:hover, .typical-link:hover, .feedback-text__wrapper a:hover {
     border-bottom: 1px solid rgba(105, 194, 105, 1);
 }
 
@@ -2333,7 +2334,8 @@ input:not(:focus):-ms-input-placeholder {
     -o-transition: background-color .25s ease-out;
     transition: background-color .25s ease-out;
     margin-bottom: 53px;
-    background-color: rgba(255, 255, 255, 0.22);
+    /*background-color: rgba(255, 255, 255, 0.22);*/
+    background-color: transparent;
     min-height: 356px;
     cursor: pointer;
 }
@@ -2367,6 +2369,8 @@ input:not(:focus):-ms-input-placeholder {
     -webkit-transition: filter .25s ease, -webkit-filter .33s ease;
     -o-transition: filter .25s ease, -webkit-filter .33s ease;
     transition: filter .25s ease, -webkit-filter .33s ease;
+    -webkit-filter: drop-shadow(0px 0px 25px #43b343);
+    filter: drop-shadow(0px 0px 25px #43b343);
 }
 
 .probabilities:hover .probabilities__icon {
@@ -3220,7 +3224,8 @@ input:not(:focus):-ms-input-placeholder {
     display: -ms-inline-flex;
     display: inline-flex;
     margin: 0 4px;
-    width: 17px;
+    width: 9px;
+    flex-shrink: 0;
     height: 1px;
     background-color: #d6d6d6;
 }
@@ -3239,7 +3244,7 @@ input:not(:focus):-ms-input-placeholder {
     justify-content: flex-start;
     -ms-align-items: flex-start;
     align-items: flex-start;
-    padding: 16px 0;
+    padding: 16px 56px;
 }
 
 .article-page__column {
@@ -3268,7 +3273,7 @@ input:not(:focus):-ms-input-placeholder {
     height: 1px;
     position: absolute;
     display: block;
-    /*left: -56px;*/
+    left: -56px;
     background-color: rgba(67, 179, 67, 0.3);
     top: 17px;
 }
@@ -3703,7 +3708,8 @@ svg.mountain .st0 {
     display: flex;
     width: 100%;
     justify-content: center;
-    margin: 72px 0 90px 0;
+    /*margin: 72px 0 90px 0;*/
+    margin: 72px 0 72px 0;
     height: 32px;
     padding-right: 7px;
 }
@@ -3954,13 +3960,17 @@ svg.mountain .st0 {
 }
 
 .callback-text.show {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .callback-text {
     text-align: center;
     color: #fff;
     margin-bottom: 53px;
+    height: 300px;
 }
 
 .callback-text__title {
@@ -5172,6 +5182,18 @@ svg.mountain .st0 {
     max-width: 300px;
 }
 
+.client-custom-checkbox:hover {
+    border-color: #a1d9a1;
+}
+
+.list__item_nav label {
+    width: 18px !important;
+    height: 18px !important;
+}
+.section_item_block {
+    flex-shrink: 0 !important;
+}
+
 .custom-checkbox {
     width: 22px;
     height: 22px;
@@ -6266,6 +6288,7 @@ svg.mountain .st0 {
 
     width: 100%;
     padding-left: 50px;
+    padding-bottom: 70px;
 }
 
 .timeline-description__wrapper p {
@@ -6928,9 +6951,11 @@ svg.mountain .st0 {
     top: 0;
     left: 0;
     opacity: 0;
+    display: none;
 }
 
 .fp-viewing-anchor1 .animation-step1 .green-background {
+    display: block;
     animation: animation-background-step1 0.5s ease-in-out .3s;
     animation-fill-mode: forwards;
 }
@@ -6967,16 +6992,19 @@ svg.mountain .st0 {
 }
 
 .fp-viewing-anchor1 .animation-step1 .animate-docs {
+    display: block;
     animation: animation-docs-step1 0.5s ease-in-out .8s;
     animation-fill-mode: forwards;
 }
 
 .fp-viewing-anchor1 .animation-step1 .animate-signature {
+    display: block;
     animation: animation-signature-step1 0.3s ease-in-out 1.3s;
     animation-fill-mode: forwards;
 }
 
 .fp-viewing-anchor1 .animation-step1 .animate-printing {
+    display: block;
     animation: animation-printing-step1 0.3s ease-in-out 1.6s;
     animation-fill-mode: forwards;
 }
@@ -6984,6 +7012,7 @@ svg.mountain .st0 {
 .animate-docs {
     position: relative;
     opacity: 0;
+    display: none;
 }
 
 .animate-signature {
@@ -6991,6 +7020,7 @@ svg.mountain .st0 {
     bottom: 15px;
     left: 11px;
     opacity: 0;
+    display: none;
 }
 
 .animate-printing {
@@ -6998,6 +7028,7 @@ svg.mountain .st0 {
     bottom: 17px;
     right: 15px;
     opacity: 0;
+    display: none;
 }
 
 .map-pieces-map {
@@ -7012,11 +7043,15 @@ svg.mountain .st0 {
 .map-top {
     top: 1px;
     left: 357px;
+    animation: none;
+    animation-fill-mode: none;
 }
 
 .map-bottom {
     top: 83px;
     left: -1px;
+    animation: none;
+    animation-fill-mode: none; 
 }
 
 .map-bottom::before {
@@ -7058,6 +7093,7 @@ svg.mountain .st0 {
     top: 118px;
     left: 683px;
     opacity: 0;
+    display: none;
 }
 
 .fp-viewing-anchor2 .map-bottom::after, .fp-viewing-anchor2 .map-top::after,
@@ -7072,6 +7108,7 @@ svg.mountain .st0 {
     top: 101px;
     left: 453px;
     opacity: 0;
+    display: none;
 }
 
 .cut-earth {
@@ -7096,11 +7133,13 @@ svg.mountain .st0 {
 }
 
 .fp-viewing-anchor2 .animation-step2 .drilling-machine {
+    display: block;
     animation: animation-drilling-maching-step2 .5s ease-in-out .3s;
     animation-fill-mode: forwards;
 }
 
 .fp-viewing-anchor2 .drilling-line {
+    display: block;
     animation: animation-drilling-line-step2 1s ease-in-out .8s;
     animation-fill-mode: forwards;
 }
@@ -7256,6 +7295,10 @@ svg.mountain .st0 {
     overflow: hidden;
 }
 
+.animation-drilling__line-animate::before {
+    content: none;
+}
+
 .fp-viewing-anchor2 .animation-drilling__line-animate::before {
     content: '';
     width: 100%;
@@ -7264,9 +7307,11 @@ svg.mountain .st0 {
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(-100%);
+    opacity: 0;
+    display: block;
     animation: animation-line-step2 .5s ease-in-out 2.3s;
     animation-fill-mode: forwards;
+    
 }
 
 .fp-viewing-anchor2 .animation-drilling__circle {
@@ -7279,6 +7324,7 @@ svg.mountain .st0 {
     margin-top: 17px;
     transform: translateY(6px);
     opacity: 0;
+    display: none;
 }
 
 .fp-viewing-anchor2 .animation-drilling__circle::before {
@@ -7295,16 +7341,19 @@ svg.mountain .st0 {
 }
 
 .fp-viewing-anchor2 .animation-drilling__circle:nth-child(2) {
+    display: block;
     animation: animation-drilling-circle .3s ease-in-out 2.4s;
     animation-fill-mode: forwards;
 }
 
 .fp-viewing-anchor2 .animation-drilling__circle:nth-child(3) {
+    display: block;
     animation: animation-drilling-circle .3s ease-in-out 2.6s;
     animation-fill-mode: forwards;
 }
 
 .fp-viewing-anchor2 .animation-drilling__circle:nth-child(4) {
+    display: block;
     animation: animation-drilling-circle .3s ease-in-out 2.8s;
     animation-fill-mode: forwards;
 }
@@ -8257,12 +8306,13 @@ svg.mountain .st0 {
 
 @keyframes animation-line-step2 {
     0% {
-        transform: translateY(-100%);
+        opacity: 0;
     }
     100% {
-        transform: translateY(0);
+        opacity: 1;
     }
 }
+
 
 @keyframes animation-drilling-circle {
     0% {
@@ -9669,6 +9719,9 @@ svg.mountain .st0 {
     width: 12px;
     height: 12px;
     background-color: #43b343;
+}
+.section-13 {
+    border-top: 1px solid #e5e5e5;
 }
 /*----------------------------------------Адаптива-------------------------------------------------------*/
 @media all and (max-width: 1400px) {

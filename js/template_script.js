@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     //Раздел переменных
     //----------------------------------------------------------------------------------------------------
-    var $registrationFormsInput = $('.username, .user-telephone, .callback-form__email, .callback__textarea, .mail-input'),
+    var $registrationFormsInput = $('.username, .user-telephone, .phone-input, .callback-form__email, .callback__textarea, .mail-input'),
         $registrationFormPlaceholders = $('.field-placeholder'),
         showDigitsAnimationFirst = true,
         showDigitsAnimationSecond = true,
@@ -111,10 +111,6 @@ $(document).ready(function () {
         $.each($wrappers, function (indexInArray, valueOfElement) {
             $(this).removeClass('active');
         });
-
-
-
-
     });
 
     $registrationFormsInput.on('keydown keyup', function () {
@@ -157,7 +153,6 @@ $(document).ready(function () {
             repeat: false,
 
         });
-
 
 
     }
