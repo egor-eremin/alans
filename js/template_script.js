@@ -554,9 +554,24 @@ $(document).ready(function () {
                         scrollOverflow: true,
                         anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5', 'anchor6', 'anchor7', 'anchor8', 'anchor9','anchor10','anchor11','anchor12','anchor13','anchor14'],
                         menu: '#menu-fullpage',
+                        // afterLoad: function(origin, destination, direction) {
+                        //     if ($('body').is('.fp-viewing-anchor2')) {
 
-                    });
-        }
+                        //         setTimeout(function() {
+                        //             $('.animation-line').animate({
+                        //                 top: '0px',
+                        //             }, 430, 'linear')
+                        //         }, 1700);
+
+                        //     } else {
+                        //         $('.animation-line').animate({
+                        //                 top: '-100%',
+                        //             }, 0, 'linear')
+                        //     }
+                        // },
+
+                    })
+        };
 
         if ($('.services-slider__list').length > 0 && $('.services-slider__list').is('.slick-slider')) {
             $('.services-slider__list').slick('unslick');
