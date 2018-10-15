@@ -3352,13 +3352,14 @@ input:not(:focus):-ms-input-placeholder {
     flex-wrap: wrap;
     align-content: flex-start;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     margin-top: 50px;
 }
 
 .branch-solution-list__item {
-
+    width: calc(100% / 3 - 11px);
+    margin-right: 11px;
     margin-bottom: 11px;
 }
 
@@ -5189,6 +5190,7 @@ svg.mountain .st0 {
 .list__item_nav label {
     width: 18px !important;
     height: 18px !important;
+    flex-shrink: 0;
 }
 .section_item_block {
     flex-shrink: 0 !important;
@@ -6045,7 +6047,7 @@ svg.mountain .st0 {
 }
 
 .work-slide__ul-item span {
-    border-bottom: 1px solid #cecece;
+    /*border-bottom: 1px solid #cecece;*/
 }
 
 .work-slide__number {
@@ -6938,8 +6940,8 @@ svg.mountain .st0 {
 }
 
 .big-tree_3 {
-    top: 90px;
-    left: 685px;
+    top: 107px;
+    left: 649px;
 }
 
 .big-tree_4 {
@@ -6969,7 +6971,7 @@ svg.mountain .st0 {
 
 .big-tree_9 {
     top: 376px;
-    left: 1019px;
+    left: 1024px;
 }
 
 .big-tree_10 {
