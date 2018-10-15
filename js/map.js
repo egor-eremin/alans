@@ -51,14 +51,14 @@ $(document).ready(function () {
                     iconShape: {
                                     type: 'Rectangle',
                                     coordinates: [
-                                        [0, 0], [64, 88]
+                                        [-32, -88], [32, 0]
                                     ]
                                 },
                     // iconImageHref: 'img/pin-3.png',
                     iconImageSize: [64, 88],
                     iconImageOffset: [-32, -88],
 
-                    balloonOffset:[-60, -142],
+                    balloonOffset:[-92, -227],
                     balloonContentSize: [184, 130],
                     balloonLayout: "default#imageWithContent",
                     balloonImageSize: [0, 0], balloonShadow: false,
