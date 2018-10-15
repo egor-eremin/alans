@@ -54,7 +54,7 @@ $(document).ready(function () {
                                         [0, 0], [64, 88]
                                     ]
                                 },
-                    iconImageHref: 'img/pin-3.png',
+                    // iconImageHref: 'img/pin-3.png',
                     iconImageSize: [64, 88],
                     iconImageOffset: [-32, -88],
 

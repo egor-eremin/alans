@@ -7288,6 +7288,7 @@ svg.mountain .st0 {
     height: 88px;
     background: url("../img/custom-marker.png") no-repeat;
     position: relative;
+    transform: translate(-32px, -88px);
 }
 
 .map-marker-wrapper {
