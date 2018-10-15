@@ -662,7 +662,7 @@ input {
     color: #000000;
     text-decoration: none;
     position: relative;
-
+    margin-bottom: 7px;
     transition: .3s ease-in-out;
 }
 
@@ -2599,6 +2599,8 @@ input:not(:focus):-ms-input-placeholder {
 .about-contant--activities-types .article__text figure,
 .about-contant--activities-types .article__text figure img {
     max-width: 100%;
+    width: auto !important;
+    height: auto !important;
     margin: auto;
     text-align: center;
 }
@@ -3244,7 +3246,7 @@ input:not(:focus):-ms-input-placeholder {
     justify-content: flex-start;
     -ms-align-items: flex-start;
     align-items: flex-start;
-    padding: 16px 56px;
+    padding: 56px;
 }
 
 .article-page__column {
@@ -9784,6 +9786,9 @@ svg.mountain .st0 {
 .section-13 {
     border-top: 1px solid #e5e5e5;
 }
+.burger-menu-list__item:not(.burger-menu-list__item--no-second-level) .burger-menu-link__wrp .burger-menu-list-item__header {
+    pointer-events: none;
+}
 /*----------------------------------------Адаптива-------------------------------------------------------*/
 @media all and (max-width: 1400px) {
     .up-arrow__wrapper .layout-position {
@@ -10337,11 +10342,12 @@ svg.mountain .st0 {
     }
 
     .burger-menu-list-item__container {
-        overflow: hidden;
-        height: 0;
-        transition-property: height;
-        transition-duration: 200ms;
-        transition-timing-function: ease-in-out;
+        /*overflow: hidden;*/
+        /*height: 0;*/
+        /*transition-property: height;*/
+        /*transition-duration: 200ms;*/
+        /*transition-timing-function: ease-in-out;*/
+        display: none;
     }
 
     .burger-menu-link__wrp {
@@ -10805,8 +10811,8 @@ svg.mountain .st0 {
     }
     .article-page__column {
         width: 100%;
-        padding-right: 56px;
-        padding-left: 56px;
+        padding-right: 0;
+        padding-left: 0;
     }
     .image__content {
         width: auto;
@@ -11079,6 +11085,12 @@ svg.mountain .st0 {
     }
     .mobile-project__item {
         margin-bottom: 9px;
+    }
+    .about-contant--activities-types .person-summary__wrap {
+        flex-direction: column;
+    }
+    .about-contant--activities-types .person-summary__person {
+        width: 100%;
     }
 }
 
@@ -11849,6 +11861,10 @@ svg.mountain .st0 {
         padding-left: 35px;
     }
     .article-page__column {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .article-page {
         padding-left: 35px;
         padding-right: 35px;
     }
