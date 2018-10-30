@@ -1,0 +1,20 @@
+.grid{margin:0 auto;width:100%;height:100vh;box-shadow:1px 1px 3px #333;background-color:#3A78A1;background-image:linear-gradient(#83ABC4 1px, transparent 1px),
+linear-gradient(90deg, #83ABC4 1px, transparent 1px),
+linear-gradient(#3A78A1 1px, transparent 1px),
+linear-gradient(90deg, #3A78A1 1px, transparent 1px),
+linear-gradient(#4E86AB 1px, transparent 1px),
+linear-gradient(90deg, #4E86AB 1px, transparent 1px);background-size:100px 100px,
+100px 100px,
+5px 5px,
+5px 5px,
+20px 20px,
+20px 20px;background-position:-1px -1px,
+-1px -1px,
+0 0,
+0 0,
+-1px -1px,
+-1px -1px;}
+.marked-outer{border:2px dashed #f00;}
+.marked-outer--filled{background-color:rgba(180, 27, 27, 29%);}
+.marked-wrapper{border:1px dashed #ff00ff;}
+.marked-column{border:1px dashed green;}
