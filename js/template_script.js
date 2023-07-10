@@ -6,9 +6,9 @@ $(document).ready(function () {
         $activitiesTypes = $('.article__link--activities-types, .article-header-stay__link'),
         $mtbContentDescription = $('.mtb-content-description__text'), $mtbContentLink = $('.mtb-items__item'),
         $mobileAdvantages = $('.advantages-mobile-list');
-    $(function () {
-        objectFitImages()
-    });
+    // $(function () {
+    //     objectFitImages()
+    // });
     initFields($registrationFormsInput);
     $('.user-telephone, .phone-input').mask('+7 (000) 000-00-00');
     $('.callback-form').validate({
@@ -121,12 +121,14 @@ $(document).ready(function () {
         animatedScrollToPosition($('body, html'), $formPosition, 500);
     });
     (function animationAdvantages() {
-        var advantagesCoordinate = $('.advantages').offset().top;
-        var heightWindow = $(window).height();
-        var advantagesDescription = $('.advantages-item__description');
+        if ($('.advantages').lenght > 0) {
+            var advantagesCoordinate = $('.advantages').offset().top;
+            var heightWindow = $(window).height();
+            var advantagesDescription = $('.advantages-item__description');
 
-        if ((advantagesCoordinate < heightWindow) && (!advantagesDescription.hasClass('fadeInUp'))) {
-            advantagesDescription.addClass('fadeInUp');
+            if ((advantagesCoordinate < heightWindow) && (!advantagesDescription.hasClass('fadeInUp'))) {
+                advantagesDescription.addClass('fadeInUp');
+            }
         }
     })();
     $(window).on('scroll', function () {
